@@ -1,2 +1,0 @@
-1|'CHEN'|'Rémi'|'Ufolep 1'|'18/09/1999'|kuala lumpur|0564879523|remi.chen@hotma.fr|035894623
-2|POLYDORAS|dimitri|Ufolep 4|18/09/1999|kuala lumpur|0564879523|remi.chen@hotma.fr|035894623
