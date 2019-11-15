@@ -68,17 +68,17 @@
 
       <div class="carousel-inner">
     <div class="carousel-item active">
-      <img id="img1" class="d-block w-100" src="../data/images/images_sites/ob_00da8f_l-equipe-scale-2019.jpg" alt="First slide">
+      <img id="img1" class="d-block w-100" src="../model/data/images/images_sites/ob_00da8f_l-equipe-scale-2019.jpg" alt="First slide">
       <div class="carousel-caption">
      </div>
     </div>
     <div class="carousel-item">
-      <img id="img2" class="d-block w-100" src="../data/images/images_sites/ob_763433_p1620864.JPG" alt="Second slide">
+      <img id="img2" class="d-block w-100" src="../model/data/images/images_sites/ob_763433_p1620864.JPG" alt="Second slide">
       <div class="carousel-caption">
      </div>
     </div>
     <div class="carousel-item">
-      <img id="img3" class="d-block w-100" src="../data/images/images_sites/ob_c45056_p1620014.JPG" alt="Third slide">
+      <img id="img3" class="d-block w-100" src="../model/data/images/images_sites/ob_c45056_p1620014.JPG" alt="Third slide">
       <div class="carousel-caption">
     </div>
     </div>
