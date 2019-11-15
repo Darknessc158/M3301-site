@@ -46,14 +46,14 @@
   <div class="histoireclub">
     <?php
     foreach ($histoireclub as $key => $uneHC) {
-      $imagePath = "../data/images/".$uneHC->getImage();
+      $imagePath = "../model/data/images/histoireclub/".$uneHC->getImage();
     ?>
     <div class="uneHC">
       <img src="<?=$imagePath?>" alt="" class = "image">
       <p><?php echo $uneHC->getAnnee(); ?></p>
       <p><?php echo $uneHC->getDescription(); ?></p>
     </div>
-
+<?php } ?>
   </div>
 
 

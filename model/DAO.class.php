@@ -1,6 +1,6 @@
 <?php
 
-require_once("../model/Article.class.php");
+require_once("../model/histoireclub.class.php");
 require_once("../model/Actualite.class.php");
 
 class DAO {
@@ -21,6 +21,13 @@ class DAO {
   //Acces à tout les articles
   function getAllArticles() : array {
     $req = "SELECT * FROM article";
+    $sth = $this->db->query($req);
+    $result = $sth->fetchAll(PDO::FETCH_CLASS, "article");
+    return $result;
+  }
+
+  function getAllhistoireclub() : array {
+    $req = "SELECT * FROM histoireclub";
     $sth = $this->db->query($req);
     $result = $sth->fetchAll(PDO::FETCH_CLASS, "article");
     return $result;

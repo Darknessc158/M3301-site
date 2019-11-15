@@ -1,6 +1,8 @@
-CREATE TABLE bureau (
-
-)
+CREATE TABLE histoireclub{
+      image varchar(10),
+      description STRING,
+      annee varchar(4)
+};
 
 CREATE TABLE adherent (
      idAdherent int(3) PRIMARY KEY,
