@@ -8,30 +8,33 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <title>SCALE - Gestion des stocks</title>
+  <title>SCALE Echirolles - club de cyclisme</title>
 </head>
 <body>
 
   <div class="jumbotron text-center" style="margin-bottom:0">
-    <h1>SCALE Echirolles</h1>
-    <p>Ceci est un test approuvé par Rémi Chen</p>
+    <img src="../data/images/accueil_banniere.jpg" alt="">
   </div>
 
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="accueil.view.php">Accueil</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <a class="navbar-brand" href="main.view.php"> <img src="../data/images/logo-scale.jpg" alt=""></a>
+
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="actualites.view.php">Actualités</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="lebureau.view.php">Le bureau</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="lescoureurs.view.php">Les coureurs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
       </ul>
     </div>
@@ -42,12 +45,12 @@
     <div class="row">
       <div class="col-sm-4">
         <h2>A propos de nous</h2>
-        <p>Scale Echirolles est une association sportive de byciclette bimotorisé grâce a l'energie humaine issue du pédalage</p>
+        <p>Scale Echirolles est une association sportive de vélo</p>
         <h3>Nos sponsors</h3>
         <p>Retrouvez ici tout nos sponsors</p>
         <ul class="nav nav-pills flex-column">
           <li class="nav-item">
-            <!-- <a class="nav-link" href="https://www.gites-de-france-isere.com/"><img src="../data/sponsor_gite.jpg" alt=""></a> -->
+            <!-- <a class="nav-link" href="https://www.gites-de-france-isere.com/"><img src="../data/sponsor_gite.jpg" alt=""></a>  -->
           </li>
           <li class="nav-item">
             <!-- <a class="nav-link" href="https://piecesaccessoiresvelo.fr/"><img src="../data/sponsor_pieces.png" alt=""></a> -->

@@ -1,12 +1,17 @@
+CREATE TABLE bureau (
+
+)
+
 CREATE TABLE adherent (
      idAdherent int(3) PRIMARY KEY,
      nom STRING NOT NULL,
      prenom STRING NOT NULL,
-     categorie STRING,
+     role varchar(30),
+     categorie varchar(30),
      datenaissance DATE,
      adresse STRING,
      telephone char(10),
-     mail STRING,
+     mail varchar(40),
      numLicence int,
      FOREIGN KEY (numLicence) REFERENCES  licence(numLicence)
 );
@@ -16,7 +21,7 @@ CREATE TABLE licence(
   federation STRING,
   idPaiement int,
   idAdherent int(3),
- );
+   );
 
 CREATE TABLE paimentLicence(
   idPaiement int PRIMARY KEY,
@@ -28,8 +33,7 @@ CREATE TABLE paimentLicence(
 );
 
 
-
-CREATE TABLE achatArticle(
+/*CREATE TABLE achatArticle(
     idArticle int(3) PRIMARY KEY,
     nom STRING,
     description STRING,
@@ -62,4 +66,4 @@ CREATE TABLE articleCommande(
   taille STRING,
   quantite int,
   prixDEVente float
-);
+);*/
