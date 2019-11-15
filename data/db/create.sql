@@ -3,7 +3,7 @@ CREATE TABLE adherent (
      nom STRING NOT NULL,
      prenom STRING NOT NULL,
      categorie STRING,
-     datenaissance DATE NOT NULL,
+     datenaissance DATE,
      adresse STRING,
      telephone char(10),
      mail STRING,
@@ -18,7 +18,7 @@ CREATE TABLE licence(
   idAdherent int(3),
  );
 
-CREATE TABLE payementLicence(
+CREATE TABLE paimentLicence(
   idPaiement int PRIMARY KEY,
   datePayement date,
   montant float,
