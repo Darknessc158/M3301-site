@@ -2,7 +2,7 @@
   private $db;
 
   public function __construct($path){
-    $database ='sqlite:../model//boombox.db';
+    $database ='sqlite:/data/db/scale.db';
     try{
       $this->db = new PDO($database);
       //var_dump($database);
