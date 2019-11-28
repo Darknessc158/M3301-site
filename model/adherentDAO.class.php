@@ -21,11 +21,18 @@
     return $res;
   }
 
-  function getUnAdherent($idadherent){ //recuperation d'un article avec son id
+  function getUnAdherent($idadherent){ //recuperation d'un adherent avec son id
     $req = "SELECT * FROM adherent WHERE idAdherent=$idadherent;";
     $sth=$this->db->query($req);
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'adherent');
     return $res[0];
+  }
+
+  function getNbLigne(){ 
+    $req = "SELECT count(*) FROM adherent;";
+    $sth=$this->db->query($req);
+    $res = $sth;
+    return $res;
   }
 
   //Aide Ajout adherent ...
