@@ -1,6 +1,6 @@
 <?php
-require_once('adherent.class.php');
-require_once('adherentDAO.class.php');
+require_once('../model/adherent.class.php');
+require_once('../model/adherentDAO.class.php');
 
 // Récupération des données de configuration
 $config = parse_ini_file('../config/config.ini');
@@ -10,7 +10,6 @@ $adherents = new adherentDAO($config['database_path']);
 
 //$n = $adherents->getUnAdherent(1);
 $nblignes = $adherents->getNbLigne();
-echo "$nblignes";
 //view
 include('../view/adminpage.php');
 ?>
