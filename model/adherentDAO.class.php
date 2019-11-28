@@ -14,7 +14,7 @@
     }
   }
 
-  function getLesAdherents(){ //recuperation de tous les articles de la bd
+  function getLesAdherents(){ //recuperation de tous les adherents de la bd
     $req = "SELECT * FROM adherent;";
     $sth=$this->db->query($req);
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'adherent');
@@ -24,7 +24,7 @@
   function getUnAdherent($idadherent){ //recuperation d'un article avec son id
     $req = "SELECT * FROM adherent WHERE idAdherent=$idadherent;";
     $sth=$this->db->query($req);
-    $res = $sth->fetchAll(PDO::FETCH_CLASS,'Article');
+    $res = $sth->fetchAll(PDO::FETCH_CLASS,'adherent');
     return $res[0];
   }
 
