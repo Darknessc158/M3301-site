@@ -34,13 +34,7 @@
     $res = $data['nb'];
     return $res;
   }
-  function getNomColonnes($idcol){
-    $sth=$this->db->query("SELECT column_name FROM information_schema.columns WHERE table_name = 'adherent';");
-    $data = $sth->fetch();
-    $res = $data[$idcol];
-    return $res;
-  }
-  
+
   //Aide Ajout adherent ...
   /*
   function addArticle($intitule,$description,$type,$prix,$reference,$urlphoto){ //essai d'une fonction pour ajouter un article a la bd

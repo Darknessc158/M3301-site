@@ -15,6 +15,4 @@ var_dump($m);
 $l = $adherents->getNbLigne();
 printf("nombre de lignes : $l \n");
 
-$name = $adherents->getNomColonnes(1);
-printf("nom de la colonne : $name \n");
 ?>

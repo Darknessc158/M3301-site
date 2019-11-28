@@ -33,23 +33,29 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr> <!-- remplissage auto avec notre bd -->
-                    <th>Name</th><!-- recuperer nomcolonne avec notre bd -->
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
+                    <th>idadherent</th><!--  nomcolonne de la bd -->
+                    <th>nom</th>
+                    <th>prenom</th>
+                    <th>categorie</th>
+                    <th>datenaissance</th>
+                    <th>adresse</th>
+                    <th>telephone</th>
+                    <th>mail</th>
+                    <th>numlicence</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php $i=1; $nblignes=2; while ($nblignes > 0){ ?>
                   <tr>
-                    <td><?=$adherents->getUnAdherent($i)->getNom(); ?></td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
-                    <td>$320,800</td>
+                    <td><?=$adherents->getUnAdherent($i)->getIdAdherent();?></td>
+                    <td><?=$adherents->getUnAdherent($i)->getNom();?></td>
+                    <td><?=$adherents->getUnAdherent($i)->getPrenom();?></td>
+                    <td><?=$adherents->getUnAdherent($i)->getCategorie();?></td>
+                    <td><?=$adherents->getUnAdherent($i)->getDateNaissance();?></td>
+                    <td><?=$adherents->getUnAdherent($i)->getAdresse();?></td>
+                    <td><?=$adherents->getUnAdherent($i)->getTelephone();?></td>
+                    <td><?=$adherents->getUnAdherent($i)->getMail();?></td>
+                    <td><?=$adherents->getUnAdherent($i)->getNumLicence();?></td>
                   </tr>
                 <?php $nblignes--;
                       $i++;} ?>
