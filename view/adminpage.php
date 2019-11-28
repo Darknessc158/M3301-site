@@ -42,7 +42,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $i=0; while ($nblignes > 0){ ?>
+                  <?php $i=1; $nblignes=2; while ($nblignes > 0){ ?>
                   <tr>
                     <td><?=$adherents->getUnAdherent($i)->getNom(); ?></td>
                     <td>System Architect</td>
