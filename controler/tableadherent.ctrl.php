@@ -10,7 +10,7 @@ $adherents = new adherentDAO($config['database_path']);
 
 //$n = $adherents->getUnAdherent(1);
 $nblignes = $adherents->getNbLigne();
-
+echo "$nblignes";
 //view
 include('../view/adminpage.php');
 ?>
