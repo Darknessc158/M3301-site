@@ -15,14 +15,14 @@
   }
 
   function getLesAdherents(){ //recuperation de tous les articles de la bd
-    $req = "SELECT * FROM adherent";
+    $req = "SELECT * FROM adherent;";
     $sth=$this->db->query($req);
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'adherent');
     return $res;
   }
 
   function getUnAdherent($idadherent){ //recuperation d'un article avec son id
-    $req = "SELECT * FROM adherent WHERE idadherent=$idadherent;";
+    $req = "SELECT * FROM adherent WHERE idAdherent=$idadherent;";
     $sth=$this->db->query($req);
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'Article');
     return $res[0];
