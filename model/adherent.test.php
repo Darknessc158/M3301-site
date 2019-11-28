@@ -12,4 +12,6 @@ $m = $adherents->getLesAdherents();
 var_dump($m);
 //$n = $adherents->getUnAdherent(1);
 //var_dump($n);
+$l = $adherents->getNbLigne();
+printf("nombre de lignes : $l \n");
 ?>

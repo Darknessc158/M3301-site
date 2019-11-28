@@ -28,10 +28,10 @@
     return $res[0];
   }
 
-  function getNbLigne(){ 
-    $req = "SELECT count(*) FROM adherent;";
-    $sth=$this->db->query($req);
-    $res = $sth;
+  function getNbLigne(){
+    $sth=$this->db->query("SELECT count(*) as nb FROM adherent;");
+    $data = $sth->fetch();
+    $res = $data['nb'];
     return $res;
   }
 
