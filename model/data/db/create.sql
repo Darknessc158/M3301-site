@@ -1,8 +1,8 @@
-CREATE TABLE histoireclub{
-      image varchar(10),
-      description STRING,
-      annee varchar(4)
-};
+-- CREATE TABLE histoireclub{
+--       image varchar(10),
+--       description STRING,
+--       annee varchar(4)
+-- };
 
 CREATE TABLE adherent (
      idAdherent varchar(4) PRIMARY KEY,
@@ -18,21 +18,21 @@ CREATE TABLE adherent (
      FOREIGN KEY (numLicence) REFERENCES  licence(numLicence)
 );
 
-CREATE TABLE licence(
-  numLicence int PRIMARY KEY,
-  federation STRING,
-  idPaiement int,
-  idAdherent int(3),
-   );
-
-CREATE TABLE paimentLicence(
-  idPaiement int PRIMARY KEY,
-  datePayement date,
-  montant float,
-  typePyement STRING,
-
-  FOREIGN KEY (idAdherent) REFERENCES  adherent(idAdherent)
-);
+-- CREATE TABLE licence(
+--   numLicence int PRIMARY KEY,
+--   federation STRING,
+--   idPaiement int,
+--   idAdherent int(3),
+--    );
+--
+-- CREATE TABLE paimentLicence(
+--   idPaiement int PRIMARY KEY,
+--   datePayement date,
+--   montant float,
+--   typePyement STRING,
+--
+--   FOREIGN KEY (idAdherent) REFERENCES  adherent(idAdherent)
+-- );
 
 
 /*CREATE TABLE achatArticle(
