@@ -17,11 +17,11 @@
 
 
   <div class="jumbotron text-center" style="margin-bottom:0">
-    <img src="../data/images/accueil_banniere.jpg" alt="">
+    <img src="../model/data/images/images_sites/accueil_banniere.jpg" alt="">
   </div>
   <!-- NAV DE BASE !-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="main.view.php"> <img src="../data/images/logo-scale.jpg" alt=""></a>
+    <a class="navbar-brand" href="main.view.php"> <img src="../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
@@ -47,26 +47,31 @@
 
 
   <!-- Tableau !-->
+  <?php $chemin='../controler/tableadherent.ctrl.php' ?>
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
         <th><a href="#"></a>idadherent</th><!--  nomcolonne de la bd -->
         <th><p>Nom
-          <a href="../controler/tableadherent.ctrl.php?tri=nomcroit"><i class="fas fa-sort-up"></i></a>
-          <a href="../controler/tableadherent.ctrl.php?tri=nomdecroit"><i class="fas fa-sort-down"></i></a>
+          <a href="<?= $chemin ?>?tri=nomcroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=nomdecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
 
         <th><p>Prenom
-          <a href="../controler/tableadherent.ctrl.php?tri=prenomcroit"><i class="fas fa-sort-up"></i></a>
-          <a href="../controler/tableadherent.ctrl.php?tri=prenomdecroit"><i class="fas fa-sort-down"></i></a>
+          <a href="<?= $chemin ?>?tri=prenomcroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=prenomdecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
 
-        <th>categorie</th>
+        <th><p>categorie
+          <a href="<?= $chemin ?>?tri=catecroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=catedecroit"><i class="fas fa-sort-down"></i></a>
+        </p></th>
         <th>datenaissance</th>
         <th>adresse</th>
         <th>telephone</th>
         <th>mail</th>
         <th>numlicence</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -81,6 +86,8 @@
           <td><?=$unAdherent->getTelephone();?></td>
           <td><?=$unAdherent->getMail();?></td>
           <td><?=$unAdherent->getNumLicence();?></td>
+          <td><i class="fas fa-user-edit"></i>
+             <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times"></i></a></td>
         </tr>
         <?php } ?>
       </tbody>

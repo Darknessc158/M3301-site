@@ -4,7 +4,7 @@
  */
 class adherent
 {
-    public $idadherent;
+    public $idAdherent;
     public $nom;
     public $prenom;
     public $categorie;
@@ -12,11 +12,11 @@ class adherent
     public $adresse;
     public $telephone;
     public $mail;
-    public $numlicence;
+    public $numLicence;
 
 
     public function getIdAdherent(){
-      return $this->idadherent;
+      return $this->idAdherent;
     }
     public function getNom(){
       return $this->nom;
@@ -40,7 +40,7 @@ class adherent
       return $this->mail;
     }
     public function getNumLicence(){
-      return $this->numlicence;
+      return $this->numLicence;
     }
 }
 
