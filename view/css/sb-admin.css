@@ -1,21 +1,8 @@
-.table-bordered {
-  border: 1px solid #dee2e6;
+table {
+border: medium solid #000000;
+width: 50%;
 }
-
-.table-bordered th,
-.table-bordered td {
-  border: 1px solid #dee2e6;
-}
-
-.table-bordered thead th,
-.table-bordered thead td {
-  border-bottom-width: 2px;
-}
-
-.nav-link {
-  display: block;
-  padding: 0.5rem 1rem;
-}
-.nav-link:hover, .nav-link:focus {
-  text-decoration: none;
+td, th {
+border: thin solid #6495ed;
+width: 50%;
 }

@@ -1,28 +1,52 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <title>SB Admin - Tables</title>
+  <title>SCALE Echirolles - club de cyclisme</title>
   <!-- Custom styles for this template-->
-  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="../view/css/sb-admin.css" rel="stylesheet">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
 
 <body id="page-top">
 
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-    <a class="navbar-brand mr-1" href="#">SCAL Echirolles</a>
-  </nav>
 
-  <div id="wrapper">
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <img src="../data/images/accueil_banniere.jpg" alt="">
+  </div>
+<!-- NAV DE BASE !-->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <a class="navbar-brand" href="main.view.php"> <img src="../data/images/logo-scale.jpg" alt=""></a>
 
-    <!-- Sidebar -->
-    <ul class="sidebar navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="actualites.view.php">Actualités</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="lebureau.view.php">Le bureau</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="lescoureurs.view.php">Les coureurs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
       </ul>
+    </div>
+  </nav>
+  <!-- NAV DE BASE !-->
 
+
+  <div id="wrapper">
       <div id="content-wrapper">
         <!-- DataTables Example -->
         <div class="card-header">
@@ -45,7 +69,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <?php $i=1; $nblignes=2; while ($nblignes > 0){ ?>
+                  <?php $i=1; while ($nblignes > 0){ ?>
                   <tr>
                     <td><?=$adherents->getUnAdherent($i)->getIdAdherent();?></td>
                     <td><?=$adherents->getUnAdherent($i)->getNom();?></td>
