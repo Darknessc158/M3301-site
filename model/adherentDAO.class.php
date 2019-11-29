@@ -61,7 +61,6 @@
           case 'datenaissancedecroit':
           $recherche = $this->db->query("SELECT * FROM adherent ORDER BY datenaissance DESC ");
           break;
-
           default:
           $recherche = $this->db->query("SELECT * FROM adherent");
           break;

@@ -50,9 +50,17 @@
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
-        <th>idadherent</th><!--  nomcolonne de la bd -->
-        <th>nom</th>
-        <th>prenom</th>
+        <th><a href="#"></a>idadherent</th><!--  nomcolonne de la bd -->
+        <th><p>Nom
+          <a href="../controler/tableadherent.ctrl.php?tri=nomcroit"><i class="fas fa-sort-up"></i></a>
+          <a href="../controler/tableadherent.ctrl.php?tri=nomdecroit"><i class="fas fa-sort-down"></i></a>
+        </p></th>
+
+        <th><p>Prenom
+          <a href="../controler/tableadherent.ctrl.php?tri=prenomcroit"><i class="fas fa-sort-up"></i></a>
+          <a href="../controler/tableadherent.ctrl.php?tri=prenomdecroit"><i class="fas fa-sort-down"></i></a>
+        </p></th>
+
         <th>categorie</th>
         <th>datenaissance</th>
         <th>adresse</th>
@@ -62,22 +70,22 @@
       </tr>
     </thead>
     <tbody>
-      <?php $i=1; while ($nblignes > 0){ ?>
+      <?php foreach ($resadh as $key => $unAdherent){ ?>
         <tr>
-          <td><?=$adherents->getUnAdherent($i)->getIdAdherent();?></td>
-          <td><?=$adherents->getUnAdherent($i)->getNom();?></td>
-          <td><?=$adherents->getUnAdherent($i)->getPrenom();?></td>
-          <td><?=$adherents->getUnAdherent($i)->getCategorie();?></td>
-          <td><?=$adherents->getUnAdherent($i)->getDateNaissance();?></td>
-          <td><?=$adherents->getUnAdherent($i)->getAdresse();?></td>
-          <td><?=$adherents->getUnAdherent($i)->getTelephone();?></td>
-          <td><?=$adherents->getUnAdherent($i)->getMail();?></td>
-          <td><?=$adherents->getUnAdherent($i)->getNumLicence();?></td>
+          <td><?=$unAdherent->getIdAdherent();?></td>
+          <td><?=$unAdherent->getNom();?></td>
+          <td><?=$unAdherent->getPrenom();?></td>
+          <td><?=$unAdherent->getCategorie();?></td>
+          <td><?=$unAdherent->getDateNaissance();?></td>
+          <td><?=$unAdherent->getAdresse();?></td>
+          <td><?=$unAdherent->getTelephone();?></td>
+          <td><?=$unAdherent->getMail();?></td>
+          <td><?=$unAdherent->getNumLicence();?></td>
         </tr>
-        <?php $nblignes--;
-        $i++;} ?>
+        <?php } ?>
       </tbody>
     </table>
     <!-- Fin tableau -->
   </body>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </html>
