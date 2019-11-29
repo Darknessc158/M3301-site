@@ -5,16 +5,15 @@
 -- };
 
 CREATE TABLE adherent (
-     idAdherent varchar(4) PRIMARY KEY,
-     nom STRING NOT NULL,
-     prenom STRING NOT NULL,
-     role varchar(30),
+     idAdherent  INTEGER PRIMARY KEY,
+     nom varchar(30) NOT NULL,
+     prenom varchar(30) NOT NULL,
      categorie varchar(30),
      datenaissance DATE,
-     adresse STRING,
+     adresse varchar(40),
      telephone char(10),
      mail varchar(40),
-     numLicence varchar(20),
+     numLicence varchar(20) UNIQUE,
      FOREIGN KEY (numLicence) REFERENCES  licence(numLicence)
 );
 

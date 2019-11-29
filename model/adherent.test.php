@@ -9,10 +9,14 @@ $config = parse_ini_file('../config/config.ini');
 $adherents = new adherentDAO($config['database_path']);
 
 $m = $adherents->getLesAdherents();
+printf("test 1 :");
 var_dump($m);
 //$n = $adherents->getUnAdherent(1);
 //var_dump($n);
 $l = $adherents->getNbLigne();
 printf("nombre de lignes : $l \n");
+
+$id = $adherents->getUnAdherent(2);
+var_dump($id);
 
 ?>

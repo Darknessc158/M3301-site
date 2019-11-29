@@ -5,7 +5,7 @@ require_once('../model/adherentDAO.class.php');
 // Récupération des données de configuration
 $config = parse_ini_file('../config/config.ini');
 
-// Creation de l'instace DAO
+// Creation de l'instance DAO
 $adherents = new adherentDAO($config['database_path']);
 
 //$n = $adherents->getUnAdherent(1);

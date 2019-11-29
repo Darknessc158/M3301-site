@@ -35,6 +35,41 @@
     return $res;
   }
 
+  public function getListeTrie($tri){ //fonction pour recuperer les objets correspondant à une valeur d'un element(type,intitule...) et si tri recuperation triée
+        switch ($tri) {
+          case 'nomcroit':
+          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY nom ASC ");
+          break;
+          case 'nomdecroit':
+          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY nom DESC ");
+          break;
+          case 'prenomcroit':
+          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY prenom ASC ");
+          break;
+          case 'prenomdecroit':
+          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY prenom DESC ");
+          break;
+          case 'catecroit':
+          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY categorie ASC ");
+          break;
+          case 'catedecroit':
+          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY categorie DESC ");
+          break;
+          case 'datenaissancecroit':
+          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY datenaissance ASC ");
+          break;
+          case 'datenaissancedecroit':
+          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY datenaissance DESC ");
+          break;
+
+          default:
+          $recherche = $this->db->query("SELECT * FROM adherent");
+          break;
+          }
+    $resultats=$recherche->fetchAll(PDO::FETCH_CLASS,'adherent');
+    return $resultats;
+  }
+
   //Aide Ajout adherent ...
   /*
   function addArticle($intitule,$description,$type,$prix,$reference,$urlphoto){ //essai d'une fonction pour ajouter un article a la bd
