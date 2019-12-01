@@ -21,7 +21,7 @@
   </div>
   <!-- NAV DE BASE !-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="main.view.php"> <img src="../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
+    <a class="navbar-brand" href="../controler/tableadherent.ctrl.php"> <img src="../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
