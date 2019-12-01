@@ -14,11 +14,12 @@ if (isset($_GET['type'])){
     $id=$_GET['idAdherent'];
     $resadh = $adherents->supprUnAdherents($id);
   }
+}
 
 if (isset($_GET['tri'])){ //Si valeur et element dans la query string
   $tri=$_GET['tri'];
   $resadh = $adherents->getListeTrie($tri);//les articles voulus en fonction des parametres de la query string sont recupérés
-  }else{
+}else{
   $resadh = $adherents->getLesAdherents(); //si rien dans la query string on recupere tous les articles
 }
 
