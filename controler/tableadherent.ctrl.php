@@ -12,7 +12,10 @@ if (isset($_GET['type'])){
   $type=$_GET['type'];
   if ($type == 'delete'){
     $id=$_GET['idAdherent'];
-    $resadh = $adherents->supprUnAdherents($id);
+    $adherents->supprUnAdherent($id);
+  }
+  if ($type == 'insert'){
+    $resadh = $adherents->insertUnAdherent();
   }
 }
 

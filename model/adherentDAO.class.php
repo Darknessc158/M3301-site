@@ -69,24 +69,14 @@
     return $resultats;
   }
 
-  function supprUnAdherents($idAdherent){ //supression d'un adherent
+  function supprUnAdherent($idAdherent){ //supression d'un adherent
     $req = "DELETE FROM adherent where $idAdherent = idAdherent;";
     $sth=$this->db->query($req);
-    //$res = $sth->fetchAll(PDO::FETCH_CLASS,'adherent');
-    //return $res;
   }
 
-  //Aide Ajout adherent ...
-  /*
-  function addArticle($intitule,$description,$type,$prix,$reference,$urlphoto){ //essai d'une fonction pour ajouter un article a la bd
-    $stmt = $this->db->prepare("INSERT INTO ARTICLE (reference,intitule,description,type,prix,urlphoto) VALUES (:reference, :intitule, :description, :type, :prix, :urlphoto);");
-    $stmt->bindParam(':reference',$reference);
-    $stmt->bindParam(':intitule',$intitule);
-    $stmt->bindParam(':description',$description);
-    $stmt->bindParam(':type',$type);
-    $stmt->bindParam(':prix',$prix);
-    $stmt->bindParam(':urlphoto',$urlphoto);
-    $sth->execute();
-  }*/
+  function insertUnAdherent($nom,$prenom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numLicence){ // Ajout d'un adherent
+    $req = "INSERT INTO adherent (nom,prenom,categorie,datenaissance,adresse,telephone,mail,numLicence) VALUES ('$nom','$prenom','$categorie','$datenaissance','$adresse','$telephone','$mail','$numLicence');";
+    $sth=$this->db->query($req);
+  }
 }
   ?>
