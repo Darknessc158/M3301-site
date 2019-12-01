@@ -90,7 +90,7 @@
              <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times"></i></a></td>
         </tr>
         <?php } ?>
-        <p>Ajouter un adherent : <a href="<?= $chemin ?>?type=insert"> <i class="fas fa-plus-circle"></i> </a></p>
+        <p>Ajouter un adherent : <a href="../view/insertAdherent.php"> <i class="fas fa-plus-circle"></i> </a></p>
       </tbody>
     </table>
     <!-- Fin tableau -->

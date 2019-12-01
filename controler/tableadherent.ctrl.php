@@ -14,9 +14,6 @@ if (isset($_GET['type'])){
     $id=$_GET['idAdherent'];
     $adherents->supprUnAdherent($id);
   }
-  if ($type == 'insert'){
-    $resadh = $adherents->insertUnAdherent();
-  }
 }
 
 if (isset($_GET['tri'])){ //Si valeur et element dans la query string

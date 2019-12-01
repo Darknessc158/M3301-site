@@ -6,7 +6,7 @@
 </head>
 <body>
   <h1>Ajout d'un adhérent à l'association</h1>
-  <form class="" action="insertAdherent.ctrl.php" method="post">
+  <form class="" action="../controler/insertAdherent.ctrl.php" method="post">
     <p>
         Nom :<br />
        <input type="text" name="prenom" value="" />
