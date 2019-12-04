@@ -42,10 +42,12 @@
 
     <p>
        <input type="submit" value="Ajouter" />
-      <a href="../controler/tableadherent.ctrl.php"> <input type="reset" value="Annuler" /> </a>
+       <input type="reset" value="Annuler" />
+       <a href="../controler/tableadherent.ctrl.php"><i class="fas fa-undo"></i></a>
     </p>
   </form>
 
 
 </body>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </html>
