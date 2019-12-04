@@ -24,7 +24,7 @@ CREATE TABLE paiement (
   description varchar(100),
   etatDuPaiement varchar(50),
   type varchar(35),
-  idAdherent INTEGER,
+  idAdherent INTEGER
 );
 
 -- CREATE TABLE licence(
