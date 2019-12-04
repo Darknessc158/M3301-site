@@ -42,7 +42,7 @@
 
     <p>
        <input type="submit" value="Ajouter" />
-      <a href="../controler/tableadherent.ctrl.php"> <input type="reset" value="Annuler" /> </a>
+       <input type="reset" value="Annuler" />
     </p>
   </form>
 

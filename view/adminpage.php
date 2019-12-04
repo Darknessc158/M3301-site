@@ -86,8 +86,10 @@
           <td><?=$unAdherent->getTelephone();?></td>
           <td><?=$unAdherent->getMail();?></td>
           <td><?=$unAdherent->getNumLicence();?></td>
-          <td><i class="fas fa-user-edit"></i>
-             <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times"></i></a></td>
+          <td>
+            <a href="../view/insertAdherent.php?type=update&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit"></i></a>
+            <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times"></i></a>
+           </td>
         </tr>
         <?php } ?>
         <p>Ajouter un adherent : <a href="../view/insertAdherent.php"> <i class="fas fa-plus-circle"></i> </a></p>
