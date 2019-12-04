@@ -12,7 +12,7 @@ if (isset($_GET['idAdherent'])){
   $idadh=$_GET['idAdherent'];
 }
 
-$unAadherent = $adherents->getUnAdherent($idadh);
+$unAdherent = $adherents->getUnAdherent($idadh);
 
 $prenom = $unAdherent->getPrenom();
 $nom = $unAdherent->getNom();
