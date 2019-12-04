@@ -66,22 +66,27 @@
           <a href="<?= $chemin ?>?tri=catecroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>?tri=catedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
-        <th>datenaissance</th>
+        <th><p>datenaissance
           <a href="<?= $chemin ?>?tri=datenaissancecroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>?tri=datenaissancedecroit"><i class="fas fa-sort-down"></i></a>
-        <th>adresse</th>
+        </p></th>
+        <th><p>adresse
         <a href="<?= $chemin ?>?tri=adressecroit"><i class="fas fa-sort-up"></i></a>
         <a href="<?= $chemin ?>?tri=adressedecroit"><i class="fas fa-sort-down"></i></a>
-        <th>telephone</th>
+        </p></th>
+        <th><p>telephone
         <a href="<?= $chemin ?>?tri=telcroit"><i class="fas fa-sort-up"></i></a>
         <a href="<?= $chemin ?>?tri=teldecroit"><i class="fas fa-sort-down"></i></a>
-        <th>mail</th>
+        </p></th>
+        <th><p>mail
         <a href="<?= $chemin ?>?tri=mailcroit"><i class="fas fa-sort-up"></i></a>
         <a href="<?= $chemin ?>?tri=maildecroit"><i class="fas fa-sort-down"></i></a>
-        <th>numlicence</th>
+        </p></th>
+        <th><p>numlicence
         <a href="<?= $chemin ?>?tri=numlicencecroit"><i class="fas fa-sort-up"></i></a>
         <a href="<?= $chemin ?>?tri=numlicencedecroit"><i class="fas fa-sort-down"></i></a>
-        <th></th>
+        </p></th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
