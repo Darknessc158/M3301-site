@@ -43,7 +43,7 @@
     <p>
        <input type="submit" value="Ajouter" />
        <input type="reset" value="Annuler" />
-       <a href="../controler/tableadherent.ctrl.php"><i class="fas fa-undo"></i></a>
+       <a href="../controler/tableadherent.ctrl.php"> Retour : <i class="fas fa-undo"></i></a>
     </p>
   </form>
 
