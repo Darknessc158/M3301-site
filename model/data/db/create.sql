@@ -17,6 +17,15 @@ CREATE TABLE adherent (
      FOREIGN KEY (numLicence) REFERENCES  licence(numLicence)
 );
 
+CREATE TABLE paiement (
+  idPaiement INTEGER PRIMARY KEY,
+  datePaiement DATE,
+  prix float,
+  description varchar(100),
+  etatDuPaiement varchar(50),
+  type varchar(35),
+);
+
 -- CREATE TABLE licence(
 --   numLicence int PRIMARY KEY,
 --   federation STRING,
