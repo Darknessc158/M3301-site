@@ -1,6 +1,6 @@
 <?php
-require_once('../model/classPaiement/paiement.class.php');
-require_once('../model/classPaiement/paiementDAO.class.php');
+require_once('../../model/classPaiement/paiement.class.php');
+require_once('../../model/classPaiement/paiementDAO.class.php');
 
 // Creation de l'instance DAO
 $paiements = new paiementDAO('../../model/data/db');
