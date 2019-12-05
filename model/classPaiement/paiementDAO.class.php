@@ -37,6 +37,10 @@ class paiementDAO { //classe paiement basededonnees
     $res = $data['nb'];
     return $res;
   }
+  function insertUnPaiement($datePaiement,$prix,$description,$etatDuPaiement,$type,$idAdherent){ // Ajout d'un paiement
+    $req = "INSERT INTO paiement (datePaiement,prix,description,etatDuPaiement,type,idAdherent) VALUES ('$datePaiement','$prix','$description','$etatDuPaiement','$type','$idAdherent');";
+    $sth=$this->db->query($req);
+  }
 
 }
   ?>

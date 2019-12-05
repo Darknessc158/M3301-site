@@ -66,6 +66,8 @@
 
         <th>idAdherent</th>
 
+        <th>Action</th>
+
       </tr>
     </thead>
     <tbody>
@@ -77,11 +79,16 @@
           <td><?=$unPaiement->getDescription();?></td>
           <td><?=$unPaiement->getEtatDuPaiement();?></td>
           <td><?=$unPaiement->getType();?></td>
-          <td><?=$unPaiement->getIdAdherent();?></td>
+          <td><?=$unPaiement->getIdAdherent();?></td><!--Lien vers l'adherents pour savoir qui c -->
+          <td>
+            <!--<a href="../controler/tableUnPaiement.ctrl.php?idPaiement=&type=update"><i class="fas fa-user-edit"></i></a> -->
+            <!--<a href="../controler/tableUnPaiement.ctrl.php?type=delete&idPaiement=;?>"><i class="fas fa-user-times"></i></a>-->
+          </td>
         </tr>
       <?php }}else{
         echo "Pas de paiement pour cet adherent";
       } ?>
+      <p>Ajouter un paiement : <a href="../view/insertPaiement.php"> <i class="fas fa-plus-circle"></i> </a></p>
     </tbody>
     </table>
     <!-- Fin tableau -->
