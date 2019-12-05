@@ -20,5 +20,11 @@ $paiements->supprUnPaiement($_GET['idPaiement']);
 
 $unPaiement = $paiements->insertUnPaiement($datePaiement,$prix,$description,$etatDuPaiement,$type,$idAdherent);
 
+//recuperation des donnes pour recup le nom et prenom de l'id qui correspond
+require_once('../../model/classAdherent/adherent.class.php');
+require_once('../../model/classAdherent/adherentDAO.class.php');
+$config = parse_ini_file('../../config/config.ini');
+$adherents = new adherentDAO($config['database_path']);
+
 include('../../view/paiementview/adminpage.paiement.php');
 ?>
