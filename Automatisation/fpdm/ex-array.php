@@ -7,8 +7,8 @@
 require('fpdm.php');
 
 $fields = array(
-	'name'    => 'My name',
-	'address' => 'My address',
+	'name'    => 'JOSUMEO',
+	'address' => '45 RUE DES RUES ',
 	'city'    => 'My city',
 	'phone'   => 'My phone number'
 );
