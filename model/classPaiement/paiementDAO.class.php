@@ -41,6 +41,10 @@ class paiementDAO { //classe paiement basededonnees
     $req = "INSERT INTO paiement (datePaiement,prix,description,etatDuPaiement,type,idAdherent) VALUES ('$datePaiement','$prix','$description','$etatDuPaiement','$type','$idAdherent');";
     $sth=$this->db->query($req);
   }
+  function supprUnPaiement($idPaiement){ //supression d'un adherent
+    $req = "DELETE FROM paiement where $idPaiement = idPaiement;";
+    $sth=$this->db->query($req);
+  }
 
 }
   ?>
