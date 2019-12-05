@@ -33,7 +33,7 @@
     </p>
     <p>
         Identifiant de l'adhérent :<br />
-       <input type="text" name="idAdherent" value="" />
+       <input type="text" name="idAdherent" value="<?=$_GET['idAdherent']?>" />
     </p>
     <p>
        <input type="submit" value="Ajouter" />
