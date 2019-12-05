@@ -69,7 +69,7 @@
       </tr>
     </thead>
     <tbody>
-      <?php while ($respaiement as $key => $unPaiement){ ?>
+      <?php while ($nb > 0){ ?>
         <tr>
           <td><?=$respaiement->getIdPaiement();?></td>
           <td><?=$respaiement->getDatePaiement();?></td>
@@ -79,7 +79,7 @@
           <td><?=$respaiement->getType();?></td>
           <td><?=$respaiement->getIdAdherent();?></td>
         </tr>
-        <?php } ?>
+        <?php $nb--; } ?>
     </tbody>
     </table>
     <!-- Fin tableau -->
