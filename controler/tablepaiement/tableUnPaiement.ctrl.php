@@ -15,7 +15,7 @@ if (isset($_GET['type'])) {
 
 if (isset($_GET['idAdherent']) && ($paiements->paiementExiste($_GET['idAdherent']) != 0) ){
   $id=$_GET['idAdherent'];
-  $res = $paiements->getUnPaiement($id);
+  $res = $paiements->getLesPaiementsDunAdherent($id);
 }else if(isset($_GET['idAdherent'])){
   $res = 0;
 }else{

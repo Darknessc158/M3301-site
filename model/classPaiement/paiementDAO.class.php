@@ -23,11 +23,18 @@ class paiementDAO { //classe paiement basededonnees
     return $res;
   }
 
-  function getUnPaiement($idadherent){ //recuperation d'un paiement avec l'id d'un adherent
+  function getLesPaiementsDunAdherent($idadherent){ //recuperation d'un paiement avec l'id d'un adherent
     $req = "SELECT * FROM paiement WHERE idAdherent=$idadherent;";
     $sth=$this->db->query($req);
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'paiement');
     return $res;
+  }
+
+  function getUnPaiement($idPaiement){ //recuperation d'un paiement avec l'id d'un adherent
+    $req = "SELECT * FROM paiement WHERE idPaiement=$idPaiement;";
+    $sth=$this->db->query($req);
+    $res = $sth->fetchAll(PDO::FETCH_CLASS,'paiement');
+    return $res[0];
   }
 
   function paiementExiste($idadherent){ //verif si un paiement existe pour cette adherent
