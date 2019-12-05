@@ -8,10 +8,13 @@ $paiements = new paiementDAO('../model/data/db');
 if (isset($_GET['idAdherent']) && ($paiements->paiementExiste($_GET['idAdherent']) != 0) ){
   $id=$_GET['idAdherent'];
   $res = $paiements->getUnPaiement($id);
+  $nb = $paiements->getNbLigne($id);
 }else{
   $res = $paiements->getLesPaiements();
+  $nb = $paiements->getNbLigne();
 }
 
+$nbloop = $nb;
 $respaiement = $res;
 
 //view

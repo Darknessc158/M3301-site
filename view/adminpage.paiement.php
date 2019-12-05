@@ -69,7 +69,7 @@
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($respaiement as $key => $unPaiement){ ?>
+      <?php while ($respaiement as $key => $unPaiement){ ?>
         <tr>
           <td><?=$unPaiement->getIdPaiement();?></td>
           <td><?=$unPaiement->getDatePaiement();?></td>
