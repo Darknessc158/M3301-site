@@ -9,7 +9,7 @@ if (isset($_GET['idAdherent']) && ($paiements->paiementExiste($_GET['idAdherent'
   $id=$_GET['idAdherent'];
   $res = $paiements->getUnPaiement($id);
 }else if(isset($_GET['idAdherent'])){
-  $res = "Pas de paiement pour cette adherent"
+  $res = 0;
 }else{
   $res = $paiements->getLesPaiements();
 }

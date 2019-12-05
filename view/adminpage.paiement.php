@@ -69,7 +69,7 @@
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($respaiement as $key => $unPaiement) { ?>
+      <?php if ($res != 0){ foreach ($respaiement as $key => $unPaiement) { ?>
         <tr>
           <td><?=$unPaiement->getIdPaiement();?></td>
           <td><?=$unPaiement->getDatePaiement();?></td>
@@ -79,7 +79,9 @@
           <td><?=$unPaiement->getType();?></td>
           <td><?=$unPaiement->getIdAdherent();?></td>
         </tr>
-        <?php } ?>
+      <?php }}else{
+        echo "Pas de paiement pour cet adherent";
+      } ?>
     </tbody>
     </table>
     <!-- Fin tableau -->
