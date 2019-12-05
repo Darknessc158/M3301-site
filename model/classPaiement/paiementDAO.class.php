@@ -30,5 +30,12 @@ class paiementDAO { //classe paiement basededonnees
     return $res[0];
   }
 
+  function paiementExiste($idadherent){ //verif si un paiement existe pour cette adherent
+    $req = "SELECT count(*) as nb FROM paiement WHERE idAdherent=$idadherent;";
+    $sth=$this->db->query($req);
+    $data = $sth->fetch();
+    $res = $data['nb'];
+    return $res;
+  }
 }
   ?>
