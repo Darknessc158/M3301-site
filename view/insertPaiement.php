@@ -6,7 +6,7 @@
 </head>
 <body>
   <h1>Ajout d'un paiement</h1>
-  <form class="" action="../controler/insertAdherent.ctrl.php" method="post">
+  <form class="" action="../controler/insertPaiement.ctrl.php" method="post">
     <p>
         Date du paiement (jj/mm/aaaa) :<br />
        <input type="text" name="datePaiement" value="" />
