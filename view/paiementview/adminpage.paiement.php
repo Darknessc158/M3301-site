@@ -73,7 +73,7 @@
     <tbody>
 
       <?php if ($res != 0){ foreach ($respaiement as $key => $unPaiement) { ?>
-        <?php $adh = ($adherents->getUnAdherent($unPaiement->getIdAdherent())) ?>
+        <?php if($adherents->getUnAdherent($unPaiement->getIdAdherent())){$adh = $adherents->getUnAdherent($unPaiement->getIdAdherent()) } ?>
         <tr>
           <td><?=$unPaiement->getIdPaiement();?></td>
           <td><?=$unPaiement->getDatePaiement();?></td>
