@@ -71,17 +71,16 @@
     <tbody>
       <?php foreach ($respaiement as $key => $unPaiement){ ?>
         <tr>
-          <td><?=//$unPaiement->getIdPaiement();?></td>
-          <td><?=//$unPaiement->getDatePaiement();?></td>
-          <td><?=//$unPaiement->getPrix();?></td>
-          <td><?=//$unPaiement->getDescription();?></td>
-          <td><?=//$unPaiement->getEtatDuPaiement();?></td>
-          <td><?=//$unPaiement->getType();?></td>
-          <td><?=//$unPaiement->getIdAdherent();?></td>
+          <td><?=$unPaiement->getIdPaiement();?></td>
+          <td><?=$unPaiement->getDatePaiement();?></td>
+          <td><?=$unPaiement->getPrix();?></td>
+          <td><?=$unPaiement->getDescription();?></td>
+          <td><?=$unPaiement->getEtatDuPaiement();?></td>
+          <td><?=$unPaiement->getType();?></td>
+          <td><?=$unPaiement->getIdAdherent();?></td>
         </tr>
         <?php } ?>
-        <p>Ajouter un adherent : <a href="../view/insertAdherent.php"> <i class="fas fa-plus-circle"></i> </a></p>
-      </tbody>
+    </tbody>
     </table>
     <!-- Fin tableau -->
   </body>

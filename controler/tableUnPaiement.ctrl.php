@@ -2,17 +2,14 @@
 require_once('../model/classPaiement/paiement.class.php');
 require_once('../model/classPaiement/paiementDAO.class.php');
 
-// Récupération des données de configuration
-$config = parse_ini_file('../config/config.ini');
-
 // Creation de l'instance DAO
-$adherents = new paiementDAO($config['database_path']);
+$paiements = new paiementDAO('../model/data/db');
 
-if (isset($_GET['idAdherent'])){
+if (isset($_GET['idAdherent']) && ){
   $id=$_GET['idAdherent'];
-  $respaiement->getUnPaiement($id);
+  $respaiement = $paiements->getUnPaiement($id);
 }else{
-  $respaiement->getLesPaiements();
+  $respaiement = $paiements->getLesPaiements();
 }
 
 //view
