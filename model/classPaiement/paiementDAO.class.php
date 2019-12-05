@@ -38,19 +38,5 @@ class paiementDAO { //classe paiement basededonnees
     return $res;
   }
 
-  function getNbLigne($idadherent){
-    $sth=$this->db->query("SELECT count(*) as nb FROM paiement WHERE idAdherent=$idadherent;");
-    $data = $sth->fetch();
-    $res = $data['nb'];
-    return $res;
-  }
-
-  function getNbLigneTot(){
-    $sth=$this->db->query("SELECT count(*) as nb FROM paiement;");
-    $data = $sth->fetch();
-    $res = $data['nb'];
-    return $res;
-  }
-
 }
   ?>
