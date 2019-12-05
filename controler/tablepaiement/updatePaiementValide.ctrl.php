@@ -20,9 +20,5 @@ $paiements->supprUnPaiement($_GET['idPaiement']);
 
 $unPaiement = $paiements->insertUnPaiement($datePaiement,$prix,$description,$etatDuPaiement,$type,$idAdherent);
 
-//2 variables à definir pour la vue res et respaiement
-$respaiement = $paiements->getLesPaiements();
-$res = $respaiement;
-
 include('../../view/paiementview/adminpage.paiement.php');
 ?>

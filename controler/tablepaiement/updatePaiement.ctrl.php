@@ -21,5 +21,6 @@ $etatDuPaiement = $unPaiement->getEtatDuPaiement();
 $type = $unPaiement->getType();
 $idAdherent = $unPaiement->getIdAdherent();
 
+//appel le formulaire paiement pré rempli
 include('../../view/paiementview/updatePaiement.php');
 ?>
