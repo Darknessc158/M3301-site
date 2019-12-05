@@ -86,6 +86,7 @@
         <a href="<?= $chemin ?>?tri=numlicencecroit"><i class="fas fa-sort-up"></i></a>
         <a href="<?= $chemin ?>?tri=numlicencedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
+        <th>Paiement</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -101,6 +102,7 @@
           <td><?=$unAdherent->getTelephone();?></td>
           <td><?=$unAdherent->getMail();?></td>
           <td><?=$unAdherent->getNumLicence();?></td>
+          <td> <a href="../controler/tableUnPaiement.ctrl.php">Paiement</a> </td>
           <td>
             <a href="../controler/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit"></i></a>
             <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times"></i></a>
