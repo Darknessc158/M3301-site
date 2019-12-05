@@ -2,10 +2,10 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>Modification d'un adhérent</title>
+  <title>Modification d'un Paiement</title>
 </head>
 <body>
-  <h1>Modification d'un adhérent</h1>
+  <h1>Modification d'un Paiement</h1>
   <form class="" action="../../controler/tablepaiement/updatePaiementValide.ctrl.php?idPaiement=<?=$_GET['idPaiement']?>" method="post">
     <p>
         Date du paiement (jj/mm/aaaa) :<br />
