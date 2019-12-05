@@ -7,10 +7,12 @@ $paiements = new paiementDAO('../model/data/db');
 
 if (isset($_GET['idAdherent']) && ($paiements->paiementExiste($_GET['idAdherent']) != 0) ){
   $id=$_GET['idAdherent'];
-  $respaiement = $paiements->getUnPaiement($id);
+  $res = $paiements->getUnPaiement($id);
 }else{
-  $respaiement = $paiements->getLesPaiements();
+  $res = $paiements->getLesPaiements();
 }
+
+$respaiement = $res;
 
 //view
 include('../view/adminpage.paiement.php');
