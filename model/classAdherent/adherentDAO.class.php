@@ -27,6 +27,13 @@
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'adherent');
     return $res[0];
   }
+  function adherentExiste($idadherent){ //verif si un adherent existe
+    $req = "SELECT count(*) as nb FROM adherent WHERE idAdherent=$idadherent;";
+    $sth=$this->db->query($req);
+    $data = $sth->fetch();
+    $res = $data['nb'];
+    return $res;
+  }
 
   function getNbLigne(){
     $sth=$this->db->query("SELECT count(*) as nb FROM adherent;");
