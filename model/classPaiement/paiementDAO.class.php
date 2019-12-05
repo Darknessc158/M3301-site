@@ -45,7 +45,7 @@ class paiementDAO { //classe paiement basededonnees
     return $res;
   }
 
-  function getNbLigne(){
+  function getNbLigneTot(){
     $sth=$this->db->query("SELECT count(*) as nb FROM paiement;");
     $data = $sth->fetch();
     $res = $data['nb'];

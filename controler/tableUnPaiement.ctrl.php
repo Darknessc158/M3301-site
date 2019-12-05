@@ -11,7 +11,7 @@ if (isset($_GET['idAdherent']) && ($paiements->paiementExiste($_GET['idAdherent'
   $nb = $paiements->getNbLigne($id);
 }else{
   $res = $paiements->getLesPaiements();
-  $nb = $paiements->getNbLigne();
+  $nb = $paiements->getNbLigneTot();
 }
 
 $nbloop = $nb;
