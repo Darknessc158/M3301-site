@@ -71,7 +71,9 @@
       </tr>
     </thead>
     <tbody>
+
       <?php if ($res != 0){ foreach ($respaiement as $key => $unPaiement) { ?>
+        <?php $adh = ($adherents->getUnAdherent($unPaiement->getIdAdherent())) ?>
         <tr>
           <td><?=$unPaiement->getIdPaiement();?></td>
           <td><?=$unPaiement->getDatePaiement();?></td>
@@ -79,7 +81,7 @@
           <td><?=$unPaiement->getDescription();?></td>
           <td><?=$unPaiement->getEtatDuPaiement();?></td>
           <td><?=$unPaiement->getType();?></td>
-          <td><?=$unPaiement->getIdAdherent();?> (<?=($adherents->getUnAdherent($unPaiement->getIdAdherent()))->getNom();?>,<?=($adherents->getUnAdherent($unPaiement->getIdAdherent()))->getPrenom();?>)</td><!--Lien vers l'adherents pour savoir qui c -->
+          <td><?=$unPaiement->getIdAdherent();?> (<?=if($adh->getNom()){$adh->getNom();?>,<?=($adh->getPrenom();}?>)</td><!--Lien vers l'adherents pour savoir qui c -->
           <td>
             <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update"><i class="fas fa-user-edit"></i></a>
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i class="fas fa-user-times"></i></a>
