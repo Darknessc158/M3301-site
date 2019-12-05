@@ -81,7 +81,7 @@
           <td><?=$unPaiement->getDescription();?></td>
           <td><?=$unPaiement->getEtatDuPaiement();?></td>
           <td><?=$unPaiement->getType();?></td>
-          <td><?=$unPaiement->getIdAdherent();?> (<?=if($adh->getNom()){$adh->getNom();?>,<?=($adh->getPrenom();}?>)</td><!--Lien vers l'adherents pour savoir qui c -->
+          <td><?=$unPaiement->getIdAdherent();?> (<?php if ($adh->getNom()) { echo $adh->getNom(); echo ","; echo $adh->getPrenom(); }?>)</td><!--Lien vers l'adherents pour savoir qui c -->
           <td>
             <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update"><i class="fas fa-user-edit"></i></a>
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i class="fas fa-user-times"></i></a>
