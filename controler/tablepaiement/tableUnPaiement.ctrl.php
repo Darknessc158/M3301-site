@@ -3,7 +3,7 @@ require_once('../model/classPaiement/paiement.class.php');
 require_once('../model/classPaiement/paiementDAO.class.php');
 
 // Creation de l'instance DAO
-$paiements = new paiementDAO('../model/data/db');
+$paiements = new paiementDAO('../../model/data/db');
 
 if (isset($_GET['type'])) {
   $type = $_GET['type'];
@@ -25,5 +25,5 @@ if (isset($_GET['idAdherent']) && ($paiements->paiementExiste($_GET['idAdherent'
 $respaiement = $res;
 
 //view
-include('../view/adminpage.paiement.php');
+include('../../view/paiementview/adminpage.paiement.php');
 ?>

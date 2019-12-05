@@ -3,7 +3,7 @@ require_once('../model/classPaiement/paiement.class.php');
 require_once('../model/classPaiement/paiementDAO.class.php');
 
 // Creation de l'instance DAO
-$paiements = new paiementDAO('../model/data/db');
+$paiements = new paiementDAO('../../model/data/db');
 
 
 $datePaiement = $_POST['datePaiement'];
@@ -18,5 +18,5 @@ $unPaiement = $paiements->insertUnPaiement($datePaiement,$prix,$description,$eta
 $res = $paiements->getLesPaiements();
 $respaiement = $res;
 
-include('../view/adminpage.paiement.php');
+include('../../view/paiementview/adminpage.paiement.php');
 ?>

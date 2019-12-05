@@ -3,7 +3,7 @@
 <head>
   <title>SCALE Echirolles - club de cyclisme</title>
   <!-- Custom styles for this template-->
-  <link href="../view/css/sb-admin.css" rel="stylesheet">
+  <link href="../../view/css/sb-admin.css" rel="stylesheet">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,11 +17,11 @@
 
 
   <div class="jumbotron text-center" style="margin-bottom:0">
-    <img src="../model/data/images/images_sites/accueil_banniere.jpg" alt="">
+    <img src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="">
   </div>
   <!-- NAV DE BASE !-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="../controler/tableadherent.ctrl.php"> <img src="../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
+    <a class="navbar-brand" href="../../controler/tableadherent/tableadherent.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
@@ -41,7 +41,7 @@
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../controler/tableUnPaiement.ctrl.php">Tout les paiements</a>
+          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tout les paiements</a>
         </li>
       </ul>
     </div>
@@ -50,7 +50,7 @@
 
 
   <!-- Tableau !-->
-  <?php $chemin='../controler/tableadherent.ctrl.php' ?>
+  <?php $chemin='../../controler/tableadherent/tableadherent.ctrl.php' ?>
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
@@ -105,14 +105,14 @@
           <td><?=$unAdherent->getTelephone();?></td>
           <td><?=$unAdherent->getMail();?></td>
           <td><?=$unAdherent->getNumLicence();?></td>
-          <td> <a href="../controler/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>">Paiement</a> </td>
+          <td> <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>">Paiement</a> </td>
           <td>
-            <a href="../controler/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit"></i></a>
+            <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit"></i></a>
             <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times"></i></a>
            </td>
         </tr>
         <?php } ?>
-        <p>Ajouter un adherent : <a href="../view/insertAdherent.php"> <i class="fas fa-plus-circle"></i> </a></p>
+        <p>Ajouter un adherent : <a href="../../view/adherentview/insertAdherent.php"> <i class="fas fa-plus-circle"></i> </a></p>
       </tbody>
     </table>
     <!-- Fin tableau -->

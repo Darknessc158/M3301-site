@@ -1,6 +1,6 @@
 <?php
-require_once('../model/adherent.class.php');
-require_once('../model/adherentDAO.class.php');
+require_once('../../model/classAdherent/adherent.class.php');
+require_once('../../model/classAdherent/adherentDAO.class.php');
 
 // Récupération des données de configuration
 $config = parse_ini_file('../config/config.ini');
@@ -23,5 +23,5 @@ $telephone = $unAdherent->getTelephone();
 $mail = $unAdherent->getMail();
 $numlicence = $unAdherent->getNumLicence();
 
-include('../view/updateAdherent.php');
+include('../../view/adherentview/updateAdherent.php');
 ?>

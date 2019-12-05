@@ -6,7 +6,7 @@
 </head>
 <body>
   <h1>Modification d'un adhérent</h1>
-  <form class="" action="../controler/updateAdherentValide.ctrl.php?idAdherent=<?=$_GET['idAdherent']?>" method="post">
+  <form class="" action="../../controler/tableadherent/updateAdherentValide.ctrl.php?idAdherent=<?=$_GET['idAdherent']?>" method="post">
     <p>
         Nom :<br />
        <input type="text" name="prenom" value="<?php echo $nom ?>" />
@@ -43,7 +43,7 @@
     <p>
        <input type="submit" value="Modifier" />
        <input type="reset" value="Annuler" />
-       <a href="../controler/tableadherent.ctrl.php"> Retour : <i class="fas fa-undo"></i></a>
+       <a href="../../controler/tableadherent/tableadherent.ctrl.php"> Retour : <i class="fas fa-undo"></i></a>
     </p>
   </form>
 

@@ -3,7 +3,7 @@
 <head>
   <title>SCALE Echirolles - club de cyclisme</title>
   <!-- Custom styles for this template-->
-  <link href="../view/css/sb-admin.css" rel="stylesheet">
+  <link href="../../view/css/sb-admin.css" rel="stylesheet">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,11 +17,11 @@
 
 
   <div class="jumbotron text-center" style="margin-bottom:0">
-    <img src="../model/data/images/images_sites/accueil_banniere.jpg" alt="">
+    <img src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="">
   </div>
   <!-- NAV DE BASE !-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="../controler/tableadherent.ctrl.php"> <img src="../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
+    <a class="navbar-brand" href="../../controler/tableadherent/tableadherent.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
@@ -47,7 +47,7 @@
 
 
   <!-- Tableau !-->
-  <?php $chemin='../controler/tableadherent.ctrl.php' ?>
+  <?php $chemin='../../controler/tableadherent/tableadherent.ctrl.php' ?>
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
@@ -82,13 +82,13 @@
           <td><?=$unPaiement->getIdAdherent();?></td><!--Lien vers l'adherents pour savoir qui c -->
           <td>
             <!--<a href="../controler/tableUnPaiement.ctrl.php?idPaiement=&type=update"><i class="fas fa-user-edit"></i></a> -->
-            <a href="../controler/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i class="fas fa-user-times"></i></a>
+            <a href="../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i class="fas fa-user-times"></i></a>
           </td>
         </tr>
       <?php }}else{
         echo "Pas de paiement pour cet adherent";
       } ?>
-      <p>Ajouter un paiement : <a href="../view/insertPaiement.php"> <i class="fas fa-plus-circle"></i> </a></p>
+      <p>Ajouter un paiement : <a href="insertPaiement.php"> <i class="fas fa-plus-circle"></i> </a></p>
     </tbody>
     </table>
     <!-- Fin tableau -->

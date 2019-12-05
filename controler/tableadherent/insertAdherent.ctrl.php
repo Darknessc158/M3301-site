@@ -1,12 +1,13 @@
 <?php
-require_once('../model/adherent.class.php');
-require_once('../model/adherentDAO.class.php');
+require_once('../../model/classAdherent/adherent.class.php');
+require_once('../../model/classAdherent/adherentDAO.class.php');
 
 // Récupération des données de configuration
 $config = parse_ini_file('../config/config.ini');
 
 // Creation de l'instance DAO
 $adherents = new adherentDAO($config['database_path']);
+
 
 $prenom = $_POST['prenom'];
 $nom = $_POST['nom'];
@@ -17,12 +18,9 @@ $telephone = $_POST['telephone'];
 $mail = $_POST['mail'];
 $numlicence = $_POST['numlicence'];
 
-//delete avant
-$adherents->supprUnAdherent($_GET['idAdherent']);
-
 $unAdherent = $adherents->insertUnAdherent($prenom,$nom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numlicence);
 
 $resadh = $adherents->getLesAdherents();
 
-include('../view/adminpage.php');
+include('../../view/adherentview/adminpage.php');
 ?>

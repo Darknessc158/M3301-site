@@ -6,7 +6,7 @@
 </head>
 <body>
   <h1>Ajout d'un paiement</h1>
-  <form class="" action="../controler/insertPaiement.ctrl.php" method="post">
+  <form class="" action="../../controler/tablepaiement/insertPaiement.ctrl.php" method="post">
     <p>
         Date du paiement (jj/mm/aaaa) :<br />
        <input type="text" name="datePaiement" value="" />
@@ -38,7 +38,7 @@
     <p>
        <input type="submit" value="Ajouter" />
        <input type="reset" value="Annuler" />
-       Retour : <a href="../controler/tableUnPaiement.ctrl.php"><i class="fas fa-undo"></i></a>
+       Retour : <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php"><i class="fas fa-undo"></i></a>
     </p>
   </form>
 

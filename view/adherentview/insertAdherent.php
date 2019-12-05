@@ -6,7 +6,7 @@
 </head>
 <body>
   <h1>Ajout d'un adhérent à l'association</h1>
-  <form class="" action="../controler/insertAdherent.ctrl.php" method="post">
+  <form class="" action="../../controler/tableadherent/insertAdherent.ctrl.php" method="post">
     <p>
         Nom :<br />
        <input type="text" name="prenom" value="" />
@@ -43,7 +43,7 @@
     <p>
        <input type="submit" value="Ajouter" />
        <input type="reset" value="Annuler" />
-       Retour : <a href="../controler/tableadherent.ctrl.php"><i class="fas fa-undo"></i></a>
+       Retour : <a href="../../controler/tableadherent/tableadherent.ctrl.php"><i class="fas fa-undo"></i></a>
     </p>
   </form>
 
