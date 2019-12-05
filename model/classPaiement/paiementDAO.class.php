@@ -27,7 +27,7 @@ class paiementDAO { //classe paiement basededonnees
     $req = "SELECT * FROM paiement WHERE idAdherent=$idadherent;";
     $sth=$this->db->query($req);
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'paiement');
-    return $res[0];
+    return $res;
   }
 
   function paiementExiste($idadherent){ //verif si un paiement existe pour cette adherent
