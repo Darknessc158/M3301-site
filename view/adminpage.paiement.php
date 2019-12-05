@@ -71,13 +71,13 @@
     <tbody>
       <?php foreach ($respaiement as $key => $unPaiement){ ?>
         <tr>
-          <td><?=$unPaiement->getIdPaiement();?></td>
-          <td><?=$unPaiement->getDatePaiement();?></td>
-          <td><?=$unPaiement->getPrix();?></td>
-          <td><?=$unPaiement->getDescription();?></td>
-          <td><?=$unPaiement->getEtatDuPaiement();?></td>
-          <td><?=$unPaiement->getType();?></td>
-          <td><?=$unPaiement->getIdAdherent();?></td>
+          <td><?=$respaiement->getIdPaiement();?></td>
+          <td><?=$respaiement->getDatePaiement();?></td>
+          <td><?=$respaiement->getPrix();?></td>
+          <td><?=$respaiement->getDescription();?></td>
+          <td><?=$respaiement->getEtatDuPaiement();?></td>
+          <td><?=$respaiement->getType();?></td>
+          <td><?=$respaiement->getIdAdherent();?></td>
         </tr>
         <?php } ?>
     </tbody>
