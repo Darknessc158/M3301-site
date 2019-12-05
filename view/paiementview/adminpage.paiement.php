@@ -45,7 +45,7 @@
   </nav>
   <!-- NAV DE BASE !-->
 
-
+  <h2>Table des paiements</h2>
   <!-- Tableau !-->
   <?php $chemin='../../controler/tableadherent/tableadherent.ctrl.php' ?>
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
