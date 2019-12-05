@@ -8,11 +8,11 @@ require('fpdm/fpdm.php');
 
 
 $fields = array(
-	'NOM'    => 'Nom',
-	'PRENOM' => 'Prenom'
+	'Nom'    => 'Jean',
+	'Prenom' => 'François'
 );
 
-$pdf = new FPDM('essaie.pdf');
+$pdf = new FPDM('yes_compatible.pdf');
 $pdf->Load($fields, false); // second parameter: false if field values are in ISO-8859-1, true if UTF-8
 $pdf->Merge();
 $pdf->Output();
