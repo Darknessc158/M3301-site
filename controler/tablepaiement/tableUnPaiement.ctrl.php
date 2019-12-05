@@ -24,16 +24,12 @@ if (isset($_GET['idAdherent']) && ($paiements->paiementExiste($_GET['idAdherent'
 
 $respaiement = $res;
 
-//recuperation du nom qui correspond à ce paiement
+//recuperation des donnes pour recup le nom et prenom de l'id qui correspond
 require_once('../../model/classAdherent/adherent.class.php');
 require_once('../../model/classAdherent/adherentDAO.class.php');
+
 // Creation de l'instance DAO
 $adherents = new adherentDAO($config['database_path']);
-
-foreach ($respaiement as $unPaiement){
-  $adh = $adherents->getUnAdherent($unPaiement->getIdAdherent());
-}
-
 
 //view
 include('../../view/paiementview/adminpage.paiement.php');
