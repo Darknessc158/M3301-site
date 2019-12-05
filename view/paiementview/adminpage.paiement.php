@@ -81,7 +81,7 @@
           <td><?=$unPaiement->getType();?></td>
           <td><?=$unPaiement->getIdAdherent();?></td><!--Lien vers l'adherents pour savoir qui c -->
           <td>
-            <!--<a href="../controler/tableUnPaiement.ctrl.php?idPaiement=&type=update"><i class="fas fa-user-edit"></i></a> -->
+            <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update"><i class="fas fa-user-edit"></i></a>
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i class="fas fa-user-times"></i></a>
           </td>
         </tr>
