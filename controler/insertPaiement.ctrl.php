@@ -15,7 +15,8 @@ $idAdherent = $_POST['idAdherent'];
 
 $unPaiement = $paiements->insertUnPaiement($datePaiement,$prix,$description,$etatDuPaiement,$type,$idAdherent);
 
-$respaiement = $paiements->getLesPaiements();
+$res = $paiements->getLesPaiements();
+$respaiement = $res;
 
 include('../view/adminpage.paiement.php');
 ?>
