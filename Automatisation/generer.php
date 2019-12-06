@@ -13,7 +13,7 @@ $fields = array(
 	'ADRESSE' => '12345'
 );
 
-$pdf = new FPDM('document/doc_faitmain/Sanstitre.pdf');
+$pdf = new FPDM('document/doc_faitmain/compatible.pdf');
 $pdf->Load($fields, false); // second parameter: false if field values are in ISO-8859-1, true if UTF-8
 $pdf->Merge();
 $pdf->Output("D", "formulaire_remplie.pdf");
