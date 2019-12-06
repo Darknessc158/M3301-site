@@ -27,6 +27,15 @@ CREATE TABLE paiement (
   idAdherent INTEGER
 );
 
+CREATE TABLE article (
+  idArticle INTEGER PRIMARY KEY,
+  prix float,
+  categorie varchar(35),
+  quantite INTEGER,
+  description varchar(100),
+  marque varchar(35)
+);
+
 -- CREATE TABLE licence(
 --   numLicence int PRIMARY KEY,
 --   federation STRING,
