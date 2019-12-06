@@ -41,7 +41,7 @@ CREATE TABLE article (
 CREATE TABLE commandearticle(
    numArticle INTEGER,
    numPaiement INTEGER,
-   quantitecommande INTEGER,
+   quantiteCommande INTEGER,
    FOREIGN KEY (numArticle) REFERENCES  article(idArticle),
    FOREIGN KEY (numPaiement) REFERENCES  paiement(idPaiement)
 );
