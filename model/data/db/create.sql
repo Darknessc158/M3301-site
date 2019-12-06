@@ -36,12 +36,15 @@ CREATE TABLE article (
   marque varchar(35)
 );
 
--- CREATE TABLE licence(
---   numLicence int PRIMARY KEY,
---   federation STRING,
---   idPaiement int,
---   idAdherent int(3),
---    );
+
+
+CREATE TABLE commandearticle(
+   numArticle INTEGER,
+   numPaiement INTEGER,
+   quantitecommande INTEGER,
+   FOREIGN KEY (numArticle) REFERENCES  article(idArticle),
+   FOREIGN KEY (numPaiement) REFERENCES  paiement(idPaiement)
+);
 --
 -- CREATE TABLE paimentLicence(
 --   idPaiement int PRIMARY KEY,
