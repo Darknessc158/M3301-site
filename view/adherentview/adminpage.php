@@ -43,12 +43,15 @@
         <li class="nav-item">
           <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tout les paiements</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Tout les articles</a>
+        </li>
       </ul>
     </div>
   </nav>
   <!-- NAV DE BASE !-->
 
-  <h2>Table des adhérents</h2>
+  <h2>Gestion des adhérents</h2>
   <!-- Tableau !-->
   <?php $chemin='../../controler/tableadherent/tableadherent.ctrl.php' ?>
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
