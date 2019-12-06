@@ -57,7 +57,6 @@
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
-        <th><a href="#"></a>idadherent</th><!--  nomcolonne de la bd -->
         <th><p>Nom
           <a href="<?= $chemin ?>?tri=nomcroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>?tri=nomdecroit"><i class="fas fa-sort-down"></i></a>
@@ -81,25 +80,19 @@
         <a href="<?= $chemin ?>?tri=adressedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
         <th><p>telephone
-        <a href="<?= $chemin ?>?tri=telcroit"><i class="fas fa-sort-up"></i></a>
-        <a href="<?= $chemin ?>?tri=teldecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
         <th><p>mail
-        <a href="<?= $chemin ?>?tri=mailcroit"><i class="fas fa-sort-up"></i></a>
-        <a href="<?= $chemin ?>?tri=maildecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
         <th><p>numlicence
         <a href="<?= $chemin ?>?tri=numlicencecroit"><i class="fas fa-sort-up"></i></a>
         <a href="<?= $chemin ?>?tri=numlicencedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
-        <th>Paiement</th>
         <th>Action</th>
       </tr>
     </thead>
     <tbody>
       <?php foreach ($resadh as $key => $unAdherent){ ?>
         <tr>
-          <td><?=$unAdherent->getIdAdherent();?></td>
           <td><?=$unAdherent->getNom();?></td>
           <td><?=$unAdherent->getPrenom();?></td>
           <td><?=$unAdherent->getCategorie();?></td>
@@ -108,8 +101,8 @@
           <td><?=$unAdherent->getTelephone();?></td>
           <td><?=$unAdherent->getMail();?></td>
           <td><?=$unAdherent->getNumLicence();?></td>
-          <td> <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>">Paiement</a> </td>
           <td>
+            <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket"></i></a>
             <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit"></i></a>
             <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times"></i></a>
            </td>

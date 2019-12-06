@@ -93,7 +93,7 @@
       <?php }}else{
         echo "Pas de paiement pour cet adherent";
       } ?>
-      <p>Ajouter un paiement : <a href="../../view/paiementview/insertPaiement.php?idAdherent=<?php if (isset($_GET['idAdherent'])){echo $_GET['idAdherent'];}?>"> <i class="fas fa-plus-circle"></i> </a></p>
+      <p>Ajouter un paiement : <a href="../../controler/tablepaiement/insertpaiement.ctrl.php<?php if (isset($_GET['idAdherent'])){echo "?idAdherent=".$_GET['idAdherent'];}?>"> <i class="fas fa-plus-circle"></i> </a></p>
     </tbody>
     </table>
     <!-- Fin tableau -->

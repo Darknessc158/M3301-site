@@ -74,18 +74,6 @@
           case 'adressedecroit':
           $recherche = $this->db->query("SELECT * FROM adherent ORDER BY adresse DESC ");
           break;
-          case 'telcroit':
-          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY telephone ASC ");
-          break;
-          case 'teldecroit':
-          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY telephone DESC ");
-          break;
-          case 'mailcroit':
-          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY mail ASC ");
-          break;
-          case 'maildecroit':
-          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY mail DESC ");
-          break;
           case 'numlicencecroit':
           $recherche = $this->db->query("SELECT * FROM adherent ORDER BY numLicence ASC ");
           break;
