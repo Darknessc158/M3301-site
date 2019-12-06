@@ -2,9 +2,11 @@
   private $db;
 
   public function __construct($path){
-    $database ='sqlite:'.$path.'/scale.db';
+    $database ='mysql:dbname='.$path.'/scale.db;host=127.0.0.1';
+    $user = 'root';
+    $password = 'cave';
     try{
-      $this->db = new PDO($database);
+      $this->db = new PDO($database,$user,$password);
       //var_dump($database);
     }
 

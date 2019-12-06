@@ -3,7 +3,8 @@
 --       description STRING,
 --       annee varchar(4)
 -- };
-
+CREATE DATABASE scale;
+USE scale;
 CREATE TABLE adherent (
      idAdherent  INTEGER PRIMARY KEY,
      nom varchar(30) NOT NULL,
