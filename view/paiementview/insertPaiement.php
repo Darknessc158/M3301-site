@@ -50,7 +50,7 @@
         </SELECT>
       </fieldset>
 
-      <div id="formcache">
+      <div id="formcache" hidden>
         <fieldset>
         <legend>Informations article</legend>
         <label for='nomArticle'>Liste des articles disponibles :</label>
@@ -64,7 +64,7 @@
           </fieldset>
       </div>
       <input type="checkbox" onclick="document.getElementById('formcache').style.display = (this.checked? 'block':'none');" value="Article" />
-      Cliquez sur la case pour afficher les informations concernant un article ...
+      Cliquez sur la case pour afficher les informations concernant un article <br/>
 
       <input type="submit" value="Ajouter" />
       <input type="reset" value="Annuler" />
