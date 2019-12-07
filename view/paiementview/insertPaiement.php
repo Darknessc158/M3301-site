@@ -21,7 +21,7 @@
   <?php if (!isset( $_GET['idAdherent'])){ ?>
         <select name="idAdherent">
           <?php foreach ($lesadh as $unadh) { ?>
-            <option value ="<?php $unadh->getIdAdherent();?>"><?php echo $unadh->getPrenom()." ".$unadh->getNom();?></option>
+            <option value ="<?php echo $unadh->getIdAdherent();?>"><?php echo $unadh->getPrenom()." ".$unadh->getNom();?></option>
             <?php } ?>
         </select>
       <?php } ?>
