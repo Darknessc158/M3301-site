@@ -41,10 +41,10 @@
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tout les paiements</a>
+          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tous les paiements</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Tout les articles</a>
+          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Tous les articles</a>
         </li>
       </ul>
     </div>
