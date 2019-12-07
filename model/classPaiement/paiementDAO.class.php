@@ -30,6 +30,13 @@ class paiementDAO { //classe paiement basededonnees
     return $res;
   }
 
+  function getNomPrenomAdh($idadherent){
+    $req = "SELECT a.nom,a.prenom FROM paiement p,adherent a WHERE p.idAdherent=a.idAdherent and a.idAdherent=$idadherent;";
+    $sth=$this->db->query($req);
+    $res = $sth->fetch();
+    return $res;
+  }
+
   function getUnPaiement($idPaiement){ //recuperation d'un paiement avec l'id d'un adherent
     $req = "SELECT * FROM paiement WHERE idPaiement=$idPaiement;";
     $sth=$this->db->query($req);

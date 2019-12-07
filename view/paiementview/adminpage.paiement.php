@@ -81,17 +81,7 @@
           <td><?=$unPaiement->getEtatDuPaiement();?></td>
           <td><?=$unPaiement->getType();?></td>
           <td>
-            <?php
-          $id = $unadh->getIdAdherent();
-          while ($id != $unPaiement->getIdAdherent() && $lesadh) {
-            foreach ($lesadh as  $unadh) {
-              $id = $unadh->getIdAdherent();
-            }
-          }if ($id != $unPaiement->getIdAdherent()){
-            echo "Pas d'adhérent pour ce paiement";
-          }else{
-            echo ($adherents->getUnAdherent($id))->getPrenom()." ".($adherents->getUnAdherent($id))->getNom();
-          } ?>
+          <?php echo ($paiements->getNomPrenomAdh($unPaiement->getIdAdherent()))[1]." ".($paiements->getNomPrenomAdh($unPaiement->getIdAdherent()))[0]; ?>
           <td>
             <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update"><i class="fas fa-user-edit"></i></a>
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i class="fas fa-user-times"></i></a>
