@@ -5,22 +5,22 @@
   <title>Ajout d'un paiement</title>
 </head>
 <body>
-  <h1>Ajout d'un paiement</h1>
-  <form class="" action="../../controler/tablepaiement/insertPaiement.ctrl.php" method="post">
+
+  <?php if (isset( $_GET['idAdherent'])){
+    $id = $_GET['idAdherent'];
+    $adh = $adherents->getUnAdherent($id);?>
+
+  <h1>Ajout d'un paiement pour <?php echo $adh->getPrenom()." ".$adh->getNom()?> </h1>
+
+  <form class="" action="../../controler/tablepaiement/insertPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;?>" method="post">
 
 
-    <label for="idAdherent">Identifiant de l'adhérent :</label>
-    <?php if (isset( $_GET['idAdherent'])){
-      $id = $_GET['idAdherent'];
-      $adh = $adherents->getUnAdherent($id);?>
-      <input type="text" name="idAdherent" disabled value="<?=$id?>"><?php echo $adh->getPrenom()." ".$adh->getNom()?>
-    <?php }else{ ?>
+  <?php if (!isset( $_GET['idAdherent'])){ ?>
         <select name="idAdherent">
           <?php foreach ($lesadh as $unadh) { ?>
             <option value ="<?php $unadh->getIdAdherent()?>"><?php echo $unadh->getPrenom()." ".$unadh->getNom()?></option>
             <?php } ?>
         </select>
-
       <?php } ?>
 
 
