@@ -55,19 +55,17 @@
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
 
-        <th>idPaiement</th><!--  nomcolonne de la bd -->
+        <th>Date du paiement</th>
 
-        <th>datePaiement</th>
+        <th>Prix</th>
 
-        <th>prix</th>
+        <th>Description</th>
 
-        <th>description</th>
+        <th>Etat du paiement</th>
 
-        <th>etatDuPaiement</th>
+        <th>Licence, Adhésion, Article</th>
 
-        <th>type</th>
-
-        <th>idAdherent</th>
+        <th>Nom de l'adhérent</th>
 
         <th>Action</th>
 
@@ -77,13 +75,13 @@
 
       <?php foreach ($respaiement as $unPaiement) { ?>
         <tr>
-          <td><?=$unPaiement->getIdPaiement();?></td>
           <td><?=$unPaiement->getDatePaiement();?></td>
           <td><?=$unPaiement->getPrix();?></td>
           <td><?=$unPaiement->getDescription();?></td>
           <td><?=$unPaiement->getEtatDuPaiement();?></td>
           <td><?=$unPaiement->getType();?></td>
-          <td><?=$unPaiement->getIdAdherent();?>
+          <td><?php $adh = ($adherents->getUnAdherent($unPaiement->getIdAdherent()));
+          echo $adh->getPrenom()." ".$adh->getNom();?>
           <td>
             <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update"><i class="fas fa-user-edit"></i></a>
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i class="fas fa-user-times"></i></a>
