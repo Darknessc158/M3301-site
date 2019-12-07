@@ -65,7 +65,7 @@
 
         <th>Licence, Adhésion, Article</th>
 
-        <th>Nom de l'adhérent</th>
+        <th>Adhérent</th>
 
         <th>Action</th>
 
@@ -80,8 +80,9 @@
           <td><?=$unPaiement->getDescription();?></td>
           <td><?=$unPaiement->getEtatDuPaiement();?></td>
           <td><?=$unPaiement->getType();?></td>
-          <td><?php $adh = ($adherents->getUnAdherent($unPaiement->getIdAdherent()));
-          echo $adh->getPrenom()." ".$adh->getNom();?>
+          <td><?php if ($adherents->adherentExiste($unPaiement->getIdAdherent()) > 0) {$adh = ($adherents->getUnAdherent($unPaiement->getIdAdherent()));
+          echo $adh->getPrenom()." ".$adh->getNom();}
+          else{echo "Pas d'adhérent pour ce paiement";}?>
           <td>
             <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update"><i class="fas fa-user-edit"></i></a>
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i class="fas fa-user-times"></i></a>
