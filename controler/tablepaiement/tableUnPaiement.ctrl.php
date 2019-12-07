@@ -25,6 +25,10 @@ if (isset($_GET['idAdherent'])){ // on a l'id adherent
   $res = $paiements->getLesPaiements(); // si pas id on recupere tous les paiements
 }
 $respaiement = $res; //on remplit la variable pour la view
+<<<<<<< HEAD
+=======
+//test
+>>>>>>> 76ce45d5a1ffd7cfa6e6fa079911a795f4d7d985
 var_dump($respaiement);
 //--------------------------------------------------------------------
 

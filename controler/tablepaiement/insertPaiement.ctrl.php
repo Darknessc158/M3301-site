@@ -22,6 +22,7 @@ if (isset($_GET['idAdherent'])){
 }else{
 $idAdherent = $_POST['idAdherent'];
 }
+var_dump($idAdherent);
 $unPaiement = $paiements->insertUnPaiement($datePaiement,$prix,$description,$etatDuPaiement,$type,$idAdherent);
 
 
