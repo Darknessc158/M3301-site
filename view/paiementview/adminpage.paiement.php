@@ -81,7 +81,7 @@
           <td><?=$unPaiement->getEtatDuPaiement();?></td>
           <td><?=$unPaiement->getType();?></td>
           <td><?php
-          if (array_key_exists($key,$lesadh){
+          if (array_key_exists($key,$lesadh)){
           echo $lesadh[$key]->getPrenom()." ".$lesadh[$key]->getNom();
           }else{echo "Pas d'adhérent pour ce paiement";}?>
           <td>
