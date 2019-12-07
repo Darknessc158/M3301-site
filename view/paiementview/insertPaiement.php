@@ -8,11 +8,14 @@
 
   <?php if (isset( $_GET['idAdherent'])){
     $id = $_GET['idAdherent'];
-    $adh = $adherents->getUnAdherent($id);?>
+    $adh = $adherents->getUnAdherent($id); ?>
 
-  <h1>Ajout d'un paiement pour <?php echo $adh->getPrenom()." ".$adh->getNom()?> </h1>
+  <h1>Ajout d'un paiement pour <?php echo $adh->getPrenom()." ".$adh->getNom();?> </h1>
+<?php }else{ ?>
+  <h1>Ajout d'un paiement</h1>
+<?php } ?>
 
-  <form class="" action="../../controler/tablepaiement/insertPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;?>" method="post">
+  <form class="" action="../../controler/tablepaiement/insertPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;}?>" method="post">
 
 
   <?php if (!isset( $_GET['idAdherent'])){ ?>
