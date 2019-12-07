@@ -73,16 +73,16 @@
     </thead>
     <tbody>
 
-      <?php foreach ($respaiement as $unPaiement) { ?>
+      <?php foreach ($respaiement as $key => $unPaiement) { ?>
         <tr>
           <td><?=$unPaiement->getDatePaiement();?></td>
           <td><?=$unPaiement->getPrix();?></td>
           <td><?=$unPaiement->getDescription();?></td>
           <td><?=$unPaiement->getEtatDuPaiement();?></td>
           <td><?=$unPaiement->getType();?></td>
-          <td><?php if ($adherents->getUnAdherent($unPaiement->getIdAdherent()) != null) {$adh = ($adherents->getUnAdherent($unPaiement->getIdAdherent()));
-          echo $adh->getPrenom()." ".$adh->getNom();}
-          else{echo "Pas d'adhérent pour ce paiement";}?>
+          <td><?php if ($lesadh[$key]->getIdAdherent() == $unPaiement->getIdAdherent()){
+          echo $lesadh[$key]->getPrenom()." ".$lesadh[$key]->getNom();
+          }else{echo "Pas d'adhérent pour ce paiement";}?>
           <td>
             <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update"><i class="fas fa-user-edit"></i></a>
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i class="fas fa-user-times"></i></a>
