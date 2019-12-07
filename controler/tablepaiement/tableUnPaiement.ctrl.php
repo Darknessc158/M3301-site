@@ -18,7 +18,7 @@ if (isset($_GET['type'])) {
 
 
 //GESTION affichage paiement----------------------------------------
-if (isset($_GET['idAdherent']))){ // on a l'id adherent
+if (isset($_GET['idAdherent'])){ // on a l'id adherent
   $id=$_GET['idAdherent'];
   $res = $paiements->getLesPaiementsDunAdherent($id);
 }else{
