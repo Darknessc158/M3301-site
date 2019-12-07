@@ -75,8 +75,7 @@
     </thead>
     <tbody>
 
-      <?php if ($res != 0){ foreach ($respaiement as $key => $unPaiement) { ?>
-        <?php if($adherents->adherentExiste($unPaiement->getIdAdherent()) != 0 ){$adh = $adherents->getUnAdherent($unPaiement->getIdAdherent()); } ?>
+      <?php foreach ($respaiement as $unPaiement) { ?>
         <tr>
           <td><?=$unPaiement->getIdPaiement();?></td>
           <td><?=$unPaiement->getDatePaiement();?></td>
@@ -84,15 +83,13 @@
           <td><?=$unPaiement->getDescription();?></td>
           <td><?=$unPaiement->getEtatDuPaiement();?></td>
           <td><?=$unPaiement->getType();?></td>
-          <td><?=$unPaiement->getIdAdherent();?> (<?php if ($adherents->adherentExiste($unPaiement->getIdAdherent()) == 0) {echo"Pas d'adherent";}else{ echo $adh->getNom(); echo ","; echo $adh->getPrenom(); }?>)</td><!--Lien vers l'adherents pour savoir qui c -->
+          <td><?=$unPaiement->getIdAdherent();?>
           <td>
             <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update"><i class="fas fa-user-edit"></i></a>
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i class="fas fa-user-times"></i></a>
           </td>
         </tr>
-      <?php }}else{
-        echo "Pas de paiement pour cet adherent";
-      } ?>
+      <?php } ?>
       <p>Ajouter un paiement : <a href="../../controler/tablepaiement/insertpaiement.ctrl.php<?php if (isset($_GET['idAdherent'])){echo "?idAdherent=".$_GET['idAdherent'];}?>"> <i class="fas fa-plus-circle"></i> </a></p>
     </tbody>
     </table>
