@@ -17,8 +17,11 @@ $prix = $_POST['prix'];
 $description = $_POST['description'];
 $etatDuPaiement = $_POST['etatDuPaiement'];
 $type = $_POST['type'];
+if (isset['idAdherent']){
+  $idAdherent = $_GET['idAdherent'];
+}else{
 $idAdherent = $_POST['idAdherent'];
-
+}
 $unPaiement = $paiements->insertUnPaiement($datePaiement,$prix,$description,$etatDuPaiement,$type,$idAdherent);
 
 
