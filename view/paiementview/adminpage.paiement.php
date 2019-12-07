@@ -81,8 +81,8 @@
           <td><?=$unPaiement->getEtatDuPaiement();?></td>
           <td><?=$unPaiement->getType();?></td>
           <td><?php
-          if (array_key_exists($key,$lesadh)){
-          echo $lesadh[$key]->getPrenom()." ".$lesadh[$key]->getNom();
+          if (array_key_exists($unPaiement->getIdAdherent(),$lesadh)){
+          echo $lesadh[$unPaiement->getIdAdherent()]->getPrenom()." ".$lesadh[$unPaiement->getIdAdherent()]->getNom();
           }else{echo "Pas d'adhérent pour ce paiement";}?>
           <td>
             <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update"><i class="fas fa-user-edit"></i></a>
