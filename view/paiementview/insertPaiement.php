@@ -3,29 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>Ajout d'un paiement</title>
-
-  <script>
-  function mafonction(moncheckbox){
-    if(moncheckbox.checked){
-      document.write("<fieldset>
-      <legend>Informations article</legend>
-      <label for='nomArticle'>Liste des articles disponibles :</label>
-      <SELECT name="nomArticle" size="1">
-      <?php foreach ($lesArticles as  $unArticle) { ?>
-        <option value ="<?php $unArticle->getDescription()?>"><?php echo $unArticle->getDescription()?></option>
-        <?php } ?>
-        </SELECT>
-        <label for="">Quantité commandée :</label>
-        <input type="text" name="quantiteCommande" value="" />
-        </fieldset>")
-      }
-      else{
-        //le code qui le cache
-      }
-    }
-    </script>
-
-
   </head>
   <body>
 
@@ -73,7 +50,21 @@
         </SELECT>
       </fieldset>
 
-      <input onclick="mafonction(this)" type="checkbox" name="choix" value="Article">
+      <div id="formcache">
+        <fieldset>
+        <legend>Informations article</legend>
+        <label for='nomArticle'>Liste des articles disponibles :</label>
+        <SELECT name="nomArticle" size="1">
+        <?php foreach ($lesArticles as  $unArticle) { ?>
+          <option value ="<?php $unArticle->getDescription()?>"><?php echo $unArticle->getDescription()?></option>
+          <?php } ?>
+          </SELECT>
+          <label for="">Quantité commandée :</label>
+          <input type="text" name="quantiteCommande" value="" />
+          </fieldset>
+      </div>
+      <input type="checkbox" onclick="document.getElementById('formcache').style.display = (this.checked? 'block':'none');" value="Article" />
+      Cliquez sur la case pour afficher les informations concernant un article ...
 
       <input type="submit" value="Ajouter" />
       <input type="reset" value="Annuler" />
