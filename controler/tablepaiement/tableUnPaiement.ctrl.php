@@ -5,6 +5,8 @@ require_once('../../model/classPaiement/paiementDAO.class.php');
 // Creation de l'instance DAO
 $paiements = new paiementDAO('../../model/data/db');
 
+
+//------------------gestion supression d'un paiement-------------------------
 if (isset($_GET['type'])) {
   $type = $_GET['type'];
   if ($type == 'delete'){
@@ -12,23 +14,26 @@ if (isset($_GET['type'])) {
     $paiements->supprUnPaiement($id);
   }
 }
+//----------------------------------------------------------------------------
 
-if (isset($_GET['idAdherent']) && ($paiements->paiementExiste($_GET['idAdherent']) != 0) ){
+
+//GESTION affichage paiement----------------------------------------
+if (isset($_GET['idAdherent']))){ // on a l'id adherent
   $id=$_GET['idAdherent'];
   $res = $paiements->getLesPaiementsDunAdherent($id);
-}else if(isset($_GET['idAdherent'])){
-  $res = 0;
 }else{
-  $res = $paiements->getLesPaiements();
+  $res = $paiements->getLesPaiements(); // si pas id on recupere tous les paiements
 }
+$respaiement = $res; //on remplit la variable pour la view
+//--------------------------------------------------------------------
 
-$respaiement = $res;
 
 //recuperation des donnes pour recup le nom et prenom de l'id qui correspond
 require_once('../../model/classAdherent/adherent.class.php');
 require_once('../../model/classAdherent/adherentDAO.class.php');
 $config = parse_ini_file('../../config/config.ini');
 $adherents = new adherentDAO($config['database_path']);
+//----------------------------------------------------------
 
 //view
 include('../../view/paiementview/adminpage.paiement.php');

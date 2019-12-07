@@ -90,7 +90,7 @@
           </td>
         </tr>
       <?php } ?>
-      <p>Ajouter un paiement : <a href="../../controler/tablepaiement/insertpaiement.ctrl.php<?php if (isset($_GET['idAdherent'])){echo "?idAdherent=".$_GET['idAdherent'];}?>"> <i class="fas fa-plus-circle"></i> </a></p>
+      <p>Ajouter un paiement : <a href="../../controler/tablepaiement/insertpaiement.ctrl.php<?php if (isset($_GET['idAdherent'])){echo "?idAdherent=".$_GET['idAdherent'];}?>"> <i class="fas fa-cart-plus"></i> </a></p>
     </tbody>
     </table>
     <!-- Fin tableau -->
