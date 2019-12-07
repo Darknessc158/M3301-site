@@ -80,7 +80,7 @@
           <td><?=$unPaiement->getDescription();?></td>
           <td><?=$unPaiement->getEtatDuPaiement();?></td>
           <td><?=$unPaiement->getType();?></td>
-          <td><?php if ($adherents->adherentExiste($unPaiement->getIdAdherent()) > 0) {$adh = ($adherents->getUnAdherent($unPaiement->getIdAdherent()));
+          <td><?php if ($adherents->getUnAdherent($unPaiement->getIdAdherent()) != null) {$adh = ($adherents->getUnAdherent($unPaiement->getIdAdherent()));
           echo $adh->getPrenom()." ".$adh->getNom();}
           else{echo "Pas d'adhérent pour ce paiement";}?>
           <td>
