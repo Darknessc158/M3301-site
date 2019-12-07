@@ -80,8 +80,8 @@
           <td><?=$unPaiement->getDescription();?></td>
           <td><?=$unPaiement->getEtatDuPaiement();?></td>
           <td><?=$unPaiement->getType();?></td>
-          <td><?php
-          if (array_key_exists($unPaiement->getIdAdherent(),$lesadh)){
+          <td><?php var_dump($lesadh);
+          if ($unPaiement->getIdAdherent() == $lesadh->getIdAdherent())){
           echo $lesadh[$unPaiement->getIdAdherent()]->getPrenom()." ".$lesadh[$unPaiement->getIdAdherent()]->getNom();
           }else{echo "Pas d'adhérent pour ce paiement";}?>
           <td>
