@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
   <title>Ajout d'un adhérent à l'association</title>
@@ -21,7 +21,7 @@
     </p>
     <p>
        Date de naissance :<br />
-       <input type="text" name="datenaissance" value="" />
+       <input type="date" name="datenaissance" value="" />
     </p>
     <p>
        Adresse :<br />
