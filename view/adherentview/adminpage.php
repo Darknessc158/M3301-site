@@ -91,7 +91,7 @@
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($resadh as $key => $unAdherent){ ?>
+      <?php foreach ($resadh as $unAdherent){ ?>
         <tr>
           <td><?=$unAdherent->getNom();?></td>
           <td><?=$unAdherent->getPrenom();?></td>

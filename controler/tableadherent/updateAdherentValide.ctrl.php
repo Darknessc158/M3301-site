@@ -20,7 +20,7 @@ $numlicence = $_POST['numlicence'];
 //delete avant
 $adherents->supprUnAdherent($_GET['idAdherent']);
 
-$unAdherent = $adherents->insertUnAdherent($prenom,$nom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numlicence);
+$unAdherent = $adherents->insertUnAdherent($nom,$prenom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numlicence);
 
 $resadh = $adherents->getLesAdherents();
 
