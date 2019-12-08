@@ -48,9 +48,9 @@
   </nav>
   <!-- NAV DE BASE !-->
 
-  <h2>Gestion des paiements <?php if (isset($_GET['idAdherent'])){ echo 'concernant '.$adherents->getUnAdherent($_GET['idAdherent']))->getPrenom().' '.($adherents->getUnAdherent($_GET['idAdherent']))->getNom();} ?> </h2>
+  <h2>Gestion des paiements <?php if (isset($_GET['idAdherent'])){ echo 'concernant '; echo ($adherents->getUnAdherent($_GET['idAdherent']))->getPrenom().' '.($adherents->getUnAdherent($_GET['idAdherent']))->getNom();} ?> </h2>
 
-<?php if (isset($_GET['idAdherent'])){if ($respaiement == null){echo 'Pas de paiement effectué par cet adhérent';}else{ ?>
+<?php if ($respaiement == null){ if (isset($_GET['idAdherent'])) {echo 'Pas de paiement enregistré pour cet adhérent';}else{echo "Pas de paiement enregistré";}}else{ ?>
 
   <!-- Tableau !-->
   <?php $chemin='../../controler/tableadherent/tableadherent.ctrl.php' ?>
@@ -90,7 +90,7 @@
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i class="fas fa-user-times"></i></a>
           </td>
         </tr>
-      <?php }}} ?>
+      <?php }} ?>
       <p>Ajouter un paiement : <a href="../../controler/tablepaiement/insertpaiementavant.ctrl.php<?php if (isset($_GET['idAdherent'])){echo "?idAdherent=".$_GET['idAdherent'];}?>"> <i class="fas fa-cart-plus"></i> </a></p>
     </tbody>
     </table>
