@@ -65,15 +65,15 @@
       </div>
 
       <label for="type">Type (Licence,adhésion,Article) :</label><br/>
-      <SELECT name="type" size="1" onclick="document.getElementById('formcache').style.display = (this.checked? 'block':'none');">
+      <SELECT name="type" size="1">
         <option value = 'Licence'>Licence</option>
         <option value = 'Adhésion' selected>Adhésion</option>
-        <option value = 'Article' onclick="document.getElementById('formcache').style.display = (this.checked? 'block':'none');" >Article</option>
+        <option value = 'Article' onchange="document.getElementById('formcache').style.display = (this.selectedIndex? 'block':'none');" >Article</option>
       </SELECT>
-      
+<!--
       <input type="checkbox" onclick="document.getElementById('formcache').style.display = (this.checked? 'block':'none');" value="Article" />
       Cliquez sur la case pour afficher les informations concernant un article <br/>
-
+-->
       <input type="submit" value="Ajouter" />
       <input type="reset" value="Annuler" />
       Retour : <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php"><i class="fas fa-undo"></i></a>
