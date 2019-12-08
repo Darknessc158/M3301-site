@@ -105,6 +105,12 @@
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket" title="Voir les paiements."></i></a>
             <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit" title="Modifier l'adhérent."></i></a>
             <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times" title="Supprimer l'adhérent."></i></a>
+
+<i class="fas fa-user-times" title="Supprimer l'adhérent." style="cursor:pointer;" onClick="DelAdherent('.<?=$unAdherent->getIdAdherent();?>.')"></i>
+
+
+
+
             </td>
         </tr>
       <?php } ?>
@@ -115,6 +121,13 @@
 </body>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <!-- Script pour valider supression d'un adhérent -->
-
+<script>function DelAdherent(id){
+    if(confirm("Voulez vous vraiment supprimer cet adhérent ?")){
+            window.location='../../controler/tableadherent/tableadherent.ctrl.php?type=delete&idAdherent='+id
+    }
+    else{
+            alert("L'adhérent n'a pas été supprimé.")
+    }
+}
 </script>
 </html>
