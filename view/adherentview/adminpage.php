@@ -116,13 +116,6 @@
       </tbody>
     </table>
     <!-- Fin tableau -->
-    <p>Move the mouse over the text below:</p>
-
-    <div class="tooltip">Hover over me
-      <span class="tooltiptext">Tooltip text</span>
-    </div>
-
-    <p>Note that the position of the tooltip text isn't very good. Go back to the tutorial and continue reading on how to position the </p>
   </body>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </html>
