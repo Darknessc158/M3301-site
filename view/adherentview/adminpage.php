@@ -106,6 +106,7 @@
             <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit" title="Modifier l'adhérent."></i></a>
             <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times" title="Supprimer l'adhérent."></i></a>
             <?php echo '<span onclick="return delete_confirm('.$unAdherent->getIdAdherent().')">Supprimer</span>'; ?>
+            <input type="image" name="suppression" src="icons/page_delete.png" alt="Supprimer la recette" value="<?php echo $donnees['numRecette']; ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ?');" />
           </td>
         </tr>
       <?php } ?>
