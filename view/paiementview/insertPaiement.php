@@ -65,20 +65,20 @@
       </div>
 
       <label for="type">Sélectionnez un type (Licence,adhésion,Article) :</label><br/>
-      <SELECT name="type" size="1" id="mySelect" onchange="document.getElementById('mySelect').onchange = myFunction()">
+      <SELECT name="type" size="1" id="mySelect" >
         <option value = 'Licence'>Licence</option>
         <option value = 'Adhésion' selected>Adhésion</option>
-        <option value = 'Article' onchange="document.getElementById('formcache').style.display = (this.selectedIndex? 'block':'none');" >Article</option>
+        <option value = 'Article' >Article</option>
       </SELECT>
 
 <script>
-function myFunction() {
-  if(this.value == 'Article'){
-     document.getElementById('formcache').style.display = 'block';
-     } else {
-     document.getElementById('formcache').style.display = 'none';
-     }
-  }
+document.getElementById('mySelect').onchange = function(){
+if(this.value == 'Article'){
+   document.getElementById('formcache').style.display = 'block';
+   } else {
+   document.getElementById('formcache').style.display = 'none';
+   }
+};
 </script>
 
 </body>
