@@ -9,11 +9,11 @@
   <form class="" action="../../controler/tableadherent/insertAdherent.ctrl.php" method="post">
     <p>
         Nom :<br />
-       <input type="text" name="prenom" value="" />
+       <input type="text" name="nom" value="" />
     </p>
     <p>
         Prénom :<br />
-       <input type="text" name="nom" value="" />
+       <input type="text" name="prenom" value="" />
     </p>
     <p>
        Categorie :<br />
