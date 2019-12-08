@@ -11,6 +11,19 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+  <!-- Script pour valider supression d'un adhérent -->
+  <script type="text/javascript">
+  function delete_confirm(id)
+  {
+      if(confirm("Voulez vous vraiment supprimer cet adhérent ?"))
+      {
+          alert('Suppression effectuée');
+          location.href= '../../controler/tableadherent/tableadherent.ctrl.php?type=delete&idAdherent=<?=$id;?>';
+      }
+      return false;
+  }
+  </script>
+
 </head>
 
 <body id="page-top" style="text-align:center;">
@@ -105,6 +118,7 @@
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket" title="Voir les paiements."></i></a>
             <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit" title="Modifier l'adhérent."></i></a>
             <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times" title="Supprimer l'adhérent."></i></a>
+            <?php echo "<span onclick="delete_confirm('.$unAdherent->getIdAdherent();.')"><i class="fas fa-user-times" title="Supprimer l adhérent."></i></span>"; ?>
           </td>
         </tr>
       <?php } ?>
