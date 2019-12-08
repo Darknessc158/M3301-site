@@ -102,9 +102,11 @@
           <td><?=$unAdherent->getMail();?></td>
           <td><?=$unAdherent->getNumLicence();?></td>
           <td>
-            <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket"></i></a>
+            <div class="tooltip">
+            <span class="tooltiptext">Voir les paiements<a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket"></i></a></span>
             <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit"></i></a>
             <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times"></i></a>
+            </div>
            </td>
         </tr>
         <?php } ?>
