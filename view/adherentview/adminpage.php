@@ -105,9 +105,7 @@
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket" title="Voir les paiements."></i></a>
             <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit" title="Modifier l'adhérent."></i></a>
             <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times" title="Supprimer l'adhérent."></i></a>
-            <?php echo '<span onclick="return delete_confirm('.$unAdherent->getIdAdherent().')">Supprimer</span>'; ?>
-            <input type="image" name="suppression" src="icons/page_delete.png" alt="Supprimer la recette" value="<?php echo $donnees['numRecette']; ?>" OnClick="return confirm('Voulez-vous vraiment supprimer ?');" />
-          </td>
+            </td>
         </tr>
       <?php } ?>
       <p>Ajouter un adherent : <a href="../../view/adherentview/insertAdherent.php"> <i class="fas fa-plus-circle"></i> </a></p>
@@ -117,15 +115,6 @@
 </body>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <!-- Script pour valider supression d'un adhérent -->
-<script>
-function delete_confirm(id)
-{
-    if(confirm("Voulez vous vraiment supprimer cet adhérent ?"))
-    {
-        alert('Suppression effectuée');
-        location.href= '../../controler/tableadherent/tableadherent.ctrl.php?type=delete&idAdherent=<?=$id;?>';
-    }
-    return false;
-}
+
 </script>
 </html>
