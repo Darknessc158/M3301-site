@@ -68,9 +68,9 @@
       <SELECT name="type" size="1" onclick="document.getElementById('formcache').style.display = (this.checked? 'block':'none');">
         <option value = 'Licence'>Licence</option>
         <option value = 'Adhésion' selected>Adhésion</option>
-        <option value = 'Article'>Article</option>
+        <option value = 'Article' onclick="document.getElementById('formcache').style.display = (this.checked? 'block':'none');" >Article</option>
       </SELECT>
-
+      
       <input type="checkbox" onclick="document.getElementById('formcache').style.display = (this.checked? 'block':'none');" value="Article" />
       Cliquez sur la case pour afficher les informations concernant un article <br/>
 
