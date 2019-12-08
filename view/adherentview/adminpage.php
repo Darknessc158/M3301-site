@@ -104,14 +104,6 @@
           <td>
 
 
-<p>Move the mouse over the text below:</p>
-
-<div class="tooltip">Hover over me
-  <span class="tooltiptext">Tooltip text</span>
-</div>
-
-<p>Note that the position of the tooltip text isn't very good. Go back to the tutorial and continue reading on how to position the tooltip in a desirable way.</p>
-
 
 <div class="tooltip">Voir les paiements<span class="tooltiptext">Voir les paiements</span></div>
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket"></i></a>
@@ -124,6 +116,13 @@
       </tbody>
     </table>
     <!-- Fin tableau -->
+    <p>Move the mouse over the text below:</p>
+
+    <div class="tooltip">Hover over me
+      <span class="tooltiptext">Tooltip text</span>
+    </div>
+
+    <p>Note that the position of the tooltip text isn't very good. Go back to the tutorial and continue reading on how to position the </p>
   </body>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </html>
