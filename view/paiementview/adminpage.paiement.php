@@ -13,7 +13,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" style="text-align:center;">
 
 
   <div class="jumbotron text-center" style="margin-bottom:0">
@@ -48,7 +48,7 @@
   </nav>
   <!-- NAV DE BASE !-->
 
-  <h2>Paiements concernant <?php if (isset($_GET['idAdherent'])){ echo ($adherents->getUnAdherent($_GET['idAdherent']))->getPrenom().' '.($adherents->getUnAdherent($_GET['idAdherent']))->getNom();} ?> </h2>
+  <h2>Gestion des paiements <?php if (isset($_GET['idAdherent'])){ echo 'concernant '.$adherents->getUnAdherent($_GET['idAdherent']))->getPrenom().' '.($adherents->getUnAdherent($_GET['idAdherent']))->getNom();} ?> </h2>
 
 <?php if (isset($_GET['idAdherent'])){if ($respaiement == null){echo 'Pas de paiement effectué par cet adhérent';}else{ ?>
 
