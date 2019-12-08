@@ -102,9 +102,9 @@
           <td><?=$unAdherent->getMail();?></td>
           <td><?=$unAdherent->getNumLicence();?></td>
           <td>
-            <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket"></i></a>
-            <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit"></i></a>
-            <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times"></i></a>
+            <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket" title="Voir les paiements."></i></a>
+            <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit" title="Modifier l'adhérent."></i></a>
+            <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times" title="Supprimer l'adhérent."></i></a>
           </td>
         </tr>
       <?php } ?>
@@ -112,12 +112,6 @@
     </tbody>
   </table>
   <!-- Fin tableau -->
-  <div id="popup">
-
-    <a href="links.php"> <img src="<i class="fas fa-user-edit"></i>" alt="img">  <span> Popup. </span></a>
-
-  </div>
-
 </body>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </html>
