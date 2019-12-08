@@ -23,7 +23,10 @@ width: 50%;
   padding: 5px 0;
   /* Position the tooltip */
   position: absolute;
+<<<<<<< HEAD
   left: 105%;
+=======
+>>>>>>> 9179bc967562ed839f660a73fdc1850669b8c1fb
   z-index: 1;
 }
 .tooltip:hover .tooltiptext {
