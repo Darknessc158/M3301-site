@@ -114,7 +114,7 @@
   <!-- Fin tableau -->
   <div id="popup">
 
-    <a href="links.php"><i class="fas fa-user-edit"></i> <span> Popup. </span></a>
+    <a href="links.php"> <img src="<i class="fas fa-user-edit"></i>" alt="img">  <span> Popup. </span></a>
 
   </div>
 
