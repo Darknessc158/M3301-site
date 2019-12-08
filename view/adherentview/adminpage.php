@@ -76,16 +76,16 @@
           <a href="<?= $chemin ?>?tri=datenaissancedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
         <th><p>adresse
-        <a href="<?= $chemin ?>?tri=adressecroit"><i class="fas fa-sort-up"></i></a>
-        <a href="<?= $chemin ?>?tri=adressedecroit"><i class="fas fa-sort-down"></i></a>
+          <a href="<?= $chemin ?>?tri=adressecroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=adressedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
         <th><p>telephone
         </p></th>
         <th><p>mail
         </p></th>
         <th><p>numlicence
-        <a href="<?= $chemin ?>?tri=numlicencecroit"><i class="fas fa-sort-up"></i></a>
-        <a href="<?= $chemin ?>?tri=numlicencedecroit"><i class="fas fa-sort-down"></i></a>
+          <a href="<?= $chemin ?>?tri=numlicencecroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=numlicencedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
         <th>Action</th>
       </tr>
@@ -102,20 +102,22 @@
           <td><?=$unAdherent->getMail();?></td>
           <td><?=$unAdherent->getNumLicence();?></td>
           <td>
-
-
-
-<div class="tooltip">Voir les paiements<span class="tooltiptext">Voir les paiements</span></div>
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket"></i></a>
             <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit"></i></a>
             <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times"></i></a>
-           </td>
+          </td>
         </tr>
-        <?php } ?>
-        <p>Ajouter un adherent : <a href="../../view/adherentview/insertAdherent.php"> <i class="fas fa-plus-circle"></i> </a></p>
-      </tbody>
-    </table>
-    <!-- Fin tableau -->
-  </body>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  </html>
+      <?php } ?>
+      <p>Ajouter un adherent : <a href="../../view/adherentview/insertAdherent.php"> <i class="fas fa-plus-circle"></i> </a></p>
+    </tbody>
+  </table>
+  <!-- Fin tableau -->
+  <div id="popup">
+
+    <a href="links.php"><i class="fas fa-user-edit"></i> <span> Popup. </span></a>
+
+  </div>
+
+</body>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</html>
