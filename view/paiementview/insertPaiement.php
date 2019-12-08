@@ -50,7 +50,7 @@
         </SELECT> -->
       </fieldset>
 
-      <div id="formcache" hidden>
+      <div id="formcache" style="display:none;">
         <fieldset>
         <legend>Informations article</legend>
         <label for='nomArticle'>Liste des articles disponibles :</label>
@@ -64,12 +64,25 @@
           </fieldset>
       </div>
 
-      <label for="type">Type (Licence,adhésion,Article) :</label><br/>
-      <SELECT name="type" size="1">
+      <label for="type">Sélectionnez un type (Licence,adhésion,Article) :</label><br/>
+      <SELECT name="type" size="1" id="mySelect" onchange="document.getElementById('mySelect').onchange = myFunction()">
         <option value = 'Licence'>Licence</option>
         <option value = 'Adhésion' selected>Adhésion</option>
         <option value = 'Article' onchange="document.getElementById('formcache').style.display = (this.selectedIndex? 'block':'none');" >Article</option>
       </SELECT>
+
+<script>
+function myFunction() {
+  if(this.value == 'Article'){
+     document.getElementById('formcache').style.display = 'block';
+     } else {
+     document.getElementById('formcache').style.display = 'none';
+     }
+  }
+</script>
+
+</body>
+</html>
 <!--
       <input type="checkbox" onclick="document.getElementById('formcache').style.display = (this.checked? 'block':'none');" value="Article" />
       Cliquez sur la case pour afficher les informations concernant un article <br/>
