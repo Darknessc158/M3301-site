@@ -22,8 +22,9 @@ width: 50%;
   border-radius: 6px;
   padding: 5px 0;
   /* Position the tooltip */
-  top: -5px;
+  position: absolute;
   left: 105%;
+  z-index: 1;
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
