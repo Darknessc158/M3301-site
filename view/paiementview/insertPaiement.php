@@ -41,13 +41,13 @@
         <label for="etatDuPaiement">Etat du paiement :</label><br/>
         <input type="text" name="etatDuPaiement" value="" /><br/>
 
-
+<!--
         <label for="type">Type (Licence,adhésion,Article) :</label><br/>
         <SELECT name="type" size="1">
           <option value = 'Licence'>Licence</option>
           <option value = 'Adhésion'>Adhésion</option>
           <option value = 'Article'>Article</option>
-        </SELECT>
+        </SELECT> -->
       </fieldset>
 
       <div id="formcache" hidden>
@@ -63,6 +63,14 @@
           <input type="text" name="quantiteCommande" value="" />
           </fieldset>
       </div>
+
+      <label for="type">Type (Licence,adhésion,Article) :</label><br/>
+      <SELECT name="type" size="1" onclick="document.getElementById('formcache').style.display = (this.checked? 'block':'none');">
+        <option value = 'Licence'>Licence</option>
+        <option value = 'Adhésion' selected>Adhésion</option>
+        <option value = 'Article'>Article</option>
+      </SELECT>
+
       <input type="checkbox" onclick="document.getElementById('formcache').style.display = (this.checked? 'block':'none');" value="Article" />
       Cliquez sur la case pour afficher les informations concernant un article <br/>
 
