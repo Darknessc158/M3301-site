@@ -59,6 +59,39 @@ class paiementDAO { //classe paiement basededonnees
     $req = "DELETE FROM paiement where $idPaiement = idPaiement;";
     $sth=$this->db->query($req);
   }
+  public function getListeTrie($tri){ //fonction pour trier
+        switch ($tri) {
+          case 'catecroit':
+          $recherche = $this->db->query("SELECT * FROM paiement ORDER BY type ASC ");
+          break;
+          case 'catedecroit':
+          $recherche = $this->db->query("SELECT * FROM paiement ORDER BY type DESC ");
+          break;
+          case 'datepaiementcroit':
+          $recherche = $this->db->query("SELECT * FROM paiement ORDER BY datePaiement ASC ");
+          break;
+          case 'datepaiementdecroit':
+          $recherche = $this->db->query("SELECT * FROM paiement ORDER BY datePaiement DESC ");
+          break;
+          case 'prixcroit':
+          $recherche = $this->db->query("SELECT * FROM paiement ORDER BY prix ASC ");
+          break;
+          case 'prixdecroit':
+          $recherche = $this->db->query("SELECT * FROM paiement ORDER BY prix DESC ");
+          break;
+          case 'etatcroit':
+          $recherche = $this->db->query("SELECT * FROM paiement ORDER BY etatDuPaiement ASC ");
+          break;
+          case 'etatdecroit':
+          $recherche = $this->db->query("SELECT * FROM paiement ORDER BY etatDuPaiement DESC ");
+          break;
+          default:
+          $recherche = $this->db->query("SELECT * FROM paiement");
+          break;
+          }
+    $resultats=$recherche->fetchAll(PDO::FETCH_CLASS,'paiement');
+    return $resultats;
+  }
 
 }
   ?>
