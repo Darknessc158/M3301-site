@@ -17,6 +17,13 @@ $prix = $_POST['prix'];
 $description = $_POST['description'];
 $etatDuPaiement = $_POST['etatDuPaiement'];
 $type = $_POST['type'];
+
+if($type == 'Article'){
+  $refArticle = $_POST['nomArticle'];
+  $quantiteCommande = $_POST['quantiteCommande'];
+  //Puis faire l'instance DAO avec la class article et verif puis diminuer le stock ...
+}
+
 if (isset($_GET['idAdherent'])){
   $idAdherent = $_GET['idAdherent'];
 }else{
