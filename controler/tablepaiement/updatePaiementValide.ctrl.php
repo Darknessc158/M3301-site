@@ -13,7 +13,7 @@ $prix = $_POST['prix'];
 $description = $_POST['description'];
 $etatDuPaiement = $_POST['etatDuPaiement'];
 $type = $_POST['type'];
-$idAdherent = $_POST['idAdherent'];
+$idAdherent = $_GET['idAdherent'];
 
 //delete avant
 $paiements->supprUnPaiement($_GET['idPaiement']);
