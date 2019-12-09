@@ -87,7 +87,7 @@
           <?php echo ($paiements->getNomPrenomAdh($unPaiement->getIdAdherent()))[1]." ".($paiements->getNomPrenomAdh($unPaiement->getIdAdherent()))[0]; ?>
           <td>
             <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update"><i class="far fa-edit" title="Modifier"></i></a>
-            <i class="far fa-trash-alt" title="Supprimer" style="cursor:pointer; color:red;" onClick="DelPaiement('<?=$unPaiement->getIdPaiement();?>')"></i>
+            <i class="far fa-trash-alt" title="Supprimer" style="cursor:pointer; color:red;" onClick="DelPaiement('<?=$unPaiement->getIdPaiement();?>','<?=$unPaiement->getIdAdherent();?>')"></i>
           </td>
         </tr>
       <?php }} ?>
@@ -97,9 +97,13 @@
     <!-- Fin tableau -->
   </body>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <script>function DelPaiement(id){
+  <script>function DelPaiement(idpa,idad){
       if(confirm("Voulez vous vraiment supprimer ce paiement ?")){
-              window.location='../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement='+id
+        <?php  if (isset($_GET['idAdherent'])){ ?>
+              window.location='../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement='+idpa+'&idAdherent='+idad
+        <?php }else{ ?>
+              window.location='../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement='+idpa
+          <?php } ?>
       }
       else{
               alert("Le paiement n'a pas été supprimé.")
