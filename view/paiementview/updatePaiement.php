@@ -5,7 +5,18 @@
   <title>Modification d'un Paiement</title>
 </head>
 <body>
-  <h1>Modification d'un Paiement</h1>
+
+  <!-- Titre du formulaire paiement -->
+  <?php if (isset( $_GET['idAdherent'])){
+    $id = $_GET['idAdherent'];
+    $adh = $adherents->getUnAdherent($id); ?>
+    <h1>Modification du Paiement concernant <?php echo $adh->getPrenom()." ".$adh->getNom();?> </h1>
+  <?php }else{ ?>
+    <h1>Modification du Paiement</h1>
+  <?php } ?>
+  <!-------------------------------->
+
+  <h1></h1>
   <form class="" action="../../controler/tablepaiement/updatePaiementValide.ctrl.php?idPaiement=<?=$_GET['idPaiement']?>&idAdherent=<?=$_GET['idAdherent']?>" method="post">
 
     <!--Infos essentielles -->
