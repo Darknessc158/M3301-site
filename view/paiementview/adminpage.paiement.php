@@ -58,19 +58,19 @@
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
 
+        <th>Catégorie</th>
+
         <th>Date du paiement</th>
 
         <th>Prix</th>
 
-        <th>Description</th>
+        <th>Adhérent</th>
 
         <th>Etat du paiement</th>
 
-        <th>Licence, Adhésion, Article</th>
+        <th>Description</th>
 
-        <th>Adhérent</th>
-
-        <th>Action</th>
+        <th>Actions</th>
 
       </tr>
     </thead>
@@ -78,13 +78,14 @@
 
       <?php foreach ($respaiement as $key => $unPaiement) { ?>
         <tr>
+          <td><?=$unPaiement->getType();?></td>
           <td><?=$unPaiement->getDatePaiement();?></td>
           <td><?=$unPaiement->getPrix();?></td>
-          <td><?=$unPaiement->getDescription();?></td>
-          <td><?=$unPaiement->getEtatDuPaiement();?></td>
-          <td><?=$unPaiement->getType();?></td>
           <td>
           <?php echo ($paiements->getNomPrenomAdh($unPaiement->getIdAdherent()))[1]." ".($paiements->getNomPrenomAdh($unPaiement->getIdAdherent()))[0]; ?>
+          </td>
+          <td><?=$unPaiement->getEtatDuPaiement();?></td>
+          <td><?=$unPaiement->getDescription();?></td>
           <td>
             <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update&idAdherent=<?=$unPaiement->getIdAdherent();?>"><i class="far fa-edit" title="Modifier"></i></a>
             <i class="far fa-trash-alt" title="Supprimer" style="cursor:pointer; color:red;" onClick="DelPaiement('<?=$unPaiement->getIdPaiement();?>','<?=$unPaiement->getIdAdherent();?>')"></i>
