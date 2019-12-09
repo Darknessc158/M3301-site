@@ -47,5 +47,8 @@ $lesadh = $adherents->getLesAdherents();
 //----------------------------------------------------------
 
 //view
-include('../../view/paiementview/adminpage.paiement.php');
+if (isset($_GET['idAdherent'])){
+  include('../../view/paiementview/adminpage.paiement.php?idAdherent='.<?=$_GET['idAdherent']?>);
+}
+
 ?>
