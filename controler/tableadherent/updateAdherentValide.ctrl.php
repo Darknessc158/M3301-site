@@ -20,7 +20,8 @@ $numlicence = $_POST['numlicence'];
 //delete avant
 $adherents->supprUnAdherent($_GET['idAdherent']);
 
-$unAdherent = $adherents->insertUnAdherent($nom,$prenom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numlicence);
+//inverse prenom et nom car bug
+$unAdherent = $adherents->insertUnAdherent($prenom,$nom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numlicence);
 
 $resadh = $adherents->getLesAdherents();
 
