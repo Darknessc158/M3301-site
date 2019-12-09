@@ -104,7 +104,7 @@
           <td>
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket" title="Voir les paiements."></i></a>
             <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit" title="Modifier l'adhérent."></i></a>
-            <i class="fas fa-user-times" title="Supprimer l'adhérent." style="cursor:pointer;" onClick="DelAdherent('<?=$unAdherent->getIdAdherent();?>')"></i>
+            <i class="fas fa-user-times" title="Supprimer l'adhérent." style="cursor:pointer; color:red;" onClick="DelAdherent('<?=$unAdherent->getIdAdherent();?>')"></i>
 
 
 
