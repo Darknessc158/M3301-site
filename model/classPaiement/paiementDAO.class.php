@@ -37,7 +37,7 @@ class paiementDAO { //classe paiement basededonnees
     return $res;
   }
 
-  function getUnPaiement($idPaiement){ //recuperation d'un paiement avec l'id d'un adherent
+  function getUnPaiement($idPaiement){ //recuperation d'un paiement avec l'id d'un paiement
     $req = "SELECT * FROM paiement WHERE idPaiement=$idPaiement;";
     $sth=$this->db->query($req);
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'paiement');

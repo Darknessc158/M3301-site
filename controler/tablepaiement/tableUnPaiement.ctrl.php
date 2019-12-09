@@ -11,7 +11,9 @@ if (isset($_GET['type'])) {
   $type = $_GET['type'];
   if ($type == 'delete'){
     $id=$_GET['idPaiement'];
+    $idadh = ($paiements->getUnPaiement($id))->getIdAdherent(); //recupere l'id de l'adherent
     $paiements->supprUnPaiement($id);
+    $res = $paiements->getLesPaiementsDunAdherent($idadh); //Pour afficher ses paiements a lui
   }
 }
 //----------------------------------------------------------------------------

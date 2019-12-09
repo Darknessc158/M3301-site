@@ -47,8 +47,10 @@ $lesadh = $adherents->getLesAdherents();
 //----------------------------------------------------------
 
 //view
-if (isset($_GET['idAdherent'])){
-  include('../../view/paiementview/adminpage.paiement.php?idAdherent='.<?=$_GET['idAdherent']?>);
+if (isset($_GET['idAdherent'])){//si l'adherent est set alors on redirige vers ses paiements
+  include('../../controler/tablepaiement/tableUnPaiement.ctrl.php');
+}else{
+  include('../../view/paiementview/adminpage.paiement.php');
 }
 
 ?>
