@@ -87,7 +87,6 @@
           <?php echo ($paiements->getNomPrenomAdh($unPaiement->getIdAdherent()))[1]." ".($paiements->getNomPrenomAdh($unPaiement->getIdAdherent()))[0]; ?>
           <td>
             <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update"><i class="far fa-edit" title="Modifier"></i></a>
-            <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i style="color:red;" class="far fa-trash-alt" title="Supprimer"></i></a>
             <i class="far fa-trash-alt" title="Supprimer" style="cursor:pointer; color:red;" onClick="DelPaiement('<?=$unPaiement->getIdPaiement();?>')"></i>
           </td>
         </tr>
