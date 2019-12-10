@@ -34,6 +34,11 @@ class articleDAO
     return $res[0];
   }
 
+  function insertUnArticle($prix,$categorie,$stock,$description,$marque){ // Ajout d'un adherent
+    $req = "INSERT INTO paiement (prix,categorie,quantite,description,marque) VALUES ('$prix','$categorie','$stock','$description','$marque');";
+    $sth=$this->db->query($req);
+  }
+
 }
 
 

@@ -79,7 +79,7 @@
           <td><?=$unArticle->getMarque();?></td>
         </tr>
         <?php } ?>
-        <p>Ajouter un article(Pas encore fait) : <a href="../../view/adherentview/insertAdherent.php"> <i class="fas fa-plus-circle"></i> </a></p>
+        <p>Ajouter un article : <a href="../../view/articleview/insertArticle.php"> <i class="fas fa-plus-circle"></i> </a></p>
     </tbody>
   </table>
     <!-- Fin tableau -->
