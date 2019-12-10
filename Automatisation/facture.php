@@ -22,23 +22,54 @@ function facture(int numero_paiement){
  public  $quantite;
 
   }
-  //Liste des numero d'article et des quantite
-  $req = "SELECT num_article,quantite FROM LIGNE_COMMANDE_ARTICLE  where COMMANDEnum_commande = $numcommande ;";
+  //Liste des numero d'article et des quantite dans une ligne commande
+  $req = "SELECT * FROM LIGNE_COMMANDE_ARTICLE  where COMMANDEnum_commande = $numcommande ;";
   $sth=$this->db->query($req);
-  $clearticlequantite = $sth->fetchAll(PDO::FETCH_CLASS,'commandearticle');
-
-  //creer un objet quantite/numArticle/nomarticle/prix
-
-
-  //Liste des objets Article qui sont dans la commande
-  $req = "SELECT * FROM ARTICLE  where num_article = $clearticlequantite.numArticle ;";
-  $sth=$this->db->query($req);
-  $liste_article = $sth->fetchAll(PDO::FETCH_CLASS,'article');
+  $listeprod_lignecommande = $sth->fetchAll(PDO::FETCH_CLASS,'LIGNE_COMMANDE_ARTICLE');
 
 
 
+   //pour chaque num article de ligne de commande on va
 
-  
+    //Boucle permettant d'afficher tout le produit contenue dans une commandes
+    foreach ($listeprod_lignecommande) {
+      $req = "SELECT * FROM LIGNE_COMMANDE_ARTICLE  where Num_article = $listeprod_lignecommande.ArticleNum_article ;";
+      $sth=$this->db->query($req);
+      $produit_courant = $sth->fetchAll(PDO::FETCH_CLASS,'article');
+
+
+      //Il faudra mettre ça dans une ligne ou ecrire dans un fichier et utiliser le tableau de fpdm   http://www.fpdf.org/?lang=fr
+      printf("quantité =%s
+              num produit = %s
+              nom article = %s
+              Prix unitaire HT = %d
+              Marque = %s
+              Prix total HT = %d
+              Prix total TTC = %d",$listeprod_lignecommande.quantite,%$listeprod_lignecommande.ARTICLENum_article,%$produit_courant.Description,%$produit_courant.Prix,... );
+
+    //Passer a la ligne
+    }
+
+
+  require('fpdm/fpdm.php');
+
+
+  $fields = array(
+  	'num_paiement'    => $numPaiement,
+  	'num_commande' => $numcommande,
+  	'nom_client' => $membre.nom,
+  	'adresse_client' => $membre.adress,
+    'ligne1_quantite' =>,
+    'ligne1_numarticle' =>,
+    'ligne1_nom' => ,
+    'marque' => ,
+    'prix' =>
+  );
+
+  $pdf = new FPDM('doc_compa.pdf');
+  $pdf->Load($fields, false); // second parameter: false if field values are in ISO-8859-1, true if UTF-8
+  $pdf->Merge();
+  $pdf->Output("D", "formulaire_remplie.pdf");
 
 
 
