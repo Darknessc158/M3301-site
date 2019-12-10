@@ -17,25 +17,27 @@ if (isset($_GET['type'])) {
 //----------------------------------------------------------------------------
 
 
-//GESTION affichage paiement----------------------------------------
+//GESTION affichage paiement--et tri--------------------------------------
 if (isset($_GET['idAdherent'])){ // on a l'id adherent
   $id=$_GET['idAdherent'];
-  $res = $paiements->getLesPaiementsDunAdherent($id);
+  if (isset($_GET['tri'])){ //Si valeur et element dans la query string
+    $tri=$_GET['tri'];
+    $res = $paiements->getListeTrieAvecAdh($tri,$id);
+  }else{
+    $res = $paiements->getLesPaiementsDunAdherent($id);
+  }
 }else{
-  $res = $paiements->getLesPaiements(); // si pas id on recupere tous les paiements
+  if (isset($_GET['tri'])){ //Si valeur et element dans la query string
+    $tri=$_GET['tri'];
+    $res = $paiements->getListeTrie($tri);
+  }else{
+    $res = $paiements->getLesPaiements(); // si pas id on recupere tous les paiements
+  }
 }
 $respaiement = $res; //on remplit la variable pour la view
 
 //--------------------------------------------------------------------
 
-//GESTION tri affichage paiement----------------------------------------
-if (isset($_GET['tri'])){ //Si valeur et element dans la query string
-  $tri=$_GET['tri'];
-  $res = $paiements->getListeTrie($tri);
-}else{
-  $res = $paiements->getLesPaiements();
-}
-//--------------------------------------------------------------------
 
 //recuperation des donnes pour recup le nom et prenom de l'id qui correspond
 require_once('../../model/classAdherent/adherent.class.php');

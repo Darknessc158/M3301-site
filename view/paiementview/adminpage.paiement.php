@@ -53,20 +53,38 @@
 <?php if ($respaiement == null){ if (isset($_GET['idAdherent'])) {echo 'Pas de paiement enregistré pour cet adhérent';}else{echo "Pas de paiement enregistré";}}else{ ?>
 
   <!-- Tableau !-->
-  <?php $chemin='../../controler/tableadherent/tableadherent.ctrl.php' ?>
+  <?php $chemin='../../controler/tablepaiement/tableUnPaiement.ctrl.php?';
+    if (isset($_GET['idAdherent'])){
+      $id = $_GET['idAdherent'];
+      $chemin='../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent='.$id.'&';
+    }
+
+   ?>
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
 
-        <th>Catégorie</th>
+        <th>Catégorie
+          <a href="<?= $chemin ?>tri=catecroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>tri=catedecroit"><i class="fas fa-sort-down"></i></a>
+        </th>
 
-        <th>Date du paiement</th>
+        <th>Date du paiement
+          <a href="<?= $chemin ?>tri=datepaiementcroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>tri=datepaiementdecroit"><i class="fas fa-sort-down"></i></a>
+        </th>
 
-        <th>Prix</th>
+        <th>Prix
+          <a href="<?= $chemin ?>tri=prixcroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>tri=prixdecroit"><i class="fas fa-sort-down"></i></a>
+        </th>
 
         <th>Adhérent</th>
 
-        <th>Etat du paiement</th>
+        <th>Etat du paiement
+          <a href="<?= $chemin ?>?tri=etatcroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=etatdecroit"><i class="fas fa-sort-down"></i></a>
+        </th>
 
         <th>Description</th>
 
