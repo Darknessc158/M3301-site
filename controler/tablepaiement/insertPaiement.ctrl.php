@@ -6,22 +6,26 @@ require_once('../../model/classArticle/articleDAO.class.php');
 
 // Creation de l'instance DAO
 $paiements = new paiementDAO('../../model/data/db');
+$articles = new articleDAO('../../model/data/db');
 require_once('../../model/classAdherent/adherent.class.php');
 require_once('../../model/classAdherent/adherentDAO.class.php');
 
 // Récupération des données de configuration
 $config = parse_ini_file('../../config/config.ini');
 
-$datePaiement = $_POST['datePaiement'];
-$prix = $_POST['prix'];
-$description = $_POST['description'];
-$etatDuPaiement = $_POST['etatDuPaiement'];
-$type = $_POST['type'];
 
-if($type == 'Article'){
-  $refArticle = $_POST['nomArticle'];
+$type = $_POST['type'];
+if ($type == 'Article'){
+  $datePaiement = $_POST['datePaiementArticle'];
+  $description = $_POST['nomArticle'];
   $quantiteCommande = $_POST['quantiteCommande'];
-  //Puis faire l'instance DAO avec la class article et verif puis diminuer le stock ...
+  $prix = (($articles->getUnArticleRef($description))->getPrix())*$quantiteCommande;
+  $etatDuPaiement = $_POST['etatDuPaiementArticle'];
+}else{//adhésion,licence
+  $datePaiement = $_POST['datePaiement'];
+  $prix = $_POST['prix'];
+  $description = $_POST['description'];
+  $etatDuPaiement = $_POST['etatDuPaiement'];
 }
 
 if (isset($_GET['idAdherent'])){

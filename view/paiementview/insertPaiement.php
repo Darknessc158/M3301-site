@@ -22,24 +22,29 @@
 
     <!--Si l'adherent n'est pas set on affiche la liste des adherents -->
     <?php if (!isset( $_GET['idAdherent'])){ ?>
+      <label>Sélectionnez l'adhérent concerné :</label>
       <select name="idAdherent">
         <?php foreach ($lesadh as $unadh) { ?>
           <option value ="<?php echo $unadh->getIdAdherent();?>"><?php echo $unadh->getPrenom()." ".$unadh->getNom();?></option>
         <?php } ?>
-      </select>
+      </select></br>
     <?php } ?>
     <!-------------------------------->
+    <fieldset>
+      <legend>Type du paiement</legend>
+
     <label for="type">Sélectionnez un type (Licence,adhésion,Article) :</label><br/>
     <SELECT name="type" size="1" id="mySelect" >
       <option value = 'Licence'>Licence</option>
       <option value = 'Adhésion' selected>Adhésion</option>
       <option value = 'Article' >Article</option>
     </SELECT>
+        </fieldset>
 
     <!--Infos essentielles pour l'ajout d'une licence, adhésion -->
 
 
-      <div id="formbase" style="display:none;">
+      <div id="formbase" style="display:block;">
 
       <fieldset>
 
@@ -67,20 +72,20 @@
         <legend>Informations article</legend>
 
         <label for="datePaiement">Date du paiement :</label><br/>
-        <input type="date" name="datePaiement" value="" /><br/>
+        <input type="date" name="datePaiementArticle" value="" /><br/>
 
-        <label for='nomArticle'>Liste des articles disponibles :</label>
+        <label for='nomArticle'>Liste des articles disponibles :</label><br/>
         <SELECT name="nomArticle" size="1">
           <?php foreach ($lesArticles as  $unArticle) { ?>
             <option value ="<?php $unArticle->getDescription()?>"><?php echo $unArticle->getDescription()?></option>
           <?php } ?>
-        </SELECT>
+        </SELECT><br/>
 
-        <label for="">Quantité commandée :</label>
-        <input type="text" name="quantiteCommande" value="" />
+        <label for="">Quantité commandée :</label><br/>
+        <input type="text" name="quantiteCommande" value="" /><br/>
 
         <label for="etatDuPaiement">Etat du paiement :</label><br/>
-        <input type="text" name="etatDuPaiement" value="" /><br/>
+        <input type="text" name="etatDuPaiementArticle" value="" /><br/>
 
       </fieldset>
     </div>
@@ -90,6 +95,7 @@
       <input type="reset" value="Annuler" />
       Retour : <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;}?>"><i class="fas fa-undo"></i></a>
     </p>
+
   </form>
 
 
@@ -102,6 +108,7 @@ document.getElementById('mySelect').onchange = function(){
     document.getElementById('formcache').style.display = 'block';
   } else {
     document.getElementById('formcache').style.display = 'none';
+    document.getElementById('formbase').style.display = 'block';
   }
 };
 </script>

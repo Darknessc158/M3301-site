@@ -33,6 +33,12 @@ class articleDAO
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'article');
     return $res[0];
   }
+  function getUnArticleRef($ref){ //recuperation d'un adherent avec son id
+    $req = "SELECT * FROM article WHERE $ref=description;";
+    $sth=$this->db->query($req);
+    $res = $sth->fetchAll(PDO::FETCH_CLASS,'article');
+    return $res[0];
+  }
 
   function insertUnArticle($prix,$categorie,$stock,$description,$marque){ // Ajout d'un adherent
     $req = "INSERT INTO paiement (prix,categorie,quantite,description,marque) VALUES ('$prix','$categorie','$stock','$description','$marque');";
