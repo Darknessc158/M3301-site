@@ -33,19 +33,7 @@
     <!--Infos essentielles pour l'ajout d'un paiement -->
     <fieldset>
 
-      <legend>Informations du paiement</legend>
-
-      <label for="datePaiement">Date du paiement :</label><br/>
-      <input type="date" name="datePaiement" value="" /><br/>
-
-      <label for="prix">Prix :</label><br/>
-      <input type="text" name="prix" value="" /><br/>
-
-      <label for="description">Description :</label><br/>
-      <input type="text" name="description" value="" /><br/>
-
-      <label for="etatDuPaiement">Etat du paiement :</label><br/>
-      <input type="text" name="etatDuPaiement" value="" /><br/>
+      <legend>Informations adhésion, licence</legend>
 
       <label for="type">Sélectionnez un type (Licence,adhésion,Article) :</label><br/>
       <SELECT name="type" size="1" id="mySelect" >
@@ -54,20 +42,44 @@
         <option value = 'Article' >Article</option>
       </SELECT>
 
+      <div id="formbase" style="display:block;">
+        <label for="datePaiement">Date du paiement :</label><br/>
+        <input type="date" name="datePaiement" value="" /><br/>
+
+        <label for="prix">Prix :</label><br/>
+        <input type="text" name="prix" value="" /><br/>
+
+        <label for="description">Description :</label><br/>
+        <input type="text" name="description" value="" /><br/>
+
+        <label for="etatDuPaiement">Etat du paiement :</label><br/>
+        <input type="text" name="etatDuPaiement" value="" /><br/>
+      </div>
+
+
     </fieldset>
 
     <!--Infos supplémentaires si c'est un Article -->
     <div id="formcache" style="display:none;">
       <fieldset>
         <legend>Informations article</legend>
+
+        <label for="datePaiement">Date du paiement :</label><br/>
+        <input type="date" name="datePaiement" value="" /><br/>
+
         <label for='nomArticle'>Liste des articles disponibles :</label>
         <SELECT name="nomArticle" size="1">
           <?php foreach ($lesArticles as  $unArticle) { ?>
             <option value ="<?php $unArticle->getDescription()?>"><?php echo $unArticle->getDescription()?></option>
           <?php } ?>
         </SELECT>
+
         <label for="">Quantité commandée :</label>
         <input type="text" name="quantiteCommande" value="" />
+
+        <label for="etatDuPaiement">Etat du paiement :</label><br/>
+        <input type="text" name="etatDuPaiement" value="" /><br/>
+        
       </fieldset>
     </div>
 
@@ -84,6 +96,7 @@
 <script>//Javascript si c'est un Article
 document.getElementById('mySelect').onchange = function(){
   if(this.value == 'Article'){
+    document.getElementById('formbase').style.display = 'none';
     document.getElementById('formcache').style.display = 'block';
   } else {
     document.getElementById('formcache').style.display = 'none';
