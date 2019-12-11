@@ -29,20 +29,22 @@
       </select>
     <?php } ?>
     <!-------------------------------->
+    <label for="type">Sélectionnez un type (Licence,adhésion,Article) :</label><br/>
+    <SELECT name="type" size="1" id="mySelect" >
+      <option value = 'Licence'>Licence</option>
+      <option value = 'Adhésion' selected>Adhésion</option>
+      <option value = 'Article' >Article</option>
+    </SELECT>
 
-    <!--Infos essentielles pour l'ajout d'un paiement -->
-    <fieldset>
+    <!--Infos essentielles pour l'ajout d'une licence, adhésion -->
 
-      <legend>Informations adhésion, licence</legend>
 
-      <label for="type">Sélectionnez un type (Licence,adhésion,Article) :</label><br/>
-      <SELECT name="type" size="1" id="mySelect" >
-        <option value = 'Licence'>Licence</option>
-        <option value = 'Adhésion' selected>Adhésion</option>
-        <option value = 'Article' >Article</option>
-      </SELECT>
+      <div id="formbase" style="display:none;">
 
-      <div id="formbase" style="display:block;">
+      <fieldset>
+
+        <legend>Informations adhésion, licence</legend>
+
         <label for="datePaiement">Date du paiement :</label><br/>
         <input type="date" name="datePaiement" value="" /><br/>
 
@@ -79,7 +81,7 @@
 
         <label for="etatDuPaiement">Etat du paiement :</label><br/>
         <input type="text" name="etatDuPaiement" value="" /><br/>
-        
+
       </fieldset>
     </div>
 
