@@ -75,9 +75,9 @@
         <input type="date" name="datePaiementArticle" value="" /><br/>
 
         <label for='nomArticle'>Liste des articles disponibles :</label><br/>
-        <SELECT name="nomArticle" size="1">
+        <SELECT name="descriptionArticle" size="1">
           <?php foreach ($lesArticles as  $unArticle) { ?>
-            <option value ="<?php $unArticle->getDescription()?>"><?php echo $unArticle->getDescription()?></option>
+            <option value ="<?php echo $unArticle->getDescription()?>"><?php echo $unArticle->getDescription()?></option>
           <?php } ?>
         </SELECT><br/>
 

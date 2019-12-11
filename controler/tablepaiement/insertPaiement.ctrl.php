@@ -13,14 +13,14 @@ require_once('../../model/classAdherent/adherentDAO.class.php');
 // Récupération des données de configuration
 $config = parse_ini_file('../../config/config.ini');
 
-
 $type = $_POST['type'];
 if ($type == 'Article'){
   $datePaiement = $_POST['datePaiementArticle'];
-  $description = $_POST['nomArticle'];
+  $description = $_POST['descriptionArticle'];
   $quantiteCommande = $_POST['quantiteCommande'];
   $prix = (($articles->getUnArticleRef($description))->getPrix())*$quantiteCommande;
   $etatDuPaiement = $_POST['etatDuPaiementArticle'];
+  $description = $_POST['descriptionArticle'].'('.$quantiteCommande.')';
 }else{//adhésion,licence
   $datePaiement = $_POST['datePaiement'];
   $prix = $_POST['prix'];

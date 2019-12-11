@@ -34,7 +34,7 @@ class articleDAO
     return $res[0];
   }
   function getUnArticleRef($ref){ //recuperation d'un adherent avec son id
-    $req = "SELECT * FROM article WHERE $ref=description;";
+    $req = "SELECT * FROM article WHERE description='$ref';";
     $sth=$this->db->query($req);
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'article');
     return $res[0];

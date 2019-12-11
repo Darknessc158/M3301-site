@@ -43,6 +43,9 @@
         <li class="nav-item">
           <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tous les paiements</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Tous les articles</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -86,7 +89,7 @@
           <a href="<?= $chemin ?>?tri=etatdecroit"><i class="fas fa-sort-down"></i></a>
         </th>
 
-        <th>Description</th>
+        <th>Description(quantité)</th>
 
         <th>Actions</th>
 
