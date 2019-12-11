@@ -20,5 +20,5 @@ $categorie = $unArticle->getCategorie();
 $stock = $unArticle->getQuantite();
 $marque = $unArticle->getMarque();
 
-include('../../controler/tablearticle/updateArticle.ctrl.php?idArticle='.$id);
+include('../../view/articleview/updateArticle.php');
 ?>

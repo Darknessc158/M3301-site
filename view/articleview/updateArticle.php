@@ -2,11 +2,11 @@
 <html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title>Ajout d'un Article</title>
+  <title>Modification d'un Article</title>
 </head>
 <body>
-  <h1>Ajout d'un article</h1>
-  <form class="" action="../../controler/tablearticle/updateArticle.ctrl.php?idArticle=<<?php echo $_GET['idArticle']; ?>" method="post">
+  <h1>Modification d'un article</h1>
+  <form class="" action="../../controler/tablearticle/updateArticle.ctrl.php?idArticle=<?php echo $_GET['idArticle']; ?>" method="post">
     <p>
         Description (Nom, référence, taille ...) :<br />
        <input type="text" name="description" value="<?php echo $description; ?>" />
@@ -29,7 +29,7 @@
     </p>
 
     <p>
-       <input type="submit" value="Ajouter" />
+       <input type="submit" value="Modifier" />
        <input type="reset" value="Annuler" />
        Retour : <a href="../../controler/tablearticle/tablearticle.ctrl.php"><i class="fas fa-undo"></i></a>
     </p>

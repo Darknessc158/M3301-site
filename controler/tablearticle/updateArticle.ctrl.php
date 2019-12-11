@@ -8,11 +8,11 @@ $config = parse_ini_file('../../config/config.ini');
 // Creation de l'instance DAO
 $articles = new articleDAO($config['database_path']);
 
-$description = $_POST['prenom'];
-$prix = $_POST['nom'];
+$description = $_POST['description'];
+$prix = $_POST['prix'];
 $categorie = $_POST['categorie'];
-$stock = $_POST['datenaissance'];
-$marque = $_POST['adresse'];
+$stock = $_POST['stock'];
+$marque = $_POST['marque'];
 
 //delete avant
 $articles->supprUnArticle($_GET['idArticle']);
