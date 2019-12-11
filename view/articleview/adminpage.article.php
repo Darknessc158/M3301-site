@@ -13,7 +13,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" style="text-align:center;">
 
 
   <div class="jumbotron text-center" style="margin-bottom:0">
@@ -43,6 +43,9 @@
         <li class="nav-item">
           <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tous les paiements</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Tous les articles</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -54,29 +57,32 @@
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
 
-        <th>Identifiant de l'article</th>
-
-        <th>Prix</th>
-
         <th>Catégorie</th>
+
+        <th>Produit et taille</th>
 
         <th>Quantité en stock</th>
 
-        <th>Description</th>
+        <th>Prix</th>
 
         <th>Marque</th>
+
+        <th>Actions</th>
 
       </tr>
     </thead>
     <tbody>
       <?php foreach ($lesArticles as  $unArticle){ ?>
         <tr>
-          <td><?=$unArticle->getIdArticle();?></td>
-          <td><?=$unArticle->getPrix();?></td>
           <td><?=$unArticle->getCategorie();?></td>
-          <td><?=$unArticle->getQuantite();?></td>
           <td><?=$unArticle->getDescription();?></td>
+          <td><?=$unArticle->getQuantite();?></td>
+          <td><?=$unArticle->getPrix();?></td>
           <td><?=$unArticle->getMarque();?></td>
+          <td>
+            <a href="../../controler/tablearticle/updateArticleAvant.ctrl.php?idArticle=<?=$unArticle->getIdArticle();?>"><i class="fas fa-user-edit" title="Modifier l'article."></i></a>
+            <i class="fas fa-user-times" title="Supprimer l'article." style="cursor:pointer; color:red;" onClick="DelArticle('<?=$unArticle->getIdArticle();?>')"></i>
+            </td>
         </tr>
         <?php } ?>
         <p>Ajouter un article : <a href="../../view/articleview/insertArticle.php"> <i class="fas fa-plus-circle"></i> </a></p>
@@ -85,4 +91,14 @@
     <!-- Fin tableau -->
 </body>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!-- Script pour valider supression d'un adhérent -->
+<script>function DelArticle(id){
+    if(confirm("Voulez vous vraiment supprimer cet article ?")){
+            window.location='../../controler/tablearticle/tablearticle.ctrl.php?type=delete&idArticle='+id
+    }
+    else{
+            alert("L'article n'a pas été supprimé.")
+    }
+}
+</script>
 </html>

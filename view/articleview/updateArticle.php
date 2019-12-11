@@ -6,26 +6,26 @@
 </head>
 <body>
   <h1>Ajout d'un article</h1>
-  <form class="" action="../../controler/tablearticle/insertArticle.ctrl.php" method="post">
+  <form class="" action="../../controler/tablearticle/updateArticle.ctrl.php?idArticle=<<?php echo $_GET['idArticle']; ?>" method="post">
     <p>
         Description (Nom, référence, taille ...) :<br />
-       <input type="text" name="description" value="" />
+       <input type="text" name="description" value="<?php echo $description; ?>" />
     </p>
     <p>
         Prix :<br />
-       <input type="text" name="prix" value="" />
+       <input type="text" name="prix" value="<?php echo $prix; ?>" />
     </p>
     <p>
        Catégorie(pneu,tenue...) :<br />
-       <input type="text" name="categorie" value="" />
+       <input type="text" name="categorie" value="<?php echo $categorie; ?>" />
     </p>
     <p>
        Quantité en stock :<br />
-       <input type="text" name="stock" value="" />
+       <input type="text" name="stock" value="<?php echo $stock; ?>" />
     </p>
     <p>
        Marque :<br />
-       <input type="text" name="marque" value="" />
+       <input type="text" name="marque" value="<?php echo $marque; ?>" />
     </p>
 
     <p>

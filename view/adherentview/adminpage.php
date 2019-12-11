@@ -105,11 +105,7 @@
             <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket" title="Voir les paiements."></i></a>
             <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit" title="Modifier l'adhérent."></i></a>
             <i class="fas fa-user-times" title="Supprimer l'adhérent." style="cursor:pointer; color:red;" onClick="DelAdherent('<?=$unAdherent->getIdAdherent();?>')"></i>
-
-
-
-
-            </td>
+          </td>
         </tr>
       <?php } ?>
       <p>Ajouter un adherent : <a href="../../view/adherentview/insertAdherent.php"> <i class="fas fa-plus-circle"></i> </a></p>
