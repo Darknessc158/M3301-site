@@ -38,7 +38,7 @@ class article
   }
   public function reduireStock($x)
   {
-    $this->quantite = $this->quantite - $x;
+    $this->quantite = (string)($this->quantite - $x);
   }
 
 }

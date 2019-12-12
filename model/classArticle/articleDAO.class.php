@@ -49,6 +49,16 @@ class articleDAO
     $sth=$this->db->query($req);
   }
 
+  function updateUnArticle($article){ // update d'un article
+    $quantite = (INTEGER)$article->getQuantite();
+    var_dump($quantite);
+    $numArticle = (INTEGER)$article->getIdArticle();
+    var_dump($numArticle);
+    $req = "UPDATE article set quantiteCommande = '$quantite' WHERE numArticle='$numArticle';";
+    $sth=$this->db->query($req);
+    var_dump($sth);
+  }
+
 }
 
 

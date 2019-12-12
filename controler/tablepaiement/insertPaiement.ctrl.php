@@ -22,7 +22,11 @@ if ($type == 'Article'){
   $description = $_POST['descriptionArticle'];
   $quantiteCommande = $_POST['quantiteCommande'];
   $articlePaye = $articles->getUnArticleRef($description);
-  $articlePaye->reduireStock($quantiteCommande); //on reduit le stock
+  var_dump($quantiteCommande);
+  var_dump($articlePaye);
+  $articlePaye->reduireStock($quantiteCommande); //on reduit le stock dans php
+  var_dump($articlePaye);
+  $articles->updateUnArticle($articlePaye); //on update le stock dans le DAO
   $prix = ($articlePaye->getPrix())*$quantiteCommande;
   $etatDuPaiement = $_POST['etatDuPaiementArticle'];
   $description = $_POST['descriptionArticle'].'('.$quantiteCommande.')';

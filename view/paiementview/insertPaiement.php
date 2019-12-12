@@ -78,7 +78,7 @@
         <SELECT name="descriptionArticle" size="2">
           <?php foreach ($lesArticles as  $unArticle) { ?>
             <option value ="<?php echo $unArticle->getDescription()?>"><?php echo $unArticle->getDescription();?></option>
-            <option value="">Quantité restante : <?php echo $unArticle->getQuantite();  ?></option> <!--Affiche le stock restant-->
+            <option value="" disabled>Quantité restante : <?php echo $unArticle->getQuantite();  ?></option> <!--Affiche le stock restant-->
           <?php } ?>
         </SELECT><br/>
 
