@@ -84,7 +84,7 @@
         <th><p>Email
         </p></th>
         <th><p>Numéro de licence
-          <a href="<?= $chemin ?>?tri=numlicencecroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=numlicencecroit"><i  id="asc" onclick="ChangeIcon(this);" class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>?tri=numlicencedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
         <th>Actions</th>
@@ -115,13 +115,24 @@
 </body>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <!-- Script pour valider supression d'un adhérent -->
-<script>function DelAdherent(id){
+<script>
+function DelAdherent(id){
     if(confirm("Voulez vous vraiment supprimer cet adhérent ?")){
             window.location='../../controler/tableadherent/tableadherent.ctrl.php?type=delete&idAdherent='+id
     }
     else{
             alert("L'adhérent n'a pas été supprimé.")
     }
+}
+function ChangeIcon(element){
+  var x = element.getElementById("asc");
+  var v = x.getAttribute("class");
+  if (v == "fas fa-sort-up"){
+    v = "fas fa-sort-down";
+  }else{
+    v = "fas fa-sort-up";
+  }
+  x.setAttribute("class",v);
 }
 </script>
 </html>
