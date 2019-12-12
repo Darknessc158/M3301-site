@@ -38,65 +38,65 @@
           <option value = 'Licence' disabled>Licence</option>
           <option value = 'Adhésion' disabled>Adhésion</option>
           <option value = 'Article' selected>Article</option>
-        <?php $article=1; } ?>
-      </SELECT>
-
-        </fieldset>
-<?php if ($article != 1) { ?>
-
-
-    <!--Infos essentielles -->
-      <div id="formbase">
-
-      <fieldset>
-
-      <legend>Informations <?php echo $type; ?></legend>
-
-      <label for="datePaiement">Date du paiement :</label><br/>
-      <input type="date" name="datePaiement" value="<?php echo $datePaiement ?>" /><br/>
-
-      <label for="prix">Prix :</label><br/>
-      <input type="text" name="prix" value="<?php echo $prix ?>" /><br/>
-
-      <label for="description">Description :</label><br/>
-      <input type="text" name="description" value="<?php echo $description ?>" /><br/>
-
-      <label for="etatDuPaiement">Etat du paiement :</label><br/>
-      <input type="text" name="etatDuPaiement" value="<?php echo $etatDuPaiement ?>" /><br/>
-
-
-
-    </fieldset>
-  </div>
-
-  <?php }else{ ?>
-
-    <!--Infos supplémentaires si c'est un Article -->
-    <div id="formaticle">
-      <fieldset>
-        <legend>Informations article pour <?php echo $description ?></legend>
-
-        <label for="datePaiement">Date du paiement :</label><br/>
-        <input type="date" name="datePaiementArticle" value="<?php echo $datePaiement ?>" /><br/>
-
-        <label for="">Quantité commandée :</label><br/>
-        <input type="text" name="quantiteCommande" value="<?php echo $quantiteCommande ?>" /><br/>
-
-        <label for="etatDuPaiement">Etat du paiement :</label><br/>
-        <input type="text" name="etatDuPaiementArticle" value="<?php echo $etatDuPaiement ?>" /><br/>
+          <?php $article=1; } ?>
+        </SELECT>
 
       </fieldset>
-    </div>
-  <?php } ?>
-
-    <p>
-      <input type="submit" value="Modifier" />
-      <input type="reset" value="Annuler" />
-      Retour : <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;}?>"><i class="fas fa-undo"></i></a>
-    </p>
-  </form>
+      <?php if ($article != 1) { ?>
 
 
-</body>
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-</html>
+        <!--Infos essentielles -->
+        <div id="formbase">
+
+          <fieldset>
+
+            <legend>Informations <?php echo $type; ?></legend>
+
+            <label for="datePaiement">Date du paiement :</label><br/>
+            <input type="date" name="datePaiement" value="<?php echo $datePaiement ?>" /><br/>
+
+            <label for="prix">Prix :</label><br/>
+            <input type="text" name="prix" value="<?php echo $prix ?>" /><br/>
+
+            <label for="description">Description :</label><br/>
+            <input type="text" name="description" value="<?php echo $description ?>" /><br/>
+
+            <label for="etatDuPaiement">Etat du paiement :</label><br/>
+            <input type="text" name="etatDuPaiement" value="<?php echo $etatDuPaiement ?>" /><br/>
+
+
+
+          </fieldset>
+        </div>
+
+      <?php }else{ ?>
+
+        <!--Infos supplémentaires si c'est un Article -->
+        <div id="formaticle">
+          <fieldset>
+            <legend>Informations article pour <?php echo $description ?></legend>
+
+            <label for="datePaiement">Date du paiement :</label><br/>
+            <input type="date" name="datePaiementArticle" value="<?php echo $datePaiement ?>" /><br/>
+
+            <label for="">Quantité commandée :</label><br/>
+            <input type="text" name="quantiteCommande" value="<?php echo $quantiteCommande ?>" /><br/>
+
+            <label for="etatDuPaiement">Etat du paiement :</label><br/>
+            <input type="text" name="etatDuPaiementArticle" value="<?php echo $etatDuPaiement ?>" /><br/>
+
+          </fieldset>
+        </div>
+      <?php } ?>
+
+      <p>
+        <input type="submit" value="Modifier" />
+        <input type="reset" value="Annuler" />
+        Retour : <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;}?>"><i class="fas fa-undo"></i></a>
+      </p>
+    </form>
+
+
+  </body>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </html>
