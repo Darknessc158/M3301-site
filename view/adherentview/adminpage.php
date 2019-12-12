@@ -87,6 +87,18 @@
           <a href="<?= $chemin ?>?tri=numlicencecroit"><i  id="asc" onclick="ChangeIcon(this);" class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>?tri=numlicencedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
+
+        <p>This example demonstrates how to assign an "ondblclick" event to a p element.</p>
+
+        <p id="demo" ondblclick="myFunction()">Double-click me.</p>
+
+        <script>
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "I was double-clicked!";
+        }
+        </script>
+
+
         <th>Actions</th>
       </tr>
     </thead>
