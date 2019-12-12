@@ -20,7 +20,7 @@ $unPaiement = $paiements->getUnPaiement($id);
 
 $datePaiement = $unPaiement->getDatePaiement();
 $prix = $unPaiement->getPrix();
-$description = $unPaiement->getDescription();
+$description = explode("(",$unPaiement->getDescription())[0];
 $etatDuPaiement = $unPaiement->getEtatDuPaiement();
 $type = $unPaiement->getType();
 if ($type == 'Article'){

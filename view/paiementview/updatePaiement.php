@@ -23,31 +23,34 @@
       <legend>Type du paiement</legend>
 
       <!--Option à séléctionner en fonction du type deja choisi -->
-      <label for="type">Sélectionnez un type (Licence,adhésion,Article) :</label><br/>
-      <SELECT name="type" size="1" id="mySelect" >
+      <?php $article = 0; ?>
+      <label for="type">Type du paiement à modifier : <?php echo $type; ?></label><br/>
+      <SELECT name="type" size="1" id="mySelect" hidden >
         <?php if ($type == Licence){?>
           <option value = 'Licence' selected>Licence</option>
-          <option value = 'Adhésion'>Adhésion</option>
-          <option value = 'Article'>Article</option>
+          <option value = 'Adhésion' disabled>Adhésion</option>
+          <option value = 'Article' disabled>Article</option>
         <?php }else if ($type == Adhésion){?>
-          <option value = 'Licence'>Licence</option>
+          <option value = 'Licence' disabled>Licence</option>
           <option value = 'Adhésion' selected>Adhésion</option>
-          <option value = 'Article'>Article</option>
+          <option value = 'Article' disabled>Article</option>
         <?php }else{?>
-          <option value = 'Licence'>Licence</option>
-          <option value = 'Adhésion'>Adhésion</option>
+          <option value = 'Licence' disabled>Licence</option>
+          <option value = 'Adhésion' disabled>Adhésion</option>
           <option value = 'Article' selected>Article</option>
-        <?php } ?>
+        <?php $article=1; } ?>
       </SELECT>
 
         </fieldset>
+<?php if ($article != 1) { ?>
+
 
     <!--Infos essentielles -->
-      <div id="formbase" style="display:block;">
+      <div id="formbase">
 
       <fieldset>
 
-      <legend>Informations adhésion, licence</legend>
+      <legend>Informations <?php echo $type; ?></legend>
 
       <label for="datePaiement">Date du paiement :</label><br/>
       <input type="date" name="datePaiement" value="<?php echo $datePaiement ?>" /><br/>
@@ -64,50 +67,36 @@
 
 
     </fieldset>
+  </div>
+
+  <?php }else{ ?>
 
     <!--Infos supplémentaires si c'est un Article -->
-    <div id="formcache" style="display:none;">
+    <div id="formaticle">
       <fieldset>
-        <legend>Informations article</legend>
+        <legend>Informations article pour <?php echo $description ?></legend>
 
         <label for="datePaiement">Date du paiement :</label><br/>
         <input type="date" name="datePaiementArticle" value="<?php echo $datePaiement ?>" /><br/>
 
-        <label for='nomArticle'>Liste des articles disponibles :</label><br/>
-        <SELECT name="descriptionArticle" size="1">
-          <?php foreach ($lesArticles as  $unArticle) { ?>
-            <option value ="<?php echo $unArticle->getDescription()?>"><?php echo $unArticle->getDescription()?></option>
-          <?php } ?>
-        </SELECT><br/>
-
-        <label for="">Quantité commandée :</label>
-        <input type="text" name="quantiteCommande" value="<?php echo $quantiteCommande ?>" />
+        <label for="">Quantité commandée :</label><br/>
+        <input type="text" name="quantiteCommande" value="<?php echo $quantiteCommande ?>" /><br/>
 
         <label for="etatDuPaiement">Etat du paiement :</label><br/>
         <input type="text" name="etatDuPaiementArticle" value="<?php echo $etatDuPaiement ?>" /><br/>
 
       </fieldset>
     </div>
+  <?php } ?>
 
     <p>
       <input type="submit" value="Modifier" />
       <input type="reset" value="Annuler" />
-      Retour : <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php"><i class="fas fa-undo"></i></a>
+      Retour : <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;}?>"><i class="fas fa-undo"></i></a>
     </p>
   </form>
 
 
 </body>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script>//Javascript si c'est un Article
-document.getElementById('mySelect').onchange = function(){
-  if(this.value == 'Article'){
-    document.getElementById('formbase').style.display = 'none';
-    document.getElementById('formcache').style.display = 'block';
-  } else {
-    document.getElementById('formcache').style.display = 'none';
-    document.getElementById('formbase').style.display = 'block';
-  }
-};
-</script>
 </html>
