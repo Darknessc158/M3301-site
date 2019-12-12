@@ -16,25 +16,11 @@
   <?php } ?>
   <!-------------------------------->
 
-  <h1></h1>
+
   <form class="" action="../../controler/tablepaiement/updatePaiementValide.ctrl.php?idPaiement=<?=$_GET['idPaiement']?>&idAdherent=<?=$_GET['idAdherent']?>" method="post">
 
-    <!--Infos essentielles -->
     <fieldset>
-
-      <legend>Informations du paiement</legend>
-
-      <label for="datePaiement">Date du paiement :</label><br/>
-      <input type="date" name="datePaiement" value="<?php echo $datePaiement ?>" /><br/>
-
-      <label for="prix">Prix :</label><br/>
-      <input type="text" name="prix" value="<?php echo $prix ?>" /><br/>
-
-      <label for="description">Description :</label><br/>
-      <input type="text" name="description" value="<?php echo $description ?>" /><br/>
-
-      <label for="etatDuPaiement">Etat du paiement :</label><br/>
-      <input type="text" name="etatDuPaiement" value="<?php echo $etatDuPaiement ?>" /><br/>
+      <legend>Type du paiement</legend>
 
       <!--Option à séléctionner en fonction du type deja choisi -->
       <label for="type">Sélectionnez un type (Licence,adhésion,Article) :</label><br/>
@@ -54,6 +40,29 @@
         <?php } ?>
       </SELECT>
 
+        </fieldset>
+
+    <!--Infos essentielles -->
+      <div id="formbase" style="display:block;">
+
+      <fieldset>
+
+      <legend>Informations adhésion, licence</legend>
+
+      <label for="datePaiement">Date du paiement :</label><br/>
+      <input type="date" name="datePaiement" value="<?php echo $datePaiement ?>" /><br/>
+
+      <label for="prix">Prix :</label><br/>
+      <input type="text" name="prix" value="<?php echo $prix ?>" /><br/>
+
+      <label for="description">Description :</label><br/>
+      <input type="text" name="description" value="<?php echo $description ?>" /><br/>
+
+      <label for="etatDuPaiement">Etat du paiement :</label><br/>
+      <input type="text" name="etatDuPaiement" value="<?php echo $etatDuPaiement ?>" /><br/>
+
+
+
     </fieldset>
 
     <!--Infos supplémentaires si c'est un Article -->
@@ -61,11 +70,21 @@
       <fieldset>
         <legend>Informations article</legend>
 
-        <label for='nomArticle'>Référence de l'Article :</label>
-        <input type="text" name="nomArticle" value="" /><br/>
+        <label for="datePaiement">Date du paiement :</label><br/>
+        <input type="date" name="datePaiementArticle" value="<?php echo $datePaiement ?>" /><br/>
+
+        <label for='nomArticle'>Liste des articles disponibles :</label><br/>
+        <SELECT name="descriptionArticle" size="1">
+          <?php foreach ($lesArticles as  $unArticle) { ?>
+            <option value ="<?php echo $unArticle->getDescription()?>"><?php echo $unArticle->getDescription()?></option>
+          <?php } ?>
+        </SELECT><br/>
 
         <label for="">Quantité commandée :</label>
-        <input type="text" name="quantiteCommande" value="" />
+        <input type="text" name="quantiteCommande" value="<?php echo $quantiteCommande ?>" />
+
+        <label for="etatDuPaiement">Etat du paiement :</label><br/>
+        <input type="text" name="etatDuPaiementArticle" value="<?php echo $etatDuPaiement ?>" /><br/>
 
       </fieldset>
     </div>
@@ -80,12 +99,14 @@
 
 </body>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-<script> //Javascript si c'est un Article
+<script>//Javascript si c'est un Article
 document.getElementById('mySelect').onchange = function(){
   if(this.value == 'Article'){
+    document.getElementById('formbase').style.display = 'none';
     document.getElementById('formcache').style.display = 'block';
   } else {
     document.getElementById('formcache').style.display = 'none';
+    document.getElementById('formbase').style.display = 'block';
   }
 };
 </script>

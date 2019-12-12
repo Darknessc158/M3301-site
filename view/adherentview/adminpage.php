@@ -84,11 +84,9 @@
         <th><p>Email
         </p></th>
         <th><p>Numéro de licence
-          <a href="<?= $chemin ?>?tri=numlicencecroit"><i  id="asc" onclick="ChangeIcon(this);" class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=numlicencecroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>?tri=numlicencedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
-
-        <th><b>#</b> <i class="fa fa-fw fa-sort"></i></th>
 
         <th>Actions</th>
       </tr>

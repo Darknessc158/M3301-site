@@ -8,12 +8,20 @@ $config = parse_ini_file('../../config/config.ini');
 // Creation de l'instance DAO
 $paiements = new paiementDAO($config['database_path']);
 
-$datePaiement = $_POST['datePaiement'];
-$prix = $_POST['prix'];
-$description = $_POST['description'];
-$etatDuPaiement = $_POST['etatDuPaiement'];
 $type = $_POST['type'];
-$idAdherent = $_GET['idAdherent'];
+if ($type == 'Article'){
+  $datePaiement = $_POST['datePaiementArticle'];
+  $description = $_POST['descriptionArticle'];
+  $quantiteCommande = $_POST['quantiteCommande'];
+  $prix = (($articles->getUnArticleRef($description))->getPrix())*$quantiteCommande;
+  $etatDuPaiement = $_POST['etatDuPaiementArticle'];
+  $description = $_POST['descriptionArticle'].'('.$quantiteCommande.')';
+}else{//adhésion,licence
+  $datePaiement = $_POST['datePaiement'];
+  $prix = $_POST['prix'];
+  $description = $_POST['description'];
+  $etatDuPaiement = $_POST['etatDuPaiement'];
+}
 
 //delete avant
 $paiements->supprUnPaiement($_GET['idPaiement']);

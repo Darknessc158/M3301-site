@@ -23,7 +23,18 @@ $prix = $unPaiement->getPrix();
 $description = $unPaiement->getDescription();
 $etatDuPaiement = $unPaiement->getEtatDuPaiement();
 $type = $unPaiement->getType();
+if ($type == 'Article'){
+  $quantiteCommande = explode("(",$unPaiement->getDescription())[1];
+  $quantiteCommande = explode(")",$quantiteCommande)[0];//recuperation de la quantite dans la description
+}
 $idAdherent = $unPaiement->getIdAdherent();
+
+//Pour l'affichage des articles dispo
+require_once('../../model/classArticle/article.class.php');
+require_once('../../model/classArticle/articleDAO.class.php');
+$articles = new articleDAO($config['database_path']);
+$lesArticles = $articles->getLesArticles();
+
 
 //appel le formulaire paiement pré rempli
 include('../../view/paiementview/updatePaiement.php');
