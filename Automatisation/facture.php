@@ -38,7 +38,7 @@ function facture(int numero_paiement){
       $produit_courant = $sth->fetchAll(PDO::FETCH_CLASS,'article');
 
 
-      //Il faudra mettre ça dans une ligne ou ecrire dans un fichier et utiliser le tableau de fpdm   http://www.fpdf.org/?lang=fr
+              //Stock les differentes valeur dans des variables local a la boucle
 
               $quantite=$listeprod_lignecommande.quantite;
               $numarticle=$listeprod_lignecommande.ARTICLENum_article;
@@ -48,200 +48,121 @@ function facture(int numero_paiement){
               $PrixTHC=$listeprod_lignecommande.quantite*$produit_courant.PrixUnitaireHT;
               $PrixTTC=$listeprod_lignecommande.quantite*$produit_courant.PrixUnitaireHT*1.20);
 
-
-    $ligne = $quantite+';'+$numarticle+';'+$Description+';'+$Marque+';'+$PrixUnitaire+';'+$PrixTHC+';'+$PrixTTC+';';
+    // Stock les variables dans une string et separer les variables par des ';'
+    $ligne = $quantite+';'+$numarticle+';'+$Description+';'+$Marque+';'+$PrixUnitaire+';'+$PrixTHC+';'+$PrixTTC '\n';
+    //Ecrit la ligne dans le fichier
     fwrite($text,$ligne);
     }
+    //En sorti de boucle nous avons donc toute les info necessaire sur chacun des produits de la commande
     //Fermeture du fichier
     fclose($text);
 
-require('fpdm/fpdm.php');
 
-class PDF extends FPDF
-{
-// Chargement des données$ligne = $quantite+';'+$numarticle+';'+$Description+';'+$Marque+';'+$PrixUnitaire+';'+$PrixTHC+';'+$PrixTTC+';';
-function LoadData($file)
-{
-    // Lecture des lignes du fichier
-    $lines = file($file);
-    $data = array();
-    foreach($lines as $line)
-        $data[] = explode(';',trim($line));
-    return $data;
-}
 
-// Tableau simple
-function BasicTable($header, $data)
-{
-    // En-tête
-    foreach($header as $col)
-        $this->Cell(40,7,$col,1);
-    $this->Ln();
-    // Données
-    foreach($data as $row)
+    //
+    require('fpdf/fpdf.php');
+
+    class PDF extends FPDF
     {
-        foreach($row as $col)
-            $this->Cell(40,6,$col,1);
-        $this->Ln();
-    }
-}
-
-// Tableau amélioré
-function ImprovedTable($header, $data)
-{
-    // Largeurs des colonnes
-    $w = array(40, 35, 45, 40);
-    // En-tête
-    for($i=0;$i<count($header);$i++)
-        $this->Cell($w[$i],7,$header[$i],1,0,'C');
-    $this->Ln();
-    // Données
-    foreach($data as $row)
+    // Chargement des données
+    function LoadData($file)
     {
-        $this->Cell($w[0],6,$row[0],'LR');
-        $this->Cell($w[1],6,$row[1],'LR');
-        $this->Cell($w[2],6,number_format($row[2],0,',',' '),'LR',0,'R');
-        $this->Cell($w[3],6,number_format($row[3],0,',',' '),'LR',0,'R');
-        $this->Ln();
+        // Lecture des lignes du fichier
+        $lines = file($file);
+        $data = array();
+        foreach($lines as $line)
+            $data[] = explode(';',trim($line));
+        return $data;
     }
-    // Trait de terminaison
-    $this->Cell(array_sum($w),0,'','T');
-}
 
-// Tableau coloré
-function FancyTable($header, $data)
-{
-    // Couleurs, épaisseur du trait et police grasse
-    $this->SetFillColor(255,0,0);
-    $this->SetTextColor(255);
-    $this->SetDrawColor(128,0,0);
-    $this->SetLineWidth(.3);
-    $this->SetFont('','B');
-    // En-tête
-    $w = array(40, 35, 45, 40);
-    for($i=0;$i<count($header);$i++)
-        $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
-    $this->Ln();
-    // Restauration des couleurs et de la police
-    $this->SetFillColor(224,235,255);class PDF extends FPDF
-{
-// Chargement des données
-function LoadData($file)
-{
-    // Lecture des lignes du fichier
-    $lines = file($file);
-    $data = array();
-    foreach($lines as $line)
-        $data[] = explode(';',trim($line));
-    return $data;
-}
-
-// Tableau simple
-function BasicTable($header, $data)
-{
-    // En-tête
-    foreach($header as $col)
-        $this->Cell(40,7,$col,1);
-    $this->Ln();
-    // Données
-    foreach($data as $row)
+    // Tableau simple
+    function BasicTable($header, $data)
     {
-        foreach($row as $col)
-            $this->Cell(40,6,$col,1);
+        // En-tête
+        foreach($header as $col)
+            $this->Cell(25,10,$col,1);
         $this->Ln();
+        // Données
+        foreach($data as $row)
+        {
+            foreach($row as $col)
+                $this->Cell(20,6,$col,1);
+            $this->Ln();
+        }
     }
-}
 
-// Tableau amélioré
-function ImprovedTable($header, $data)
-{
-    // Largeurs des colonnes
-    $w = array(40, 35, 45, 40);
-    // En-tête
-    for($i=0;$i<count($header);$i++)
-        $this->Cell($w[$i],7,$header[$i],1,0,'C');
-    $this->Ln();
-    // Données
-    foreach($data as $row)
+    // Tableau amélioré
+    function ImprovedTable($header, $data)
     {
-        $this->Cell($w[0],6,$row[0],'LR');
-        $this->Cell($w[1],6,$row[1],'LR');
-        $this->Cell($w[2],6,number_format($row[2],0,',',' '),'LR',0,'R');
-        $this->Cell($w[3],6,number_format($row[3],0,',',' '),'LR',0,'R');
+        // Largeurs des colonnes
+        $w = array(40, 35, 45, 40);
+        // En-tête
+        for($i=0;$i<count($header);$i++)
+            $this->Cell($w[$i],7,$header[$i],1,0,'C');
         $this->Ln();
+        // Données
+        foreach($data as $row)
+        {
+            $this->Cell($w[0],6,$row[0],'LR');
+            $this->Cell($w[1],6,$row[1],'LR');
+            $this->Cell($w[2],6,number_format($row[2],0,',',' '),'LR',0,'R');
+            $this->Cell($w[3],6,number_format($row[3],0,',',' '),'LR',0,'R');
+            $this->Ln();
+        }
+        // Trait de terminaison
+        $this->Cell(array_sum($w),0,'','T');
     }
-    // Trait de terminaison
-    $this->Cell(array_sum($w),0,'','T');
-}
 
-// Tableau coloré
-function FancyTable($header, $data)
-{
-    // Couleurs, épaisseur du trait et police grasse
-    $this->SetFillColor(255,0,0);
-    $this->SetTextColor(255);
-    $this->SetDrawColor(128,0,0);
-    $this->SetLineWidth(.3);
-    $this->SetFont('','B');
-    // En-tête
-    $w = array(40, 35, 45, 40);
-    for($i=0;$i<count($header);$i++)
-        $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
-    $this->Ln();
-    // Restauration des couleurs et de la police
-    $this->SetFillColor(224,235,255);
-    $this->SetTextColor(0);
-    $this->SetFont('');
-    // Données
-    $fill = false;
-    foreach($data as $row)
+    // Tableau coloré
+    function FancyTable($header, $data)
     {
-        $this->Cell($w[0],6,$row[0],'LR',0,'L',$fill);
-        $this->Cell($w[1],6,$row[1],'LR',0,'L',$fill);
-        $this->Cell($w[2],6,number_format($row[2],0,',',' '),'LR',0,'R',$fill);
-        $this->Cell($w[3],6,number_format($row[3],0,',',' '),'LR',0,'R',$fill);
+        // Couleurs, épaisseur du trait et police grasse
+        $this->SetFillColor(255,0,0);
+        $this->SetTextColor(255);
+        $this->SetDrawColor(128,0,0);
+        $this->SetLineWidth(.3);
+        $this->SetFont('','B');
+        // En-tête
+        $w = array(40, 35, 45, 40);
+        for($i=0;$i<count($header);$i++)
+            $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
         $this->Ln();
-        $fill = !$fill;
+        // Restauration des couleurs et de la police
+        $this->SetFillColor(224,235,255);
+        $this->SetTextColor(0);
+        $this->SetFont('');
+        // Données
+        $fill = false;
+        foreach($data as $row)
+        {
+            $this->Cell($w[0],6,$row[0],'LR',0,'L',$fill);
+            $this->Cell($w[1],6,$row[1],'LR',0,'L',$fill);
+            $this->Cell($w[2],6,number_format($row[2],0,',',' '),'LR',0,'R',$fill);
+            $this->Cell($w[3],6,number_format($row[3],0,',',' '),'LR',0,'R',$fill);
+            $this->Ln();
+            $fill = !$fill;
+        }
+        // Trait de terminaison
+        $this->Cell(array_sum($w),0,'','T');
     }
-    // Trait de terminaison
-    $this->Cell(array_sum($w),0,'','T');
-}
-}
-    $this->SetTextColor(0);
-    $this->SetFont('');
-    // Données
-    $fill = false;
-    foreach($data as $row)
-    {
-        $this->Cell($w[0],6,$row[0],'LR',0,'L',$fill);
-        $this->Cell($w[1],6,$row[1],'LR',0,'L',$fill);
-        $this->Cell($w[2],6,number_format($row[2],0,',',' '),'LR',0,'R',$fill);
-        $this->Cell($w[3],6,number_format($row[3],0,',',' '),'LR',0,'R',$fill);
-        $this->Ln();
-        $fill = !$fill;
     }
-    // Trait de terminaison
-    $this->Cell(array_sum($w),0,'','T');
-}
-}
 
-  $fields = array(
-    //Haut de la facture
-  	'num_paiement'    => $numPaiement,
-  	'num_commande' => $numcommande,
-  	'nom_client' => $membre.nom,
-  	'adresse_client' => $membre.adress,
 
-  );
 
-  $pdf = new FPDM('doc_compta.pdf');
-  $header = ('Quantite','Num Article','Description','Marque','Prix UTC','PrixTHC','PrixTTC');
-  $data = $pdf->LoadData('temp_facture.txt');
-  $pdf->AddPage();
-  $pdf->BasicTable($header,$data);
-  $pdf->Load($fields, false); // second parameter: false if field values are in ISO-8859-1, true if UTF-8
-  $pdf->Merge();
-  $pdf->Output();
+
+
+
+    $pdf = new PDF();
+    $header = array('Quantite','Num Article','Description','Marque','Prix UTC','PrixTHC','PrixTTC');
+    $data = $pdf->LoadData('temp_facture.txt');
+    $pdf->SetFont('Arial','',10);
+    $pdf->AddPage();
+    $pdf->BasicTable($header,$data);
+    $pdf->AddPage();
+    $pdf->ImprovedTable($header,$data);
+    $pdf->AddPage();
+    $pdf->FancyTable($header,$data);
+    $pdf->Output('I','resultat.pdf');
 
 }
 
