@@ -21,7 +21,9 @@ if ($type == 'Article'){
   $datePaiement = $_POST['datePaiementArticle'];
   $description = $_POST['descriptionArticle'];
   $quantiteCommande = $_POST['quantiteCommande'];
-  $prix = (($articles->getUnArticleRef($description))->getPrix())*$quantiteCommande;
+  $articlePaye = $articles->getUnArticleRef($description);
+  $articlePaye->reduireStock($quantiteCommande); //on reduit le stock
+  $prix = ($articlePaye->getPrix())*$quantiteCommande;
   $etatDuPaiement = $_POST['etatDuPaiementArticle'];
   $description = $_POST['descriptionArticle'].'('.$quantiteCommande.')';
 }else{//adhésion,licence

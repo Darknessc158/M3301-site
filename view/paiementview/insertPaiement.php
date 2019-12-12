@@ -75,13 +75,14 @@
         <input type="date" name="datePaiementArticle" value="" /><br/>
 
         <label for='nomArticle'>Liste des articles disponibles :</label><br/>
-        <SELECT name="descriptionArticle" size="1">
+        <SELECT name="descriptionArticle" size="2">
           <?php foreach ($lesArticles as  $unArticle) { ?>
-            <option value ="<?php echo $unArticle->getDescription()?>"><?php echo $unArticle->getDescription()?></option>
+            <option value ="<?php echo $unArticle->getDescription()?>"><?php echo $unArticle->getDescription();?></option>
+            <option value="">Quantité restante : <?php echo $unArticle->getQuantite();  ?></option> <!--Affiche le stock restant-->
           <?php } ?>
         </SELECT><br/>
 
-        <label for="">Quantité commandée :</label><br/>
+        <label for="">Quantité commandée doit être infèrieur à la quantité restante :</label><br/>
         <input type="text" name="quantiteCommande" value="" /><br/>
 
         <label for="etatDuPaiement">Etat du paiement :</label><br/>
