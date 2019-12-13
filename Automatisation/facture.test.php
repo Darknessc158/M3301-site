@@ -31,19 +31,26 @@ function BasicTable($header, $data)
     }
 }
 }
+$date = new DateTime();
+$result = $date ->format('Y-m-d');
+echo $result . "string";
+$krr = explode('-',$result);
+$result = implode("",$krr);
 
 
 
+$filename = $result + 'azeazeaze';
+echo $filename;
 
 
 
-$pdf = new PDF();
-$header = array('Quantite','Num Article','Description','Marque','Prix UTC','PrixTHC','PrixTTC');
-$data = $pdf->LoadData('temp_facture.txt');
-$pdf->SetFont('Arial','',10);
-$pdf->AddPage();
-$pdf->BasicTable($header,$data);
-$pdf->Output('I','resultat.pdf');
+// $pdf = new PDF();
+// $header = array('Quantite','Num Article','Description','Marque','Prix UTC','PrixTHC','PrixTTC');
+// $data = $pdf->LoadData('temp_facture.txt');
+// $pdf->SetFont('Arial','',10);
+// $pdf->AddPage();
+// $pdf->BasicTable($header,$data);
+// $pdf->Output('I','resultat.pdf');
 
 
   ?>
