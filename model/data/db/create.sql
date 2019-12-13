@@ -3,9 +3,10 @@
 --       description STRING,
 --       annee varchar(4)
 -- };
-
+CREATE DATABASE scale;
+USE scale;
 CREATE TABLE adherent (
-     idAdherent  INTEGER PRIMARY KEY,
+     idAdherent  INTEGER PRIMARY KEY AUTO_INCREMENT,
      nom varchar(30) NOT NULL,
      prenom varchar(30) NOT NULL,
      categorie varchar(30),
@@ -13,8 +14,7 @@ CREATE TABLE adherent (
      adresse varchar(40),
      telephone char(10),
      mail varchar(40),
-     numLicence varchar(20) UNIQUE,
-     FOREIGN KEY (numLicence) REFERENCES  licence(numLicence)
+     numLicence varchar(20) UNIQUE
 );
 
 CREATE TABLE paiement (

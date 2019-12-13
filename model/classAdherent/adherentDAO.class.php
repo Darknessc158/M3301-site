@@ -1,10 +1,12 @@
 <?php class adherentDAO { //classe adherent basededonnees
   private $db;
 
-  public function __construct($path){
-    $database ='sqlite:'.$path.'/scale.db';
+  public function __construct(){
+    $database = 'mysql:host=localhost;dbname=scale';
+    $user = 'root';
+    $password = 'cave';
     try{
-      $this->db = new PDO($database);
+      $this->db = new PDO($database, $user, $password);
       //var_dump($database);
     }
 
