@@ -32,19 +32,13 @@
           <a class="nav-link" href="lebureau.view.php">Le bureau</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="lescoureurs.view.php">Les coureurs</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tous les paiements</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Tous les articles</a>
+          <a class="nav-link" href="../../view/page administrateur/admin.view.php">Page administrateur</a>
         </li>
       </ul>
     </div>
@@ -57,38 +51,78 @@
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
-        <th><p>Nom
-          <a href="<?= $chemin ?>?tri=nomcroit"><i class="fas fa-sort-up"></i></a>
-          <a href="<?= $chemin ?>?tri=nomdecroit"><i class="fas fa-sort-down"></i></a>
-        </p></th>
+        <th>
+          <div class="boite_titre">
+          <p>Nom</p>
+          <div class="icones_tri">
+            <a href="<?= $chemin ?>?tri=nomcroit"><i class="fas fa-sort-up"></i></a>
+            <a href="<?= $chemin ?>?tri=nomdecroit"><i class="fas fa-sort-down"></i></a>
+          </div>
+        </div>
+        </th>
 
-        <th><p>Prénom
-          <a href="<?= $chemin ?>?tri=prenomcroit"><i class="fas fa-sort-up"></i></a>
-          <a href="<?= $chemin ?>?tri=prenomdecroit"><i class="fas fa-sort-down"></i></a>
-        </p></th>
+        <th>
+          <div class="boite_titre">
+            <p>Prénom</p>
+            <div class="icones_tri">
+              <a href="<?= $chemin ?>?tri=prenomcroit"><i class="fas fa-sort-up"></i></a>
+              <a href="<?= $chemin ?>?tri=prenomdecroit"><i class="fas fa-sort-down"></i></a>
+            </div>
+          </div>
+        </th>
 
-        <th><p>Catégorie
-          <a href="<?= $chemin ?>?tri=catecroit"><i class="fas fa-sort-up"></i></a>
-          <a href="<?= $chemin ?>?tri=catedecroit"><i class="fas fa-sort-down"></i></a>
-        </p></th>
-        <th><p>Date de naissance
-          <a href="<?= $chemin ?>?tri=datenaissancecroit"><i class="fas fa-sort-up"></i></a>
-          <a href="<?= $chemin ?>?tri=datenaissancedecroit"><i class="fas fa-sort-down"></i></a>
-        </p></th>
-        <th><p>Adresse
-          <a href="<?= $chemin ?>?tri=adressecroit"><i class="fas fa-sort-up"></i></a>
-          <a href="<?= $chemin ?>?tri=adressedecroit"><i class="fas fa-sort-down"></i></a>
-        </p></th>
-        <th><p>Télephone
-        </p></th>
-        <th><p>Email
-        </p></th>
-        <th><p>Numéro de licence
-          <a href="<?= $chemin ?>?tri=numlicencecroit"><i class="fas fa-sort-up"></i></a>
-          <a href="<?= $chemin ?>?tri=numlicencedecroit"><i class="fas fa-sort-down"></i></a>
-        </p></th>
+        <th>
+          <div class="boite_titre">
+          <p>Catégorie</p>
+          <div class="icones_tri">
+            <a href="<?= $chemin ?>?tri=catecroit"><i class="fas fa-sort-up"></i></a>
+            <a href="<?= $chemin ?>?tri=catedecroit"><i class="fas fa-sort-down"></i></a>
+          </div>
+        </div>
+        </th>
 
-        <th>Actions</th>
+        <th>
+          <div class="boite_titre">
+          <p>Numéro de licence</p>
+          <div class="icones_tri">
+            <a href="<?= $chemin ?>?tri=datenaissancecroit"><i class="fas fa-sort-up"></i></a>
+            <a href="<?= $chemin ?>?tri=datenaissancedecroit"><i class="fas fa-sort-down"></i></a>
+          </div>
+        </div>
+        </th>
+
+        <th>
+          <div class="boite_titre">
+          <p>Adresse</p>
+          <div class="icones_tri">
+            <a href="<?= $chemin ?>?tri=adressecroit"><i class="fas fa-sort-up"></i></a>
+            <a href="<?= $chemin ?>?tri=adressedecroit"><i class="fas fa-sort-down"></i></a>
+          </div>
+        </div>
+        </th>
+
+        <th>
+          <p>Télephone</p>
+        </th>
+
+        <th>
+          <p>Email</p>
+        </th>
+
+        <th>
+          <div class="boite_titre">
+          <p>Numéro de licence</p>
+          <div class="icones_tri">
+            <a href="<?= $chemin ?>?tri=numlicencecroit"><i class="fas fa-sort-up"></i></a>
+            <a href="<?= $chemin ?>?tri=numlicencedecroit"><i class="fas fa-sort-down"></i></a>
+          </div>
+        </div>
+        </th>
+
+        <th>
+          Actions
+        </th>
+
       </tr>
     </thead>
     <tbody>
@@ -118,12 +152,9 @@
 <!-- Script pour valider supression d'un adhérent -->
 <script>
 function DelAdherent(id){
-    if(confirm("Voulez vous vraiment supprimer cet adhérent ?")){
-            window.location='../../controler/tableadherent/tableadherent.ctrl.php?type=delete&idAdherent='+id
-    }
-    else{
-            alert("L'adhérent n'a pas été supprimé.")
-    }
+  if(confirm("Voulez vous vraiment supprimer cet adhérent ?")){
+    window.location='../../controler/tableadherent/tableadherent.ctrl.php?type=delete&idAdherent='+id
+  }
 }
 function ChangeIcon(element){
   var x = element.getElementById("asc");

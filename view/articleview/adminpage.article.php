@@ -15,13 +15,9 @@
 
 <body id="page-top" style="text-align:center;">
 
-
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <img src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="">
-  </div>
   <!-- NAV DE BASE !-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="../../controler/tableadherent/tableadherent.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
+    <a class="navbar-brand" href="main.view.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
@@ -32,19 +28,13 @@
           <a class="nav-link" href="lebureau.view.php">Le bureau</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="lescoureurs.view.php">Les coureurs</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tous les paiements</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Tous les articles</a>
+          <a class="nav-link" href="../../view/page administrateur/admin.view.php">Page administrateur</a>
         </li>
       </ul>
     </div>
@@ -57,17 +47,29 @@
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
 
-        <th>Catégorie</th>
+        <th>
+        <p>Catégorie</p>
+        </th>
 
-        <th>Produit et taille</th>
+        <th>
+          <p>Produit et taille</p>
+        </th>
 
-        <th>Quantité en stock</th>
+        <th>
+          <p>Quantité en stock</p>
+        </th>
 
-        <th>Prix</th>
+        <th>
+          <p>Prix</p>
+        </th>
 
-        <th>Marque</th>
+        <th>
+          <p>Marque</p>
+        </th>
 
-        <th>Actions</th>
+        <th>
+          <p>Actions</p>
+        </th>
 
       </tr>
     </thead>

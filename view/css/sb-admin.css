@@ -1,8 +1,28 @@
-table {
-border: medium solid #000000;
-width: 50%;
-}
+
 td, th {
 border: thin solid #6495ed;
-width: 50%;
+padding: auto;
+}
+
+a:link{
+  color: blue;
+}
+
+a:hover {
+  color: red;
+}
+
+.boite_titre{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.boite_titre p {
+  margin : auto;
+}
+
+.icones_tri {
+  display: flex;
+  flex-direction: column;
 }
