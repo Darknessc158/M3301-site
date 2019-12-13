@@ -13,12 +13,33 @@
 
 </head>
 
-<body id="page-top" style="text-align:center;">
+<body id="" style="text-align:center;">
 
 
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <img src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="">
+  <div class="boximg" style="margin-bottom:0">
+    <p class="box">
+    <img class="scroll" src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
+    <img class="scroll" src="../../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
+    <img class="scroll" src="../../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
+    </p>
   </div>
+
+  <script type="text/javascript">
+  I = 0 ;
+  Imax = document.images.length - 1 ;
+  setTimeout(suivante, 7000) ;
+  function suivante()
+  {
+  document.images[I].style.display = "none" ;
+  if ( I < Imax )
+       I++;
+  else
+       I=0;
+  document.images[I].style.display = "block";
+  setTimeout(suivante, 7000) ;
+  }
+  </script>
+
   <!-- NAV DE BASE !-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" href="../../controler/tableadherent/tableadherent.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt=""></a>

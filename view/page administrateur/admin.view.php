@@ -63,7 +63,7 @@
   <div class="card-body">
     <h5 class="card-title">Gestionnaire des transactions</h5>
     <p class="card-text">Liste des transactions, modifier ou supprimer une transaction</p>
-    <a href="../../controler/tablearticle/tablearticle.ctrl.php" class="btn btn-primary">Gérer les transactions</a>
+    <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php" class="btn btn-primary">Gérer les transactions</a>
   </div>
   </div>
 
