@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
   <title>Ajout d'un adhérent à l'association</title>
 </head>
 <body>
   <h1>Ajout d'un adhérent à l'association</h1>
-  <form class="" action="../controler/insertAdherent.ctrl.php" method="post">
+  <form class="" action="../../controler/tableadherent/insertAdherent.ctrl.php" method="post">
     <p>
         Nom :<br />
-       <input type="text" name="prenom" value="" />
+       <input type="text" name="nom" value="" />
     </p>
     <p>
         Prénom :<br />
-       <input type="text" name="nom" value="" />
+       <input type="text" name="prenom" value="" />
     </p>
     <p>
        Categorie :<br />
@@ -21,7 +21,7 @@
     </p>
     <p>
        Date de naissance :<br />
-       <input type="text" name="datenaissance" value="" />
+       <input type="date" name="datenaissance" value="" />
     </p>
     <p>
        Adresse :<br />
@@ -43,9 +43,11 @@
     <p>
        <input type="submit" value="Ajouter" />
        <input type="reset" value="Annuler" />
+       Retour : <a href="../../controler/tableadherent/tableadherent.ctrl.php"><i class="fas fa-undo"></i></a>
     </p>
   </form>
 
 
 </body>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </html>

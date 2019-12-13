@@ -1,9 +1,9 @@
 <?php
-require_once('../model/adherent.class.php');
-require_once('../model/adherentDAO.class.php');
+require_once('../../model/classAdherent/adherent.class.php');
+require_once('../../model/classAdherent/adherentDAO.class.php');
 
 // Récupération des données de configuration
-$config = parse_ini_file('../config/config.ini');
+$config = parse_ini_file('../../config/config.ini');
 
 // Creation de l'instance DAO
 $adherents = new adherentDAO($config['database_path']);
@@ -28,5 +28,5 @@ if (isset($_GET['tri'])){ //Si valeur et element dans la query string
 //$n = $adherents->getUnAdherent(1);
 $nblignes = $adherents->getNbLigne();
 //view
-include('../view/adminpage.php');
+include('../../view/adherentview/adminpage.php');
 ?>

@@ -18,12 +18,34 @@ CREATE TABLE adherent (
      FOREIGN KEY (numLicence) REFERENCES  licence(numLicence)
 );
 
--- CREATE TABLE licence(
---   numLicence int PRIMARY KEY,
---   federation STRING,
---   idPaiement int,
---   idAdherent int(3),
---    );
+CREATE TABLE paiement (
+  idPaiement INTEGER PRIMARY KEY,
+  datePaiement DATE,
+  prix float,
+  description varchar(100),
+  etatDuPaiement varchar(50),
+  type varchar(35),
+  idAdherent INTEGER
+);
+
+CREATE TABLE article (
+  idArticle INTEGER PRIMARY KEY,
+  prix float,
+  categorie varchar(35),
+  quantite INTEGER,
+  description varchar(100),
+  marque varchar(35)
+);
+
+
+
+CREATE TABLE commandearticle(
+   numArticle INTEGER,
+   numPaiement INTEGER,
+   quantiteCommande INTEGER,
+   FOREIGN KEY (numArticle) REFERENCES  article(idArticle),
+   FOREIGN KEY (numPaiement) REFERENCES  paiement(idPaiement)
+);
 --
 -- CREATE TABLE paimentLicence(
 --   idPaiement int PRIMARY KEY,

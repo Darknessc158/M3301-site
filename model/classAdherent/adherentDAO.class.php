@@ -29,6 +29,13 @@
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'adherent');
     return $res[0];
   }
+  function adherentExiste($idadherent){ //verif si un adherent existe
+    $req = "SELECT count(*) as nb FROM adherent WHERE idAdherent=$idadherent;";
+    $sth=$this->db->query($req);
+    $data = $sth->fetch();
+    $res = $data['nb'];
+    return $res;
+  }
 
   function getNbLigne(){
     $sth=$this->db->query("SELECT count(*) as nb FROM adherent;");
@@ -62,6 +69,18 @@
           break;
           case 'datenaissancedecroit':
           $recherche = $this->db->query("SELECT * FROM adherent ORDER BY datenaissance DESC ");
+          break;
+          case 'adressecroit':
+          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY adresse ASC ");
+          break;
+          case 'adressedecroit':
+          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY adresse DESC ");
+          break;
+          case 'numlicencecroit':
+          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY numLicence ASC ");
+          break;
+          case 'numlicencedecroit':
+          $recherche = $this->db->query("SELECT * FROM adherent ORDER BY numLicence DESC ");
           break;
           default:
           $recherche = $this->db->query("SELECT * FROM adherent");
