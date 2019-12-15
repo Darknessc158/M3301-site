@@ -68,65 +68,22 @@
   </nav>
 
 
-<h1>Rejoignez-nous ! </h1>
-  <div class="container">
-    <div class="element">
-      <h3>Qui sommes nous ?</h3>
-      <p>Scale Echirolles est une association sportive de cyclisme.
-      Nous sommes une vingtaine d'adhérents composés de 17 coureurs.
-      Si vous aimez le cyclisme (se faire plaisir en roulant avec des amis) alors n'attendez plus SCALE Echirolles est fait
-      pour vous ! Venez nous rejoindre le week-end ou même le mercredi après-midi pour rouler en petit comité.
-      Vous pourrez aussi participer à plusieurs courses dont notamment celles organisées par le club sous l'égide de l'UFOLEP
-      ainsi que de la FFC.
-    </p>
-    </div>
-    <div class="element">
-      <h3>Notre programme d'entrainements</h3>
-      <h4>Les entrainements :</h4>
-      <p>Entrainements tous les mercredis et samedis à 14 h (hors saison hivernale)
-        avec possibilité de décaler l'heure et le jour en fonction des jours de compétition et du temps.
-      </p>
-      <h4>Les stages :</h4>
-      <p>Stage de présaison, stage de cohésion, ...</p>
-    </div>
-    <div class="element">
-      <h3>Les dates clefs du club</h3>
-      <p>Assemblée Générale du SCALE : 17/11/18 </p>
-      <p>Loto du SCALE : 08/12/18 </p>
-      <p>Tirage des rois et signature des licences : 11/01/19 </p>
-      </div>
-        <div class="element">
-          <h3>Les courses organisées par le club</h3>
-          <p>Le Grand Prix de Lalley</p>
-          <p>La Montée du col de l'Arzelier</p>
-        </div>
-      <div class="element">
-        <h3>Quelques chiffres du SCALE</h3>
-        <p>Victoires ...</p>
-      </div>
-      <div class="element">
-        <h3>Nos sponsors</h3>
-        <p>Retrouvez ici nos sponsors :</p>
-        <img src="../../model/data/images/images_sites/sponsor_gite.jpg" alt="" width="30%">
-        <img src="../../model/data/images/images_sites/sponsor_pieces.png" alt="" width="30%">
-      </div>
-      </div>
+<h1>Les coureurs en 2019</h1>
 
-      <p id="separator">-----------------------------------------------------------------------------------------</p>
-      <h2>Le coin Strava</h2>
-      <div class="container2">
-      <div class="elementact">
-          <h3>Les activités du club</h3>
-          <iframe allowtransparency frameborder='0' height='454' scrolling='no' src='https://www.strava.com/clubs/62426/latest-rides/d3aa846eaa79ed7b80724cc810c4ef256b18f568?show_rides=true' width='200'></iframe>
-      </div>
-      <div class="elementstats">
-        <h4>Zoom sur les stats</h4>
-        <iframe allowtransparency frameborder='0' height='160' scrolling='no' src='https://www.strava.com/clubs/62426/latest-rides/d3aa846eaa79ed7b80724cc810c4ef256b18f568?show_rides=false' width='300'></iframe>
-      </div>
-</div>
-
-
-
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20190119/ob_a63655_lucien-tytgat.jpg" alt="" width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20190410/ob_a1b6f5_louison-martin.jpg" alt="" width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_641979_bastille-8.JPG" alt=""  width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_8d0318_bastille-2.JPG" alt=""  width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20180116/ob_fae257_17-c-murianette-077-original-2.jpg" alt=""  width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_8c8a5b_prapoutel-15.JPG" alt=""  width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20180605/ob_14848e_p1120273.JPG" alt=""  width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_ca8128_murianette-7.JPG" alt=""  width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_f3b99a_prapoutel-10.JPG" alt=""  width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_ac3fd5_bastille-5.JPG" alt=""  width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20180116/ob_8ddab7_17-c-murianette-084-original-2.jpg" alt=""  width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20180116/ob_fb1d58_17-c-murianette-078-original-2.jpg" alt=""  width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_af7d9a_miribel-3.JPG" alt=""  width="10%" height="auto">
+<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_acf0dd_lalley4.JPG" alt=""  width="10%" height="auto">
 
 
 
