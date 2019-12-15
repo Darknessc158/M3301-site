@@ -1,4 +1,9 @@
 
+body{
+  text-align: center;
+  background-color: lightgray;
+}
+
 td, th {
 border: thin solid #6495ed;
 padding: auto;

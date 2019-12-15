@@ -3,7 +3,7 @@
 <head>
   <title>SCALE Echirolles - club de cyclisme</title>
   <!-- Custom styles for this template-->
-  <link href="../../view/css/sb-admin.css" rel="stylesheet">
+  <link href="../../view/css/admintable.view.css" rel="stylesheet">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,7 +13,7 @@
 
 </head>
 
-<body id="page-top" style="text-align:center;">
+<body style="text-align:center; background-color:silver;">
 
   <!-- NAV DE BASE !-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -41,7 +41,7 @@
   </nav>
   <!-- NAV DE BASE !-->
 
-  <h2>Gestion des Articles</h2>
+  <h2>Gestion des stocks</h2>
   <!-- Tableau !-->
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
@@ -82,8 +82,8 @@
           <td><?=$unArticle->getPrix();?></td>
           <td><?=$unArticle->getMarque();?></td>
           <td>
-            <a href="../../controler/tablearticle/updateArticleAvant.ctrl.php?idArticle=<?=$unArticle->getIdArticle();?>"><i class="fas fa-user-edit" title="Modifier l'article."></i></a>
-            <i class="fas fa-user-times" title="Supprimer l'article." style="cursor:pointer; color:red;" onClick="DelArticle('<?=$unArticle->getIdArticle();?>')"></i>
+            <a href="../../controler/tablearticle/updateArticleAvant.ctrl.php?idArticle=<?=$unArticle->getIdArticle();?>"><i class="far fa-edit" title="Modifier l'article."></i></a>
+            <i class="far fa-trash-alt" title="Supprimer l'article." style="cursor:pointer; color:red;" onClick="DelArticle('<?=$unArticle->getIdArticle();?>')"></i>
             </td>
         </tr>
         <?php } ?>
@@ -97,9 +97,6 @@
 <script>function DelArticle(id){
     if(confirm("Voulez vous vraiment supprimer cet article ?")){
             window.location='../../controler/tablearticle/tablearticle.ctrl.php?type=delete&idArticle='+id
-    }
-    else{
-            alert("L'article n'a pas été supprimé.")
     }
 }
 </script>

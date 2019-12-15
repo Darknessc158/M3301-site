@@ -2,6 +2,7 @@
 <html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="../../view/css/form.view.css">
   <title>Ajout d'un adhérent à l'association</title>
 </head>
 <body>
@@ -43,6 +44,8 @@
     <p>
        <input type="submit" value="Ajouter" />
        <input type="reset" value="Annuler" />
+       </p>
+       <p>
        Retour : <a href="../../controler/tableadherent/tableadherent.ctrl.php"><i class="fas fa-undo"></i></a>
     </p>
   </form>

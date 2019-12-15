@@ -13,15 +13,18 @@
 
 </head>
 
-<body id="page-top" style="text-align:center;">
+<body id="page-top" style="text-align:center; background-color:silver;">
 
 
   <!-- NAV DE BASE !-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="../../view/autres/main.view.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
+    <a class="navbar-brand" href="#"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt="" style="border-radius: 20px;"></a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../../view/autres/main.view.php">Accueil</a>
+        </li>
         <li class="nav-item">
           <a class="nav-link" href="actualites.view.php">Actualités</a>
         </li>

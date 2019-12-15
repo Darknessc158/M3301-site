@@ -2,6 +2,7 @@
 <html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="../../view/css/form.view.css">
   <title>Ajout d'un paiement</title>
 </head>
 <body>
@@ -94,7 +95,9 @@
     <p>
       <input type="submit" value="Ajouter" />
       <input type="reset" value="Annuler" />
-      Retour : <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;}?>"><i class="fas fa-undo"></i></a>
+    </p>
+    <p>
+      Retour : <a id="retour" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;}?>"><i class="fas fa-undo"></i></a>
     </p>
 
   </form>

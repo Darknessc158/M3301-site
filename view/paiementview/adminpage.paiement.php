@@ -3,7 +3,7 @@
 <head>
   <title>SCALE Echirolles - club de cyclisme</title>
   <!-- Custom styles for this template-->
-  <link href="../../view/css/sb-admin.css" rel="stylesheet">
+  <link href="../../view/css/admintable.view.css" rel="stylesheet">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,7 +13,7 @@
 
 </head>
 
-<body id="page-top" style="text-align:center;">
+<body style="text-align:center; background-color:silver;">
 
   <!-- NAV DE BASE !-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark rounded">
@@ -41,7 +41,7 @@
   </nav>
   <!-- NAV DE BASE !-->
 
-  <h2>Gestion des paiements <?php if (isset($_GET['idAdherent'])){ echo 'concernant '; echo ($adherents->getUnAdherent($_GET['idAdherent']))->getPrenom().' '.($adherents->getUnAdherent($_GET['idAdherent']))->getNom();} ?> </h2>
+  <h2>Gestion des transactions <?php if (isset($_GET['idAdherent'])){ echo 'concernant '; echo ($adherents->getUnAdherent($_GET['idAdherent']))->getPrenom().' '.($adherents->getUnAdherent($_GET['idAdherent']))->getNom();} ?> </h2>
 
 <?php if ($respaiement == null){ if (isset($_GET['idAdherent'])) {echo 'Pas de paiement enregistré pour cet adhérent';}else{echo "Pas de paiement enregistré";}}else{ ?>
 
@@ -142,9 +142,6 @@
         <?php }else{ ?>
               window.location='../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement='+idpa
           <?php } ?>
-      }
-      else{
-              alert("Le paiement n'a pas été supprimé.")
       }
   }
   </script>

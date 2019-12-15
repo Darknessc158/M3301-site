@@ -3,8 +3,8 @@
 <head>
   <title>SCALE Echirolles - club de cyclisme</title>
   <!-- Custom styles for this template-->
-  <link href="../../view/css/sb-admin.css" rel="stylesheet">
-  <!-- Required meta tags -->
+  <link href="../../view/css/admintable.view.css" rel="stylesheet">
+    <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -13,7 +13,7 @@
 
 </head>
 
-<body id="" style="text-align:center;">
+<body style="text-align:center; background-color:silver;">
 
 
   <div class="boximg" style="margin-bottom:0">
