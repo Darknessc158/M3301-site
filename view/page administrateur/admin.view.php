@@ -56,7 +56,7 @@
   <img class="card-img-top" src="commandes-icon.png" alt="image gestion des stocks">
   <div class="card-body">
     <h5 class="card-title">Gestionnaire des stocks</h5>
-    <p class="card-text">Liste des articles et des quantités, modifier ou supprimer une article</p>
+    <p class="card-text">Liste des articles et des quantités, modifier ou supprimer un article</p>
     <a href="../../controler/tablearticle/tablearticle.ctrl.php" class="btn btn-primary">Gérer les stocks</a>
   </div>
   </div>
