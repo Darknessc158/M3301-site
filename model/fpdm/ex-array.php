@@ -6,25 +6,31 @@
 
 require('fpdm.php');
 
+$name = $_POST['name']);
+$address = $_POST['address']);
+$city = $_POST['city']);
+$phone = $_POST['phone']);
 
-	if (!isset( $_POST['name'])) {
-		 $_POST['name'])=" frank ";
+
+	if (!isset($name)) {
+		 	$phone = "test";
 	}
-	if (!isset(  $_POST['address'])) {
-		 $_POST['address'])=" ocean ";
+	if (!isset($address)) {
+			$phone = "test";
 	}
-	if (!isset( $_POST['city'])) {
-		 $_POST['city'])="didier ";
+	if (!isset($city)) {
+		 	$phone = "test";
 	}
-	if (!isset( $_POST['phone'])) {
-		 $_POST['phone'])=" ti pipe ";
+	if (!isset($phone)) {
+		$phone = "test";
 	}
+
 	echo "oui";
 	$fields = array(
-		'name'    => $_POST['name'],
-		'address' =>  $_POST['address'],
-		'city'    =>  $_POST['city'],
-		'phone'   =>  $_POST['phone']
+		'name'    => $name,
+		'address' => $address,
+		'city'    => $city,
+		'phone'   =>  $phone
 	);
 
 	$pdf = new FPDM('template.pdf');
