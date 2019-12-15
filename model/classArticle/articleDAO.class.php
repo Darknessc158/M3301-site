@@ -50,7 +50,7 @@ class articleDAO
   }
 
   function updateUnArticleStock($id,$stockrestant){ // update d'un article
-    $req = "UPDATE article set quantiteCommande=$stockrestant WHERE idArticle=$id;";
+    $req = "UPDATE article set quantite=$stockrestant WHERE idArticle=$id;";
     $sth=$this->db->query($req);
   }
 

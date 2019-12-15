@@ -82,7 +82,7 @@
           <?php } ?>
         </SELECT><br/>
 
-        <label for="">Quantité commandée doit être infèrieur à la quantité restante :</label><br/>
+        <label for="">Quantité commandée (inférieur à la quantité restante) :</label><br/>
         <input type="text" name="quantiteCommande" value="" /><br/>
 
         <label for="etatDuPaiement">Etat du paiement :</label><br/>
