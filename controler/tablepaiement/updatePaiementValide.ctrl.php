@@ -27,7 +27,6 @@ if ($type == 'Article'){
   $datePaiement = $_POST['datePaiementArticle'];
   $description = explode("(",$unPaiement->getDescription())[0];
   $quantiteCommande = $_POST['quantiteCommande'];
-  var_dump($description);
   $prix = (($articles->getUnArticleRef($description))->getPrix())*$quantiteCommande;
   $etatDuPaiement = $_POST['etatDuPaiementArticle'];
   $description = $description.'('.$quantiteCommande.')';
