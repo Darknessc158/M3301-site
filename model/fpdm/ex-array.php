@@ -1,4 +1,3 @@
-
 <?php
 
 /***************************
@@ -6,6 +5,8 @@
 ****************************/
 
 require('fpdm.php');
+
+
 if(isset($_POST['valider'])){
 
 	$fields = array(
