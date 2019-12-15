@@ -5,8 +5,21 @@
 ****************************/
 
 require('fpdm.php');
-if(isset($_POST['valider'])){
 
+
+	if (!isset( $_POST['name'])) {
+		 $_POST['name'])=" frank ";
+	}
+	if (!isset(  $_POST['address'])) {
+		 $_POST['address'])=" ocean ";
+	}
+	if (!isset( $_POST['city'])) {
+		 $_POST['city'])="didier ";
+	}
+	if (!isset( $_POST['phone'])) {
+		 $_POST['phone'])=" ti pipe ";
+	}
+	echo "oui";
 	$fields = array(
 		'name'    => $_POST['name'],
 		'address' =>  $_POST['address'],
