@@ -25,9 +25,12 @@
     {
       var url ;
       url = formulaire.ListeUrl.options[formulaire.ListeUrl.selectedIndex].value;
-      window.open(url,'_blank');
+      //window.open(url,'_blank'); truc de base
+      // nouveauté : (et i marche )
+      window.location.href=url;
     }
   }
+
   </script>
   <FORM >
     <h3>Liste des PDF </h3>
@@ -53,8 +56,8 @@
 
         <div class="boite formetpdf">
         <div class="formulaire">
-        <form class="" action="../../model/fpdm/ex-array.php" method="post" autocomplete="on">
-        <p> Name :<br /></p>
+        <form class="" action="../../model/fpdm/ex-array.php" method="post" autocomplete="off">
+        <p> Name :<br />
         <input list="nom" type="text" name="name" />
         <datalist id="nom">
         <option value="proposition nom 1 ">
@@ -62,7 +65,8 @@
         <option value="proposition nom 3">
         <option value="proposition nom 4">
         </datalist>
-
+        </p>
+        
         <p>Address :<br />
         <input list="address" type="text" name="address" />
         <datalist id="address">
@@ -72,7 +76,6 @@
         <option value="proposition adresse 4">
         <option value="45 rue du zouk">
         <option value="289 rue des exemples ">
-
         </datalist>
         </p>
 

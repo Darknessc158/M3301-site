@@ -88,7 +88,7 @@ Franki Vincent
     {
       var url ;
       url = formulaire.ListeUrl.options[formulaire.ListeUrl.selectedIndex].value;
-      window.open(url,'_blank');
+        window.location.href=url;
     }
   }
   </script>
@@ -123,7 +123,7 @@ if (isset($_GET['name'])){
 
     <form autocomplete="off" action="/action_page.php">
       <div class="autocomplete" style="width:300px;">
-      
+
         <input id="inputname" type="text" name="name" placeholder="name">
 
         <input id="inputcity" type="text" name="city" placeholder="city">

@@ -9,19 +9,19 @@ require('fpdm.php');
 if($_GET['modele']='exemple'){
   if(isset($_POST['valider'])){
 
-    if (!isset($_POST['name']))$name = $_POST['name'];
-   else $name = ' ';
+    if (empty($_POST['name']))$name =' ' ;
+   else $name = $_POST['name'];
 
-   if (!isset($_POST['address']))$address = $_POST['address'];
-  else $address = ' ';
+   if (empty($_POST['address']))$address =' ' ;
+  else $address = $_POST['address'];
 
-  if (!isset($_POST['city']))$city = $_POST['city'];
-  else $city = ' ';
+  if (empty($_POST['city']))$city =' ';
+  else $city =  $_POST['city'];
 
-  if (!isset($_POST['phone']))$phone = $_POST['phone'];
-  else $phone = ' ';
+  if (empty($_POST['phone']))$phone = ' ';
+  else $phone =  $_POST['phone'];
 
-  
+
     $fields = array(
   		'name'    => $name,
   		'address' =>  $address,
