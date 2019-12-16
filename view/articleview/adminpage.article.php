@@ -43,29 +43,60 @@
 
   <h2>Gestion des stocks</h2>
   <!-- Tableau !-->
+  <?php $chemin='../../controler/tablearticle/tablearticle.ctrl.php' ?>
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
 
-        <th>
-        <p>Catégorie</p>
-        </th>
+        <div class="boite_titre">
+          <th>
+            <p>Catégorie</p>
+            <div class="icones_tri">
+              <a href="<?= $chemin ?>?tri=catecroit"><i class="fas fa-sort-up"></i></a>
+              <a href="<?= $chemin ?>?tri=catedecroit"><i class="fas fa-sort-down"></i></a>
+            </div>
+          </th>
+        </div>
 
-        <th>
-          <p>Produit et taille</p>
-        </th>
+        <div class="boite_titre">
+          <th>
+            <p>Produit et taille</p>
+            <div class="icones_tri">
+              <a href="<?= $chemin ?>?tri=produitcroit"><i class="fas fa-sort-up"></i></a>
+              <a href="<?= $chemin ?>?tri=produitdecroit"><i class="fas fa-sort-down"></i></a>
+            </div>
+          </th>
+        </div>
 
-        <th>
-          <p>Quantité en stock</p>
-        </th>
+        <div class="boite_titre">
+          <th>
+            <p>Quantité en stock</p>
+            <div class="icones_tri">
+              <a href="<?= $chemin ?>?tri=quantitecroit"><i class="fas fa-sort-up"></i></a>
+              <a href="<?= $chemin ?>?tri=quantitedecroit"><i class="fas fa-sort-down"></i></a>
+            </div>
+          </th>
+        </div>
 
-        <th>
-          <p>Prix</p>
-        </th>
+        <div class="boite_titre">
+          <th>
+            <p>Prix</p>
+            <div class="icones_tri">
+              <a href="<?= $chemin ?>?tri=prixcroit"><i class="fas fa-sort-up"></i></a>
+              <a href="<?= $chemin ?>?tri=prixdecroit"><i class="fas fa-sort-down"></i></a>
+            </div>
+          </th>
+        </div>
 
-        <th>
-          <p>Marque</p>
-        </th>
+        <div class="boite_titre">
+          <th>
+            <p>Marque</p>
+            <div class="icones_tri">
+              <a href="<?= $chemin ?>?tri=marquecroit"><i class="fas fa-sort-up"></i></a>
+              <a href="<?= $chemin ?>?tri=marquedecroit"><i class="fas fa-sort-down"></i></a>
+            </div>
+          </th>
+        </div>
 
         <th>
           <p>Actions</p>
@@ -84,10 +115,10 @@
           <td>
             <a href="../../controler/tablearticle/updateArticleAvant.ctrl.php?idArticle=<?=$unArticle->getIdArticle();?>"><i class="far fa-edit" title="Modifier l'article."></i></a>
             <i class="far fa-trash-alt" title="Supprimer l'article." style="cursor:pointer; color:red;" onClick="DelArticle('<?=$unArticle->getIdArticle();?>')"></i>
-            </td>
+          </td>
         </tr>
-        <?php } ?>
-        <p>Ajouter un article : <a href="../../view/articleview/insertArticle.php"> <i class="fas fa-plus-circle"></i> </a></p>
+      <?php } ?>
+      <p>Ajouter un article : <a href="../../view/articleview/insertArticle.php"> <i class="fas fa-plus-circle"></i> </a></p>
     </tbody>
   </table>
     <!-- Fin tableau -->
