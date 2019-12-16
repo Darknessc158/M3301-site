@@ -48,55 +48,60 @@
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
 
-        <div class="boite_titre">
-          <th>
+
+        <th>
+          <div class="boite_titre">
             <p>Catégorie</p>
             <div class="icones_tri">
               <a href="<?= $chemin ?>?tri=catecroit"><i class="fas fa-sort-up"></i></a>
               <a href="<?= $chemin ?>?tri=catedecroit"><i class="fas fa-sort-down"></i></a>
             </div>
-          </th>
-        </div>
+          </div>
+        </th>
 
-        <div class="boite_titre">
-          <th>
+        <th>
+          <div class="boite_titre">
             <p>Produit et taille</p>
             <div class="icones_tri">
               <a href="<?= $chemin ?>?tri=produitcroit"><i class="fas fa-sort-up"></i></a>
               <a href="<?= $chemin ?>?tri=produitdecroit"><i class="fas fa-sort-down"></i></a>
             </div>
-          </th>
-        </div>
+          </div>
+        </th>
+      </div>
 
+      <th>
         <div class="boite_titre">
-          <th>
-            <p>Quantité en stock</p>
-            <div class="icones_tri">
-              <a href="<?= $chemin ?>?tri=quantitecroit"><i class="fas fa-sort-up"></i></a>
-              <a href="<?= $chemin ?>?tri=quantitedecroit"><i class="fas fa-sort-down"></i></a>
-            </div>
-          </th>
+          <p>Quantité en stock</p>
+          <div class="icones_tri">
+            <a href="<?= $chemin ?>?tri=quantitecroit"><i class="fas fa-sort-up"></i></a>
+            <a href="<?= $chemin ?>?tri=quantitedecroit"><i class="fas fa-sort-down"></i></a>
+          </div>
         </div>
+      </th>
+    </div>
 
-        <div class="boite_titre">
-          <th>
-            <p>Prix</p>
-            <div class="icones_tri">
-              <a href="<?= $chemin ?>?tri=prixcroit"><i class="fas fa-sort-up"></i></a>
-              <a href="<?= $chemin ?>?tri=prixdecroit"><i class="fas fa-sort-down"></i></a>
-            </div>
-          </th>
+    <th>
+      <div class="boite_titre">
+        <p>Prix</p>
+        <div class="icones_tri">
+          <a href="<?= $chemin ?>?tri=prixcroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=prixdecroit"><i class="fas fa-sort-down"></i></a>
         </div>
+      </div>
+    </th>
+  </div>
 
-        <div class="boite_titre">
-          <th>
-            <p>Marque</p>
-            <div class="icones_tri">
-              <a href="<?= $chemin ?>?tri=marquecroit"><i class="fas fa-sort-up"></i></a>
-              <a href="<?= $chemin ?>?tri=marquedecroit"><i class="fas fa-sort-down"></i></a>
-            </div>
-          </th>
-        </div>
+  <th>
+    <div class="boite_titre">
+      <p>Marque</p>
+      <div class="icones_tri">
+        <a href="<?= $chemin ?>?tri=marquecroit"><i class="fas fa-sort-up"></i></a>
+        <a href="<?= $chemin ?>?tri=marquedecroit"><i class="fas fa-sort-down"></i></a>
+      </div>
+    </div>
+  </th>
+
 
         <th>
           <p>Actions</p>
