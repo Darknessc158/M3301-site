@@ -43,7 +43,7 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="../view/autres/main.view.php">Accueil</a>
+          <a class="nav-link" href="../view/autres/accueil.view.php">Accueil</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../view/autres/actualites.view.php">Actualités</a>

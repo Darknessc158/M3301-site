@@ -7,7 +7,7 @@ $adherents = new adherentDAO('../model/data/db');
 
 $lesadh = $adherents->getLesAdherents();
 
-var_dump($lesadh);
+//var_dump($lesadh);
 
 include('../view/autres/lescoureurs.view.php');
 ?>
