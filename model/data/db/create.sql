@@ -14,7 +14,7 @@ CREATE TABLE adherent (
      telephone char(10),
      mail varchar(40),
      numLicence varchar(20) UNIQUE,
-     urlPhoto varchar(150),
+     urlPhoto varchar(200),
      FOREIGN KEY (numLicence) REFERENCES  licence(numLicence)
 );
 

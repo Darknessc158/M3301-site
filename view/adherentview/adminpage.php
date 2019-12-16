@@ -104,7 +104,7 @@
 
         <th>
           <div class="boite_titre">
-          <p>Numéro de licence</p>
+          <p>Date de naissance</p>
           <div class="icones_tri">
             <a href="<?= $chemin ?>?tri=datenaissancecroit"><i class="fas fa-sort-up"></i></a>
             <a href="<?= $chemin ?>?tri=datenaissancedecroit"><i class="fas fa-sort-down"></i></a>
