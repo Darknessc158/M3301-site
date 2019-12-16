@@ -111,7 +111,13 @@
     </div>
     <div class="element">
       <h4>Les stages</h4>
+      <p>Stage de cohésion (un peu de vélo, beaucoup d'amusement) : </p>
       <p>Stage de présaison, stage de cohésion, ...</p>
+    </div>
+    <div class="container">
+      <img src="../../model/data/images/accueil/stage1_cohesion1.JPG" alt="" width="42%">
+      <img src="../../model/data/images/accueil/stage1_cohesion2.JPG" alt="" width="42%">
+      <img src="../../model/data/images/accueil/stage1_depart.JPG" alt="" width="42%">
     </div>
   </div>
 
