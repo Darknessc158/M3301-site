@@ -6,10 +6,12 @@
 </head>
 <body>
 
+<form class="selecteur" action="formulaire.php" method="post">
+
+</form>
 
 
-
-
+<?php if($_POST['name']='exemple') ?>
   <form class="" action="../../model/fpdm/ex-array.php" method="post">
     <p> Nom :<br /> <input type="text" name="name" /></p>
     <p>Address :<br /><input type="text" name="address" /></p>
