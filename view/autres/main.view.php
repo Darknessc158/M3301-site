@@ -52,7 +52,7 @@
           <a class="nav-link" href="lebureau.view.php">Le bureau</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="lescoureurs.view.php">Les coureurs</a>
+          <a class="nav-link" href="../../controler/lescoureurs.ctrl.php">Les coureurs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>

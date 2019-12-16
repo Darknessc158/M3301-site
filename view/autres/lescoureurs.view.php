@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="../../view/css/main.css" rel="stylesheet">
+  <link href="../view/css/main.css" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
   <title>SCALE Echirolles - club de cyclisme</title>
 </head>
-<body>
+<body style="text-align:center;">
 
   <div class="boximg" style="margin-bottom:0">
     <p class="box">
-      <img class="scroll" src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
-      <img class="scroll" src="../../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
-      <img class="scroll" src="../../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
+      <img class="scroll" src="../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
+      <img class="scroll" src="../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
+      <img class="scroll" src="../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
     </p>
   </div>
 
@@ -43,25 +43,25 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="main.view.php">Accueil</a>
+          <a class="nav-link" href="../view/autres/main.view.php">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="actualites.view.php">Actualités</a>
+          <a class="nav-link" href="../view/autres/actualites.view.php">Actualités</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="lebureau.view.php">Le bureau</a>
+          <a class="nav-link" href="../view/autres/lebureau.view.php">Le bureau</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="lescoureurs.view.php">Les coureurs</a>
+          <a class="nav-link" href="../view/autres/lescoureurs.view.php">Les coureurs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
+          <a class="nav-link" href="../view/autres/histoireclub.view.php">Histoire du club</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.view.php">Nous contacter</a>
+          <a class="nav-link" href="../view/autres/contact.view.php">Nous contacter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../view/page administrateur/admin.view.php">Page administrateur</a>
+          <a class="nav-link" href="../view/page administrateur/admin.view.php">Page administrateur</a>
         </li>
       </ul>
     </div>
