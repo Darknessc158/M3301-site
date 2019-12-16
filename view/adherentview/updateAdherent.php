@@ -40,6 +40,10 @@
         Numero de licence (si connu) :<br />
        <input type="text" name="numlicence" value="<?php echo $numlicence ?>" />
     </p>
+    <p>
+        URL photo (si connue) :<br />
+       <input type="text" name="urlphoto" value="<?php echo $urlphoto ?>" />
+    </p>
 
     <p>
        <input type="submit" value="Modifier" />
