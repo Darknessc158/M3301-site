@@ -70,20 +70,13 @@
 
 <h1>Les coureurs en 2019</h1>
 
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20190119/ob_a63655_lucien-tytgat.jpg" alt="" width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20190410/ob_a1b6f5_louison-martin.jpg" alt="" width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_641979_bastille-8.JPG" alt=""  width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_8d0318_bastille-2.JPG" alt=""  width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20180116/ob_fae257_17-c-murianette-077-original-2.jpg" alt=""  width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_8c8a5b_prapoutel-15.JPG" alt=""  width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20180605/ob_14848e_p1120273.JPG" alt=""  width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_ca8128_murianette-7.JPG" alt=""  width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_f3b99a_prapoutel-10.JPG" alt=""  width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_ac3fd5_bastille-5.JPG" alt=""  width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20180116/ob_8ddab7_17-c-murianette-084-original-2.jpg" alt=""  width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20180116/ob_fb1d58_17-c-murianette-078-original-2.jpg" alt=""  width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_af7d9a_miribel-3.JPG" alt=""  width="10%" height="auto">
-<img src="https://img.over-blog-kiwi.com/1/54/10/44/20161228/ob_acf0dd_lalley4.JPG" alt=""  width="10%" height="auto">
+<?php foreach ($lesadh as $coureur) {
+  echo "<div>";
+  echo '<p>'.$coureur->getPrenom().' '.$coureur->getNom().'</p>';
+  echo '<p> Catégorie : '.$coureur->getCategorie().'</p>';
+  echo '<img src="'.$coureur->getUrlPhoto().'" alt="" width="10%" height="auto">';
+  echo "</div>";
+} ?>
 
 
 

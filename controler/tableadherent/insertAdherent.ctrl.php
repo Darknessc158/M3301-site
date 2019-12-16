@@ -17,8 +17,9 @@ $adresse = $_POST['adresse'];
 $telephone = $_POST['telephone'];
 $mail = $_POST['mail'];
 $numlicence = $_POST['numlicence'];
+$urlphoto = $_POST['urlphoto'];
 
-$unAdherent = $adherents->insertUnAdherent($nom,$prenom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numlicence);
+$unAdherent = $adherents->insertUnAdherent($nom,$prenom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numlicence,$urlphoto);
 
 $resadh = $adherents->getLesAdherents();
 
