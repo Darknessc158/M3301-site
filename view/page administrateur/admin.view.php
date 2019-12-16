@@ -70,6 +70,15 @@
   </div>
   </div>
 
+  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="transactions-icon.png" alt="image gestion des stocks">
+  <div class="card-body">
+    <h5 class="card-title">Gestionnaire du site</h5>
+    <p class="card-text">Modifier les site, Ajouter des coureurs ou des articles pour l'actualité ...</p>
+    <a href="../../view/adherentview/insertAdherentSite.php" class="btn btn-primary">Gérer le site</a>
+  </div>
+  </div>
+
   </div>
 
 

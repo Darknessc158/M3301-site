@@ -11,7 +11,7 @@
 
   <title>SCALE Echirolles - club de cyclisme</title>
 </head>
-<body>
+<body style="background-color:silver;">
 
   <div class="boximg" style="margin-bottom:0">
     <p class="box">

@@ -40,6 +40,10 @@
         Numero de licence (si connu) :<br />
        <input type="text" name="numlicence" value="" />
     </p>
+    <p>
+        URL photo (si connue) :<br />
+       <input type="text" name="urlphoto" value="" />
+    </p>
 
     <p>
        <input type="submit" value="Ajouter" />
