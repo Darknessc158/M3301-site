@@ -36,6 +36,10 @@ class article
   {
     return $this->marque;
   }
+  public function reduireStock($x)
+  {
+    $this->quantite = (string)($this->quantite - $x);
+  }
 
 }
 

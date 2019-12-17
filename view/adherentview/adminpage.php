@@ -13,7 +13,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" style="text-align:center;">
 
 
   <div class="jumbotron text-center" style="margin-bottom:0">
@@ -41,10 +41,10 @@
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tout les paiements</a>
+          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tous les paiements</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Tout les articles</a>
+          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Tous les articles</a>
         </li>
       </ul>
     </div>
@@ -57,49 +57,43 @@
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
-        <th><a href="#"></a>idadherent</th><!--  nomcolonne de la bd -->
         <th><p>Nom
           <a href="<?= $chemin ?>?tri=nomcroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>?tri=nomdecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
 
-        <th><p>Prenom
+        <th><p>Prénom
           <a href="<?= $chemin ?>?tri=prenomcroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>?tri=prenomdecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
 
-        <th><p>categorie
+        <th><p>Catégorie
           <a href="<?= $chemin ?>?tri=catecroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>?tri=catedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
-        <th><p>datenaissance
+        <th><p>Date de naissance
           <a href="<?= $chemin ?>?tri=datenaissancecroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>?tri=datenaissancedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
-        <th><p>adresse
-        <a href="<?= $chemin ?>?tri=adressecroit"><i class="fas fa-sort-up"></i></a>
-        <a href="<?= $chemin ?>?tri=adressedecroit"><i class="fas fa-sort-down"></i></a>
+        <th><p>Adresse
+          <a href="<?= $chemin ?>?tri=adressecroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=adressedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
-        <th><p>telephone
-        <a href="<?= $chemin ?>?tri=telcroit"><i class="fas fa-sort-up"></i></a>
-        <a href="<?= $chemin ?>?tri=teldecroit"><i class="fas fa-sort-down"></i></a>
+        <th><p>Télephone
         </p></th>
-        <th><p>mail
-        <a href="<?= $chemin ?>?tri=mailcroit"><i class="fas fa-sort-up"></i></a>
-        <a href="<?= $chemin ?>?tri=maildecroit"><i class="fas fa-sort-down"></i></a>
+        <th><p>Email
         </p></th>
-        <th><p>numlicence
-        <a href="<?= $chemin ?>?tri=numlicencecroit"><i class="fas fa-sort-up"></i></a>
-        <a href="<?= $chemin ?>?tri=numlicencedecroit"><i class="fas fa-sort-down"></i></a>
+        <th><p>Numéro de licence
+          <a href="<?= $chemin ?>?tri=numlicencecroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=numlicencedecroit"><i class="fas fa-sort-down"></i></a>
         </p></th>
-        <th>Paiement</th>
-        <th>Action</th>
+
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
-      <?php foreach ($resadh as $key => $unAdherent){ ?>
+      <?php foreach ($resadh as $unAdherent){ ?>
         <tr>
-          <td><?=$unAdherent->getIdAdherent();?></td>
           <td><?=$unAdherent->getNom();?></td>
           <td><?=$unAdherent->getPrenom();?></td>
           <td><?=$unAdherent->getCategorie();?></td>
@@ -108,17 +102,38 @@
           <td><?=$unAdherent->getTelephone();?></td>
           <td><?=$unAdherent->getMail();?></td>
           <td><?=$unAdherent->getNumLicence();?></td>
-          <td> <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>">Paiement</a> </td>
           <td>
-            <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit"></i></a>
-            <a href="<?= $chemin ?>?type=delete&idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-times"></i></a>
-           </td>
+            <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-shopping-basket" title="Voir les paiements."></i></a>
+            <a href="../../controler/tableadherent/updateAdherent.ctrl.php?idAdherent=<?=$unAdherent->getIdAdherent();?>"><i class="fas fa-user-edit" title="Modifier l'adhérent."></i></a>
+            <i class="fas fa-user-times" title="Supprimer l'adhérent." style="cursor:pointer; color:red;" onClick="DelAdherent('<?=$unAdherent->getIdAdherent();?>')"></i>
+          </td>
         </tr>
-        <?php } ?>
-        <p>Ajouter un adherent : <a href="../../view/adherentview/insertAdherent.php"> <i class="fas fa-plus-circle"></i> </a></p>
-      </tbody>
-    </table>
-    <!-- Fin tableau -->
-  </body>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  </html>
+      <?php } ?>
+      <p>Ajouter un adherent : <a href="../../view/adherentview/insertAdherent.php"> <i class="fas fa-plus-circle"></i> </a></p>
+    </tbody>
+  </table>
+  <!-- Fin tableau -->
+</body>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<!-- Script pour valider supression d'un adhérent -->
+<script>
+function DelAdherent(id){
+    if(confirm("Voulez vous vraiment supprimer cet adhérent ?")){
+            window.location='../../controler/tableadherent/tableadherent.ctrl.php?type=delete&idAdherent='+id
+    }
+    else{
+            alert("L'adhérent n'a pas été supprimé.")
+    }
+}
+function ChangeIcon(element){
+  var x = element.getElementById("asc");
+  var v = x.getAttribute("class");
+  if (v == "fas fa-sort-up"){
+    v = "fas fa-sort-down";
+  }else{
+    v = "fas fa-sort-up";
+  }
+  x.setAttribute("class",v);
+}
+</script>
+</html>

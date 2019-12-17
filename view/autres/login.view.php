@@ -44,70 +44,47 @@
   </nav>
 
 
-  <div class="container" style="margin-top:30px">
-    <div class="row">
-      <div class="col-sm-4">
-        <h2>A propos de nous</h2>
-        <p>Scale Echirolles est une association sportive de vélo</p>
-        <h3>Nos sponsors</h3>
-        <p>Retrouvez ici tout nos sponsors</p>
-        <ul class="nav nav-pills flex-column">
-          <li class="nav-item">
-            <!-- <a class="nav-link" href="https://www.gites-de-france-isere.com/"><img src="../data/sponsor_gite.jpg" alt=""></a>  -->
-          </li>
-          <li class="nav-item">
-            <!-- <a class="nav-link" href="https://piecesaccessoiresvelo.fr/"><img src="../data/sponsor_pieces.png" alt=""></a> -->
-          </li>
-        </ul>
-        <hr class="d-sm-none">
-      </div>
-
-      <div class="col-sm-8">
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Dec 7, 2017</h5>
-        <p>Some text..</p>
-        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-      </div>
-    </div>
-  </div>
-
-
-
-<footer class="page-footer font-small blue pt-4 bg-dark text-white">
-  <div class="container-fluid text-center text-md-left">
-    <div class="row">
-      <div class="col-md-6 mt-md-0 mt-3">
-
-        <h5 class="text-uppercase">Footer Content</h5>
-        <p>Here you can use rows and columns to organize your footer content.</p>
-
-      </div>
-      <hr class="clearfix w-100 d-md-none pb-3">
-
-      <div class="col-md-3 mb-md-0 mb-3">
-
-        <h5 class="text-uppercase">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
-      
-  </div>
-  <div class="footer-copyright text-center py-3">© 2019 Copyright
-  </div>
-</footer>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Sign In</h3>
+			</div>
+			<div class="card-body">
+				
+				<form action="login.ctrl.php" method="post">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="username">
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="password">
+					</div>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Se souvenir de moi
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Login" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Pas encore inscrit?<a href="#">S'inscrire</a>
+				</div>
+				<div class="d-flex justify-content-center">
+					<a href="#">Mot de passe oublié?</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->

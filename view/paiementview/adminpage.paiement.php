@@ -13,7 +13,7 @@
 
 </head>
 
-<body id="page-top">
+<body id="page-top" style="text-align:center;">
 
 
   <div class="jumbotron text-center" style="margin-bottom:0">
@@ -41,62 +41,95 @@
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tout les paiements</a>
+          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tous les paiements</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Tous les articles</a>
         </li>
       </ul>
     </div>
   </nav>
   <!-- NAV DE BASE !-->
 
-  <h2>Table des paiements</h2>
+  <h2>Gestion des paiements <?php if (isset($_GET['idAdherent'])){ echo 'concernant '; echo ($adherents->getUnAdherent($_GET['idAdherent']))->getPrenom().' '.($adherents->getUnAdherent($_GET['idAdherent']))->getNom();} ?> </h2>
+
+<?php if ($respaiement == null){ if (isset($_GET['idAdherent'])) {echo 'Pas de paiement enregistré pour cet adhérent';}else{echo "Pas de paiement enregistré";}}else{ ?>
+
   <!-- Tableau !-->
-  <?php $chemin='../../controler/tableadherent/tableadherent.ctrl.php' ?>
+  <?php $chemin='../../controler/tablepaiement/tableUnPaiement.ctrl.php?';
+    if (isset($_GET['idAdherent'])){
+      $id = $_GET['idAdherent'];
+      $chemin='../../controler/tablepaiement/tableUnPaiement.ctrl.php?idAdherent='.$id.'&';
+    }
+
+   ?>
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
 
-        <th>idPaiement</th><!--  nomcolonne de la bd -->
+        <th>Catégorie
+          <a href="<?= $chemin ?>tri=catecroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>tri=catedecroit"><i class="fas fa-sort-down"></i></a>
+        </th>
 
-        <th>datePaiement</th>
+        <th>Date du paiement
+          <a href="<?= $chemin ?>tri=datepaiementcroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>tri=datepaiementdecroit"><i class="fas fa-sort-down"></i></a>
+        </th>
 
-        <th>prix</th>
+        <th>Prix
+          <a href="<?= $chemin ?>tri=prixcroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>tri=prixdecroit"><i class="fas fa-sort-down"></i></a>
+        </th>
 
-        <th>description</th>
+        <th>Adhérent</th>
 
-        <th>etatDuPaiement</th>
+        <th>Etat du paiement
+          <a href="<?= $chemin ?>?tri=etatcroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=etatdecroit"><i class="fas fa-sort-down"></i></a>
+        </th>
 
-        <th>type</th>
+        <th>Description(quantité)</th>
 
-        <th>idAdherent</th>
-
-        <th>Action</th>
+        <th>Actions</th>
 
       </tr>
     </thead>
     <tbody>
 
-      <?php if ($res != 0){ foreach ($respaiement as $key => $unPaiement) { ?>
-        <?php if($adherents->adherentExiste($unPaiement->getIdAdherent()) != 0 ){$adh = $adherents->getUnAdherent($unPaiement->getIdAdherent()); } ?>
+      <?php foreach ($respaiement as $key => $unPaiement) { ?>
         <tr>
-          <td><?=$unPaiement->getIdPaiement();?></td>
+          <td><?=$unPaiement->getType();?></td>
           <td><?=$unPaiement->getDatePaiement();?></td>
           <td><?=$unPaiement->getPrix();?></td>
-          <td><?=$unPaiement->getDescription();?></td>
-          <td><?=$unPaiement->getEtatDuPaiement();?></td>
-          <td><?=$unPaiement->getType();?></td>
-          <td><?=$unPaiement->getIdAdherent();?> (<?php if ($adherents->adherentExiste($unPaiement->getIdAdherent()) == 0) {echo"Pas d'adherent";}else{ echo $adh->getNom(); echo ","; echo $adh->getPrenom(); }?>)</td><!--Lien vers l'adherents pour savoir qui c -->
           <td>
-            <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update"><i class="fas fa-user-edit"></i></a>
-            <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement=<?=$unPaiement->getIdPaiement();?>"><i class="fas fa-user-times"></i></a>
+          <?php echo ($paiements->getNomPrenomAdh($unPaiement->getIdAdherent()))[1]." ".($paiements->getNomPrenomAdh($unPaiement->getIdAdherent()))[0]; ?>
+          </td>
+          <td><?=$unPaiement->getEtatDuPaiement();?></td>
+          <td><?=$unPaiement->getDescription();?></td>
+          <td>
+            <a href="../../controler/tablepaiement/updatePaiement.ctrl.php?idPaiement=<?=$unPaiement->getIdPaiement();?>&type=update&idAdherent=<?=$unPaiement->getIdAdherent();?>"><i class="far fa-edit" title="Modifier"></i></a>
+            <i class="far fa-trash-alt" title="Supprimer" style="cursor:pointer; color:red;" onClick="DelPaiement('<?=$unPaiement->getIdPaiement();?>','<?=$unPaiement->getIdAdherent();?>')"></i>
           </td>
         </tr>
-      <?php }}else{
-        echo "Pas de paiement pour cet adherent";
-      } ?>
-      <p>Ajouter un paiement : <a href="../../view/paiementview/insertPaiement.php?idAdherent=<?php if (isset($_GET['idAdherent'])){echo $_GET['idAdherent'];}?>"> <i class="fas fa-plus-circle"></i> </a></p>
+      <?php }} ?>
+      <p>Ajouter un paiement : <a href="../../controler/tablepaiement/insertpaiementavant.ctrl.php<?php if (isset($_GET['idAdherent'])){echo "?idAdherent=".$_GET['idAdherent'];}?>"> <i class="fas fa-cart-plus"></i> </a></p>
     </tbody>
     </table>
     <!-- Fin tableau -->
   </body>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script>function DelPaiement(idpa,idad){
+      if(confirm("Voulez vous vraiment supprimer ce paiement ?")){
+        <?php  if (isset($_GET['idAdherent'])){ ?>
+              window.location='../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement='+idpa+'&idAdherent='+idad
+        <?php }else{ ?>
+              window.location='../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement='+idpa
+          <?php } ?>
+      }
+      else{
+              alert("Le paiement n'a pas été supprimé.")
+      }
+  }
+  </script>
   </html>
