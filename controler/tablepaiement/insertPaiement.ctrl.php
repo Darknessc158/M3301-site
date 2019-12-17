@@ -16,20 +16,28 @@ $adherents = new adherentDAO($config['database_path']);
 
 $lesadh = $adherents->getLesAdherents();
 
+
+
 $type = $_POST['type'];
 if ($type == 'Article'){
+  //obligé de le faire 2 fois car pas le meme name pour article et autres.
   $datePaiement = $_POST['datePaiementArticle'];
   $description = $_POST['descriptionArticle'];
   $quantiteCommande = $_POST['quantiteCommande'];
+  //-------------------------------------------
+
+  //changement du stock de l'article commandé
   $articlePaye = $articles->getUnArticleRef($description);
-  var_dump($quantiteCommande);
-  var_dump($articlePaye);
-  $articlePaye->reduireStock($quantiteCommande); //on reduit le stock dans php
-  var_dump($articlePaye);
-  $articles->updateUnArticle($articlePaye); //on update le stock dans le DAO
-  $prix = ($articlePaye->getPrix())*$quantiteCommande;
+  $stock = $articlePaye->getQuantite();
+  $stockrestant = $stock-$quantiteCommande;
+  $idArticle = $articlePaye->getIdArticle();
+  $articles->updateUnArticleStock($idArticle,$stockrestant); //on update le stock dans le DAO
+  //----------------------------------------
+
+  $prix = ($articlePaye->getPrix())*$quantiteCommande;//Calcul du prix
   $etatDuPaiement = $_POST['etatDuPaiementArticle'];
-  $description = $_POST['descriptionArticle'].'('.$quantiteCommande.')';
+  $description = $_POST['descriptionArticle'].'('.$quantiteCommande.')'; //on ecrit nomProduit (quantite)
+
 }else{//adhésion,licence
   $datePaiement = $_POST['datePaiement'];
   $prix = $_POST['prix'];

@@ -3,7 +3,7 @@
 <head>
   <title>SCALE Echirolles - club de cyclisme</title>
   <!-- Custom styles for this template-->
-  <link href="../../view/css/sb-admin.css" rel="stylesheet">
+  <link href="../../view/css/admintable.view.css" rel="stylesheet">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,15 +13,11 @@
 
 </head>
 
-<body id="page-top" style="text-align:center;">
+<body style="text-align:center; background-color:silver;">
 
-
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <img src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="">
-  </div>
   <!-- NAV DE BASE !-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="../../controler/tableadherent/tableadherent.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
+    <a class="navbar-brand" href="../../controler/tablearticle/tablearticle.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
@@ -32,42 +28,84 @@
           <a class="nav-link" href="lebureau.view.php">Le bureau</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="lescoureurs.view.php">Les coureurs</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tous les paiements</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Tous les articles</a>
+          <a class="nav-link" href="../../view/page administrateur/admin.view.php">Page administrateur</a>
         </li>
       </ul>
     </div>
   </nav>
   <!-- NAV DE BASE !-->
 
-  <h2>Gestion des Articles</h2>
+  <h2>Gestion des stocks</h2>
   <!-- Tableau !-->
+  <?php $chemin='../../controler/tablearticle/tablearticle.ctrl.php' ?>
   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
 
-        <th>Catégorie</th>
 
-        <th>Produit et taille</th>
+        <th>
+          <div class="boite_titre">
+            <p>Catégorie</p>
+            <div class="icones_tri">
+              <a href="<?= $chemin ?>?tri=catecroit"><i class="fas fa-sort-up"></i></a>
+              <a href="<?= $chemin ?>?tri=catedecroit"><i class="fas fa-sort-down"></i></a>
+            </div>
+          </div>
+        </th>
 
-        <th>Quantité en stock</th>
+        <th>
+          <div class="boite_titre">
+            <p>Produit et taille</p>
+            <div class="icones_tri">
+              <a href="<?= $chemin ?>?tri=produitcroit"><i class="fas fa-sort-up"></i></a>
+              <a href="<?= $chemin ?>?tri=produitdecroit"><i class="fas fa-sort-down"></i></a>
+            </div>
+          </div>
+        </th>
+      </div>
 
-        <th>Prix</th>
+      <th>
+        <div class="boite_titre">
+          <p>Quantité en stock</p>
+          <div class="icones_tri">
+            <a href="<?= $chemin ?>?tri=quantitecroit"><i class="fas fa-sort-up"></i></a>
+            <a href="<?= $chemin ?>?tri=quantitedecroit"><i class="fas fa-sort-down"></i></a>
+          </div>
+        </div>
+      </th>
+    </div>
 
-        <th>Marque</th>
+    <th>
+      <div class="boite_titre">
+        <p>Prix</p>
+        <div class="icones_tri">
+          <a href="<?= $chemin ?>?tri=prixcroit"><i class="fas fa-sort-up"></i></a>
+          <a href="<?= $chemin ?>?tri=prixdecroit"><i class="fas fa-sort-down"></i></a>
+        </div>
+      </div>
+    </th>
+  </div>
 
-        <th>Actions</th>
+  <th>
+    <div class="boite_titre">
+      <p>Marque</p>
+      <div class="icones_tri">
+        <a href="<?= $chemin ?>?tri=marquecroit"><i class="fas fa-sort-up"></i></a>
+        <a href="<?= $chemin ?>?tri=marquedecroit"><i class="fas fa-sort-down"></i></a>
+      </div>
+    </div>
+  </th>
+
+
+        <th>
+          <p>Actions</p>
+        </th>
 
       </tr>
     </thead>
@@ -80,12 +118,12 @@
           <td><?=$unArticle->getPrix();?></td>
           <td><?=$unArticle->getMarque();?></td>
           <td>
-            <a href="../../controler/tablearticle/updateArticleAvant.ctrl.php?idArticle=<?=$unArticle->getIdArticle();?>"><i class="fas fa-user-edit" title="Modifier l'article."></i></a>
-            <i class="fas fa-user-times" title="Supprimer l'article." style="cursor:pointer; color:red;" onClick="DelArticle('<?=$unArticle->getIdArticle();?>')"></i>
-            </td>
+            <a href="../../controler/tablearticle/updateArticleAvant.ctrl.php?idArticle=<?=$unArticle->getIdArticle();?>"><i class="far fa-edit" title="Modifier l'article."></i></a>
+            <i class="far fa-trash-alt" title="Supprimer l'article." style="cursor:pointer; color:red;" onClick="DelArticle('<?=$unArticle->getIdArticle();?>')"></i>
+          </td>
         </tr>
-        <?php } ?>
-        <p>Ajouter un article : <a href="../../view/articleview/insertArticle.php"> <i class="fas fa-plus-circle"></i> </a></p>
+      <?php } ?>
+      <p>Ajouter un article : <a href="../../view/articleview/insertArticle.php"> <i class="fas fa-plus-circle"></i> </a></p>
     </tbody>
   </table>
     <!-- Fin tableau -->
@@ -95,9 +133,6 @@
 <script>function DelArticle(id){
     if(confirm("Voulez vous vraiment supprimer cet article ?")){
             window.location='../../controler/tablearticle/tablearticle.ctrl.php?type=delete&idArticle='+id
-    }
-    else{
-            alert("L'article n'a pas été supprimé.")
     }
 }
 </script>

@@ -3,7 +3,7 @@
 <head>
   <title>SCALE Echirolles - club de cyclisme</title>
   <!-- Custom styles for this template-->
-  <link href="../../view/css/sb-admin.css" rel="stylesheet">
+  <link href="../../view/css/admintable.view.css" rel="stylesheet">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,15 +13,11 @@
 
 </head>
 
-<body id="page-top" style="text-align:center;">
+<body style="text-align:center; background-color:silver;">
 
-
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <img src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="">
-  </div>
   <!-- NAV DE BASE !-->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="../../controler/tableadherent/tableadherent.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark rounded">
+    <a class="navbar-brand" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
@@ -32,26 +28,20 @@
           <a class="nav-link" href="lebureau.view.php">Le bureau</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="lescoureurs.view.php">Les coureurs</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Tous les paiements</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Tous les articles</a>
+          <a class="nav-link" href="../../view/page administrateur/admin.view.php">Page administrateur</a>
         </li>
       </ul>
     </div>
   </nav>
   <!-- NAV DE BASE !-->
 
-  <h2>Gestion des paiements <?php if (isset($_GET['idAdherent'])){ echo 'concernant '; echo ($adherents->getUnAdherent($_GET['idAdherent']))->getPrenom().' '.($adherents->getUnAdherent($_GET['idAdherent']))->getNom();} ?> </h2>
+  <h2>Gestion des transactions <?php if (isset($_GET['idAdherent'])){ echo 'concernant '; echo ($adherents->getUnAdherent($_GET['idAdherent']))->getPrenom().' '.($adherents->getUnAdherent($_GET['idAdherent']))->getNom();} ?> </h2>
 
 <?php if ($respaiement == null){ if (isset($_GET['idAdherent'])) {echo 'Pas de paiement enregistré pour cet adhérent';}else{echo "Pas de paiement enregistré";}}else{ ?>
 
@@ -67,31 +57,57 @@
     <thead>
       <tr> <!-- remplissage auto avec notre bd -->
 
-        <th>Catégorie
+        <th>
+          <div class="boite_titre">
+          <p>Catégorie</p>
+          <div class="icones_tri">
           <a href="<?= $chemin ?>tri=catecroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>tri=catedecroit"><i class="fas fa-sort-down"></i></a>
+        </div>
+        </div>
         </th>
 
-        <th>Date du paiement
+        <th>
+          <div class="boite_titre">
+          <p>Date du paiement </p>
+          <div class="icones_tri">
           <a href="<?= $chemin ?>tri=datepaiementcroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>tri=datepaiementdecroit"><i class="fas fa-sort-down"></i></a>
+        </div>
+        </div>
         </th>
 
-        <th>Prix
+        <th>
+          <div class="boite_titre">
+          <p>Prix</p>
+          <div class="icones_tri">
           <a href="<?= $chemin ?>tri=prixcroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>tri=prixdecroit"><i class="fas fa-sort-down"></i></a>
+        </div>
+        </div>
         </th>
 
-        <th>Adhérent</th>
+        <th>
+          <p>Adhérent</p>
+          </th>
 
-        <th>Etat du paiement
+        <th>
+          <div class="boite_titre">
+          <p>Etat du paiement</p>
+          <div class="icones_tri">
           <a href="<?= $chemin ?>?tri=etatcroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>?tri=etatdecroit"><i class="fas fa-sort-down"></i></a>
+        </div>
+        </div>
         </th>
 
-        <th>Description(quantité)</th>
+        <th>
+          <p>Description(quantité)</p>
+        </th>
 
-        <th>Actions</th>
+        <th>
+          <p>Actions</p>
+        </th>
 
       </tr>
     </thead>
@@ -126,9 +142,6 @@
         <?php }else{ ?>
               window.location='../../controler/tablepaiement/tableUnPaiement.ctrl.php?type=delete&idPaiement='+idpa
           <?php } ?>
-      }
-      else{
-              alert("Le paiement n'a pas été supprimé.")
       }
   }
   </script>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Modification d'un Paiement</title>
+  <link rel="stylesheet" href="../../view/css/form.view.css">
 </head>
 <body>
 
@@ -92,8 +93,10 @@
       <p>
         <input type="submit" value="Modifier" />
         <input type="reset" value="Annuler" />
-        Retour : <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;}?>"><i class="fas fa-undo"></i></a>
-      </p>
+        </p>
+        <p>
+        Retour : <a id="retour" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;}?>"><i class="fas fa-undo"></i></a>
+        </p>
     </form>
 
 

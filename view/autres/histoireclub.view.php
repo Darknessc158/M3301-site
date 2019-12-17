@@ -31,13 +31,13 @@
           <a class="nav-link" href="lebureau.view.php">Le bureau</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="lescoureurs.view.php">Les coureurs</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../view/page administrateur/admin.view.php">Page administrateur</a>
         </li>
       </ul>
     </div>

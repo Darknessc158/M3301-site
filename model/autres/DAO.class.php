@@ -33,14 +33,6 @@ class DAO {
     return $result;
   }
 
-
-  // function getArticle(int $ref) {
-  //   $req = "SELECT * FROM article where ref=$ref";
-  //   $sth = $this->db->query($req);
-  //   $result = $sth->fetchAll(PDO::FETCH_CLASS, "article");
-  //   return $result;
-  // }
-
 }
 
  ?>

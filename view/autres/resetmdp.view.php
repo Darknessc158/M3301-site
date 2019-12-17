@@ -70,40 +70,32 @@
     <div class="d-flex justify-content-center h-100">
       <div class="card">
         <div class="card-header">
-          <h2>Inscription</h2>
+            <h2>Réinitialiser le mot de passe</h2>
         </div>
         <div class="card-body"style="width: 32rem;">
 
-          <form action="../../controler/auth/inscription.ctrl.php" method="post" class="needs-validation" novalidate>
-            <small class="help-block text-danger"><?php echo $username_err; ?></small>
-            <div class="input-group form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-              <input type="text" name="username" class="form-control" placeholder ="E-mail" required value="<?php echo $username; ?>">
-            </div>
-
-            <small class="help-block text-danger"><?php echo $password_err; ?></small>
-            <div class="input-group form-group<?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-              <input type="password" name="password" class="form-control" required placeholder="Mot de passe(6 carateres minimum)"value="<?php echo $password; ?>">
+          <form action="../../controler/auth/resetmdp.ctrl.php" method="post" class="needs-validation" novalidate>
+            <small class="help-block text-danger"><?php echo $new_password_err; ?></small>
+            <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
+                <input type="password" name="new_password" class="form-control" required placeholder="nouveau mot de passe(6 carateres minimum)"value="<?php echo $new_password; ?>">
             </div>
 
             <small class="help-block text-danger"><?php echo $confirm_password_err; ?></small>
-            <div class="input-group form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-              <input type="password" name="confirm_password" class="form-control" placeholder="Confirmer votre mot de passe"value="<?php echo $confirm_password; ?>">
+            <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
+                <input type="password" name="confirm_password" class="form-control" placeholder="Confirmer votre mot de passe"value="<?php echo $confirm_password; ?>">
             </div>
 
             <div class="form-group text-center">
               <input type="submit" class="btn btn-primary" value="Valider">
-              <input type="reset" class="btn btn-default" value="Réinitialiser">
+              <a class="btn btn-link" href="../../controler/auth/login.ctrl.php">Annuler</a>
             </div>
           </form>
         </div>
-        <div class="card-footer">
-          <div class="d-flex justify-content-center links">
-            <p>Deja inscrit? <a href="login.ctrl.php">S'identifier</a>.</p>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

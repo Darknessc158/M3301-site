@@ -2,6 +2,7 @@
 <html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="../../view/css/form.view.css">
   <title>Modification d'un Article</title>
 </head>
 <body>
@@ -31,7 +32,9 @@
     <p>
        <input type="submit" value="Modifier" />
        <input type="reset" value="Annuler" />
-       Retour : <a href="../../controler/tablearticle/tablearticle.ctrl.php"><i class="fas fa-undo"></i></a>
+       </p>
+       <p>
+       Retour : <a id="retour" href="../../controler/tablearticle/tablearticle.ctrl.php"><i class="fas fa-undo"></i></a>
     </p>
   </form>
 

@@ -49,16 +49,49 @@ class articleDAO
     $sth=$this->db->query($req);
   }
 
-  function updateUnArticle($article){ // update d'un article
-    $quantite = (INTEGER)$article->getQuantite();
-    var_dump($quantite);
-    $numArticle = (INTEGER)$article->getIdArticle();
-    var_dump($numArticle);
-    $req = "UPDATE article set quantiteCommande = '$quantite' WHERE numArticle='$numArticle';";
+  function updateUnArticleStock($id,$stockrestant){ // update d'un article
+    $req = "UPDATE article set quantite=$stockrestant WHERE idArticle=$id;";
     $sth=$this->db->query($req);
-    var_dump($sth);
   }
-
+  public function getListeTrie($tri){ //fonction pour recuperer les objets correspondant à une valeur d'un element(type,intitule...) et si tri recuperation triée
+        switch ($tri) {
+          case 'catecroit':
+          $recherche = $this->db->query("SELECT * FROM article ORDER BY categorie ASC ");
+          break;
+          case 'catedecroit':
+          $recherche = $this->db->query("SELECT * FROM article ORDER BY categorie DESC ");
+          break;
+          case 'produitcroit':
+          $recherche = $this->db->query("SELECT * FROM article ORDER BY description ASC ");
+          break;
+          case 'produitdecroit':
+          $recherche = $this->db->query("SELECT * FROM article ORDER BY description DESC ");
+          break;
+          case 'quantitecroit':
+          $recherche = $this->db->query("SELECT * FROM article ORDER BY quantite ASC ");
+          break;
+          case 'quantitedecroit':
+          $recherche = $this->db->query("SELECT * FROM article ORDER BY quantite DESC ");
+          break;
+          case 'prixcroit':
+          $recherche = $this->db->query("SELECT * FROM article ORDER BY prix ASC ");
+          break;
+          case 'prixdecroit':
+          $recherche = $this->db->query("SELECT * FROM article ORDER BY prix DESC ");
+          break;
+          case 'marquecroit':
+          $recherche = $this->db->query("SELECT * FROM article ORDER BY marque ASC ");
+          break;
+          case 'marquedecroit':
+          $recherche = $this->db->query("SELECT * FROM article ORDER BY marque DESC ");
+          break;
+          default:
+          $recherche = $this->db->query("SELECT * FROM article");
+          break;
+          }
+    $resultats=$recherche->fetchAll(PDO::FETCH_CLASS,'article');
+    return $resultats;
+  }
 }
 
 

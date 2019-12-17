@@ -1,0 +1,55 @@
+
+body{
+  text-align: center;
+  background-color: lightgray;
+}
+
+td, th {
+border: thin solid #6495ed;
+padding: auto;
+}
+
+a:link{
+  color: blue;
+}
+
+a:hover {
+  color: red;
+}
+
+.boite_titre{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.boite_titre p {
+  margin : auto;
+}
+
+.icones_tri {
+  display: flex;
+  flex-direction: column;
+}
+
+.scroll{
+  max-width: 100%;
+  height: 200px;
+}
+
+.boximg{
+  text-align: center;
+  align-items: center;
+  align-content: center;
+  display: flex;
+  background-color: gray;
+}
+.box{
+margin: auto;
+}
+img{
+  border-radius: 20px;
+}
+.scroll{
+  opacity: 80%;
+}

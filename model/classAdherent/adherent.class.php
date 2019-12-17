@@ -13,6 +13,7 @@ class adherent
     public $telephone;
     public $mail;
     public $numLicence;
+    public $urlPhoto;
 
 
     public function getIdAdherent(){
@@ -41,6 +42,9 @@ class adherent
     }
     public function getNumLicence(){
       return $this->numLicence;
+    }
+    public function getUrlPhoto(){
+      return $this->urlPhoto;
     }
 }
 

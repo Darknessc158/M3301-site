@@ -2,6 +2,7 @@
 <html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="../../view/css/form.view.css">
   <title>Ajout d'un adhérent à l'association</title>
 </head>
 <body>
@@ -39,11 +40,17 @@
         Numero de licence (si connu) :<br />
        <input type="text" name="numlicence" value="" />
     </p>
+    <p>
+        URL photo (si connue) :<br />
+       <input type="text" name="urlphoto" value="" />
+    </p>
 
     <p>
        <input type="submit" value="Ajouter" />
        <input type="reset" value="Annuler" />
-       Retour : <a href="../../controler/tableadherent/tableadherent.ctrl.php"><i class="fas fa-undo"></i></a>
+       </p>
+       <p>
+       Retour : <a id="retour" href="../../controler/tableadherent/tableadherent.ctrl.php"><i class="fas fa-undo"></i></a>
     </p>
   </form>
 

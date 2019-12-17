@@ -2,6 +2,7 @@
 <html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="../../view/css/form.view.css">
   <title>Ajout d'un paiement</title>
 </head>
 <body>
@@ -82,7 +83,7 @@
           <?php } ?>
         </SELECT><br/>
 
-        <label for="">Quantité commandée doit être infèrieur à la quantité restante :</label><br/>
+        <label for="">Quantité commandée (inférieur à la quantité restante) :</label><br/>
         <input type="text" name="quantiteCommande" value="" /><br/>
 
         <label for="etatDuPaiement">Etat du paiement :</label><br/>
@@ -94,7 +95,9 @@
     <p>
       <input type="submit" value="Ajouter" />
       <input type="reset" value="Annuler" />
-      Retour : <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;}?>"><i class="fas fa-undo"></i></a>
+    </p>
+    <p>
+      Retour : <a id="retour" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php<?php if (isset( $_GET['idAdherent'])){ echo "?idAdherent=".$id;}?>"><i class="fas fa-undo"></i></a>
     </p>
 
   </form>

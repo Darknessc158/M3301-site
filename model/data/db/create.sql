@@ -14,7 +14,13 @@ CREATE TABLE adherent (
      adresse varchar(40),
      telephone char(10),
      mail varchar(40),
+<<<<<<< HEAD
      numLicence varchar(20) UNIQUE
+=======
+     numLicence varchar(20) UNIQUE,
+     urlPhoto varchar(200),
+     FOREIGN KEY (numLicence) REFERENCES  licence(numLicence)
+>>>>>>> 132057e7956eaa76026bd5a4a8411936c1672b37
 );
 
 CREATE TABLE paiement (

@@ -16,7 +16,12 @@ if (isset($_GET['type'])){
   }
 }
 
-$lesArticles = $articles->getLesArticles(); //recuperation des articles
+if (isset($_GET['tri'])){ //Si valeur et element dans la query string
+  $tri=$_GET['tri'];
+  $lesArticles = $articles->getListeTrie($tri);//les adherents triés
+}else{
+  $lesArticles = $articles->getLesArticles(); //si rien dans la query string on ne tri pas
+}
 
 
 //view

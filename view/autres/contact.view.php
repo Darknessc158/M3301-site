@@ -28,45 +28,113 @@
           <a class="nav-link" href="lebureau.view.php">Le bureau</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="lescoureurs.view.php">Les coureurs</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../view/page administrateur/admin.view.php">Page administrateur</a>
         </li>
       </ul>
     </div>
   </nav>
 
 
-  <div class="container" style="margin-top:30px">
-    <div class="row">
-      <div class="col-sm-4">
-        <h2>A propos de nous</h2>
-        <p>Scale Echirolles est une association sportive de vélo</p>
-        <h3>Nos sponsors</h3>
-        <p>Retrouvez ici tout nos sponsors</p>
-        <ul class="nav nav-pills flex-column">
-          <li class="nav-item">
-            <!-- <a class="nav-link" href="https://www.gites-de-france-isere.com/"><img src="../data/sponsor_gite.jpg" alt=""></a>  -->
-          </li>
-          <li class="nav-item">
-            <!-- <a class="nav-link" href="https://piecesaccessoiresvelo.fr/"><img src="../data/sponsor_pieces.png" alt=""></a> -->
-          </li>
-        </ul>
-        <hr class="d-sm-none">
+  <!--Section: Contact v.2-->
+  <section class="mb-4">
+
+      <!--Section heading-->
+      <h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+      <!--Section description-->
+      <p class="text-center w-responsive mx-auto mb-5">Vous avez une question ? N'hésitez pas à nous contacter !</p>
+      <div class="row">
+          <!--Grid column-->
+          <div class="col-md-9 mb-md-0 mb-5">
+              <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+                  <!--Grid row-->
+                  <div class="row">
+
+                      <!--Grid column-->
+                      <div class="col-md-6">
+                          <div class="md-form mb-0">
+                              <input type="text" id="name" name="name" class="form-control">
+                              <label for="name" class="">Votre nom</label>
+                          </div>
+                      </div>
+                      <!--Grid column-->
+
+                      <!--Grid column-->
+                      <div class="col-md-6">
+                          <div class="md-form mb-0">
+                              <input type="text" id="email" name="email" class="form-control">
+                              <label for="email" class="">Votre email</label>
+                          </div>
+                      </div>
+                      <!--Grid column-->
+
+                  </div>
+                  <!--Grid row-->
+
+                  <!--Grid row-->
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="md-form mb-0">
+                              <input type="text" id="subject" name="subject" class="form-control">
+                              <label for="subject" class="">Sujet</label>
+                          </div>
+                      </div>
+                  </div>
+                  <!--Grid row-->
+
+                  <!--Grid row-->
+                  <div class="row">
+
+                      <!--Grid column-->
+                      <div class="col-md-12">
+
+                          <div class="md-form">
+                              <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                              <label for="message">Votre message</label>
+                          </div>
+
+                      </div>
+                  </div>
+                  <!--Grid row-->
+
+              </form>
+
+              <div class="text-center text-md-left">
+                  <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Envoyer</a>
+              </div>
+              <div class="status"></div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-3 text-center">
+              <ul class="list-unstyled mb-0">
+                  <li><i class="fas fa-map-marker-alt fa-2x"></i>
+                      <p>San Francisco, CA 94126, USA</p>
+                  </li>
+
+                  <li><i class="fas fa-phone mt-4 fa-2x"></i>
+                      <p>+ 01 234 567 89</p>
+                  </li>
+
+                  <li><i class="fas fa-envelope mt-4 fa-2x"></i>
+                      <p>contact@mdbootstrap.com</p>
+                  </li>
+              </ul>
+          </div>
+          <!--Grid column-->
+
       </div>
 
-      <div class="col-sm-8">
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Dec 7, 2017</h5>
-        <p>Some text..</p>
-        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-      </div>
-    </div>
-  </div>
+  </section>
+  <!--Section: Contact v.2-->
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
