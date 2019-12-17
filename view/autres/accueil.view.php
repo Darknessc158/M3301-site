@@ -94,6 +94,7 @@
   <p id="separator">--------------------------------------------------------------------------------------</p>
   <h2>Notre programme d'entrainements</h2>
   <div class="container">
+
     <div class="element">
       <h3>Les entrainements</h3>
       <p>Entrainements tous les mercredis et samedis à 14 h (hors saison hivernale)
@@ -102,6 +103,13 @@
       <p>RDV : Gymnase Joliot Curie - Avenue Frédéric Joliot Curie - 38130 Echirolles ou vélodrôme d'Eybens.</p>
       <p>Toutes les sorties et activités seront encadrées par des éducateurs et entraîneurs diplômés.</p>
     </div>
+
+    <div class="elemententrainement">
+      <h4>Retrouvez-nous !</h4>
+      <img src="../../model/data/images/accueil/entrainement_depart.jfif" alt="" style="max-width:99%; height:auto; margin-bottom:10px; vertical-align:top;" >
+      <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1AknAsXQlGn_Si6Ydd5zXAqj6hp_mXRe-" width="230" height="170" style="border-radius:15px;"></iframe>
+    </div>
+
     <div class="element">
       <h3>Les types d'activités</h3>
       <p>Epreuves de maniabilité et séances de PPG dans le gymnase (hiver)</p>
@@ -109,17 +117,27 @@
       <p>Sortie piscine, Sortie de ski de fond (hiver)</p>
       <p>Sortie de club (retrouvailles de tous les coureurs)</p>
     </div>
-    <div class="element">
-      <h4>Les stages</h4>
-      <p>Stage de cohésion (un peu de vélo, beaucoup d'amusement) : </p>
-      <p>Stage de présaison, stage de cohésion, ...</p>
-    </div>
-    <div class="container">
-      <img src="../../model/data/images/accueil/stage1_cohesion1.JPG" alt="" width="42%">
-      <img src="../../model/data/images/accueil/stage1_cohesion2.JPG" alt="" width="42%">
-      <img src="../../model/data/images/accueil/stage1_depart.JPG" alt="" width="42%">
-    </div>
   </div>
+
+  <p id="separator">--------------------------------------------------------------------------------------</p>
+  <h3 style="text-align:center; margin-bottom: 20px;">Les stages</h3>
+    <div class="container" style="border: 1px solid gray; border-radius: 20px;">
+      <h5>Stage de cohésion (un peu de vélo, beaucoup d'amusement !)</h5>
+      <div class="container">
+      <img src="../../model/data/images/accueil/stage1_cohesion1.JPG" alt="" style="max-width:40%; height:auto; margin-bottom:10px;">
+      <img src="../../model/data/images/accueil/stage1_cohesion2.JPG" alt="" style="max-width:40%; height:auto; margin-bottom:10px;">
+      <img src="../../model/data/images/accueil/stage1_depart.JPG" alt="" style="max-width:40%; height:auto; margin-bottom:10px;">
+      </div>
+    </div>
+    <div class="container" style="border: 1px solid gray; border-radius: 20px;  margin-bottom: 20px;">
+      <h5>Stage de présaison (Un peu plus de vélo et avec plaisir !)</h5>
+      <div class="container">
+      <img src="../../model/data/images/accueil/stage2_depart.JPG" alt="" style="max-width:40%; height:auto; margin-bottom:10px;">
+      <img src="../../model/data/images/accueil/stage2_noyer.JPG" alt="" title="Col du noyer" style="max-width:60%; height:auto;">
+      </div>
+      <p>Le stage de présaison est là pour peaufiner l'entrainement du début de saison afin d'atteindre un bon niveau pour
+      les compétitions les plus importantes à venir. Ce type de stage est souvent organisé au mois d'avril-mai.</p>
+    </div>
 
   <p id="separator">--------------------------------------------------------------------------------------</p>
   <h2>Les événements du SCALE</h2>
