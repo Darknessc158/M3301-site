@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../view/design/master.css">
+  <!-- Utilisation des icones de Font Awesome 5 (voir W3School) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <title>Vue principale</title>
+</head>
+<body>
+  <header>
+    <!-- Texte du header -->
+    <p><a href="../controler/main.ctrl.php">Open Food Facts : site de démonstration</a></p>
+    <!-- Menu en haut de la page -->
+    <nav>
+      <input type="text" placeholder="Chercher un produit" name="search_terms" value="">
+      <button type="submit" title="Rechercher"><i class="fa fa-search"></i></button>
+      <a href="https://fr.openfoodfacts.org/decouvrir">Découvrir</a>
+      <a href="https://fr.openfoodfacts.org/contribuer">Contribuer</a>
+    </nav>
+  </header>
+  <!-- Division qui englobe le contenu hors header et footer -->
+  <div>
+    <!-- Partie à gauche un 'aside' -->
+    <aside>
+      <p>
+        <a target="_blank" href="http://fr.openfoodfacts.org">
+          <img src="../view/img/openfoodfacts-logo-fr-178x150.png" alt="openfoodfacts-logo" width="100%" style="max-width:178px" />
+        </a>
+      </p>
+      <p>
+        Open Food Facts répertorie les produits alimentaires du monde entier.
+      </p>
+    </aside>
+    <!-- Partie principale -->
+    <main>
+      <h1>Open Food Facts - IUT</h1>
+      <!-- Première section avec deux articles -->
+      <section>
+        <article>
+          <h2>Découvrir</h2>
+          <p>
+            Open Food Facts est une base de données sur les produits alimentaires faite par tout le monde, pour tout le monde.
+          </p>
+          <p>
+            Elle vous permet de faire des choix plus informés, et comme les données sont ouvertes (open data), tout le monde peut les utiliser pour tout usage.
+          </p>
+        </article>
+        <article>
+          <h2>Contribuer</h2>
+          <p>
+            Open Food Facts est un projet citoyen à but non lucratif créé par des milliers de volontaires à travers le monde. Vous pouvez commencer à contribuer en ajoutant un produit de votre cuisine, et nous avons plein de projets enthousiasmants auxquels vous pouvez participer de beaucoup de façons différentes.
+          </p>
+        </article>
+      </section>
+      <!-- Seconde section avec les informations de la base -->
+      <section>
+        <h2>Les produits de la base</h2>
+        <!-- Formulaire pour les choix de navigation -->
+        <form action="../controler/explorer.ctrl.php" method="get">
+          <p>
+            1000
+            produits
+          </p>
+          <input type="submit"  value="Explorer les produits :">
+          <select name="filter">
+            <option value="none"  >
+              tous dans l'ordre
+            </option>
+            <option value="brands" >
+              par marque
+            </option>
+            <option value="main_category_fr" selected>
+              par catégorie
+            </option>
+          </select>
+          <input type="text" placeholder="Donner une valeur" name="value" value="Sodas">
+        </form>
+        <!-- Affichage d'une liste de produits -->
+        <div class="produits">
+          <article>
+            <p>
+              <img src="https://static.openfoodfacts.org/images/products/000/000/702/0254/front_fr.16.200.jpg"  >
+            </p>
+            <p>
+              <a target="_blank" href="http://world-fr.openfoodfacts.org/produit/0000007020254/root-beer-a-w">
+                <img src="design/barreCode32-32.png" alt="Bare code">
+              </a>
+              <a target="_blank" href="../controler/product.ctrl.php?code=0000007020254">
+                Root Beer
+              </a>
+            </p>
+          </article>
+          <article>
+            <p>
+              <img src="https://static.openfoodfacts.org/images/products/000/004/060/8754/front_fr.5.200.jpg"  >
+            </p>
+            <p>
+              <a target="_blank" href="http://world-fr.openfoodfacts.org/produit/0000040608754/pepsi-nouveau-gout">
+                <img src="design/barreCode32-32.png" alt="Bare code">
+              </a>
+              <a target="_blank" href="../controler/product.ctrl.php?code=0000040608754">
+                Pepsi, Nouveau goût !
+              </a>
+            </p>
+          </article>
+          <article>
+            <p>
+              <img src="https://static.openfoodfacts.org/images/products/001/200/010/9416/front.8.200.jpg"  >
+            </p>
+            <p>
+              <a target="_blank" href="http://world-fr.openfoodfacts.org/produit/0012000109416/pepsi">
+                <img src="design/barreCode32-32.png" alt="Bare code">
+              </a>
+              <a target="_blank" href="../controler/product.ctrl.php?code=0012000109416">
+                Pepsi
+              </a>
+            </p>
+          </article>
+          <article>
+            <p>
+              <img src="https://static.openfoodfacts.org/images/products/001/622/900/4507/front_fr.12.200.jpg"  >
+            </p>
+            <p>
+              <a target="_blank" href="http://world-fr.openfoodfacts.org/produit/0016229004507/foco-basil-seed-drink">
+                <img src="design/barreCode32-32.png" alt="Bare code">
+              </a>
+              <a target="_blank" href="../controler/product.ctrl.php?code=0016229004507">
+                Foco basil seed drink
+              </a>
+            </p>
+          </article>
+          <article>
+            <p>
+              <img src="https://static.openfoodfacts.org/images/products/001/622/900/6747/front_fr.6.200.jpg"  >
+            </p>
+            <p>
+              <a target="_blank" href="http://world-fr.openfoodfacts.org/produit/0016229006747/guava-drink-foco">
+                <img src="design/barreCode32-32.png" alt="Bare code">
+              </a>
+              <a target="_blank" href="../controler/product.ctrl.php?code=0016229006747">
+                Guava drink
+              </a>
+            </p>
+          </article>
+          <article>
+            <p>
+              <img src="https://static.openfoodfacts.org/images/products/001/800/075/8463/front.7.200.jpg"  >
+            </p>
+            <p>
+              <a target="_blank" href="http://world-fr.openfoodfacts.org/produit/0018000758463/canada-dry">
+                <img src="design/barreCode32-32.png" alt="Bare code">
+              </a>
+              <a target="_blank" href="../controler/product.ctrl.php?code=0018000758463">
+                Canada Dry
+              </a>
+            </p>
+          </article>
+          <article>
+            <p>
+              <img src="https://static.openfoodfacts.org/images/products/002/113/025/2626/front.6.200.jpg"  >
+            </p>
+            <p>
+              <a target="_blank" href="http://world-fr.openfoodfacts.org/produit/0021130252626/refreshe-cola">
+                <img src="design/barreCode32-32.png" alt="Bare code">
+              </a>
+              <a target="_blank" href="../controler/product.ctrl.php?code=0021130252626">
+                refreshe cola
+              </a>
+            </p>
+          </article>
+          <article>
+            <p>
+              <img src="https://static.openfoodfacts.org/images/products/004/175/520/0185/front.7.200.jpg"  >
+            </p>
+            <p>
+              <a target="_blank" href="http://world-fr.openfoodfacts.org/produit/0041755200185/lemonade-langers">
+                <img src="design/barreCode32-32.png" alt="Bare code">
+              </a>
+              <a target="_blank" href="../controler/product.ctrl.php?code=0041755200185">
+                Lemonade
+              </a>
+            </p>
+          </article>
+          <article>
+            <p>
+              <img src="https://static.openfoodfacts.org/images/products/004/900/005/0103/front.10.200.jpg"  >
+            </p>
+            <p>
+              <a target="_blank" href="http://world-fr.openfoodfacts.org/produit/0049000050103/coca-cola">
+                <img src="design/barreCode32-32.png" alt="Bare code">
+              </a>
+              <a target="_blank" href="../controler/product.ctrl.php?code=0049000050103">
+                Coca-Cola
+              </a>
+            </p>
+          </article>
+          <article>
+            <p>
+              <img src="https://static.openfoodfacts.org/images/products/004/900/006/5220/front.13.200.jpg"  >
+            </p>
+            <p>
+              <a target="_blank" href="http://world-fr.openfoodfacts.org/produit/0049000065220/coca-cola-life">
+                <img src="design/barreCode32-32.png" alt="Bare code">
+              </a>
+              <a target="_blank" href="../controler/product.ctrl.php?code=0049000065220">
+                Coca-Cola Life
+              </a>
+            </p>
+          </article>
+          <article>
+            <p>
+              <img src="https://static.openfoodfacts.org/images/products/005/430/818/4412/front_fr.6.200.jpg"  >
+            </p>
+            <p>
+              <a target="_blank" href="http://world-fr.openfoodfacts.org/produit/0054308184412/kola-champron-original-solo">
+                <img src="design/barreCode32-32.png" alt="Bare code">
+              </a>
+              <a target="_blank" href="../controler/product.ctrl.php?code=0054308184412">
+                Kola Champron Original
+              </a>
+            </p>
+          </article>
+          <article>
+            <p>
+              <img src="https://static.openfoodfacts.org/images/products/005/953/100/0607/front_fr.7.200.jpg"  >
+            </p>
+            <p>
+              <a target="_blank" href="http://world-fr.openfoodfacts.org/produit/0059531000607/a-w-racinette-root-beer">
+                <img src="design/barreCode32-32.png" alt="Bare code">
+              </a>
+              <a target="_blank" href="../controler/product.ctrl.php?code=0059531000607">
+                A&W racinette/root beer
+              </a>
+            </p>
+          </article>
+        </div>
+      </section>
+      <!-- Troisième section : le choix des pages -->
+      <section>
+        <p class="pages">
+          Pages :
+          <a href="?page=1&filter=main_category_fr&value=Sodas&action=first">Première</a>
+          <a href="?page=1&filter=main_category_fr&value=Sodas&action=prevPage">Précédente</a>
+
+          <a href="?page=1&filter=main_category_fr&value=Sodas"
+          class="selected" >
+          1
+        </a>
+
+
+        <a href="?page=2&filter=main_category_fr&value=Sodas"
+        >
+        2
+      </a>
+
+      <a href="?page=1&filter=main_category_fr&value=Sodas&action=nextPage">Suivante</a>
+      <a href="?page=1&filter=main_category_fr&value=Sodas&action=last">Dernière</a>
+    </p>
+  </section>
+</main>
+</div>
+</body>
+</html>

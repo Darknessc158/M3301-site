@@ -1,0 +1,257 @@
+/* Taille par défaut du navigateur */
+html {
+	font-size: 100%;
+  /* Variables couleurs */
+  --color-button-unselected: #0096ff;
+  --color-button-selected: #007acc;
+}
+
+/* Occupe toute la page */
+body {
+  margin: 0px;
+  font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+}
+
+header {
+  /* Taille par rapport à la racine du document */
+  font-size: 1rem;
+  padding: 0 .9375rem;
+  background: #efefef;
+  /* En flex pour placer le contenu en horizontal */
+  display: flex;
+  /* Place les boites sur toute la largeur */
+  justify-content: space-between;
+  /* Pour effacer l'espace entre les inline-block */
+  font-size: 0;
+}
+
+/* Texte dans le header */
+header p {
+  margin: 0px;
+  font-weight: 400;
+  line-height: 2.8rem;
+  font-size: 1rem;
+}
+
+/* Lien dans le header sans être dans le nav */
+header>p>a {
+     text-decoration: none;
+}
+
+/* La ligne d'entrée de la recherche */
+header input {
+  height: 1.75rem;
+  padding: 0px;
+  border: 1px solid lightgray;
+  padding-left: 0.5rem;
+}
+
+
+/* Les menus liens de header */
+header nav a {
+   display: inline-block;
+   font-size: .8125rem;
+   text-decoration: none;
+   padding-left: 1rem;
+   padding-right: 1rem;
+   line-height: 2.8125rem;
+}
+
+header a:visited {
+  color: black;
+}
+
+header a:hover {
+  background: #ddd;
+  text-decoration: underline;
+
+}
+
+/* Bouton de la recherche */
+header button {
+  background-color: var(--color-button-unselected);
+  color: white;
+  width: 60px;
+  height: 1.80rem;
+  border: 0px;
+  margin-right: 10px;
+  /* Petite annimation lors du changement de couleur */
+  transition: background-color .3s ease-out;
+}
+
+/* Réaction visuelle des boutons et les selects */
+button, input, select {
+    /* Petite annimation lors du changement de couleur */
+      transition: background-color .3s ease-out;
+}
+
+button:hover, input:hover, select:hover {
+      cursor: grab;
+}
+
+button:hover, input[type="submit"]:hover, select:hover {
+    background-color: var(--color-button-selected);
+}
+
+/* Style de la boite à gauche */
+aside {
+  min-width: 200px;
+  max-width: 300px;
+  background-color: rgb(250, 250, 250);
+  text-align: center;
+}
+
+aside p {
+  margin: 0px;
+}
+
+/* Partie principale */
+main {
+  padding: 10px;
+}
+
+/* Deux colonnes pour la division principale juste sous body */
+body>div {
+  display: flex;
+}
+
+/* Titres */
+h1 {
+  font-size: 2.3rem;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+h2 {
+    font-weight: 400;
+}
+
+/* La première section est en colonne */
+section:nth-of-type(1) {
+  display: flex;
+}
+
+/* Les deux flex-items sous la flex box doivent occuper la moitié de l'espace */
+section:nth-of-type(1) *  {
+  flex-basis: 50%;
+  margin-right: 30px;
+}
+
+/* Le formulaire pour les actions */
+
+/* Tous les elements du formulaire */
+form>* {
+  background-color: var(--color-button-unselected);
+  color: white;
+  padding-left: 0.5rem;
+  /* La marge est génrée par la balise form */
+  margin: 0px;
+}
+
+/* Le premier paragraphe est gris */
+form>p:nth-of-type(1) {
+  background-color: #eee;
+  color: black;
+  /* Sépare ce premier paragrapge des autres */
+  padding-right: 3rem;
+
+}
+
+form input {
+  line-height: 2.8rem;
+  font-size: 1.5rem;
+  border: none;
+}
+
+form input[type="text"] {
+  background-color: white;
+  color: black;
+  border: 1px solid lightskyblue;
+}
+
+/* Tous les elements du formulaire sont en ligne */
+form {
+  display: flex;
+  /* Taille des lignes et fonts pour tout le formulaire */
+  line-height: 2.8rem;
+  font-size: 1.5rem;
+  margin-top: 30px
+}
+
+/* Change le style par défaut du select */
+select {
+    /* Fait disparaitre la fleche droite et tout le design par défaut du select */
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   /* Ajout d'une nouvelle fleche comme image en fond */
+   background-image: url(fleche.png);
+   background-position: 95% center;
+   background-repeat: no-repeat;
+   padding-left: 15px;
+   border: none;
+   font-size: inherit;
+   padding: 5px 10px;
+   /* Si le texte ne tient pas ajoute des points ... */
+   text-overflow: ellipsis;
+   /* Pas de passage à la ligne */
+   white-space: nowrap;
+   width: 250px;
+}
+
+/* Format de l'affichage des produits */
+
+div.produits {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.produits article {
+  /* Taille fixe de chaque produit */
+  width: 150px;
+  margin: 20px;
+  text-align: center;
+}
+
+div.produits article p>img {
+  max-width: 150px;
+  max-height: 200px;
+}
+
+
+div.produits article a {
+  text-decoration: none;
+}
+
+div.produits article a:hover {
+  text-decoration: underline;
+}
+
+/* Design de la gestion des pages */
+
+p.pages a {
+    padding: 8px;
+    text-decoration: none;
+    color: gray;
+    border-radius: 20%;
+    display: inline-block;
+  /* Petite annimation */
+  transition-property: color,background-color,transform;
+  transition-duration: .5s;
+}
+
+p.pages a.selected {
+  color: white;
+  background-color: var(--color-button-unselected);
+}
+
+p.pages a:hover {
+  background-color: lightgrey;
+  color: black;
+  transform: translate(0px,-3px);
+}
+
+img[src$="barreCode32-32.png"] {
+  float: right;
+}
