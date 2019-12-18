@@ -22,7 +22,6 @@ $adresse = $unAdherent->getAdresse();
 $telephone = $unAdherent->getTelephone();
 $mail = $unAdherent->getMail();
 $numlicence = $unAdherent->getNumLicence();
-var_dump($unAdherent->getUrlPhoto());
 $urlphoto = $unAdherent->getUrlPhoto();
 
 include('../../view/adherentview/updateAdherent.php');
