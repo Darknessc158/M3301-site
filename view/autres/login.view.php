@@ -17,7 +17,7 @@
     <p class="box">
       <img class="scroll" src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
       <img class="scroll" src="../../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
-      <img class="scroll" src="../../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
+      <img class="scroll" src="../../model/data/images/images_sites/ob_763433_p1620864.JPG" alt="" style="display:none;">
     </p>
   </div>
 
@@ -60,9 +60,7 @@
         <li class="nav-item">
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../../view/page administrateur/admin.view.php">Page administrateur</a>
-        </li>
+
       </ul>
     </div>
   </nav>

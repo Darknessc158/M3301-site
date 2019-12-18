@@ -8,7 +8,8 @@
   <link href="../../view/css/main.css" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <title>SCALE Echirolles - club de cyclisme</title>
 </head>
 <body style="background-color:silver;">
@@ -61,9 +62,14 @@
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../view/page administrateur/admin.view.php">Page administrateur</a>
+          <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
+
       </ul>
+      <form action="../../controler/auth/login.ctrl.php" method="get" class="ml-auto">
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Se Connecter</button>
+
+    </form>
     </div>
   </nav>
 
