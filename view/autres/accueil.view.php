@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="../../view/css/main.view.css" rel="stylesheet">
+  <link href="../view/css/main.view.css" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -18,9 +18,9 @@
   <!--Image bandeau haut-->
   <div class="boximg">
     <p class="box">
-      <img class="scroll" src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
-      <img class="scroll" src="../../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
-      <img class="scroll" src="../../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
+      <img class="scroll" src="../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
+      <img class="scroll" src="../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
+      <img class="scroll" src="../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
     </p>
   </div>
   <!--Script defilement voir après.
@@ -42,7 +42,7 @@
   <!--Image bandeau haut-->
   <!--Nav-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="#"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt="" width="60%"></a>
+    <a class="navbar-brand" href="#"> <img src="../model/data/images/images_sites/logo-scale.jpg" alt="" width="60%"></a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
@@ -56,7 +56,7 @@
           <a class="nav-link" href="lebureau.view.php">Le bureau</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../../controler/lescoureurs.ctrl.php">Les coureurs</a>
+          <a class="nav-link" href="../controler/lescoureurs.ctrl.php">Les coureurs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
@@ -69,8 +69,8 @@
         </li>
 
       </ul>
-      <form action="../../controler/auth/login.ctrl.php" method="get" class="ml-auto">
-        <button class="btn btn-success my-2 my-sm-0" type="submit">Se Connecter</button>
+      <form action="../controler/auth/login.ctrl.php" method="get" class="ml-auto">
+        <button class="btn btn-success my-2 my-sm-0" type="submit"><?php echo $etat; ?></button>
 
     </form>
     </div>
@@ -94,10 +94,10 @@
   <div class="sponsors">
     <h5>Nos sponsors</h5>
     <a href="https://piecesaccessoiresvelo.fr/">
-    <img src="../../model/data/images/images_sites/sponsor_pieces.png" alt="" width="60%">
+    <img src="../model/data/images/images_sites/sponsor_pieces.png" alt="" width="60%">
     </a>
     <a href="https://www.gites-de-france-isere.com/">
-    <img src="../../model/data/images/images_sites/sponsor_gite.jpg" alt="" width="50%">
+    <img src="../model/data/images/images_sites/sponsor_gite.jpg" alt="" width="50%">
     </a>
   </div>
   <div class="localisation">
@@ -147,7 +147,7 @@
     </div>
   </div>
   <div class="container">
-    <img src="../../model/data/images/accueil/entrainement_depart2.jfif" alt="" title="Départ Joliot Curie" width="65%" height="auto">
+    <img src="../model/data/images/accueil/entrainement_depart2.jfif" alt="" title="Départ Joliot Curie" width="65%" height="auto">
   </div>
 
 </div><!--Fin des deux div gauche et droite-->
@@ -157,16 +157,16 @@
     <div class="containerstage">
       <h5>Stage de cohésion (un peu de vélo, beaucoup d'amusement !)</h5>
       <div class="container">
-      <img src="../../model/data/images/accueil/stage1_cohesion1.JPG" alt="" title="La Robine" style="max-width:40%; height:auto; margin-bottom:10px;">
-      <img src="../../model/data/images/accueil/stage1_cohesion2.JPG" alt="" title="La Robine" style="max-width:40%; height:auto; margin-bottom:10px;">
-      <img src="../../model/data/images/accueil/stage1_depart.JPG" alt="" title="La Robine" style="max-width:40%; height:auto; margin-bottom:10px;">
+      <img src="../model/data/images/accueil/stage1_cohesion1.JPG" alt="" title="La Robine" style="max-width:40%; height:auto; margin-bottom:10px;">
+      <img src="../model/data/images/accueil/stage1_cohesion2.JPG" alt="" title="La Robine" style="max-width:40%; height:auto; margin-bottom:10px;">
+      <img src="../model/data/images/accueil/stage1_depart.JPG" alt="" title="La Robine" style="max-width:40%; height:auto; margin-bottom:10px;">
       </div>
     </div>
     <div class="containerstage">
       <h5>Stage de présaison (Un peu plus de vélo et avec plaisir !)</h5>
       <div class="container">
-      <img src="../../model/data/images/accueil/stage2_depart.JPG" alt="" title="Veyne" style="max-width:40%; height:auto; margin-bottom:10px;">
-      <img src="../../model/data/images/accueil/stage2_noyer.JPG" alt="" title="Col du noyer" style="max-width:60%; height:auto;">
+      <img src="../model/data/images/accueil/stage2_depart.JPG" alt="" title="Veyne" style="max-width:40%; height:auto; margin-bottom:10px;">
+      <img src="../model/data/images/accueil/stage2_noyer.jpg" alt="" title="Col du noyer" style="max-width:60%; height:auto;">
       </div>
       <p>Le stage de présaison est là pour peaufiner l'entrainement du début de saison afin d'atteindre un bon niveau pour
       les compétitions les plus importantes à venir. Ce type de stage est souvent organisé au mois d'avril-mai.</p>
@@ -176,7 +176,7 @@
   <h2>Les événements du SCALE</h2>
   <div class="container">
     <div class="elementphoto">
-      <img src="../../model/data/images/accueil/loto.JPG" alt="" width="95%">
+      <img src="../model/data/images/accueil/loto.jpg" alt="" width="95%">
     </div>
     <div class="element">
       <h3>Les dates clefs du club</h3>
@@ -185,17 +185,17 @@
       <p>Tirage des rois et signature des licences : début-janvier </p>
     </div>
     <div class="elementphoto">
-      <img src="../../model/data/images/accueil/tiragedesrois.JPG" alt="" width="95%">
+      <img src="../model/data/images/accueil/tiragedesrois.JPG" alt="" width="95%">
     </div>
   </div>
 
       <h2>Les courses organisées par le club</h2>
       <div class="container">
       <div class="elementphoto">
-        <img src="../../model/data/images/accueil/grandprixdelalley.jpg" alt="" width="95%">
+        <img src="../model/data/images/accueil/grandprixdelalley.jpg" alt="" width="95%">
       </div>
       <div class="elementphoto">
-        <img src="../../model/data/images/accueil/arzelier.jpg" alt="" width="95%">
+        <img src="../model/data/images/accueil/arzelier.jpg" alt="" width="95%">
       </div>
     </div>
 
