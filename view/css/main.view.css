@@ -1,9 +1,7 @@
 .boximg{
-  height: 350px;
+  height: auto;
   display: flex;
   background-color: #FFFFEE;
-  background-image: url('../../model/data/images/images_sites/accueil_banniere.jpg');
-  background-size: cover;
 }
 .scroll{
   width: 100%;

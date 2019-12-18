@@ -16,11 +16,11 @@
 <header>
   <!--Image bandeau haut-->
   <div class="boximg">
-  <!--  <p class="box">
+    <p class="box">
       <img class="scroll" src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
       <img class="scroll" src="../../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
       <img class="scroll" src="../../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
-    </p> -->
+    </p>
   </div>
   <!--Script defilement voir après.
   <script type="text/javascript">
