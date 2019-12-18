@@ -22,7 +22,7 @@
     </p>
     <p>
        Date de naissance :<br />
-       <input type="date" name="datenaissance" value="<?php echo $datenaissance ?>" />
+       <input type="text" name="datenaissance" value="<?php echo $datenaissance ?>" />
     </p>
     <p>
        Adresse :<br />
