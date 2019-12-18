@@ -11,13 +11,13 @@
 
   <title>SCALE Echirolles - club de cyclisme</title>
 </head>
-<body style="text-align:center;">
+<body style="text-align:center; background-color: #FFFFEE;">
 
   <div class="boximg" style="margin-bottom:0">
     <p class="box">
       <img class="scroll" src="../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
-      <img class="scroll" src="../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
-      <img class="scroll" src="../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
+      <!--<img class="scroll" src="../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
+      <img class="scroll" src="../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">-->
     </p>
   </div>
 
@@ -68,16 +68,17 @@
   </nav>
 
 
-<h1>Les coureurs en 2019</h1>
-
+<h1>Les coureurs en <?php   echo date('Y');?></h1>
+<div class="container">
 <?php foreach ($lesadh as $coureur) {
-  echo "<div>";
-  echo '<p>'.$coureur->getPrenom().' '.$coureur->getNom().'</p>';
-  echo '<p> Catégorie : '.$coureur->getCategorie().'</p>';
-  echo '<img src="'.$coureur->getUrlPhoto().'" alt="" width="10%" height="auto">';
-  echo "</div>";
+    echo '<div style="border-bottom:1px solid gray; border-radius:100px; margin:auto; margin-bottom:20px;">';
+    echo '<div class="element" style="background-image:url('.$coureur->getUrlPhoto().'); background-size:cover;">';
+    echo "</div>";
+    echo '<p>'.$coureur->getPrenom().' '.$coureur->getNom().'</p>';
+    echo '<p> Catégorie : '.$coureur->getCategorie().'</p>';
+    echo "</div>";
 } ?>
-
+</div>
 
 
 
