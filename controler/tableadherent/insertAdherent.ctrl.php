@@ -23,7 +23,5 @@ $unAdherent = $adherents->insertUnAdherent($nom,$prenom,$categorie,$datenaissanc
 
 $resadh = $adherents->getLesAdherents();
 
-var_dump($resadh);
-
 include('../../view/adherentview/adminpage.php');
 ?>
