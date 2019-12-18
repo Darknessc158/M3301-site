@@ -16,11 +16,11 @@
 <header>
   <!--Image bandeau haut-->
   <div class="boximg">
-    <p class="box">
+  <!--  <p class="box">
       <img class="scroll" src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
       <img class="scroll" src="../../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
       <img class="scroll" src="../../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
-    </p>
+    </p> -->
   </div>
   <!--Script defilement voir après.
   <script type="text/javascript">
@@ -100,10 +100,6 @@
   </div>
 </div>
 
-<div class="gauche">
-  
-</div>
-
 
 <div class="centergauche">
 
@@ -173,32 +169,46 @@
   <p id="separator">--------------------------------------------------------------------------------------</p>
   <h2>Les événements du SCALE</h2>
   <div class="container">
+    <div class="elementphoto">
+      <img src="../../model/data/images/accueil/loto.JPG" alt="" width="95%">
+    </div>
     <div class="element">
       <h3>Les dates clefs du club</h3>
       <p>Assemblée Générale du SCALE : mi-novembre </p>
       <p>Loto du SCALE : début-décembre </p>
-      <img src="../../model/data/images/accueil/loto.JPG" alt="" width="50%">
       <p>Tirage des rois et signature des licences : début-janvier </p>
     </div>
-    <div class="element">
-      <h3>Les courses organisées par le club</h3>
-      <p>Le Grand Prix de Lalley</p>
-      <p>La Montée du col de l'Arzelier</p>
+    <div class="elementphoto">
+      <img src="../../model/data/images/accueil/tiragedesrois.JPG" alt="" width="95%">
     </div>
   </div>
+
+      <h2>Les courses organisées par le club</h2>
+      <div class="container">
+      <div class="elementphoto">
+        <img src="../../model/data/images/accueil/grandprixdelalley.jpg" alt="" width="95%">
+      </div>
+      <div class="elementphoto">
+        <img src="../../model/data/images/accueil/arzelier.jpg" alt="" width="95%">
+      </div>
+    </div>
 
   <p id="separator">--------------------------------------------------------------------------------------</p>
   <h2>Quelques chiffres du SCALE</h2>
   <div class="container">
-    <div class="elementstats">
+    <div class="element">
       <h3>Victoires ...</h3>
       <p>Le SCALE c'est tant de victoires podiums ...</p>
     </div>
-    <div class="elementact">
+  </div>
+
+  <h2>Le coin Strava</h2>
+  <div class="containerstrava">
+    <div class="stravaelement">
       <h3>Les activités du club</h3>
-      <iframe allowtransparency frameborder='0' height='454' scrolling='no' src='https://www.strava.com/clubs/62426/latest-rides/d3aa846eaa79ed7b80724cc810c4ef256b18f568?show_rides=true' width='200'></iframe>
+      <iframe allowtransparency frameborder='0' height='380' scrolling='no' src='https://www.strava.com/clubs/62426/latest-rides/d3aa846eaa79ed7b80724cc810c4ef256b18f568?show_rides=true' width='200'></iframe>
     </div>
-    <div class="elementstats">
+    <div class="stravaelement">
       <h4>Zoom sur les stats</h4>
       <iframe allowtransparency frameborder='0' height='160' scrolling='no' src='https://www.strava.com/clubs/62426/latest-rides/d3aa846eaa79ed7b80724cc810c4ef256b18f568?show_rides=false' width='300'></iframe>
     </div>
