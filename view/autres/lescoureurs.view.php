@@ -35,7 +35,7 @@
           <a class="nav-link" href="../view/autres/lebureau.view.php">Le bureau</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../view/autres/lescoureurs.view.php">Les coureurs</a>
+          <a class="nav-link" href="../controler/lescoureurs.ctrl.php">Les coureurs</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../view/autres/histoireclub.view.php">Histoire du club</a>
