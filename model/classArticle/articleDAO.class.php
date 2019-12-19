@@ -6,11 +6,12 @@ class articleDAO
 {
   private $db;
 
-  function __construct($path)
-  {
-    $database ='sqlite:'.$path.'/scale.db';
+  public function __construct(){
+    $database = 'mysql:host=soysauceduck99.ddns.net;dbname=scale';
+    $user = 'admincave';
+    $password = 'cave';
     try{
-      $this->db = new PDO($database);
+      $this->db = new PDO($database, $user, $password);
       //var_dump($database);
     }
 

@@ -9,10 +9,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 require_once('../../model/classArticle/article.class.php');
 require_once('../../model/classArticle/articleDAO.class.php');
 
-// Récupération des données de configuration
-$config = parse_ini_file('../../config/config.ini');
+
 // Creation de l'instance DAO
-$articles = new articleDAO($config['database_path']);
+$articles = new articleDAO();
 $lesarticles = $articles->getLesArticles();
 
 include('../../view/page administrateur/admin.view.php');
