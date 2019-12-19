@@ -1,8 +1,8 @@
--- CREATE TABLE histoireclub{
---       image varchar(10),
---       description STRING,
---       annee varchar(4)
--- };
+ CREATE TABLE histoireclub{
+       image varchar(10),
+       description STRING,
+       annee varchar(4)
+ };
 CREATE DATABASE scale;
 USE scale;
 CREATE TABLE adherent (
