@@ -83,3 +83,11 @@ HC_82.jpg|Le club|2011;
 HC_83.jpg|Sortie hivernale aux Glovettes (pas de neige)|;
 HC_84.jpg|1ère sortie de l'école de cyclisme|;
 HC_85.jpg|1ère course sous la pluie (les filles)|;
+
+
+LOAD DATA INFILE 'histoireclub.txt'
+INTO TABLE histoireclub
+COLUMNS
+TERMINATED BY '|'
+LINES
+TERMINATED BY ';';

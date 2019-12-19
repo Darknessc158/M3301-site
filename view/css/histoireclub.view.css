@@ -1,29 +1,23 @@
-.articles{
-  margin-top: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.gallery {
+
+column-count: 4;
+
+column-width: 33%; }
+.gallery .pics {
+transition: all 350ms ease; }
+.gallery .animation {
+transform: scale(1); }
+
+@media (max-width: 450px) {
+.gallery {
+column-count: 1;
+column-width: 100%;
+}
 }
 
-.article{
-  border: 0.5px solid black;
-  border-radius: 10px;
-  width: 300px;
-  height: auto;
-  padding: 5px;
-  margin: 5px;
-  text-align: center;
+@media (max-width: 400px) {
+.btn.filter {
+padding-left: 1.1rem;
+padding-right: 1.1rem;
 }
-
-
-.image{
-  width: 250px;
-  height: 300px;
-  object-fit: cover;
-}
-
-.lien{
-  background-color: lightblue;
-  border-radius: 10px;
-  color: white;
 }
