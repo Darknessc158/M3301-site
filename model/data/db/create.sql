@@ -1,8 +1,8 @@
--- CREATE TABLE histoireclub{
---       image varchar(10),
---       description STRING,
---       annee varchar(4)
--- };
+CREATE TABLE histoireclub{
+      image varchar(30),
+      description varchar(80),
+      annee varchar(4)
+ };
 
 CREATE TABLE adherent (
      idAdherent  INTEGER PRIMARY KEY,
