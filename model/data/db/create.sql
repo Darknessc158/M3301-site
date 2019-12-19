@@ -1,6 +1,6 @@
  CREATE TABLE histoireclub{
-       image varchar(10),
-       description STRING,
+       image varchar(20),
+       description varchar(60),
        annee varchar(4)
  };
 CREATE DATABASE scale;
