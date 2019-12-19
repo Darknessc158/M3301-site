@@ -14,22 +14,22 @@
 </head>
 <body>
 
-<header>
-  <!--Image bandeau haut-->
-  <div class="boximg">
-    <p class="box">
-      <img class="scroll" src="../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
-      <img class="scroll" src="../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
-      <img class="scroll" src="../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
-    </p>
-  </div>
-  <!--Script defilement voir après.
-  <script type="text/javascript">
-  I = 0 ;
-  Imax = document.images.length - 1 ;
-  setTimeout(suivante, 7000) ;
-  function suivante()
-  {
+  <header>
+    <!--Image bandeau haut-->
+    <div class="boximg">
+      <p class="box">
+        <img class="scroll" src="../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
+        <img class="scroll" src="../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
+        <img class="scroll" src="../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
+      </p>
+    </div>
+    <!--Script defilement voir après.
+    <script type="text/javascript">
+    I = 0 ;
+    Imax = document.images.length - 1 ;
+    setTimeout(suivante, 7000) ;
+    function suivante()
+    {
     document.images[I].style.display = "none" ;
     if ( I < Imax )
     I++;
@@ -38,51 +38,47 @@
     document.images[I].style.display = "block";
     setTimeout(suivante, 7000) ;
   }
-  </script>
-  <!--Image bandeau haut-->
-  <!--Nav-->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="#"> <img src="../model/data/images/images_sites/logo-scale.jpg" alt="" width="60%"></a>
+</script>
+<!--Image bandeau haut-->
+<!--Nav-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="main.view.php"> <img src="../model/data/images/images_sites/logo-scale.jpg" alt="logo scale Echirolles" width="60%"></a>
 
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="../controler/lescoureurs.ctrl.php">Accueil</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="actualites.view.php">Actualités</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="lebureau.view.php">Le bureau</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../controler/lescoureurs.ctrl.php">Les coureurs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.view.php">Nous contacter</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.view.php">Nous contacter</a>
-        </li>
-
-      </ul>
-      <form action="../controler/auth/login.ctrl.php" method="get" class="ml-auto">
-        <div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <span class="input-group-text" id="basic-addon1">@</span>
-  </div>
-  <button class="btn btn-success my-2 my-sm-0" type="submit"><?php echo $etat; ?></button>
-
-</div>
-
-
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="../controler/accueil.ctrl.php">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../view/autres/actualites.view.php">Actualités</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../view/autres/lebureau.view.php">Le bureau</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../view/autres/lescoureurs.view.php">Les coureurs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../view/autres/histoireclub.view.php">Histoire du club</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../view/autres/contact.view.php">Nous contacter</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../controler/auth/profilAdmin.ctrl.php">Page administrateur</a>
+      </li>
+    </ul>
+    <form action="../controler/auth/login.ctrl.php" method="get" class="ml-auto">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">@</span>
+        </div>
+        <button class="btn btn-success my-2 my-sm-0" type="submit"><?php echo $etat; ?></button>
+      </div>
     </form>
-    </div>
-  </nav>
-  <!--Nav-->
+  </div>
+</nav>
+<!--Nav-->
 </header>
 <!--Fin header-->
 <div class="all">
