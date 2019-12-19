@@ -2,9 +2,9 @@
 
 class authentificationDAO{
 	private $db;
-	
+
 	public function __construct(){
-    $database = 'mysql:host=localhost;dbname=scale';
+    $database = 'mysql:host=soysauceduck99.ddns.net;dbname=scale';
     $user = 'root';
     $password = 'cave';
     try{
@@ -17,7 +17,7 @@ class authentificationDAO{
       die('Erreur : ' . $e->getMessage());
     }
   }
-	
+
 	}
 
 

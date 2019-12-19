@@ -2,8 +2,8 @@
   private $db;
 
   public function __construct(){
-    $database = 'mysql:host=localhost;dbname=scale';
-    $user = 'root';
+    $database = 'mysql:host=soysauceduck99.ddns.net;dbname=scale';
+    $user = 'admincave';
     $password = 'cave';
     try{
       $this->db = new PDO($database, $user, $password);
@@ -95,8 +95,8 @@
     $sth=$this->db->query($req);
   }
 
-  function insertUnAdherent($nom,$prenom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numLicence){ // Ajout d'un adherent
-    $req = "INSERT INTO adherent (nom,prenom,categorie,datenaissance,adresse,telephone,mail,numLicence) VALUES ('$nom','$prenom','$categorie','$datenaissance','$adresse','$telephone','$mail','$numLicence');";
+  function insertUnAdherent($nom,$prenom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numLicence,$urlPhoto){ // Ajout d'un adherent
+    $req = "INSERT INTO adherent (nom,prenom,categorie,datenaissance,adresse,telephone,mail,numLicence,urlPhoto) VALUES ('$nom','$prenom','$categorie','$datenaissance','$adresse','$telephone','$mail','$numLicence','$urlPhoto');";
     $sth=$this->db->query($req);
   }
 }

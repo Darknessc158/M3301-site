@@ -1,6 +1,6 @@
 <?php
-  define('DB_SERVER', 'localhost');
-  define('DB_USERNAME','root');
+  define('DB_SERVER', 'soysauceduck99.ddns.net');
+  define('DB_USERNAME','admincave');
   define('DB_PASSWORD','cave');
   define('DB_NAME', 'scale');
 
