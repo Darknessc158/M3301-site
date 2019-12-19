@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -11,7 +11,7 @@
 
   <title>SCALE Echirolles - club de cyclisme</title>
 </head>
-<body style="background-color:silver;">
+<body>
 
   <div class="boximg">
     <p class="box">
