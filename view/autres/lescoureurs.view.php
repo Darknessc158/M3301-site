@@ -29,16 +29,16 @@
           <a class="nav-link" href="../controler/accueil.ctrl.php">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../view/autres/actualites.view.php">Actualités</a>
+          <a class="nav-link" href="#">Actualités</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../view/autres/lebureau.view.php">Le bureau</a>
+          <a class="nav-link" href="#">Le bureau</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../controler/lescoureurs.ctrl.php">Les coureurs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../view/autres/histoireclub.view.php">Histoire du club</a>
+          <a class="nav-link" href="#">Histoire du club</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../view/autres/contact.view.php">Nous contacter</a>

@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <link href="../view/css/main.view.css" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -12,33 +13,49 @@
 </head>
 <body>
 
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <img src="../data/images/accueil_banniere.jpg" alt="">
+  <div class="boximg" style="margin-bottom:0">
+    <p class="box">
+      <img class="scroll" src="../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
+    </p>
   </div>
 
+
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="main.view.php"> <img src="../data/images/logo-scale.jpg" alt=""></a>
+    <a class="navbar-brand" href="#"> <img src="../model/data/images/images_sites/logo-scale.jpg" alt="logo scale Echirolles" width="60%"></a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="actualites.view.php">Actualités</a>
+          <a class="nav-link" href="../controler/accueil.ctrl.php">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="lebureau.view.php">Le bureau</a>
+          <a class="nav-link" href="#">Actualités</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="lescoureurs.view.php">Les coureurs</a>
+          <a class="nav-link" href="#">Le bureau</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
+          <a class="nav-link" href="../controler/lescoureurs.ctrl.php">Les coureurs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.view.php">Nous contacter</a>
+          <a class="nav-link" href="#">Histoire du club</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../view/autres/contact.view.php">Nous contacter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../controler/auth/profilAdmin.ctrl.php">Page administrateur</a>
         </li>
       </ul>
     </div>
   </nav>
+
+
+  <h1>Les bureau du SCALE et l'encadrement</h1>
+  <div class="container">
+
+  </div>
+
 
 
   <!-- Optional JavaScript -->
