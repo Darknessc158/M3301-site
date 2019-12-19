@@ -2,8 +2,8 @@
   private $db;
 
   public function __construct(){
-    $database = 'mysql:host=localhost;dbname=scale';
-    $user = 'root';
+    $database = 'mysql:host=soysauceduck99.ddns.net;dbname=scale';
+    $user = 'admincave';
     $password = 'cave';
     try{
       $this->db = new PDO($database, $user, $password);
