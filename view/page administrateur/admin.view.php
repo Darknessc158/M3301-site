@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="../../view/css/admin.view.css" rel="stylesheet">
+  <link href="../../view/css/main.view.css" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -15,37 +16,18 @@
 
   <div class="boximg">
     <p class="box">
-      <img class="scroll" src="../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
-      <img class="scroll" src="../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
-      <img class="scroll" src="../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
+    <img class="scroll" src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
     </p>
   </div>
-  <!--Script defilement voir après.
-  <script type="text/javascript">
-  I = 0 ;
-  Imax = document.images.length - 1 ;
-  setTimeout(suivante, 7000) ;
-  function suivante()
-  {
-    document.images[I].style.display = "none" ;
-    if ( I < Imax )
-    I++;
-    else
-    I=0;
-    document.images[I].style.display = "block";
-    setTimeout(suivante, 7000) ;
-  }
-  </script>
-  <!--Image bandeau haut-->
-  <!--Nav-->
 
+  <!--Nav-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" href="#"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt="" width="60%"></a>
 
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="../../controler/accueil.ctrl.php">Accès au site</a>
+          <a class="nav-link" href="../../controler/accueil.ctrl.php">Accéder au site</a>
         </li>
       </ul>
     </div>
