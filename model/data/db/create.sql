@@ -3,9 +3,10 @@
 --       description STRING,
 --       annee varchar(4)
 -- };
-
+CREATE DATABASE scale;
+USE scale;
 CREATE TABLE adherent (
-     idAdherent  INTEGER PRIMARY KEY,
+     idAdherent  INTEGER PRIMARY KEY AUTO_INCREMENT,
      nom varchar(30) NOT NULL,
      prenom varchar(30) NOT NULL,
      categorie varchar(30),
@@ -13,8 +14,8 @@ CREATE TABLE adherent (
      adresse varchar(40),
      telephone char(10),
      mail varchar(40),
-     numLicence varchar(20) UNIQUE,
-     urlPhoto varchar(100)
+     numLicence varchar(20) UNIQUE
+
 );
 
 CREATE TABLE paiement (
@@ -44,6 +45,13 @@ CREATE TABLE commandearticle(
    quantiteCommande INTEGER,
    FOREIGN KEY (numArticle) REFERENCES  article(idArticle),
    FOREIGN KEY (numPaiement) REFERENCES  paiement(idPaiement)
+);
+
+CREATE TABLE users(
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 --
 -- CREATE TABLE paimentLicence(

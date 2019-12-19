@@ -6,7 +6,7 @@ require_once('adherentDAO.class.php');
 $config = parse_ini_file('../../config/config.ini');
 
 // Creation de l'instace DAO
-$adherents = new adherentDAO($config['database_path']);
+$adherents = new adherentDAO();
 
 $m = $adherents->getLesAdherents();
 var_dump($m);

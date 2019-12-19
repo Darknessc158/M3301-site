@@ -6,7 +6,7 @@ require_once('../../model/classAdherent/adherentDAO.class.php');
 $config = parse_ini_file('../../config/config.ini');
 
 // Creation de l'instance DAO
-$adherents = new adherentDAO($config['database_path']);
+$adherents = new adherentDAO();
 
 if (isset($_GET['type'])){
   $type=$_GET['type'];

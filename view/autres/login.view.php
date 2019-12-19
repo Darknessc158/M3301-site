@@ -60,71 +60,51 @@
         <li class="nav-item">
           <a class="nav-link" href="contact.view.php">Nous contacter</a>
         </li>
-        
+
       </ul>
     </div>
   </nav>
-  <!-- NAV DE BASE !-->
-
-  <div class="page-header  text-center">
-      <h1>Bonjour, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Bienvenue.</h1>
-  </div>
-  <div class=" text-center">
-      <a href="resetmdp.ctrl.php" class="btn btn-warning">Changer votre mot de passe</a>
-      <a href="logout.ctrl.php" class="btn btn-danger">Se deconnecter</a>
-  </div>
 
 
-  <div class="row">
-    <div class="col-sm-3">
-      <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="../../model/data/images/images_sites/admin-icon.png" alt="image administrateur">
-      <div class="card-body">
-        <h5 class="card-title">Gestionnaire des adhérents</h5>
-        <p class="card-text">Liste des adhérents, transactions d'un adhérent, modifier ou supprimer un adhérent</p>
-        <a href="../../controler/tableadherent/tableadherent.ctrl.php" class="btn btn-primary">Gérer les adhérents</a>
-      </div>
-    </div>
-    </div>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Se connecter</h3>
+			</div>
+			<div class="card-body" style="width: 32rem;">
 
-<div class="col-sm-3">
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="../../model/data/images/images_sites/commandes-icon.png" alt="image gestion des stocks">
-  <div class="card-body">
-    <h5 class="card-title">Gestionnaire des stocks</h5>
-    <p class="card-text">Liste des articles et des quantités, modifier ou supprimer un article</p>
-    <a href="../../controler/tablearticle/tablearticle.ctrl.php" class="btn btn-primary">Gérer les stocks</a>
-  </div>
-  </div>
+				<form action="../../controler/auth/login.ctrl.php" method="post" class="needs-validation" novalidate>
+
+            <small class="help-block text-danger"><?php echo $username_err; ?></small>
+            <div class="input-group form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+              <input type="text" name="username" class="form-control" placeholder ="E-mail" required value="<?php echo $username; ?>">
+            </div>
+
+            <small class="help-block text-danger"><?php echo $password_err; ?></small>
+            <div class="input-group form-group<?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+              <input type="password" name="password" class="form-control" required placeholder="Mot de passe"value="<?php echo $password; ?>">
+            </div>
+
+
+            <div class="form-group text-center">
+              <input type="submit" class="btn btn-primary" value="Valider">
+            </div>
+				</form>
+			</div>
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Pas encore inscrit?<a href="../../controler/auth/inscription.ctrl.php">S'inscrire</a>
+				</div>
+				<div class="d-flex justify-content-center">
+					<a href="#">Mot de passe oublié?</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-
-<div class="col-sm-3">
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="../../model/data/images/images_sites/transactions-icon.png" alt="image gestion des stocks">
-  <div class="card-body">
-    <h5 class="card-title">Gestionnaire des transactions</h5>
-    <p class="card-text">Liste des transactions, modifier ou supprimer une transaction</p>
-    <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php" class="btn btn-primary">Gérer les transactions</a>
-  </div>
-  </div>
-</div>
-
-<div class="col-sm-3">
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="../../model/data/images/images_sites/transactions-icon.png" alt="image gestion des stocks">
-  <div class="card-body">
-    <h5 class="card-title">Gestionnaire du site</h5>
-    <p class="card-text">Modifier le site, Ajouter des articles pour l'actualité ...</p>
-    <a href="#" class="btn btn-primary">Gérer le site</a>
-  </div>
-  </div>
-</div>
-
-
-
-
-
-    </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
