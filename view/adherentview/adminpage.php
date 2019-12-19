@@ -4,6 +4,7 @@
   <title>SCALE Echirolles - club de cyclisme</title>
   <!-- Custom styles for this template-->
   <link href="../../view/css/admintable.view.css" rel="stylesheet">
+  <link href="../../view/css/main.view.css" rel="stylesheet">
     <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,53 +14,28 @@
 
 </head>
 
-<body style="text-align:center; background-color:silver;">
+<body>
 
 
-  <div class="boximg" style="margin-bottom:0">
+  <div class="boximg">
     <p class="box">
     <img class="scroll" src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
-    <img class="scroll" src="../../model/data/images/images_sites/fond_banniere.jpg" alt="" style="display:none;">
-    <img class="scroll" src="../../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
     </p>
   </div>
-
-  <script type="text/javascript">
-  I = 0 ;
-  Imax = document.images.length - 1 ;
-  setTimeout(suivante, 7000) ;
-  function suivante()
-  {
-  document.images[I].style.display = "none" ;
-  if ( I < Imax )
-       I++;
-  else
-       I=0;
-  document.images[I].style.display = "block";
-  setTimeout(suivante, 7000) ;
-  }
-  </script>
 
   <!-- NAV DE BASE !-->
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <a class="navbar-brand" href="../../controler/tableadherent/tableadherent.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt=""></a>
-
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="actualites.view.php">Actualités</a>
+          <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Gestionnaire des stocks</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="lebureau.view.php">Le bureau</a>
+          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Gestionnaire des transactions</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.view.php">Nous contacter</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../../view/page administrateur/admin.view.php">Page administrateur</a>
+          <a class="nav-link" href="../../controler/auth/profilAdmin.ctrl.php">Accueil administrateur</a>
         </li>
       </ul>
     </div>
