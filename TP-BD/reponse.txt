@@ -1,0 +1,25 @@
+PREAMBULE
+
+1)
+a)Un meme personnage peut avoir une seul année de Naissance DF1
+b)Un nomPers peut avoir plusieurs traits de caracteres car elle est contenue dans la clé DF6
+c) Plusieur personnage peuvent etre imberbe selon la DF7
+d) d'apres la df6 un personnage peut apparaitre avec different trait de caractere dans different chapitre
+
+Partie 2
+1)
+  * si on supprime un chapitre on peut perdre le personnage, le trait caractereet le numLivre
+  * de la meme maniere si on supprime un nom de personnageon peut perdre le livre,et le chapitre
+
+2)
+  * DF4 nomPers, numChap -> anNaiss n'est pas elementaire car nomPers -> anNaiss
+  * DF8 nomType, tailleMoy -> imberbe n'est pas elementaire car nomType -> imberbe
+
+3)
+  * nomType, tailleMoy -> imberbe et nomType -> imberbe
+  * nomPers -> imberbe est redondant car nomPers -> nomType et nomType -> imberbe
+  * numChap, nomPers -> tailleMoy redondant car nomPers -> nomType et nomType -> tailleMoy
+
+5) ces attribut ne peuvent jamais etre determiner par d'autre attribut de la relation et ne se determine pas entre elles
+
+6) la relation F est 1FN car tailleMoy et imberbe ne sont pas determiner par les clé 
