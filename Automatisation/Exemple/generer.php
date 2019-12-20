@@ -4,20 +4,21 @@
   Sample using a PHP array
 ****************************/
 
-require('M3301-site/model/fpdm/fpdm.php');
+require('../fpdm/fpdm.php');
 
 $fields = array(
-	'MAIL'    => 'Franki.Vincent@gmail.com',
-	'VILLE' => 'randomtown',
-	'CODEPOSTAL' => '12345',
-	'NOMREPRESENTANT' => 'Franki Vincent '
+	'NOM'    => 'Franki.Vincent@gmail.com',
+	'PRENOM' => 'yes',
+	'ADRESSE' => '12345',
+	'cb_homme' => 'yes',
+	'cb_femme' => 'yes',
 );
 
-$pdf = new FPDM('doc_compa.pdf');
+$pdf = new FPDM('cb_compatible.pdf');
 $pdf->Load($fields, false); // second parameter: false if field values are in ISO-8859-1, true if UTF-8
 $pdf->Merge();
 //$PDFname
-$chemin = 'M3301-site/FichierPDF/PDFRemplie'+ $PDFname;
-$pdf->Output("D", $chemin);
+
+$pdf->Output();
 
 ?>
