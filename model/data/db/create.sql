@@ -10,12 +10,14 @@ CREATE TABLE adherent (
      nom varchar(30) NOT NULL,
      prenom varchar(30) NOT NULL,
      categorie varchar(30),
+     role varchar(60)
      datenaissance DATE,
      adresse varchar(40),
      telephone char(10),
      mail varchar(40),
-     numLicence varchar(20) UNIQUE
-
+     numLicence varchar(20) UNIQUE,
+     urlPhoto varchar(100),
+     urlPhotoAlt varchar(100)
 );
 
 CREATE TABLE paiement (
