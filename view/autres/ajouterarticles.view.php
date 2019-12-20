@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<h1>Insertion d'un nouvel article</h1>
-		<form action="index.php" method="post">
+		<form action="test.php" method="post">
 			<textarea name="editeur" id="editeur" rows="8" cols="80"></textarea>
 			<input type="submit" value="envoi">
 		</form>
