@@ -40,6 +40,9 @@
     </div>
   </nav>
 
+<div>
+  <?php echo $editor_data ?>
+</div>
 
   <div class="container" style="margin-top:30px">
     <div class="row">
