@@ -9,6 +9,7 @@
 		<h1>Insertion d'un nouvel article</h1>
 		<form action="../../controler/actualite.ctrl.php" method="post">
 			<textarea name="editeur" id="editeur" rows="8" cols="80"></textarea>
+			<input type="file" name="image" value="">
 			<input type="submit" value="envoi">
 		</form>
 		<script>
