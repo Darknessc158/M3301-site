@@ -83,7 +83,7 @@
         <div class="card-body">
           <h5 class="card-title">Gestionnaire du site</h5>
           <p class="card-text">Ajouter des articles pour l'actualité</p>
-          <a href="../autres/ajouterarticles.view.php" class="btn btn-primary">Ajouter un Article</a>
+          <a href="../../view/autres/ajouterarticles.view.php" class="btn btn-primary">Ajouter un Article</a>
         </div>
       </div>
     </div>

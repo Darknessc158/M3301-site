@@ -1,3 +1,9 @@
+CREATE TABLE publication{
+      titre varchar(20),
+      description varchar(400),
+      content varchar(400)
+};
+
  CREATE TABLE histoireclub{
        image varchar(20),
        description varchar(60),
