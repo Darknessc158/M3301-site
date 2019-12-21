@@ -95,8 +95,8 @@
     $sth=$this->db->query($req);
   }
 
-  function insertUnAdherent($nom,$prenom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numLicence,$urlPhoto){ // Ajout d'un adherent
-    $req = "INSERT INTO adherent (nom,prenom,categorie,datenaissance,adresse,telephone,mail,numLicence,urlPhoto) VALUES ('$nom','$prenom','$categorie','$datenaissance','$adresse','$telephone','$mail','$numLicence','$urlPhoto');";
+  function insertUnAdherent($nom,$prenom,$categorie,$role,$datenaissance,$adresse,$telephone,$mail,$numLicence,$urlPhoto,$urlPhotoAlt){ // Ajout d'un adherent
+    $req = "INSERT INTO adherent (nom,prenom,categorie,role,datenaissance,adresse,telephone,mail,numLicence,urlPhoto,urlPhotoAlt) VALUES ('$nom','$prenom','$categorie','$role','$datenaissance','$adresse','$telephone','$mail','$numLicence','$urlPhoto','$urlPhotoAlt');";
     $sth=$this->db->query($req);
   }
 }
