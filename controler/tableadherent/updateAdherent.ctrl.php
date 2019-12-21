@@ -17,12 +17,14 @@ $unAdherent = $adherents->getUnAdherent($idadh);
 $prenom = $unAdherent->getPrenom();
 $nom = $unAdherent->getNom();
 $categorie = $unAdherent->getCategorie();
+$role = $unAdherent->getRole();
 $datenaissance = $unAdherent->getDateNaissance();
 $adresse = $unAdherent->getAdresse();
 $telephone = $unAdherent->getTelephone();
 $mail = $unAdherent->getMail();
 $numlicence = $unAdherent->getNumLicence();
 $urlphoto = $unAdherent->getUrlPhoto();
+$urlphotoalt = $unAdherent->getUrlPhotoAlt();
 
 include('../../view/adherentview/updateAdherent.php');
 ?>
