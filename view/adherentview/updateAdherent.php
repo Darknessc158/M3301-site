@@ -105,6 +105,10 @@
           </p>
         </fieldset>
       </div>
+      <!--On cache ces donnes pour les recevoirs vident sans erreur DAO-->
+      <input type="text" name="role" value="<?php echo $role ?>" hidden/>
+      <input type="file" name="urlphotoalt" value="<?php echo $urlphotoalt ?>" hidden>
+      <!--On cache ces donnes pour les recevoirs vident sans erreur DAO-->
     <?php } ?>
     <?php if ($typerole=='bureau') { ?>
       <div id="formbureau" style="display:none;">
@@ -120,6 +124,11 @@
           </p>
         </fieldset>
       </div>
+      <!--On cache ces donnes pour les recevoirs vident sans erreur DAO-->
+      <input type="text" name="categorie" value="<?php echo $categorie ?>" hidden/>
+      <input type="text" name="numlicence" value="<?php echo $numlicence ?>" hidden/>
+      <input type="file" name="urlphoto" value="<?php echo $urlphoto ?>" hidden>
+      <!--On cache ces donnes pour les recevoirs vident sans erreur DAO-->
     <?php } ?>
 
     <p>
