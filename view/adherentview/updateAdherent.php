@@ -37,20 +37,23 @@
       <p>
         Rôle (Supprimer et reajouter l'adhérent pour changer le rôle avec les bonnes données): <br />
         <SELECT name="typerole" size="1" id="mySelect" >
-          <?php if ($role == 'coureur') { ?>
-            <option value = 'coureur' selected >Coureur</option>
+          <?php if ($typerole == 'coureur') { ?>
+            <option value="rien" hidden selected >Cliquez sur le rôle de l'adhérent</option>
+            <option value = 'coureur' >Coureur</option>
             <option value = 'bureau' hidden>Membre du bureau</option>
             <option value = 'deux' hidden>Les deux</option>
           <?php } ?>
-          <?php if ($role == 'bureau') { ?>
+          <?php if ($typerole == 'bureau') { ?>
+            <option value="rien" hidden selected >Cliquez sur le rôle de l'adhérent</option>
             <option value = 'coureur' hidden>Coureur</option>
-            <option value = 'bureau' selected>Membre du bureau</option>
+            <option value = 'bureau' >Membre du bureau</option>
             <option value = 'deux' hidden>Les deux</option>
           <?php } ?>
-          <?php if ($role == 'deux') { ?>
+          <?php if ($typerole == 'deux') { ?>
+            <option value="rien" hidden selected >Cliquez sur le rôle de l'adhérent</option>
             <option value = 'coureur' hidden>Coureur</option>
             <option value = 'bureau' hidden>Membre du bureau</option>
-            <option value = 'deux' selected>Les deux (Coureur et membre du bureau)</option>
+            <option value = 'deux' >Les deux (Coureur et membre du bureau)</option>
           <?php } ?>
         </SELECT>
       </p>
@@ -99,5 +102,24 @@
 
 
 </body>
+<script>
+document.getElementById('mySelect').onchange = function(){
+  if(this.value == 'coureur'){
+    document.getElementById('formcoureur').style.display = 'block';
+    document.getElementById('formbureau').style.display = 'none';
+  } else if (this.value == 'bureau') {
+    document.getElementById('formcoureur').style.display = 'none';
+    document.getElementById('formbureau').style.display = 'block';
+    <?php $typerole = 'bureau'; ?>
+  } else if (this.value == 'deux') {
+    document.getElementById('formcoureur').style.display = 'block';
+    document.getElementById('formbureau').style.display = 'block';
+    <?php $typerole = 'deux'; ?>
+  } else {
+    document.getElementById('formcache').style.display = 'none';
+    document.getElementById('formbase').style.display = 'none';
+  }
+};
+</script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </html>

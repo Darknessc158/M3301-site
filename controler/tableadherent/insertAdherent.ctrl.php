@@ -15,7 +15,10 @@ $mail = $_POST['mail'];
 $categorie = $_POST['categorie'];
 $numlicence = $_POST['numlicence'];
 $urlphoto = $_POST['urlphoto'];
-$role = $_POST['role'];
+
+//$typerole = $_GET['typerole'];
+$role = $_POST['typerole'].'/'.$_POST['role'];
+
 $ulrphotoalt = $_POST['urlphotoalt'];
 
 $unAdherent = $adherents->insertUnAdherent($nom,$prenom,$categorie,$role,$datenaissance,$adresse,$telephone,$mail,$numlicence,$urlphoto,$ulrphotoalt);

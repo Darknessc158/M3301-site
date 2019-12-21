@@ -96,9 +96,11 @@ document.getElementById('mySelect').onchange = function(){
   } else if (this.value == 'bureau') {
     document.getElementById('formcoureur').style.display = 'none';
     document.getElementById('formbureau').style.display = 'block';
+    <?php $typerole = 'bureau'; ?>
   } else if (this.value == 'deux') {
     document.getElementById('formcoureur').style.display = 'block';
     document.getElementById('formbureau').style.display = 'block';
+    <?php $typerole = 'deux'; ?>
   } else {
     document.getElementById('formcache').style.display = 'none';
     document.getElementById('formbase').style.display = 'none';
