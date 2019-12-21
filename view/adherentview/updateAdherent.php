@@ -55,7 +55,7 @@
         </SELECT>
       </p>
     </fieldset>
-    <?php if $typerole=='deux'{ ?>
+    <?php if ($typerole=='deux') { ?>
       <div id="formcoureur">
         <fieldset>
           <legend>Coureur</legend>
@@ -87,7 +87,7 @@
         </fieldset>
       </div>
     <?php } ?>
-    <?php if $typerole=='coureur'{ ?>
+    <?php if ($typerole=='coureur') { ?>
       <div id="formcoureur">
         <fieldset>
           <legend>Coureur</legend>
@@ -106,7 +106,7 @@
         </fieldset>
       </div>
     <?php } ?>
-    <?php if $typerole=='bureau'{ ?>
+    <?php if ($typerole=='bureau') { ?>
       <div id="formbureau" style="display:none;">
         <fieldset>
           <legend>Membre du bureau</legend>
