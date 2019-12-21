@@ -99,5 +99,12 @@
     $req = "INSERT INTO adherent (nom,prenom,categorie,role,datenaissance,adresse,telephone,mail,numLicence,urlPhoto,urlPhotoAlt) VALUES ('$nom','$prenom','$categorie','$role','$datenaissance','$adresse','$telephone','$mail','$numLicence','$urlPhoto','$urlPhotoAlt');";
     $sth=$this->db->query($req);
   }
+
+  function getLesCoureurs(){ //recuperation de tous les coureurs de la bd
+    $req = "SELECT * FROM adherent where role = 'coureur/';";
+    $sth=$this->db->query($req);
+    $res = $sth->fetchAll(PDO::FETCH_CLASS,'adherent');
+    return $res;
+  }
 }
   ?>

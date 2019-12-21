@@ -5,7 +5,7 @@ require_once('../model/classAdherent/adherentDAO.class.php');
 
 $adherents = new adherentDAO('../model/data/db');
 
-$lesadh = $adherents->getLesAdherents();
+$lesadh = $adherents->getLesCoureurs();
 
 //var_dump($lesadh);
 

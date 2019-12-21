@@ -17,12 +17,14 @@ $telephone = $_POST['telephone'];
 $mail = $_POST['mail'];
 $numlicence = $_POST['numlicence'];
 $urlphoto = $_POST['urlphoto'];
+$urlphotoalt = $_POST['urlphotoalt'];
+$role = $_POST['typerole'].'/'.$_POST['role'];
 
 //delete avant
 $adherents->supprUnAdherent($_GET['idAdherent']);
 
-//inverse prenom et nom car bug
-$unAdherent = $adherents->insertUnAdherent($prenom,$nom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numlicence,$urlphoto);
+
+$unAdherent = $adherents->insertUnAdherent($nom,$prenom,$categorie,$role,$datenaissance,$adresse,$telephone,$mail,$numlicence,$urlphoto,$urlphotoalt);
 
 $resadh = $adherents->getLesAdherents();
 
