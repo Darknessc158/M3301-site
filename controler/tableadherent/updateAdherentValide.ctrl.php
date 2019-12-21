@@ -23,6 +23,7 @@ $role = $_POST['typerole'].'/'.$_POST['role'];
 //delete avant
 $adherents->supprUnAdherent($_GET['idAdherent']);
 
+var_dump($role);
 
 $unAdherent = $adherents->insertUnAdherent($nom,$prenom,$categorie,$role,$datenaissance,$adresse,$telephone,$mail,$numlicence,$urlphoto,$urlphotoalt);
 

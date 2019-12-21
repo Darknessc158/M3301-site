@@ -38,88 +38,100 @@
         Rôle (Supprimer et reajouter l'adhérent pour changer le rôle avec les bonnes données): <br />
         <SELECT name="typerole" size="1" id="mySelect" >
           <?php if ($typerole == 'coureur') { ?>
-            <option value="rien" hidden selected >Cliquez sur le rôle de l'adhérent</option>
-            <option value = 'coureur' >Coureur</option>
+            <option value = 'coureur' selected>Coureur</option>
             <option value = 'bureau' hidden>Membre du bureau</option>
             <option value = 'deux' hidden>Les deux</option>
           <?php } ?>
           <?php if ($typerole == 'bureau') { ?>
-            <option value="rien" hidden selected >Cliquez sur le rôle de l'adhérent</option>
             <option value = 'coureur' hidden>Coureur</option>
-            <option value = 'bureau' >Membre du bureau</option>
+            <option value = 'bureau' selected>Membre du bureau</option>
             <option value = 'deux' hidden>Les deux</option>
           <?php } ?>
           <?php if ($typerole == 'deux') { ?>
-            <option value="rien" hidden selected >Cliquez sur le rôle de l'adhérent</option>
             <option value = 'coureur' hidden>Coureur</option>
             <option value = 'bureau' hidden>Membre du bureau</option>
-            <option value = 'deux' >Les deux (Coureur et membre du bureau)</option>
+            <option value = 'deux' selected>Les deux (Coureur et membre du bureau)</option>
           <?php } ?>
         </SELECT>
       </p>
     </fieldset>
-
-    <div id="formcoureur" style="display:none;">
-      <fieldset>
-        <legend>Coureur</legend>
-        <p>
-          Categorie :<br />
-          <input type="text" name="categorie" value="<?php echo $categorie ?>" />
-        </p>
-        <p>
-          Numero de licence (si connu) :<br />
-          <input type="text" name="numlicence" value="<?php echo $numlicence ?>" />
-        </p>
-        <p>
-          Photo (Pour l'onglet les coureurs) :<br />
-          <input type="file" name="urlphoto" value="<?php echo $urlphoto ?>">
-        </p>
-      </fieldset>
-    </div>
-
-    <div id="formbureau" style="display:none;">
-      <fieldset>
-        <legend>Membre du bureau</legend>
-        <p>
-          Description du role dans le bureau :<br />
-          <input type="text" name="role" value="<?php echo $role ?>" />
-        </p>
-        <p>
-          Photo (Pour l'onglet le bureau) :<br />
-          <input type="file" name="urlphotoalt" value="<?php echo $urlphotoalt ?>">
-        </p>
-      </fieldset>
-    </div>
+    <?php if $typerole=='deux'{ ?>
+      <div id="formcoureur">
+        <fieldset>
+          <legend>Coureur</legend>
+          <p>
+            Categorie :<br />
+            <input type="text" name="categorie" value="<?php echo $categorie ?>" />
+          </p>
+          <p>
+            Numero de licence (si connu) :<br />
+            <input type="text" name="numlicence" value="<?php echo $numlicence ?>" />
+          </p>
+          <p>
+            Photo (Pour l'onglet les coureurs) :<br />
+            <input type="file" name="urlphoto" value="<?php echo $urlphoto ?>">
+          </p>
+        </fieldset>
+      </div>
+      <div id="formbureau" style="display:none;">
+        <fieldset>
+          <legend>Membre du bureau</legend>
+          <p>
+            Description du role dans le bureau :<br />
+            <input type="text" name="role" value="<?php echo $role ?>" />
+          </p>
+          <p>
+            Photo (Pour l'onglet le bureau) :<br />
+            <input type="file" name="urlphotoalt" value="<?php echo $urlphotoalt ?>">
+          </p>
+        </fieldset>
+      </div>
+    <?php } ?>
+    <?php if $typerole=='coureur'{ ?>
+      <div id="formcoureur">
+        <fieldset>
+          <legend>Coureur</legend>
+          <p>
+            Categorie :<br />
+            <input type="text" name="categorie" value="<?php echo $categorie ?>" />
+          </p>
+          <p>
+            Numero de licence (si connu) :<br />
+            <input type="text" name="numlicence" value="<?php echo $numlicence ?>" />
+          </p>
+          <p>
+            Photo (Pour l'onglet les coureurs) :<br />
+            <input type="file" name="urlphoto" value="<?php echo $urlphoto ?>">
+          </p>
+        </fieldset>
+      </div>
+    <?php } ?>
+    <?php if $typerole=='bureau'{ ?>
+      <div id="formbureau" style="display:none;">
+        <fieldset>
+          <legend>Membre du bureau</legend>
+          <p>
+            Description du role dans le bureau :<br />
+            <input type="text" name="role" value="<?php echo $role ?>" />
+          </p>
+          <p>
+            Photo (Pour l'onglet le bureau) :<br />
+            <input type="file" name="urlphotoalt" value="<?php echo $urlphotoalt ?>">
+          </p>
+        </fieldset>
+      </div>
+    <?php } ?>
 
     <p>
-       <input type="submit" value="Modifier" />
-       <input type="reset" value="Annuler" />
-       </p>
-       <p>
-       Retour : <a id="retour" href="../../controler/tableadherent/tableadherent.ctrl.php"><i class="fas fa-undo"></i></a>
+      <input type="submit" value="Modifier" />
+      <input type="reset" value="Annuler" />
+    </p>
+    <p>
+      Retour : <a id="retour" href="../../controler/tableadherent/tableadherent.ctrl.php"><i class="fas fa-undo"></i></a>
     </p>
   </form>
 
 
 </body>
-<script>
-document.getElementById('mySelect').onchange = function(){
-  if(this.value == 'coureur'){
-    document.getElementById('formcoureur').style.display = 'block';
-    document.getElementById('formbureau').style.display = 'none';
-  } else if (this.value == 'bureau') {
-    document.getElementById('formcoureur').style.display = 'none';
-    document.getElementById('formbureau').style.display = 'block';
-    <?php $typerole = 'bureau'; ?>
-  } else if (this.value == 'deux') {
-    document.getElementById('formcoureur').style.display = 'block';
-    document.getElementById('formbureau').style.display = 'block';
-    <?php $typerole = 'deux'; ?>
-  } else {
-    document.getElementById('formcache').style.display = 'none';
-    document.getElementById('formbase').style.display = 'none';
-  }
-};
-</script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </html>
