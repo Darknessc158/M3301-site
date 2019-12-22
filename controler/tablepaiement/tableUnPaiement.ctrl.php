@@ -7,8 +7,8 @@ require_once('../../model/classAdherent/adherentDAO.class.php');
 $config = parse_ini_file('../../config/config.ini');
 
 // Creation des instances DAO
-$paiements = new paiementDAO($config['database_path']);
-$adherents = new adherentDAO($config['database_path']);
+$paiements = new paiementDAO();
+$adherents = new adherentDAO();
 
 //------------------gestion supression d'un paiement-------------------------
 if (isset($_GET['type'])) {
