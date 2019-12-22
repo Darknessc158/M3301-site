@@ -4,11 +4,6 @@ body{
   background-color: lightgray;
 }
 
-td, th {
-border: thin solid #6495ed;
-padding: auto;
-}
-
 a:link{
   color: blue;
 }
