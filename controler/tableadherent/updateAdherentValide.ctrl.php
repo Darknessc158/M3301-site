@@ -18,7 +18,7 @@ $mail = $_POST['mail'];
 $numlicence = $_POST['numlicence'];
 $urlphoto = $_POST['urlphoto'];
 $urlphotoalt = $_POST['urlphotoalt'];
-$role = $_POST['typerole'].'/'.$_POST['role'];
+$role = $_GET['typerole'].'/'.$_POST['role'];
 
 //delete avant
 $adherents->supprUnAdherent($_GET['idAdherent']);

@@ -7,7 +7,7 @@
 </head>
 <body>
   <h1>Modification d'un adhérent</h1>
-  <form class="" action="../../controler/tableadherent/updateAdherentValide.ctrl.php?idAdherent=<?=$_GET['idAdherent']?>" method="post">
+  <form class="" action="../../controler/tableadherent/updateAdherentValide.ctrl.php?idAdherent=<?=$_GET['idAdherent']?>&typerole=<?=$typerole?>" method="post">
     <fieldset>
       <legend>Informations basiques</legend>
       <p>
@@ -34,29 +34,6 @@
         Email :<br />
         <input type="text" name="mail" value="<?php echo $mail ?>" />
       </p>
-      <p>
-        Rôle (Supprimer et reajouter l'adhérent pour changer le rôle avec les bonnes données): <br />
-        <SELECT name="typerole" size="1" id="mySelect" >
-          <?php if ($typerole == 'coureur') { ?>
-            <option value = 'coureur' selected>Coureur</option>
-            <option value = 'bureau' hidden>Membre du bureau</option>
-            <option value = 'deux' hidden>Les deux</option>
-        <?php } elseif ($typerole == 'bureau') { ?>
-            <option value = 'coureur' hidden>Coureur</option>
-            <option value = 'bureau' selected>Membre du bureau</option>
-            <option value = 'deux' hidden>Les deux</option>
-          <?php} elseif ($typerole == 'deux') { ?>
-            <option value = 'coureur' hidden>Coureur</option>
-            <option value = 'bureau' hidden>Membre du bureau</option>
-            <option value = 'deux' selected>Les deux (Coureur et membre du bureau)</option>
-          <?php } else { ?>
-            <option value="rien" hidden selected >Choisissez le rôle de l'adherent</option>
-            <option value = 'coureur'>Coureur</option>
-            <option value = 'bureau'>Membre du bureau</option>
-            <option value = 'deux' >Les deux</option>
-            <?php } ?>
-        </SELECT>
-      </p>
     </fieldset>
     <?php if ($typerole=='deux') { ?>
       <div id="formcoureur">
@@ -72,7 +49,11 @@
           </p>
           <p>
             Photo (Pour l'onglet les coureurs) :<br />
+            <?php if ($urlphoto == ''){ ?>
+              <input type="file" name="urlphoto" value="<?php echo $urlphoto ?>">
+            <?php }else{ ?>
             <input type="text" name="urlphoto" value="<?php echo $urlphoto ?>">
+            <?php } ?>
           </p>
         </fieldset>
       </div>
@@ -85,7 +66,11 @@
           </p>
           <p>
             Photo (Pour l'onglet le bureau) :<br />
+            <?php if ($urlphotoalt == ''){ ?>
+              <input type="file" name="urlphotoalt" value="<?php echo $urlphotoalt ?>">
+            <?php }else{ ?>
             <input type="text" name="urlphotoalt" value="<?php echo $urlphotoalt ?>">
+            <?php } ?>
           </p>
         </fieldset>
       </div>
@@ -103,7 +88,11 @@
           </p>
           <p>
             Photo (Pour l'onglet les coureurs) :<br />
+            <?php if ($urlphoto == ''){ ?>
+              <input type="file" name="urlphoto" value="<?php echo $urlphoto ?>">
+            <?php }else{ ?>
             <input type="text" name="urlphoto" value="<?php echo $urlphoto ?>">
+            <?php } ?>
           </p>
         </fieldset>
       </div>
@@ -121,7 +110,11 @@
           </p>
           <p>
             Photo (Pour l'onglet le bureau) :<br />
+            <?php if ($urlphotoalt == ''){ ?>
+              <input type="file" name="urlphotoalt" value="<?php echo $urlphotoalt ?>">
+            <?php }else{ ?>
             <input type="text" name="urlphotoalt" value="<?php echo $urlphotoalt ?>">
+            <?php } ?>
           </p>
         </fieldset>
       </div>
@@ -174,24 +167,5 @@
 
 
 </body>
-<script>//Javascript si c'est un Article
-document.getElementById('mySelect').onchange = function(){
-  if(this.value == 'coureur'){
-    document.getElementById('formcoureur').style.display = 'block';
-    document.getElementById('formbureau').style.display = 'none';
-  } else if (this.value == 'bureau') {
-    document.getElementById('formcoureur').style.display = 'none';
-    document.getElementById('formbureau').style.display = 'block';
-    <?php $typerole = 'bureau'; ?>
-  } else if (this.value == 'deux') {
-    document.getElementById('formcoureur').style.display = 'block';
-    document.getElementById('formbureau').style.display = 'block';
-    <?php $typerole = 'deux'; ?>
-  } else {
-    document.getElementById('formcache').style.display = 'none';
-    document.getElementById('formbase').style.display = 'none';
-  }
-};
-</script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </html>
