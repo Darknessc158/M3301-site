@@ -63,7 +63,7 @@
               $str = $publication->getContent();
               $tab = explode('/',$str);
               foreach ($tab as $image) { ?>
-                <img src="../../model/data/images/imagesblog/<?=$titre?>/<?=$image?>" alt="">
+                <img src="../model/data/images/imagesblog/<?=$titre?>/<?=$image?>" alt="">
             <?php  } ?>
       </div>
     </div>
