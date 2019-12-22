@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="../view/css/main.view.css" rel="stylesheet">
+  <link href="../view/css/blog.view.css" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -55,9 +55,9 @@
   <h1>Les Actualités du club</h1>
   <div class="container">
     <?php foreach ($lespublications as $publication) { ?>
-      <div>
-      <h3><?php  $publication->getTitre() ?></h3>
-      <p><?php $publication->getDescrition() ?></p>
+      <div class="element">
+      <h3><?php  echo $publication->getTitre(); ?></h3>
+      <?php echo $publication->getDescription(); ?>
       <div class="container">
         <?php $titre =  $publication->getTitre();
               $str = $publication->getContent();
