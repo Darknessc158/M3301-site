@@ -8,11 +8,17 @@
 	</head>
 	<body>
 		<h1>Insertion d'un nouvel article</h1>
-		<form action="../../controler/actualite.ctrl.php" method="post" style="width:65%;">
+		<form action="../../controler/actualite.ctrl.php" method="post" style="width:65%;" enctype="multipart/form-data">
+
+			<label for="">Titre de l'article :</label>
+			<input type="text" name="title" value=""><br>
+
+			<label for="">Images de l'article</label>
+			<input type="file" name="files[]" multiple="multiple" name="submit" accept="image/*">
+
+
 			<textarea name="editeur" id="editeur" rows="8" cols="80"></textarea>
-			<br>
-			<input type="file" name="image" value="">
-			<br>
+
 			<p>
 				<input type="submit" value="Ajouter" />
 				<input type="reset" value="Annuler" />
