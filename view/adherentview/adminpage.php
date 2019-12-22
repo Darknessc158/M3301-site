@@ -29,6 +29,9 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
         <li class="nav-item">
+          <a class="nav-link" href="../../controler/tableadherent/tableadherent.ctrl.php">Gestionnaire des adhérents</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Gestionnaire des stocks</a>
         </li>
         <li class="nav-item">
@@ -36,6 +39,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../../controler/auth/profilAdmin.ctrl.php">Accueil administrateur</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../controler/tableadherent/tableadherent.ctrl.php"><i class="fas fa-sync" title="Rafraîchir"></i></a>
         </li>
       </ul>
     </div>

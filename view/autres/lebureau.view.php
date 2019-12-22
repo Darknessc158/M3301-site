@@ -32,7 +32,7 @@
           <a class="nav-link" href="#">Actualités</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Le bureau</a>
+          <a class="nav-link" href="../controler/lebureau.ctrl.php">Le bureau</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../controler/lescoureurs.ctrl.php">Les coureurs</a>
@@ -53,7 +53,14 @@
 
   <h1>Les bureau du SCALE et l'encadrement</h1>
   <div class="container">
-
+    <?php foreach ($lesadh as $coureur) {
+      echo '<div style="border-bottom:1px solid gray; border-radius:100px; margin:auto; margin-bottom:20px;">';
+      echo '<div class="element" style="background-image:url(../model/data/images/lescoureurs/'.$coureur->getUrlPhoto().'); background-size:cover;">';
+      echo "</div>";
+      echo '<p>'.$coureur->getPrenom().' '.$coureur->getNom().'</p>';
+      echo '<p> Catégorie : '.$coureur->getCategorie().'</p>';
+      echo "</div>";
+    } ?>
   </div>
 
 

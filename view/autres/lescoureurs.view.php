@@ -32,7 +32,7 @@
           <a class="nav-link" href="#">Actualités</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Le bureau</a>
+          <a class="nav-link" href="../controler/lebureau.ctrl.php">Le bureau</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../controler/lescoureurs.ctrl.php">Les coureurs</a>

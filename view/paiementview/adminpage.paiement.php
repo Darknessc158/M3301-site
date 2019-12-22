@@ -34,7 +34,13 @@
           <a class="nav-link" href="../../controler/tablearticle/tablearticle.ctrl.php">Gestionnaire des stocks</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Gestionnaire des transactions</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="../../controler/auth/profilAdmin.ctrl.php">Accueil administrateur</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../../controler/tablepaiement/tableUnPaiement.ctrl.php"><i class="fas fa-sync" title="Rafraîchir"></i></a>
         </li>
       </ul>
     </div>
