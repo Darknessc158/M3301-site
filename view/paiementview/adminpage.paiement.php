@@ -69,7 +69,7 @@
 
         <th>
           <div class="boite_titre">
-          <p>Date du paiement </p>
+          <p>Date du paiement (AAAA-MM-JJ)</p>
           <div class="icones_tri">
           <a href="<?= $chemin ?>tri=datepaiementcroit"><i class="fas fa-sort-up"></i></a>
           <a href="<?= $chemin ?>tri=datepaiementdecroit"><i class="fas fa-sort-down"></i></a>
