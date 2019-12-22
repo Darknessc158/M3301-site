@@ -23,6 +23,13 @@ $telephone = $unAdherent->getTelephone();
 $mail = $unAdherent->getMail();
 $numlicence = $unAdherent->getNumLicence();
 $urlphoto = $unAdherent->getUrlPhoto();
+$urlphotoalt = $unAdherent->getUrlPhotoAlt();
+
+//On separe le typerole de la description du role.
+$role = $unAdherent->getRole();
+$arrayrole = explode('/',$role);
+$typerole = $arrayrole[0];
+$role = $arrayrole[1];
 
 include('../../view/adherentview/updateAdherent.php');
 ?>

@@ -79,11 +79,11 @@
 
     <div class="col-sm-3">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../../model/data/images/images_sites/transactions-icon.png" alt="image gestion des stocks">
+        <img class="card-img-top" src="../../model/data/images/images_sites/site-icon.png" alt="image gestion des stocks">
         <div class="card-body">
           <h5 class="card-title">Gestionnaire du site</h5>
-          <p class="card-text">Modifier le site, Ajouter des articles pour l'actualité ...</p>
-          <a href="#" class="btn btn-primary">Gérer le site</a>
+          <p class="card-text">Ajouter des articles pour l'actualité</p>
+          <a href="../../view/autres/ajouterarticles.view.php" class="btn btn-primary">Ajouter un Article</a>
         </div>
       </div>
     </div>

@@ -1,3 +1,9 @@
+CREATE TABLE publication{
+      titre varchar(20),
+      description varchar(400),
+      content varchar(400)
+};
+
  CREATE TABLE histoireclub{
        image varchar(20),
        description varchar(60),
@@ -10,16 +16,18 @@ CREATE TABLE adherent (
      nom varchar(30) NOT NULL,
      prenom varchar(30) NOT NULL,
      categorie varchar(30),
+     role varchar(60),
      datenaissance DATE,
      adresse varchar(40),
      telephone char(10),
      mail varchar(40),
-     numLicence varchar(20) UNIQUE
-
+     numLicence varchar(20),
+     urlPhoto varchar(100),
+     urlPhotoAlt varchar(100)
 );
 
 CREATE TABLE paiement (
-  idPaiement INTEGER PRIMARY KEY,
+  idPaiement INTEGER PRIMARY KEY AUTO_INCREMENT,
   datePaiement DATE,
   prix float,
   description varchar(100),
@@ -29,7 +37,7 @@ CREATE TABLE paiement (
 );
 
 CREATE TABLE article (
-  idArticle INTEGER PRIMARY KEY,
+  idArticle INTEGER PRIMARY KEY AUTO_INCREMENT,
   prix float,
   categorie varchar(35),
   quantite INTEGER,

@@ -95,9 +95,22 @@
     $sth=$this->db->query($req);
   }
 
-  function insertUnAdherent($nom,$prenom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numLicence,$urlPhoto){ // Ajout d'un adherent
-    $req = "INSERT INTO adherent (nom,prenom,categorie,datenaissance,adresse,telephone,mail,numLicence,urlPhoto) VALUES ('$nom','$prenom','$categorie','$datenaissance','$adresse','$telephone','$mail','$numLicence','$urlPhoto');";
+  function insertUnAdherent($nom,$prenom,$categorie,$role,$datenaissance,$adresse,$telephone,$mail,$numLicence,$urlPhoto,$urlPhotoAlt){ // Ajout d'un adherent
+    $req = "INSERT INTO adherent (nom,prenom,categorie,role,datenaissance,adresse,telephone,mail,numLicence,urlPhoto,urlPhotoAlt) VALUES ('$nom','$prenom','$categorie','$role','$datenaissance','$adresse','$telephone','$mail','$numLicence','$urlPhoto','$urlPhotoAlt');";
     $sth=$this->db->query($req);
+  }
+
+  function getLesCoureurs(){ //recuperation de tous les coureurs de la bd
+    $req = "SELECT * FROM adherent where role LIKE 'coureur/%' OR role LIKE 'deux/%';";
+    $sth=$this->db->query($req);
+    $res = $sth->fetchAll(PDO::FETCH_CLASS,'adherent');
+    return $res;
+  }
+  function getLeBureau(){ //recuperation de tous les membres du bureau de la bd
+    $req = "SELECT * FROM adherent where role LIKE 'bureau/%' OR role LIKE 'deux/%';";
+    $sth=$this->db->query($req);
+    $res = $sth->fetchAll(PDO::FETCH_CLASS,'adherent');
+    return $res;
   }
 }
   ?>

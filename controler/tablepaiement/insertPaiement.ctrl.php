@@ -30,6 +30,14 @@ if ($type == 'Article'){
   $articlePaye = $articles->getUnArticleRef($description);
   $stock = $articlePaye->getQuantite();
   $stockrestant = $stock-$quantiteCommande;
+  if($stockrestant < 0){
+    echo "<script>alert(\"Pas assez de stock pour cette article ($description) veuillez saisir un autre montant\")</script>";
+    echo '<script language="JavaScript" type="text/javascript">window.location.replace("../../controler/tablepaiement/insertpaiementavant.ctrl.php");</script>';
+    exit(0);
+  }
+  if($stockrestant == 0 ){
+    echo "<script>alert(\"Attention plus de stock pour l'article $description \")</script>";
+  }
   $idArticle = $articlePaye->getIdArticle();
   $articles->updateUnArticleStock($idArticle,$stockrestant); //on update le stock dans le DAO
   //----------------------------------------
@@ -63,7 +71,6 @@ if (isset($_GET['idAdherent'])){ // on a l'id adherent
 }
 $respaiement = $res; //on remplit la variable pour la view
 //--------------------------------------------------------------------
-
 //view
 include('../../controler/tablepaiement/tableUnPaiement.ctrl.php');
 

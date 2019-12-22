@@ -8,12 +8,14 @@ class adherent
     public $nom;
     public $prenom;
     public $categorie;
+    public $role;
     public $datenaissance;
     public $adresse;
     public $telephone;
     public $mail;
     public $numLicence;
     public $urlPhoto;
+    public $urlPhotoAlt;
 
 
     public function getIdAdherent(){
@@ -27,6 +29,9 @@ class adherent
     }
     public function getCategorie(){
       return $this->categorie;
+    }
+    public function getRole(){
+      return $this->role;
     }
     public function getDateNaissance(){
       return $this->datenaissance;
@@ -45,6 +50,9 @@ class adherent
     }
     public function getUrlPhoto(){
       return $this->urlPhoto;
+    }
+    public function getUrlPhotoAlt(){
+      return $this->urlPhotoAlt;
     }
 }
 

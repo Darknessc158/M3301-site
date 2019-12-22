@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
   <title>Modification d'un Paiement</title>
@@ -18,7 +18,7 @@
   <!-------------------------------->
 
 
-  <form class="" action="../../controler/tablepaiement/updatePaiementValide.ctrl.php?idPaiement=<?=$_GET['idPaiement']?>&idAdherent=<?=$_GET['idAdherent']?>" method="post">
+  <form class="" action="../../controler/tablepaiement/updatePaiementValide.ctrl.php?idPaiement=<?=$_GET['idPaiement']?>&idAdherent=<?=$_GET['idAdherent']?>&quantite=<?=$quantiteCommande?>" method="post">
 
     <fieldset>
       <legend>Type du paiement</legend>
@@ -81,7 +81,7 @@
             <input type="date" name="datePaiementArticle" value="<?php echo $datePaiement ?>" /><br/>
 
             <label for="">Quantité commandée :</label><br/>
-            <input type="text" name="quantiteCommande" value="<?php echo $quantiteCommande ?>" /><br/>
+            <input type="text" name="quantiteCommande" value="<?php echo $quantiteCommande ?>" disabled style="background-color:gray;" title="(Remplir un autre formulaire pour changer la quantité.)"/><br/>
 
             <label for="etatDuPaiement">Etat du paiement :</label><br/>
             <input type="text" name="etatDuPaiementArticle" value="<?php echo $etatDuPaiement ?>" /><br/>

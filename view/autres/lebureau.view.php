@@ -32,7 +32,7 @@
           <a class="nav-link" href="#">Actualités</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Le bureau</a>
+          <a class="nav-link" href="../controler/lebureau.ctrl.php">Le bureau</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="../controler/lescoureurs.ctrl.php">Les coureurs</a>
@@ -50,10 +50,19 @@
     </div>
   </nav>
 
-
   <h1>Les bureau du SCALE et l'encadrement</h1>
   <div class="container">
-
+    <?php foreach ($lesadh as $membre) {
+      echo '<div style="border:1px dotted gray; border-radius:60px; margin:auto; margin-bottom:20px;">';
+      echo '<div class="element" style="background-image:url(../model/data/images/lebureau/'.$membre->getUrlPhotoAlt().'); background-size:cover; width:200px; height:300px;">';
+      echo "</div>";
+      $descriptionrole = explode('/',$membre->getRole())[1];
+      echo '<p>'.$descriptionrole.'</p>';
+      echo '<p>'.$membre->getPrenom().' '.$membre->getNom().'</p>';
+      echo '<p>Tél. : '.$membre->getTelephone().'</p>';
+      echo '<p><a href="mailto:'.$membre->getMail().'">'.$membre->getMail().'</a></p>';
+      echo "</div>";
+    } ?>
   </div>
 
 
