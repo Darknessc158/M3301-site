@@ -60,7 +60,7 @@
       echo '<p>'.$descriptionrole.'</p>';
       echo '<p>'.$membre->getPrenom().' '.$membre->getNom().'</p>';
       echo '<p>Tél. : '.$membre->getTelephone().'</p>';
-      echo '<p><a href="'.$membre->getMail().'">'.$membre->getMail().'</a></p>';
+      echo '<p><a href="mailto:'.$membre->getMail().'">'.$membre->getMail().'</a></p>';
       echo "</div>";
     } ?>
   </div>
