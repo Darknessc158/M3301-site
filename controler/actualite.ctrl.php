@@ -48,6 +48,8 @@ $content = implode("/",$tab[0]);
 //insertion des donnees dans la bd
 $publications->insertArticle($title,$editor_data,$content);
 
+$lespublications = $publications->getLesArticlesBlog();
+
 include('../view/autres/actualites.view.php');
 
 ?>
