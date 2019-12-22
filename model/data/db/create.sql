@@ -1,6 +1,7 @@
 CREATE TABLE publication{
-      titre varchar(20),
-      description varchar(400),
+      idPublication INTEGER PRIMARY KEY AUTO_INCREMENT,
+      titre varchar(40),
+      description TEXT,
       content varchar(400)
 };
 

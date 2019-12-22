@@ -27,6 +27,11 @@ class publicationDAO
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'publication');
     return $res;
   }
+  function insertArticle($titre,$description,$content) //Ajout d'une actualite
+  {
+    $req = "INSERT INTO publication (titre,description,content) VALUES ('$titre','$description','$content');";
+    $sth=$this->db->query($req);
+  }
 
 
 }

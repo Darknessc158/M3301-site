@@ -5,13 +5,18 @@
  */
 class publication
 {
-  public $titre
-  public $description
-  public $content
+  public $idPublication;
+  public $titre;
+  public $description;
+  public $content;
 
+  public function getIdPublication()
+  {
+    return $this->$idPublication;
+  }
   public function getTitre()
   {
-    return $this->$titre;
+    return $this->titre;
   }
   public function getDescription()
   {
