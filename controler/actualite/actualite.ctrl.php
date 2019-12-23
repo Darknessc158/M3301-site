@@ -10,8 +10,8 @@ $editor_data = $_POST["editeur"]; //Recuperation des donnees textarea
 
 //Créer un dossier pour enregistrer les photos de l'article.
 
-if (!file_exists("../model/data/images/imagesblog/$title/")) {
-  mkdir("../../model/data/images/imagesblog/$title/");
+if (file_exists("../model/data/images/imagesblog/$title/") == FALSE) {
+  @mkdir("../../model/data/images/imagesblog/$title/");
 }
 
 $valid_formats = array("jpg", "png", "gif", "zip", "bmp","jfif");

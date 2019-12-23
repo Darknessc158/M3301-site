@@ -11,13 +11,13 @@
 		<form action="../../controler/actualite/actualite.ctrl.php" method="post" style="width:65%;" enctype="multipart/form-data">
 
 			<label for="">Titre de l'article :</label>
-			<input type="text" name="title" value=""><br>
+			<input type="text" name="title" value="" style="width:60%;"/><br>
+
+			<label for="">Description :</label>
+			<textarea name="editeur" id="editeur" rows="8" cols="80"></textarea>
 
 			<label for="">Images de l'article</label>
 			<input type="file" name="files[]" multiple="multiple" name="submit" accept="image/*">
-
-
-			<textarea name="editeur" id="editeur" rows="8" cols="80"></textarea>
 
 			<p>
 				<input type="submit" value="Ajouter" />

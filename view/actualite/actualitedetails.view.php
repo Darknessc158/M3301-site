@@ -54,18 +54,44 @@
   <div class="container">
     <?php foreach ($lespublications as $publication) { ?>
       <div class="element">
-        <a href="#" title="Voir plus de détails"><h3><?php  echo $publication->getTitre(); ?></h3></a>
-        <?php $resume = substr($publication->getDescription(),0,800) . " ...";
-        echo $resume; ?>
+      <a href="#"> <i class="fas fa-plus-circle" title="Plus de détails"></i></a>
+      <h3><?php  echo $publication->getTitre(); ?></h3>
+      <?php echo $publication->getDescription(); ?>
         <?php $titre =  $publication->getTitre();
-        $str = $publication->getContent();
-        if ($str != '') { //il y a au moins 1 image.
-          $tab = explode('/',$str); var_dump($tab); ?>
-          <img class="" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[0]?>" alt="">
-        <?php  } ?>
-      </div>
-    <?php }  ?>
+              $str = $publication->getContent();
+              if ($str != '') { //il y a des images
+                $tab = explode('/',$str); ?>
+                <i class="fas fa-arrow-circle-right" id="next" ></i>
+                <div class="boximg">
+                  <p class="box">
+              <?php $length = sizeof($tab);
+              for ($i=0; $i < $length ; $i++) {
+                if ($i == 0){ ?>
+                  <img class="scroll" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[$i]?>" alt="" style="display:block;">
+              <?php  } else { ?>
+                  <img class="scroll" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[$i]?>" alt="" style="display:none;">
+                <?php }  ?>
+            <?php   } ?>
+                  </p>
+                </div>
+            <?php } ?>
+    </div>
+  <?php  } ?>
   </div>
+
+  <script>//click sur la photo
+    I = 0 ;
+    document.getElementById('next').onclick = function(){
+    Imax = document.getElementsByClassName("scroll").length - 1 ;
+    var elements =  document.getElementsByClassName("scroll");
+    elements[I].style.display = "none" ;
+    if ( I < Imax )
+    I++;
+    else
+    I=0;
+    elements[I].style.display = "block";
+  };
+  </script>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
