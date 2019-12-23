@@ -4,11 +4,9 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <link href="../../view/css/blog.view.css" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+  <link href="../../view/css/blog.view.css" rel="stylesheet">
   <title>SCALE Echirolles - club de cyclisme</title>
 </head>
 <body>
@@ -54,14 +52,18 @@
   <div class="container">
     <?php foreach ($lespublications as $publication) { ?>
       <div class="element">
-        <a href="#" title="Voir plus de détails"><h3><?php  echo $publication->getTitre(); ?></h3></a>
-        <?php $resume = substr($publication->getDescription(),0,800) . "...";
+        <a href="../../controler/actualite/detail.ctrl.php?idpublication=<?php echo $publication->getIdPublication(); ?>" title="Voir plus de détails"><h3><?php  echo $publication->getTitre(); ?></h3></a>
+        <p class="datepublication">Publié le <?php echo $publication->getDatePublication() ?></p>
+        <?php $resume = substr($publication->getDescription(),0,800); //800 caractères max pour le petit descriptif
+        if (strlen($publication->getDescription()) > 800 ){
+          $resume = $resume." ...";
+        }
         echo $resume; ?>
         <?php $titre =  $publication->getTitre();
         $str = $publication->getContent();
         if ($str != '') { //il y a au moins 1 image.
           $tab = explode('/',$str); ?>
-          <img class="" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[0]?>" alt="">
+          <img class="image" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[0]?>" alt="" width="80%">
         <?php  } ?>
       </div>
     <?php }  ?>

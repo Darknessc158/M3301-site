@@ -14,7 +14,7 @@ if (!file_exists("../model/data/images/imagesblog/$title/")) {
   @mkdir("../../model/data/images/imagesblog/$title/");
 }
 
-$valid_formats = array("jpg", "png", "gif", "zip", "bmp","jfif","JPG");
+$valid_formats = array("jpg", "png", "gif", "zip", "bmp","jfif","JPG","JPEG");
 $max_file_size = 4000*4000; //100 kb
 $path = "../../model/data/images/imagesblog/$title/"; // Upload directory
 $count = 0;

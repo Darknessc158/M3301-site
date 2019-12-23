@@ -23,17 +23,26 @@ img{
   flex-wrap: wrap;
   justify-content:space-around;
   padding: 10px;
-  width: 80%;
-  vertical-align: middle;
 }
 .element{
 background-color: white;
 border: 1px solid gray;
-width: 100%;
 height: auto;
-margin: auto;
-margin-bottom: 20px;
+margin-top: 15px;
 padding: 15px;
 border-radius: 20px;
 text-align: center;
+}
+.image{
+  width: 80% !important;
+  height: auto;
+}
+em{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding: auto;
+  width: 100%;
+}
+.datepublication{
+
 }
