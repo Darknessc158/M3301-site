@@ -10,12 +10,12 @@ $editor_data = $_POST["editeur"]; //Recuperation des donnees textarea
 
 //Créer un dossier pour enregistrer les photos de l'article.
 
-if (file_exists("../model/data/images/imagesblog/$title/") == FALSE) {
+if (!file_exists("../model/data/images/imagesblog/$title/")) {
   @mkdir("../../model/data/images/imagesblog/$title/");
 }
 
-$valid_formats = array("jpg", "png", "gif", "zip", "bmp","jfif");
-$max_file_size = 1024*1000; //100 kb
+$valid_formats = array("jpg", "png", "gif", "zip", "bmp","jfif","JPG");
+$max_file_size = 4000*4000; //100 kb
 $path = "../../model/data/images/imagesblog/$title/"; // Upload directory
 $count = 0;
 

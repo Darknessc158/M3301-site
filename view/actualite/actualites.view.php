@@ -55,12 +55,12 @@
     <?php foreach ($lespublications as $publication) { ?>
       <div class="element">
         <a href="#" title="Voir plus de détails"><h3><?php  echo $publication->getTitre(); ?></h3></a>
-        <?php $resume = substr($publication->getDescription(),0,800) . " ...";
+        <?php $resume = substr($publication->getDescription(),0,800) . "...";
         echo $resume; ?>
         <?php $titre =  $publication->getTitre();
         $str = $publication->getContent();
         if ($str != '') { //il y a au moins 1 image.
-          $tab = explode('/',$str); var_dump($tab); ?>
+          $tab = explode('/',$str); ?>
           <img class="" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[0]?>" alt="">
         <?php  } ?>
       </div>
