@@ -54,7 +54,7 @@
         <a class="nav-link" href="../controler/accueil.ctrl.php">Accueil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="../controler/touteslesactualites.ctrl.php">Actualités</a>
+        <a class="nav-link" href="../controler/actualite/touteslesactualites.ctrl.php">Actualités</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../controler/lebureau.ctrl.php">Le bureau</a>

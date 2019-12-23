@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="../view/css/blog.view.css" rel="stylesheet">
+  <link href="../../view/css/blog.view.css" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -16,7 +16,7 @@
   <!--Image bandeau haut-->
   <div class="boximg">
     <p class="box">
-      <img class="" src="../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="vertical-align:middle;">
+      <img class="" src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="vertical-align:middle;">
     </p>
   </div>
 
@@ -26,25 +26,25 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapse_target">
-    <a class="navbar-brand" href="../controler/accueil.ctrl.php"> <img src="../model/data/images/images_sites/logo-scale.jpg" alt="logo scale Echirolles" width="60%"></a>
+    <a class="navbar-brand" href="../../controler/accueil.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt="logo scale Echirolles" width="60%"></a>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="../controler/accueil.ctrl.php">Accueil</a>
+          <a class="nav-link" href="../../controler/accueil.ctrl.php">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../controler/touteslesactualites.ctrl.php">Actualités</a>
+          <a class="nav-link" href="../../controler/touteslesactualites.ctrl.php">Actualités</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../controler/lebureau.ctrl.php">Le bureau</a>
+          <a class="nav-link" href="../../controler/lebureau.ctrl.php">Le bureau</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../controler/lescoureurs.ctrl.php">Les coureurs</a>
+          <a class="nav-link" href="../../controler/lescoureurs.ctrl.php">Les coureurs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../controler/tablehistoireclub/tablehistoireclub.ctrl.php">Histoire du club</a>
+          <a class="nav-link" href="../../controler/tablehistoireclub/tablehistoireclub.ctrl.php">Histoire du club</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../view/autres/contact.view.php">Nous contacter</a>
+          <a class="nav-link" href="../../view/autres/contact.view.php">Nous contacter</a>
         </li>
       </ul>
     </div>
@@ -67,9 +67,9 @@
               <?php $length = sizeof($tab);
               for ($i=0; $i < $length ; $i++) {
                 if ($i == 0){ ?>
-                  <img class="scroll" src="../model/data/images/imagesblog/<?=$titre?>/<?=$tab[$i]?>" alt="" style="display:block;">
+                  <img class="scroll" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[$i]?>" alt="" style="display:block;">
               <?php  } else { ?>
-                  <img class="scroll" src="../model/data/images/imagesblog/<?=$titre?>/<?=$tab[$i]?>" alt="" style="display:none;">
+                  <img class="scroll" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[$i]?>" alt="" style="display:none;">
                 <?php }  ?>
             <?php   } ?>
                   </p>

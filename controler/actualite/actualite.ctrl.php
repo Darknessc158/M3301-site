@@ -1,6 +1,6 @@
 <?php
-require_once('../model/classPublication/publication.class.php');
-require_once('../model/classPublication/publicationDAO.class.php');
+require_once('../../model/classPublication/publication.class.php');
+require_once('../../model/classPublication/publicationDAO.class.php');
 
 
 $publications = new publicationDAO();
@@ -11,12 +11,12 @@ $editor_data = $_POST["editeur"]; //Recuperation des donnees textarea
 //Créer un dossier pour enregistrer les photos de l'article.
 
 if (!file_exists("../model/data/images/imagesblog/$title/")) {
-  mkdir("../model/data/images/imagesblog/$title/");
+  mkdir("../../model/data/images/imagesblog/$title/");
 }
 
 $valid_formats = array("jpg", "png", "gif", "zip", "bmp","jfif");
 $max_file_size = 1024*1000; //100 kb
-$path = "../model/data/images/imagesblog/$title/"; // Upload directory
+$path = "../../model/data/images/imagesblog/$title/"; // Upload directory
 $count = 0;
 
 if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
@@ -57,6 +57,6 @@ $publications->insertArticle($title,$editor_data,$content,$datePublication);
 
 $lespublications = $publications->getLesArticlesBlog();
 
-include('../view/autres/actualites.view.php');
+include('../../view/actualite/actualites.view.php');
 
 ?>

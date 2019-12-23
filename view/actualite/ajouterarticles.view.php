@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<h1>Insertion d'un nouvel article</h1>
-		<form action="../../controler/actualite.ctrl.php" method="post" style="width:65%;" enctype="multipart/form-data">
+		<form action="../../controler/actualite/actualite.ctrl.php" method="post" style="width:65%;" enctype="multipart/form-data">
 
 			<label for="">Titre de l'article :</label>
 			<input type="text" name="title" value=""><br>
