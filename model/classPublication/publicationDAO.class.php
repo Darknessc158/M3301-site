@@ -22,7 +22,7 @@ class publicationDAO
   }
 
   function getLesArticlesBlog(){ //recuperation de tous les articles de la bd
-    $req = "SELECT * FROM publication ORDER BY datePublication;";
+    $req = "SELECT * FROM publication ORDER BY datePublication DESC;";
     $sth=$this->db->query($req);
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'publication');
     return $res;
