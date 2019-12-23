@@ -77,7 +77,7 @@
 
   <h2>Gestion des adhérents</h2>
   <div class="search-box">
-      <input type="text" autocomplete="off" placeholder="Search country..." />
+  <input type="text" autocomplete="off" placeholder="Rechercher un adherent..." />
       <div class="result"></div>
   <!-- Tableau !-->
   <?php $chemin='../../controler/tableadherent/tableadherent.ctrl.php' ?>
