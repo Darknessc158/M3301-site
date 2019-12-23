@@ -9,6 +9,7 @@ class publication
   public $titre;
   public $description;
   public $content;
+  public $datePublication;
 
   public function getIdPublication()
   {
@@ -25,6 +26,10 @@ class publication
   public function getContent()
   {
     return $this->content;
+  }
+  public function getDatePublication()
+  {
+    return $this->datePublication;
   }
 }
 

@@ -37,16 +37,23 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
             else{ // No error found! Move uploaded files
                 if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name)) {
                     $count++; // Number of successfully uploaded files
-                    $tab[] = $_FILES['files']['name'];
                 }
             }
         }
     }
 }
-$content = implode("/",$tab[0]);
+$tab[] = $_FILES['files']['name'];
+if ($tab[0] == '') { //pas de contenu
+  $content = '';
+}else{ //il y a des images/contenus
+  $content = implode("/",$tab[0]);
+}
+
+setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1'); //date en francais
+$datePublication = utf8_encode(strftime("%A %d %B %Y"));//pour bien afficher les caractères spéciaux
 
 //insertion des donnees dans la bd
-$publications->insertArticle($title,$editor_data,$content);
+$publications->insertArticle($title,$editor_data,$content,$datePublication);
 
 $lespublications = $publications->getLesArticlesBlog();
 
