@@ -107,7 +107,7 @@ I=Imax;
 elements[I].style.display = "block";
 };
 </script>
-<!--
+
 <script type="text/javascript"> //defilement auto
 I = 0 ;
 Imax = document.getElementsByClassName("scroll").length - 1 ;
@@ -123,7 +123,7 @@ document.getElementsByClassName("scroll")[I].style.display = "block";
 setTimeout(suivante, 8000) ;
 }
 </script>
--->
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
