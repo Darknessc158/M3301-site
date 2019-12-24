@@ -16,7 +16,7 @@
     <!--Image bandeau haut-->
     <div class="boximg">
       <p class="box">
-        <img class="scroll" src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
+        <img class="" src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
       </p>
     </div>
 
