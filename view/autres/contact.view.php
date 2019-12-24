@@ -58,7 +58,7 @@
 
 
 
-  <h2>Contactez Nous</h2>
+  <h2>Contactez-nous</h2>
 
   <p>Vous avez une question ? N'hésitez pas à nous contacter !</p>
 
