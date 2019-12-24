@@ -49,11 +49,10 @@ if ($tab[0] == '') { //pas de contenu
   $content = implode("/",$tab[0]);
 }
 
-setlocale(LC_TIME, 'fr', 'fr_FR', 'fr_FR.ISO8859-1'); //date en francais
-$datePublication = utf8_encode(strftime("%A %d %B %Y"));//pour bien afficher les caractères spéciaux
+$date = date('Y-m-d');
 
 //insertion des donnees dans la bd
-$publications->insertArticle($title,$editor_data,$content,$datePublication);
+$publications->insertArticle($title,$editor_data,$content,$date);
 
 $lespublications = $publications->getLesArticlesBlog();
 

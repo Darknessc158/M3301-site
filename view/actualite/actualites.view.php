@@ -53,12 +53,12 @@
     <?php foreach ($lespublications as $publication) { ?>
       <div class="element">
         <a href="../../controler/actualite/detail.ctrl.php?idpublication=<?php echo $publication->getIdPublication(); ?>" title="Voir plus de détails"><h3><?php  echo $publication->getTitre(); ?></h3></a>
-        <p class="datepublication">Publié le <?php echo $publication->getDatePublication() ?></p>
-        <?php $resume = substr($publication->getDescription(),0,800); //800 caractères max pour le petit descriptif
-        if (strlen($publication->getDescription()) > 800 ){
-          $resume = $resume." ...";
-        }
-        echo $resume; ?>
+        <p class="datepublication">Publié le <?php setlocale(LC_ALL, 'fr_FR'); echo ($publication->getDatePublication())->format('D-j-Y'); ?></p>
+        <?php $resume = substr($publication->getDescription(),0,650); //800 caractères max pour le petit descriptif
+        if (strlen($publication->getDescription()) > 650 ){
+          $resume = $resume."...";
+        } ?>
+      <p> <?php echo $resume; ?> </p>
         <?php $titre =  $publication->getTitre();
         $str = $publication->getContent();
         if ($str != '') { //il y a au moins 1 image.
