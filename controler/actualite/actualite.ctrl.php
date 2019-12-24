@@ -8,7 +8,10 @@ $publications = new publicationDAO();
 $title = $_POST["title"]; //Recuperation titre de l'article
 $editor_data = $_POST["editeur"]; //Recuperation des donnees textarea
 
-
+//Créer un dossier pour enregistrer les photos de l'article.
+if (!file_exists("../model/data/images/imagesblog/$title/") && isset($_FILES['files'])) {
+  @mkdir("../../model/data/images/imagesblog/$title/");
+}
 
 $valid_formats = array("jpg", "png", "gif", "zip", "bmp","jfif","JPG","JPEG");
 $max_file_size = 4000*4000; //100 kb
@@ -31,10 +34,6 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
         continue; // Skip invalid file formats
       }
       else{ // No error found! Move uploaded files
-        //Créer un dossier pour enregistrer les photos de l'article.
-        if (!file_exists("../model/data/images/imagesblog/$title/")) {
-          @mkdir("../../model/data/images/imagesblog/$title/");
-        }
         if(move_uploaded_file($_FILES["files"]["tmp_name"][$f], $path.$name)) {
           $count++; // Number of successfully uploaded files
         }
