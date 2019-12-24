@@ -54,8 +54,7 @@
   <?php setlocale(LC_ALL, 'fra_fra'); //Date en francais
   $date = strtotime($publication->getDatePublication());?>
 
-  <h1>Les Actualités du club</h1>
-<div class="">
+<div style="margin:5em;">
   <h3><?php  echo $publication->getTitre(); ?></h3>
   <p class="datepublication"> Publié le <?php echo utf8_encode(strftime("%e %B %Y",$date)); ?> </p>
   <?php echo $publication->getDescription(); ?>
@@ -63,8 +62,10 @@
         $str = $publication->getContent();
         if ($str != '') { //il y a des images
           $tab = explode('/',$str); ?>
-          <i class="fas fa-arrow-circle-right" id="next" ></i>
+
           <div class="boximg">
+            <i class="fas fa-arrow-circle-left fa-4x" id="prev" style="margin:auto;" title="Image précédente"></i>
+
             <p class="box">
         <?php $length = sizeof($tab);
         for ($i=0; $i < $length ; $i++) {
@@ -75,6 +76,7 @@
           <?php }  ?>
       <?php   } ?>
             </p>
+            <i class="fas fa-arrow-circle-right fa-4x" id="next" style="margin:auto;" title="Image suivante"></i>
           </div>
       <?php } ?>
 </div>
@@ -93,7 +95,35 @@
   I=0;
   elements[I].style.display = "block";
 };
+I = 0 ;
+document.getElementById('prev').onclick = function(){
+Imax = document.getElementsByClassName("scroll").length - 1 ;
+var elements =  document.getElementsByClassName("scroll");
+elements[I].style.display = "none" ;
+if ( I > 0 )
+I--;
+else
+I=Imax;
+elements[I].style.display = "block";
+};
 </script>
+<!--
+<script type="text/javascript"> //defilement auto
+I = 0 ;
+Imax = document.getElementsByClassName("scroll").length - 1 ;
+setTimeout(suivante, 8000) ;
+function suivante()
+{
+document.getElementsByClassName("scroll")[I].style.display = "none" ;
+if ( I < Imax )
+I++;
+else
+I=0;
+document.getElementsByClassName("scroll")[I].style.display = "block";
+setTimeout(suivante, 8000) ;
+}
+</script>
+-->
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
