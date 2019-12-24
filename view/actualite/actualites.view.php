@@ -48,12 +48,19 @@
     </div>
   </nav>
   <!--Nav-->
+
+
+
   <h1>Les Actualités du club</h1>
   <div class="container">
     <?php foreach ($lespublications as $publication) { ?>
+
+      <?php setlocale(LC_ALL, 'fra_fra'); //Date en francais
+      $date = strtotime($publication->getDatePublication());?>
+
       <div class="element">
         <a href="../../controler/actualite/detail.ctrl.php?idpublication=<?php echo $publication->getIdPublication(); ?>" title="Voir plus de détails"><h3><?php  echo $publication->getTitre(); ?></h3></a>
-        <p class="datepublication">Publié le <?php setlocale(LC_ALL, 'fr_FR'); echo ($publication->getDatePublication())->format('D-j-Y'); ?></p>
+        <p class="datepublication"> Publié le <?php echo utf8_encode(strftime("%e %B %Y",$date)); ?> </p>
         <?php $resume = substr($publication->getDescription(),0,650); //800 caractères max pour le petit descriptif
         if (strlen($publication->getDescription()) > 650 ){
           $resume = $resume."...";

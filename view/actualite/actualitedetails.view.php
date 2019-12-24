@@ -50,9 +50,14 @@
     </div>
   </nav>
   <!--Nav-->
+
+  <?php setlocale(LC_ALL, 'fra_fra'); //Date en francais
+  $date = strtotime($publication->getDatePublication());?>
+
   <h1>Les Actualités du club</h1>
 <div class="">
   <h3><?php  echo $publication->getTitre(); ?></h3>
+  <p class="datepublication"> Publié le <?php echo utf8_encode(strftime("%e %B %Y",$date)); ?> </p>
   <?php echo $publication->getDescription(); ?>
   <?php $titre =  $publication->getTitre();
         $str = $publication->getContent();
