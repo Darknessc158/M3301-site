@@ -84,6 +84,7 @@
           <h5 class="card-title">Gestionnaire du site</h5>
           <p class="card-text">Ajouter des articles pour l'actualité</p>
           <a href="../../view/actualite/ajouterarticles.view.php" class="btn btn-primary">Ajouter un Article</a>
+          <a href="../../controler/actualite/tablepublication.ctrl.php" class="btn btn-primary">Modifier/Supprimer un Article</a>
         </div>
       </div>
     </div>
