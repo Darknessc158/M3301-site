@@ -50,6 +50,11 @@ if ($tab[0] == '') { //pas de contenu
 
 $date = date('Y-m-d');
 
+//if isset modification
+if (isset($_GET['modif'])) {
+  $publications->supprimerUnArticleBlog($_GET['idPublication']);
+}
+
 //insertion des donnees dans la bd
 $publications->insertArticle($title,$editor_data,$content,$date);
 

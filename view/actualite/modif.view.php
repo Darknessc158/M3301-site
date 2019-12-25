@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <!-- Custom styles for this template-->
     <link href="../../view/css/admintable.view.css" rel="stylesheet">
     <link href="../../view/css/main.view.css" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>Modification d'une publication</title>
   </head>
   <body>
+
+    <p>
+    Retour : <a id="retour" href="../../controler/auth/profilAdmin.ctrl.php"><i class="fas fa-undo"></i></a>
+    </p>
+
     <h2>Gestion du blog</h2>
     <!-- Tableau !-->
     <div class="elementqsn">
@@ -43,10 +55,11 @@
             <tr>
               <td><?=$publication->getDatePublication();?></td>
               <td><?=$publication->getTitre();?></td>
-              <td><?=$publication->getDescription();?></td>
+              <?php $resume = substr($publication->getDescription(),0,40); ?>
+              <td><?=$resume;?></td>
               <td>
-                <a href="#"><i class="fas fa-user-edit" title="Modifier l'article."></i></a>
-                <i class="fas fa-user-times" title="Supprimer l'article." style="cursor:pointer; color:red;" onClick="DelArticle('<?=$publication->getIdPublication();?>')"></i>
+                <a href="../../controler/actualite/updateavant.ctrl.php?idPublication=<?php echo $publication->getIdPublication(); ?>"><i class="far fa-edit" title="Modifier l'article."></i></a>
+                <i class="far fa-trash-alt" title="Supprimer l'article." style="cursor:pointer; color:red;" onClick="DelArticle('<?=$publication->getIdPublication();?>')"></i>
               </td>
             </tr>
           <?php } ?>
@@ -56,10 +69,11 @@
 
     <!-- Fin tableau -->
   </body>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script type="text/javascript">
   function DelArticle(id){
     if(confirm("Voulez vous vraiment supprimer cette publication ?")){
-      window.location='#'+id
+      window.location='../../controler/actualite/del.ctrl.php?idPublication='+id+'&del=true'
     }
   }
   </script>

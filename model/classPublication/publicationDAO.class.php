@@ -38,6 +38,10 @@ class publicationDAO
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'publication');
     return $res[0];
   }
+  function supprimerUnArticleBlog($idPublication){ //recuperation d'un article
+    $req = "DELETE FROM publication where $idPublication = idPublication;";
+    $sth=$this->db->query($req);
+  }
 
 
 }
