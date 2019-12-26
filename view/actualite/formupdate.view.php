@@ -14,9 +14,12 @@
 			<input type="text" name="title" value="<?php echo $publication->getTitre(); ?>" style="width:60%;"/><br>
 
 			<label for="">Description :</label>
-			<textarea name="editeur" id="editeur" rows="8" cols="80" width="1000px"><?php echo $publication->getDescription(); ?></textarea>
+			<textarea name="editeur" id="editeur" rows="8" cols="80"><?php echo $publication->getDescription(); ?></textarea>
 
-			<label for="">Images de l'article</label>
+			<label for="">Images déjà présentes</label>
+			<input type="text" name="content" value="<?php echo $publication->getContent(); ?>">
+
+			<label for="">Ajouter des images</label>
 			<input type="file" name="files[]" multiple="multiple" name="submit" accept="image/*" >
 
 			<p>

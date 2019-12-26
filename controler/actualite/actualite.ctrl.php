@@ -44,7 +44,7 @@ if(isset($_POST) and $_SERVER['REQUEST_METHOD'] == "POST"){
 $tab[] = $_FILES['files']['name'];
 if ($tab[0] == '') { //pas de contenu
   $content = '';
-}else{ //il y a des images/contenus
+}else{ //il y a des images
   $content = implode("/",$tab[0]);
 }
 
@@ -53,8 +53,13 @@ $date = date('Y-m-d');
 //if isset modification
 if (isset($_GET['modif'])) {
   $publications->supprimerUnArticleBlog($_GET['idPublication']);
+  var_dump($_POST['content']);
+  if ($_POST['content'] == ''){
+    $content = $content;
+  }else{
+  $content = $_POST['content'].'/'.$content; //on garde les images d'avant
+  }
 }
-
 //insertion des donnees dans la bd
 $publications->insertArticle($title,$editor_data,$content,$date);
 
