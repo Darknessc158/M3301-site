@@ -77,7 +77,8 @@
         $str = $publication->getContent();
         if ($str != '') { //il y a au moins 1 image.
           $tab = explode('/',$str); ?>
-          <img class="image" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[0]?>" alt="" width="80%">
+          <p></p>
+          <img class="image" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[0]?>" alt="">
         <?php  } ?>
       </div>
     <?php }  ?>

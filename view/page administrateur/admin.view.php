@@ -43,7 +43,7 @@
   </div>
 
 
-  <div class="row" style="width:100%; margin: auto; display:flex;">
+  <div class="row" style="width:100%; margin: auto; display:flex; flex-wrap:wrap; text-align:center;">
     <div class="col-sm-3">
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="../../model/data/images/images_sites/admin-icon.png" alt="image administrateur">
@@ -90,27 +90,34 @@
     </div>
   </div>
 
+  <!--Debut alerte stock article-->
+  <div class="" style="margin:auto; width:100%; margin-bottom:30px;">
+    <div class="" style="border:1px solid gray; width: 36rem; background-color: #fff; border-radius: .25rem; margin:auto; margin-bottom:30px; padding:5px;">
+      <h4>Informations sur le stock des articles</h4>
+      <h6>Articles en rupture de stock :</h6>
+      <?php foreach ($lesarticles as $article) {
+        if ($article->getQuantite() == 0){
+          $nom = $article->getDescription();
+          echo "<script>window.alert('Attention rupture de stock, article concerné : $nom')</script>";
+          echo '<p><strong style="color:red">'.$nom.'</strong></p>';
+        }
+      } ?>
+      <h6>Articles avec peu de stock :</h6>
 
-<!--Debut reflexion alerte stock article-->
-<div class="Infos Article" style="border:1px solid gray;">
-  <h3>Stocks des Articles</h3>
-  <?php foreach ($lesarticles as $article) {
-    if ($article->getQuantite() <= 4){
-      $nom = $article->getDescription();
-      $stock = $article->getQuantite();
-      echo "<p>$nom</p>";
-      echo "<p>Stock restant : $stock</p>";
-    }
-  } ?>
-</div>
-<script>
-function Article(id){
-  if(confirm("Voulez vous vraiment supprimer cet adhérent ?")){
-    window.location='../../controler/tableadherent/tableadherent.ctrl.php?type=delete&idAdherent='+id
-  }
-}
-</script>
-<!--Debut reflexion alerte stock article-->
+      <?php foreach ($lesarticles as $article) { ?>
+        <div style="border:0.5px solid black; border-radius:10px; margin:15px;">
+          <?php if ($article->getQuantite() > 0 && $article->getQuantite() <= 2){
+            $nom = $article->getDescription();
+            $stock = $article->getQuantite();
+            echo '<p><strong style="color:red">'.$nom.'</strong></p>';
+            echo '<p><strong style="color:red">Stock restant : '.$stock.'</strong></p>';
+          } ?>
+        </div>
+      <?php  } ?>
+      <a href="../../controler/tablearticle/tablearticle.ctrl.php" class="btn btn-primary">Remplir les stocks</a>
+    </div>
+  </div>
+  <!--Fin alerte stock article-->
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
