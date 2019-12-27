@@ -91,18 +91,17 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm">
+    <div class="col-sm" >
       <h1 class="titre">Rejoignez-nous ! </h1>
       <div class="container">
         <div class="elementqsn">
           <h3 class = "sous_Titre">Qui sommes nous ?</h3>
-          <p>Scale Echirolles est une association sportive de cyclisme.</p>
-          <p>Nous sommes une vingtaine d'adhérents composés de 17 coureurs.</p>
-          <p>Si vous aimez le cyclisme et encore plus accompagné alors n'attendez plus SCALE Echirolles est fait
-          pour vous ! <i class="far fa-smile-wink"></i></p>
+          <p>Le Sprint Club Amicale Laïque Echirolles (SCALE) est une association sportive de cyclisme.</p>
+          <p>Nous sommes une vingtaine d'adhérents dont 17 coureurs.</p>
+          <p>Si vous aimez le cyclisme, que vous aimez rouler en groupe et vous mesurez à d'autres... alors n'attendez plus rejoignez le SCALE Echirolles ! <i class="far fa-smile-wink"></i></p>
+          <p>Vous pourrez déjà faire une première sortie découverte avec nous.</p>
           <p>Venez nous rejoindre le week-end ou même le mercredi après-midi pour rouler en petit comité.
-          Vous pourrez aussi participer à plusieurs courses dont notamment celles organisées par le club sous l'égide de l'UFOLEP
-          ainsi que de la FFC.</p>
+          Les courses auxquelles vous pourrez participer, dont celles organisées par le club, se déroulent tous les ans d'avril à octobre sous l'égide de l'Ufolep ou de la FFC.</p>
         </div>
         <div class="infos">
           <h5 class = "sous_Titre">Informations pratiques</h5>
@@ -141,13 +140,13 @@
 </div>
 
 
-  <h2 class = "sous_Titre">Notre programme d'entrainements</h2>
+  <h2 class = "sous_Titre">Notre programme d'entrainement</h2>
   <div class="container">
 
     <div class="element">
       <h3 class = "sous_Titre">Les entrainements</h3>
       <p>Entrainements tous les mercredis et samedis à 14 h (hors saison hivernale)
-        avec possibilité de décaler l'heure et le jour en fonction des jours de compétition et du temps.
+        avec possibilité de décaler l'heure et le jour en fonction des jours de compétition et de la météo.
       </p>
       <p>RDV : Gymnase Joliot Curie - Avenue Frédéric Joliot Curie - 38130 Echirolles ou vélodrôme d'Eybens.</p>
       <p>Toutes les sorties et activités seront encadrées par des éducateurs et entraîneurs diplômés.</p>
@@ -168,22 +167,21 @@
 </div><!--Fin des deux div gauche et droite-->
 
   <h3 class = "sous_Titre" style="text-align:center; margin-bottom: 20px;">Les stages</h3>
-    <div class="containerstage">
-      <h5 class = "sous_Titre">Stage de cohésion (un peu de vélo, beaucoup d'amusement !)</h5>
+    <div class="containerstage" style="border: 8px solid white;">
+      <h5 class = "sous_Titre">Stage de cohésion : Un peu de vélo, beaucoup de bonne humeur !</h5>
       <div class="container">
       <img src="../model/data/images/accueil/stage1_cohesion1.JPG" alt="" title="La Robine" style="max-width:40%; height:auto; margin-bottom:10px;">
       <img src="../model/data/images/accueil/stage1_cohesion2.JPG" alt="" title="La Robine" style="max-width:40%; height:auto; margin-bottom:10px;">
       <img src="../model/data/images/accueil/stage1_depart.JPG" alt="" title="La Robine" style="max-width:40%; height:auto; margin-bottom:10px;">
+      <img src="../model/data/images/accueil/depart_ventoux.JPG" alt="" title="Départ Mont Ventoux" style="max-width:40%; height:auto; margin-bottom:10px;">
       </div>
     </div>
-    <div class="containerstage">
-      <h5 class = "sous_Titre">Stage de présaison (Un peu plus de vélo et avec plaisir !)</h5>
+    <div class="containerstage" style="border: 8px solid white;">
+      <h5 class = "sous_Titre">Stage de présaison : Préparer la saison et découvrir de nouveaux horizons !</h5>
       <div class="container">
       <img src="../model/data/images/accueil/stage2_depart.JPG" alt="" class="rounded float-left"title="Veyne" style="width:500px; height:auto; margin-bottom:10px;object-fit: cover;">
       <img src="../model/data/images/accueil/stage2_noyer.jpg" alt="" class="rounded float-right"title="Col du noyer" style="max-width:500px; height:auto;object-fit: cover;">
       </div>
-      <p>Le stage de présaison est là pour peaufiner l'entrainement du début de saison afin d'atteindre un bon niveau pour
-      les compétitions les plus importantes à venir. Ce type de stage est souvent organisé au mois d'avril-mai.</p>
     </div>
 
 
@@ -197,6 +195,8 @@
       <p>Assemblée Générale du SCALE : mi-novembre </p>
       <p>Loto du SCALE : début-décembre </p>
       <p>Tirage des rois et signature des licences : début-janvier </p>
+      <p>Grand prix de Lalley : début-mai </p>
+      <p>Grimpée du col de L'Arzelier : fin-septembre </p>
     </div>
     <div class="elementphoto">
       <img src="../model/data/images/accueil/tiragedesrois.JPG" alt="" width="95%">
@@ -222,9 +222,9 @@
   </div>
 
   <h2 class = "sous_Titre">Le coin Strava</h2>
-  <div class="containerstrava">
+  <div class="containerstrava" style="justify-content:center; width: 55%;">
     <div class="stravaelement">
-      <h3 class = "sous_Titre">Les activités du club</h3>
+      <h4>Les activités du club</h4>
       <iframe allowtransparency frameborder='0' height='380' scrolling='no' src='https://www.strava.com/clubs/62426/latest-rides/d3aa846eaa79ed7b80724cc810c4ef256b18f568?show_rides=true' width='200'></iframe>
     </div>
     <div class="stravaelement">
