@@ -15,6 +15,8 @@
 </head>
 <body>
 
+    <a id="boutontop"></a>
+    
   <header>
     <!--Image bandeau haut-->
     <div class="boximg">
@@ -84,7 +86,9 @@
 <div class="all">
 
 
-
+<p>
+  <a class="bouton" href="#bouton"><i class="fas fa-angle-double-down fa-2x" title="Vers bas de page."></i></a>
+</p>
 
 
 <div class="container centergauche">
@@ -191,7 +195,7 @@
       <img src="../model/data/images/accueil/loto.jpg" alt="" width="95%">
     </div>
     <div class="element">
-      <h3 class = "sous_Titre">Les dates clefs du club</h3>
+      <h3 class = "sous_Titre">Le "SAVE THE DATES" du club</h3>
       <p>Assemblée Générale du SCALE : mi-novembre </p>
       <p>Loto du SCALE : début-décembre </p>
       <p>Tirage des rois et signature des licences : début-janvier </p>
@@ -213,11 +217,28 @@
       </div>
     </div>
 
-  <h2 class = "sous_Titre">Quelques chiffres du SCALE</h2>
+  <h2 class = "sous_Titre">Les chiffres clefs du SCALE</h2>
   <div class="container">
-    <div class="element">
-      <h3 class = "sous_Titre">Victoires ...</h3>
-      <p>Le SCALE c'est tant de victoires podiums ...</p>
+    <div class="elementphoto">
+    <img src="../model/data/images/accueil/image1.png" alt="" width="95%">
+    </div>
+    <div class="element" style="height:250px; margin:auto; margin-top:0px;">
+      <h3 class = "sous_Titre"><strong>2019 :</strong></h3>
+      <p><strong>137 départs de course pour les coureurs du club.</strong></p>
+      <p><strong>14 victoires et 23 podiums.</strong></p>
+      <p><strong>Plus de 180 participants aux départs des courses organisées par le club.</strong> </p>
+    </div>
+    <div class="elementphoto">
+    <img src="../model/data/images/accueil/image2.jpg" alt="" width="95%">
+    </div>
+    <div class="elementphoto">
+    <img src="../model/data/images/accueil/image3.jpg" alt="" width="95%">
+    </div>
+    <div class="elementphoto">
+    <img src="../model/data/images/accueil/arzelier_depart.jpg" alt="" width="95%">
+    </div>
+    <div class="elementphoto">
+    <img src="../model/data/images/accueil/image4.jpg" alt="" width="95%">
     </div>
   </div>
 
@@ -233,16 +254,15 @@
     </div>
   </div>
 
-
+    <a id="bouton"></a>
   <div class="container" style="background-color:white;">
     <h2 class = "sous_Titre">Planning entrainements et courses</h2>
     <iframe src="https://calendar.google.com/calendar/embed?src=bernabeaurelien%40gmail.com&ctz=Europe%2FParis" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
   </div>
 
-
-
-
-
+  <p>
+    <a href="#boutontop"><i class="fas fa-angle-double-up fa-2x" title="Vers haut de page."></i></a>
+  </p>
 
 </div>
 
