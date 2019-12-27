@@ -411,7 +411,7 @@ ul{
 
           // faire 10 champs par 10
           elseif ($_GET['name']=='assurance') {
-            echo "<div id="boiteformetpdf">
+            echo '<div id="boiteformetpdf">
             <div id="formulaire">
             <form class="" action="../../model/fpdm/ex-array.php" method="post">
 
@@ -423,7 +423,7 @@ ul{
               </p>
             </form>
             </div>
-            </div>";
+            </div>';
 
           }
 
