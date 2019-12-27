@@ -409,21 +409,22 @@ ul{
             ';
           }
 
-          // faire 10 champs par 10 
-          elseif ($_GET['name']='assurance') {
-              <div id="boiteformetpdf">
-              <div id="formulaire">
-              <form class="" action="../../model/fpdm/ex-array.php" method="post">
+          // faire 10 champs par 10
+          elseif ($_GET['name']=='assurance') {
+            echo "<div id="boiteformetpdf">
+            <div id="formulaire">
+            <form class="" action="../../model/fpdm/ex-array.php" method="post">
 
-              <p> Numero affiliation  :<br />
-              <input list="nom" type="text" name="name" placeholder=""/>
-              <datalist id="nom">
-              <option value="038151913 ">
-                </datalist>
-                </p>
-              </form>
-              </div>
-              </div>
+            <p> Numero affiliation  :<br />
+            <input list="nom" type="text" name="name" placeholder=""/>
+            <datalist id="nom">
+            <option value="038151913 ">
+              </datalist>
+              </p>
+            </form>
+            </div>
+            </div>";
+
           }
 
         }
