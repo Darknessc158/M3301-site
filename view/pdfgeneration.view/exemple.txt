@@ -1,0 +1,115 @@
+---
+FieldType: Text
+FieldName: CODEPOSTAL
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: MAIL
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: VILLE
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: NOMPERSONNEMORAL
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: NUMAFFILIATION8
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: NOMREPRESENTANT
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: NOM_APPELATION
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: LIEUX MANIF
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: CB1
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: DATEMANIF
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: FORFAIT
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: FORFAITJ2
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: NBPARTICIPANT
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: FORFAIT2
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: NBPARTICIPANTJ1
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: NBPARTICIPANTJ2
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: FORFAITJ1
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: FORFAITJ2B
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: TOTAL
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: FORFAITJ1B
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: NOMCLUB
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: DATE
+FieldFlags: 1
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: LIEUX
+FieldFlags: 1
+FieldJustification: Left
