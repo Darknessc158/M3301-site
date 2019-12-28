@@ -42,6 +42,15 @@ class publicationDAO
     $req = "DELETE FROM publication where $idPublication = idPublication;";
     $sth=$this->db->query($req);
   }
+  function pagination($start,$end){ //recuperation des article dans un interval
+    $req = "SELECT * FROM publication ORDER BY datePublication DESC;";
+    $sth=$this->db->query($req);
+    $res = $sth->fetchAll(PDO::FETCH_CLASS,'publication');
+    for ($i=$start; $i <= $end ; $i++) {
+      $resf = $res[$i];
+    }
+    return $resf;
+  }
 
 
 }
