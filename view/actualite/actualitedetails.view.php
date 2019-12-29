@@ -61,7 +61,7 @@
   $date = strtotime($publication->getDatePublication());?>
 
 <div style="margin:5em;">
-  <h3><?php  echo $publication->getTitre(); ?></h3>
+  <h3><?php  echo  utf8_encode($publication->getTitre()); ?></h3>
   <p class="datepublication"> Publié le <?php echo utf8_encode(strftime("%e %B %Y",$date)); ?> </p>
   <?php echo $publication->getDescription(); ?>
   <?php $titre =  $publication->getTitre();
