@@ -9,7 +9,8 @@ $title = $_POST["title"]; //Recuperation titre de l'article
 $editor_data = $_POST["editeur"]; //Recuperation des donnees textarea
 
 //Créer un dossier pour enregistrer les photos de l'article.
-if (!file_exists("../model/data/images/imagesblog/$title/") && isset($_FILES['files'])) {
+//var_dump($_FILES['files']['name']);
+if (!file_exists("../model/data/images/imagesblog/$title/") && ($_FILES['files']['name'] != '')) {
   @mkdir("../../model/data/images/imagesblog/$title/");
 }
 
