@@ -46,8 +46,10 @@ class publicationDAO
     $req = "SELECT * FROM publication ORDER BY datePublication DESC;";
     $sth=$this->db->query($req);
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'publication');
+    $j = 0;
     for ($i=$start; $i <= $end ; $i++) {
-      $resf = $res[$i];
+      $resf[$j] = $res[$i];
+      $j++;
     }
     return $resf;
   }
