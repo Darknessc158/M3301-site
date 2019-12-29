@@ -87,6 +87,17 @@
         </div>
       </div>
     </div>
+
+    <div class="col-sm-3">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="../../model/data/images/images_sites/site-icon.png" alt="image gestion des stocks">
+        <div class="card-body">
+          <h5 class="card-title">Statistique du site</h5>
+          <p class="card-text">Ajouter des articles pour l'actualité</p>
+          <a href="../../view/actualite/ajouterarticles.view.php" class="btn btn-primary">Ajouter un Article</a>
+        </div>
+      </div>
+    </div>
   </div>
 
 
@@ -102,6 +113,18 @@
     }
   } ?>
 </div>
+
+<!-- test Statistique -->
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-chart-area"></i>
+    Area Chart Example</div>
+  <div class="card-body">
+    <canvas id="myAreaChart" width="100%" height="30"></canvas>
+  </div>
+  <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+</div>
+
 <script>
 function Article(id){
   if(confirm("Voulez vous vraiment supprimer cet adhérent ?")){

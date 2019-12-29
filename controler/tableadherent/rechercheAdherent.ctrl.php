@@ -25,6 +25,8 @@ try{
             while($row = $stmt->fetch()){
                 echo "<p>" . $row["nom"] . "  ".$row["prenom"]."</p>";
             }
+
+
         } else{
             echo "<p>No matches found</p>";
         }
