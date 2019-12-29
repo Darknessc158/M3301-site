@@ -85,8 +85,8 @@
   </div>
 
   <div class="pagination" style="justify-content:space-between; width:80%; margin:auto;">
-    <a href="?action=prev"><i class="fas fa-angle-double-left fa-3x" title="page précédente"></i></a>
-    <a href="?action=next"><i class="fas fa-angle-double-right fa-3x" title="page suivante"></i></a>
+    <a href="?action=prev"><i class="fas fa-angle-double-left fa-3x" title="page suivante"></i></a>
+    <a href="?action=next"><i class="fas fa-angle-double-right fa-3x" title="page précédente"></i></a>
   </div>
 
 </body>
