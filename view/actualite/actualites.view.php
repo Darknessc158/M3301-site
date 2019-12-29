@@ -65,7 +65,7 @@
       <?php setlocale(LC_ALL, 'fra_fra'); //Date en francais
       $date = strtotime($publication->getDatePublication());?>
 
-      <div class="element">
+      <div class="element" style="width:80%; margin:auto; margin-bottom:20px;">
         <a href="../../controler/actualite/detail.ctrl.php?idpublication=<?php echo $publication->getIdPublication(); ?>" title="Voir plus de détails"><h3><?php  echo $publication->getTitre(); ?></h3></a>
         <p class="datepublication"> Publié le <?php echo utf8_encode(strftime("%e %B %Y",$date)); ?> </p>
         <?php $resume = substr($publication->getDescription(),0,650); //800 caractères max pour le petit descriptif
