@@ -115,7 +115,7 @@
       } ?>
       <h6>Articles avec peu de stock :</h6>
 
-<<<<<<< HEAD
+
 <!--Debut reflexion alerte stock article-->
 <div class="Infos Article" style="border:1px solid gray;">
   <h3>Stocks des Articles</h3>
