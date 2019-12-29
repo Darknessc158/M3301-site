@@ -13,7 +13,7 @@ class publication
 
   public function getIdPublication()
   {
-    return $this->$idPublication;
+    return $this->idPublication;
   }
   public function getTitre()
   {

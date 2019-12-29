@@ -10,7 +10,6 @@ body{
 .scroll{
   width: 100%;
   height: auto;
-  opacity: 80%;
 }
 .box{
 margin: auto;
@@ -23,17 +22,24 @@ img{
   flex-wrap: wrap;
   justify-content:space-around;
   padding: 10px;
-  width: 80%;
-  vertical-align: middle;
 }
 .element{
 background-color: white;
 border: 1px solid gray;
-width: 100%;
 height: auto;
-margin: auto;
-margin-bottom: 20px;
+margin-top: 15px;
 padding: 15px;
 border-radius: 20px;
 text-align: center;
+width: 800em;
+}
+.image{
+  width: 45% !important;
+  height: auto;
+}
+em{
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding: auto;
+  width: 100%;
 }

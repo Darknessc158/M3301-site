@@ -2,7 +2,8 @@ CREATE TABLE publication{
       idPublication INTEGER PRIMARY KEY AUTO_INCREMENT,
       titre varchar(40),
       description TEXT,
-      content varchar(400)
+      content varchar(400),
+      datePublication DATE
 };
 
  CREATE TABLE histoireclub{

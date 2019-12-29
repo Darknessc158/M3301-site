@@ -22,7 +22,7 @@ class publicationDAO
   }
 
   function getLesArticlesBlog(){ //recuperation de tous les articles de la bd
-    $req = "SELECT * FROM publication;";
+    $req = "SELECT * FROM publication ORDER BY datePublication DESC;";
     $sth=$this->db->query($req);
     $res = $sth->fetchAll(PDO::FETCH_CLASS,'publication');
     return $res;
@@ -31,6 +31,27 @@ class publicationDAO
   {
     $req = "INSERT INTO publication (titre,description,content,datePublication) VALUES ('$titre','$description','$content','$datePublication');";
     $sth=$this->db->query($req);
+  }
+  function getUnArticleBlog($idPublication){ //recuperation d'un article
+    $req = "SELECT * FROM publication where $idPublication = idPublication;";
+    $sth=$this->db->query($req);
+    $res = $sth->fetchAll(PDO::FETCH_CLASS,'publication');
+    return $res[0];
+  }
+  function supprimerUnArticleBlog($idPublication){ //recuperation d'un article
+    $req = "DELETE FROM publication where $idPublication = idPublication;";
+    $sth=$this->db->query($req);
+  }
+  function pagination($start,$end){ //recuperation des article dans un interval
+    $req = "SELECT * FROM publication ORDER BY datePublication DESC;";
+    $sth=$this->db->query($req);
+    $res = $sth->fetchAll(PDO::FETCH_CLASS,'publication');
+    $j = 0;
+    for ($i=$start; $i <= $end ; $i++) {
+      $resf[$j] = $res[$i];
+      $j++;
+    }
+    return $resf;
   }
 
 

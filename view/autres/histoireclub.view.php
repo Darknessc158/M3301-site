@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
 <head>
   <!-- CSS -->
-  <link rel="stylesheet" href="../view/design/histoireclub.view.css">
-
+  <link rel="stylesheet" href="../../view/design/histoireclub.view.css">
+  <link rel="stylesheet" href="../../view/css/main.view.css">
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,34 +14,48 @@
   <title>SCALE Echirolles - club de cyclisme</title>
 </head>
 <body>
+  <header>
+    <!--Image bandeau haut-->
+    <div class="boximg">
+      <p class="box">
+        <img class="scroll" src="../../model/data/images/images_sites/accueil_banniere.jpg" alt="" style="display:block; vertical-align:middle;">
+      </p>
+    </div>
+<!--Nav-->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+  <button class="navbar-toggler" data-toggle = "collapse" data-target = "#collapse_target">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapse_target">
+  <a class="navbar-brand" href="../../controler/accueil.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt="logo scale Echirolles" width="60%"></a>
 
-  <div class="jumbotron text-center" style="margin-bottom:0">
-    <img src="../data/images/accueil_banniere.jpg" alt="">
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="../../controler/accueil.ctrl.php">Accueil</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../controler/actualite/touteslesactualites.ctrl.php">Actualités</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../controler/lebureau.ctrl.php">Le bureau</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../controler/lescoureurs.ctrl.php">Les coureurs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../controler/tablehistoireclub/tablehistoireclub.ctrl.php">Histoire du club</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../../view/autres/contact.view.php">Nous contacter</a>
+      </li>
+    </ul>
   </div>
 
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="main.view.php"> <img src="../data/images/logo-scale.jpg" alt=""></a>
-
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="actualites.view.php">Actualités</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="lebureau.view.php">Le bureau</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="histoireclub.view.php">Histoire du club</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.view.php">Nous contacter</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="../../view/page administrateur/admin.view.php">Page administrateur</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+</nav>
+<!--Nav-->
+</header>
+<!--Fin header-->
 
   <div class="histoireclub">
     <?php

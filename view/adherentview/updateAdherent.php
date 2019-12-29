@@ -50,9 +50,19 @@
           <p>
             Photo (Pour l'onglet les coureurs) :<br />
             <?php if ($urlphoto == ''){ ?>
-              <input type="file" name="urlphoto" value="<?php echo $urlphoto ?>">
+              <input type="file" name="urlphoto2">
             <?php }else{ ?>
-            <input type="text" name="urlphoto" value="<?php echo $urlphoto ?>">
+              <label for="">Souhaitez vous changez la photo ?</label>
+              <select id="mySelect1" name="photochange">
+                <option value="Non" selected>Non</option>
+                <option value="Oui">Oui</option>
+              </select>
+              <div id="yes1" style="display:none;">
+                <input type="file" name="urlphoto2">
+              </div>
+              <div id="no1" style="display:block;">
+                <input type="text" name="urlphoto" value="<?php echo $urlphoto ?>" hidden>
+              </div>
             <?php } ?>
           </p>
         </fieldset>
@@ -67,9 +77,19 @@
           <p>
             Photo (Pour l'onglet le bureau) :<br />
             <?php if ($urlphotoalt == ''){ ?>
-              <input type="file" name="urlphotoalt" value="<?php echo $urlphotoalt ?>">
+              <input type="file" name="urlphotoalt2" value="<?php echo $urlphotoalt ?>">
             <?php }else{ ?>
-            <input type="text" name="urlphotoalt" value="<?php echo $urlphotoalt ?>">
+              <label for="">Souhaitez vous changez la photo ?</label>
+              <select id="mySelect" name="photochange">
+                <option value="Non" selected>Non</option>
+                <option value="Oui">Oui</option>
+              </select>
+              <div id="yes" style="display:none;">
+                <input type="file" name="urlphotoalt2">
+              </div>
+              <div id="no" style="display:block;">
+                <input type="text" name="urlphotoalt" value="<?php echo $urlphoto ?>" hidden>
+              </div>
             <?php } ?>
           </p>
         </fieldset>
@@ -89,9 +109,19 @@
           <p>
             Photo (Pour l'onglet les coureurs) :<br />
             <?php if ($urlphoto == ''){ ?>
-              <input type="file" name="urlphoto" value="<?php echo $urlphoto ?>">
+              <input type="file" name="urlphoto2" value="<?php echo $urlphoto ?>">
             <?php }else{ ?>
-            <input type="text" name="urlphoto" value="<?php echo $urlphoto ?>">
+              <label for="">Souhaitez vous changez la photo ?</label>
+              <select id="mySelect" name="photochange">
+                <option value="Non" selected>Non</option>
+                <option value="Oui">Oui</option>
+              </select>
+              <div id="yes" style="display:none;">
+                <input type="file" name="urlphoto2">
+              </div>
+              <div id="no" style="display:block;">
+                <input type="text" name="urlphoto" value="<?php echo $urlphoto ?>" hidden>
+              </div>
             <?php } ?>
           </p>
         </fieldset>
@@ -111,9 +141,19 @@
           <p>
             Photo (Pour l'onglet le bureau) :<br />
             <?php if ($urlphotoalt == ''){ ?>
-              <input type="file" name="urlphotoalt" value="<?php echo $urlphotoalt ?>">
+              <input type="file" name="urlphotoalt2" value="<?php echo $urlphotoalt ?>">
             <?php }else{ ?>
-            <input type="text" name="urlphotoalt" value="<?php echo $urlphotoalt ?>">
+              <label for="">Souhaitez vous changez la photo ?</label>
+              <select id="mySelect" name="photochange">
+                <option value="Non" selected>Non</option>
+                <option value="Oui">Oui</option>
+              </select>
+              <div id="yes" style="display:none;">
+                <input type="file" name="urlphotoalt2">
+              </div>
+              <div id="no" style="display:block;" >
+                <input type="text" name="urlphotoalt" value="<?php echo $urlphoto ?>" hidden>
+              </div>
             <?php } ?>
           </p>
         </fieldset>
@@ -122,38 +162,8 @@
       <input type="text" name="categorie" value="<?php echo $categorie ?>" hidden/>
       <input type="text" name="numlicence" value="<?php echo $numlicence ?>" hidden/>
       <input type="file" name="urlphoto" value="<?php echo $urlphoto ?>" hidden>
+      <input type="file" name="urlphoto2" value="<?php echo $urlphoto ?>" hidden>
       <!--On cache ces donnes pour les recevoirs vident sans erreur DAO-->
-    <?php }else{ ?>
-      <div id="formcoureur"  style="display:none;">
-        <fieldset>
-          <legend>Coureur</legend>
-          <p>
-            Categorie :<br />
-            <input type="text" name="categorie" value="<?php echo $categorie ?>" />
-          </p>
-          <p>
-            Numero de licence (si connu) :<br />
-            <input type="text" name="numlicence" value="<?php echo $numlicence ?>" />
-          </p>
-          <p>
-            Photo (Pour l'onglet les coureurs) :<br />
-            <input type="file" name="urlphoto" value="<?php echo $urlphoto ?>">
-          </p>
-        </fieldset>
-      </div>
-      <div id="formbureau" style="display:none;">
-        <fieldset>
-          <legend>Membre du bureau</legend>
-          <p>
-            Description du role dans le bureau :<br />
-            <input type="text" name="role" value="<?php echo $role ?>" />
-          </p>
-          <p>
-            Photo (Pour l'onglet le bureau) :<br />
-            <input type="file" name="urlphotoalt" value="<?php echo $urlphotoalt ?>">
-          </p>
-        </fieldset>
-      </div>
     <?php } ?>
 
     <p>
@@ -167,5 +177,25 @@
 
 
 </body>
+<script>//Javascript pour changer url photo
+document.getElementById('mySelect').onchange = function(){
+  if(this.value == 'Oui'){
+    document.getElementById('yes').style.display = 'block';
+    document.getElementById('no').style.display = 'none';
+  } else {
+    document.getElementById('yes').style.display = 'none';
+    document.getElementById('no').style.display = 'block';
+  }
+};
+document.getElementById('mySelect1').onchange = function(){
+  if(this.value == 'Oui'){
+    document.getElementById('yes1').style.display = 'block';
+    document.getElementById('no1').style.display = 'none';
+  } else {
+    document.getElementById('yes1').style.display = 'none';
+    document.getElementById('no1').style.display = 'block';
+  }
+};
+</script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </html>

@@ -16,8 +16,20 @@ $adresse = $_POST['adresse'];
 $telephone = $_POST['telephone'];
 $mail = $_POST['mail'];
 $numlicence = $_POST['numlicence'];
+
+//gestion modfification des photos
+if ($_POST['urlphoto2'] != ''){
+  $urlphoto = $_POST['urlphoto2'];
+}else{
 $urlphoto = $_POST['urlphoto'];
+}
+
+if ($_POST['urlphotoalt2'] != ''){
+  $urlphotoalt = $_POST['urlphotoalt2'];
+}else{
 $urlphotoalt = $_POST['urlphotoalt'];
+}
+
 $role = $_GET['typerole'].'/'.$_POST['role'];
 
 //delete avant
