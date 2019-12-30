@@ -5,6 +5,8 @@ require_once('../../model/classPublication/publicationDAO.class.php');
 
 $publications = new publicationDAO();
 
+$idPage = 1; //variable pour lidentifiant en bas de la page
+
 $title = $_POST["title"]; //Recuperation titre de l'article
 $editor_data = $_POST["editeur"]; //Recuperation des donnees textarea
 
