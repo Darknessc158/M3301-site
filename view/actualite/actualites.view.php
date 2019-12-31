@@ -78,7 +78,7 @@
         if ($str != '') { //il y a au moins 1 image.
           $tab = explode('/',$str); ?>
           <p></p>
-          <img class="image" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[0]?>" alt="">
+          <img class="image" src="../../model/data/images/imagesblog/<?php echo $publication->getDatePublication(); ?>/<?=$tab[0]?>" alt="">
         <?php  } ?>
       </div>
     <?php }  ?>

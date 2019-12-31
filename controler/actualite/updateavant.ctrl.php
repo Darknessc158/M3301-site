@@ -8,5 +8,11 @@ $publications = new publicationDAO();
 
 $publication = $publications->getUnArticleBlog($_GET['idPublication']);
 
+if ($publication->getContent() != '' ) {
+  $content = $publication->getContent();
+}else {
+  $content = 'aucunes';
+}
+
 include('../../view/actualite/formupdate.view.php')
  ?>

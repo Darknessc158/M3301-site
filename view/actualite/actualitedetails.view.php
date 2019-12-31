@@ -76,9 +76,9 @@
         <?php $length = sizeof($tab);
         for ($i=0; $i < $length ; $i++) {
           if ($i == 0){ ?>
-            <img class="scroll" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[$i]?>" alt="" style="display:block;">
+            <img class="scroll" src="../../model/data/images/imagesblog/<?php echo $publication->getDatePublication(); ?>/<?=$tab[$i]?>" alt="" style="display:block;">
         <?php  } else { ?>
-            <img class="scroll" src="../../model/data/images/imagesblog/<?=$titre?>/<?=$tab[$i]?>" alt="" style="display:none;">
+            <img class="scroll" src="../../model/data/images/imagesblog/<?php echo $publication->getDatePublication(); ?>/<?=$tab[$i]?>" alt="" style="display:none;">
           <?php }  ?>
       <?php   } ?>
             </p>

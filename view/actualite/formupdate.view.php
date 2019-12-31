@@ -16,8 +16,11 @@
 			<label for="">Description :</label>
 			<textarea name="editeur" id="editeur" rows="8" cols="80"><?php echo $publication->getDescription(); ?></textarea>
 
+			<label for="">Date de publication de l'article (AAAA-MM-JJ) :</label>
+			<input type="text" name="date" value="<?php echo $publication->getDatePublication(); ?>" style="width:40%;"/><br>
+
 			<label for="">Images déjà présentes</label>
-			<input type="text" name="content" value="<?php echo $publication->getContent(); ?>">
+			<input type="text" name="content" value="<?php echo $content; ?>">
 
 			<label for="">Ajouter des images</label>
 			<input type="file" name="files[]" multiple="multiple" name="submit" accept="image/*" >
