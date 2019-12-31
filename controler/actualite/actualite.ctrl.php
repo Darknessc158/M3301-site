@@ -11,6 +11,10 @@ $title = $_POST["title"]; //Recuperation titre de l'article
 $editor_data = $_POST["editeur"]; //Recuperation des donnees textarea
 $date = date('Y-m-d'); //Recuperation de la date de publication
 
+if (isset($_GET['modif'])) {
+  $date = $_POST['date']; //recup date d'avant si c'est une modification de l'article
+}
+
 //Créer un dossier pour enregistrer les photos de l'article.
 if (!file_exists("../model/data/images/imagesblog/$date/") && ($_FILES['files']['name'] != '')) {
   @mkdir("../../model/data/images/imagesblog/$date/");
@@ -55,12 +59,15 @@ if ($tab[0] == '') { //pas de contenu
 //if isset modification
 if (isset($_GET['modif'])) {
   $publications->supprimerUnArticleBlog($_GET['idPublication']);
-  if ($_POST['content'] == ''){
+  if ($_POST['content'] == 'aucunes'){
     $content = $content;
-  }else{
-  $content = $_POST['content'].'/'.$content; //on garde les images d'avant
+  }else{ //on garde les images d'avant
+    if ($content != '') {
+      $content = $_POST['content'].'/'.$content;
+    }else{
+      $content = $_POST['content']; // on garde que le contenu d'avant
+    }
   }
-  $date = $_POST['date'];
 }
 
 //insertion des donnees dans la bd

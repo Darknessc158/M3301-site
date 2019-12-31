@@ -20,7 +20,7 @@
 			<input type="text" name="date" value="<?php echo $publication->getDatePublication(); ?>" style="width:40%;"/><br>
 
 			<label for="">Images déjà présentes</label>
-			<input type="text" name="content" value="<?php echo $publication->getContent(); ?>">
+			<input type="text" name="content" value="<?php echo $content; ?>">
 
 			<label for="">Ajouter des images</label>
 			<input type="file" name="files[]" multiple="multiple" name="submit" accept="image/*" >
