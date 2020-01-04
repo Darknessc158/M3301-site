@@ -1,7 +1,7 @@
 <?php
 
 
-public function txt2html($chemin='exemple.txt',$nomfichier='exemple.txt',$cheminformulaire='chemin_formulaire',$nomformulaire='nom_formulaire'):int
+ function txt2html($chemin='exemple.txt',$nomfichier='exemple.txt',$cheminformulaire='chemin_formulaire',$nomformulaire='nom_formulaire'):int
 {
   if (fopen( $chemin,"r")) {
    $in=fopen( $chemin, "r" );
@@ -9,30 +9,38 @@ public function txt2html($chemin='exemple.txt',$nomfichier='exemple.txt',$chemin
    echo "i marche pas PD";
    return -1;
  }
-  //$out= fopen( $nomfichier,"x");
-
-  $file = new SplFileObject("$nomfichier");
-
 
 //Crée le formulaire avec le chemin vers le controleur adapté
 printf('<div id="%s">
-<form class="" action="../../controleur/pdf/%s.php" method="post" autocomplete="on
-">',$nomformulaire);
+<form class="" actiona="../../controleur/pdf/%s.php" method="post" autocomplete="on
+">',$nomformulaire,$nomformulaire);
 
-
-  while (!$file->eof()) {
-
-    if (strpos($ligne_courante,'FieldName')) {
+$ligne_courante = fgets($in);
+  while (!feof($in) ) {
+    //detect la présence de la chaine 'FIeldname'
+    if (strpos($ligne_courante,'FieldName')!==false) {
       //Methode generique pour du text
+
+
+      //Enleve le surplus de la chaine et la en fait un input en html
       $ligne_courante = explode('FieldName:',$ligne_courante);
-      $txt = strtolower($ligne_courante);
-      printf('<p>%s :<br />
-      <input list="%s" type="text" name="%s"  />
-      </p>',$ligne_courante,$ligne_courante,$txt);
+      $ligne_courante = implode($ligne_courante);
+      $ligne_courante = rtrim($ligne_courante);
+
+
+
+      printf('<p>%s :<br/>
+      <input list="%s" type="text" name="%s"/>
+      </p>',$ligne_courante,$ligne_courante,$ligne_courante);
+
+
       // implementer un if pour créer des checkbox
       //Mais a convertir dans le controleur pour transformer en 'X'
+
+
     }
-    $ligne_courante = fgets($in);
+
+$ligne_courante = fgets($in);
   }
 
 echo ' <div class="Bouton">
@@ -41,10 +49,12 @@ echo ' <div class="Bouton">
   </div>
   </form>';
 
+  return 0;
+
 }
 
 //test
-txt2html()
+txt2html();
 
 
 
