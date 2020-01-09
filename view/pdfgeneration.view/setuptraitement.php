@@ -1,4 +1,7 @@
 <?php
+//template = chemin du template
+// chemin = chemin du fichier extraction field
+//sortie = chemin du fichier backend
 function setuptraitement($template , $chemin='exemple.txt',$sortie='poubelle/res6.php'):int
 {
   if (fopen( $chemin,"r")) {

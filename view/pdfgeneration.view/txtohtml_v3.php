@@ -1,16 +1,23 @@
 <?php
 
-
- function txt2html($chemin='exemple.txt',$nomfichier='exemple.txt',$cheminformulaire='chemin_formulaire',$nomformulaire='traitement_exemple'):int
+//chemin = $chemin_extraction_fields
+//sortie = sortie front_end
+//entree = nom_fichier_backend
+ function txt2html($chemin='exemple.txt',
+ ,$nomformulaire='traitement_exemple',$sortie='poubelle/formulaire_generer.html'):int
 {
   if (fopen( $chemin,"r")) {
    $in=fopen( $chemin, "r" );
  }else {
-   echo "i marche pas PD";
+   echo("i marche pas PD";
    return -1;
  }
 
-echo '<!DOCTYPE html>
+ $out = fopen($sortie,'x+');
+ fwrite($out,'<?php'.PHP_EOL);
+
+
+fwrite($out, '<!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -93,10 +100,12 @@ button:hover {
   background-color: #4CAF50;
 }
 </style>
-<body>';
+<body>');
 //Crée le formulaire avec le chemin vers le controleur adapté
-printf('<form id="regForm" class="" action="../../controler/pdf/%s.php" method="post" autocomplete="on
-">',$nomformulaire,$nomformulaire);
+// printf('<form id="regForm" class="" action="../../controler/pdf/%s.php" method="post" autocomplete="on
+// ">',$nomformulaire,$nomformulaire);
+fwrite($out,'<form id="regForm" class="" action="../../controler/pdf/'.$nomformulaire.'.php" method="post" autocomplete="on">');
+
 
 $ligne_courante = fgets($in);
 $nb=0;
@@ -113,18 +122,21 @@ $fin=false;
       $ligne_courante = implode($ligne_courante);
       $ligne_courante = rtrim($ligne_courante);
       if($nb==0){
-      printf('<div class="tab">Onglet %d:',$total) ;
+      // printf('<div class="tab">Onglet %d:',$total) ;
+      fwrite($out,'<div class="tab">Onglet %d:'.$total.PHP_EOL);
       $fin=false;
       }
       if ($nb <5) {
-        printf('<p>%s :
-        <input list="%s" type="text" name="%s" oninput="this.className = \'\'"/>
-        </p>',$ligne_courante,$ligne_courante,$ligne_courante);
+        // printf('<p>%s :
+        // <input list="%s" type="text" name="%s" oninput="this.className = \'\'"/>
+        // </p>',$ligne_courante,$ligne_courante,$ligne_courante);
+        fwrite($out,'<p>'.$ligne_courante.' :<input list="'.$ligne_courante.'s" type="text" name="'.$ligne_courante.'" oninput="this.className = \'\'"/>
+        </p>'.PHP_EOL)
         $nb++;
         $fin=false;
       }
       else{
-        echo "</div> <br>";
+        fwrite($out, '</div> <br>'.PHP_EOL);
         $nb=0;
         $total++;
         $fin=true;
@@ -136,12 +148,12 @@ $ligne_courante = fgets($in);
     //Ca depend , trouver un moyen de verifier que nb modulo 5 diff de 0
   // normalement c bon
     if ($nb<=5 && $fin==false) {
-      echo "</div>";
+      fwrite($out, '</div>'.PHP_EOL;
     }
 
     $total++;
 
-echo '
+fwrite($out, '
 <div style="overflow:auto;">
     <div style="float:right;">
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -151,9 +163,9 @@ echo '
   <!-- Circles which indicates the steps of the form: -->
 
   <div style="text-align:center;margin-top:40px;">
-  ';
+  '.PHP_EOL);
     for ($i=1; $i < $total ; $i++) {
-      echo '<span class="step"></span>';
+      fwrite($out, '<span class="step"></span>'.PHP_EOL);
     }
 
     // <span class="step"></span>
@@ -162,7 +174,7 @@ echo '
     // <span class="step"></span>
 
 
-echo '
+fwrite($out, '
 </div>
 </form>
 <script>
@@ -241,9 +253,9 @@ function fixStepIndicator(n) {
 </script>
 
 </body>
-</html>';
+</html>'.PHP_EOL);
 
-  return 0;
+  return 7;
 
 }
 
