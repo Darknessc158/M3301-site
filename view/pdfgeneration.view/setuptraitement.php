@@ -1,5 +1,5 @@
 <?php
-function setuptraitement($template , $chemin='exemple.txt',$sortie='res5.php'):int
+function setuptraitement($template , $chemin='exemple.txt',$sortie='poubelle/res6.php'):int
 {
   if (fopen( $chemin,"r")) {
    $in=fopen( $chemin, "r" );
@@ -23,6 +23,7 @@ fwrite($out,'<?php'.PHP_EOL);
        $ligne_courante = explode('FieldName:',$ligne_courante);
        $ligne_courante = implode($ligne_courante);
        $ligne_courante = rtrim($ligne_courante);
+       $ligne_courante = trim($ligne_courante);
        //ca ne marche pas { $ligne_courante[0]='\0'; }
 
        //sans la virgul a la fin
