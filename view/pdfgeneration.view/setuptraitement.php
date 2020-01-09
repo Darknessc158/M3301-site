@@ -1,5 +1,5 @@
 <?php
-function setuptraitement($template , $chemin='exemple.txt',$sortie='res2.php'):int
+function setuptraitement($template , $chemin='exemple.txt',$sortie='res5.php'):int
 {
   if (fopen( $chemin,"r")) {
    $in=fopen( $chemin, "r" );
@@ -19,15 +19,17 @@ fwrite($out,'<?php'.PHP_EOL);
 
 
        //Enleve le surplus de la chaine
+       //PB il y a un espace avant les caracteres
        $ligne_courante = explode('FieldName:',$ligne_courante);
        $ligne_courante = implode($ligne_courante);
        $ligne_courante = rtrim($ligne_courante);
+       //ca ne marche pas { $ligne_courante[0]='\0'; }
 
        //sans la virgul a la fin
        $line_array = '\''.$ligne_courante.'\'   => $'.$ligne_courante;
        array_push($array_of_array,$line_array);
 
-       $line_if = 'if (empty($_POST[\''.$ligne_courante.'\']))$name =\'$'.$ligne_courante.'\';else $name = $_POST[\''.$ligne_courante.'\'];';
+       $line_if = 'if (empty($_POST[\''.$ligne_courante.'\']))$name =\'$'.$ligne_courante.PHP_EOL.'\';else $name = $_POST[\''.$ligne_courante.'\'];';
        fwrite($out,$line_if.PHP_EOL);
      }
 
@@ -38,7 +40,7 @@ fwrite($out,'<?php'.PHP_EOL);
 
    foreach ($array_of_array as $key => $value) {
       //si c'est le dernier de la liste ne pas mettre de virgule
-     if($key != count($array_of_array)-1) fwrite($out,$value.PHP_EOL);
+     if($key == count($array_of_array)-1) fwrite($out,$value.PHP_EOL);
      //sinon en mettre
      else fwrite($out,$value.','.PHP_EOL);
    }
