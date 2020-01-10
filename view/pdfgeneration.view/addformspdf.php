@@ -1,7 +1,7 @@
 <?php
 
 require 'setuptraitement.php';
-require 'txtohtml_v3.php';
+require 'txtohtml_v4.php';
 
 
 function addform($chemin_extraction_fields='exemple.txt',
@@ -11,7 +11,7 @@ $sortie_backend='../../controler/pdf/FORMSback_end.php'){
 
 
 setuptraitement($template_formulaire,$chemin_extraction_fields,$sortie_backend);
-txt2html($chemin_extraction_fields,$sortie_backend,$sortie_frontend);
+txt2html($template_formulaire,$chemin_extraction_fields,$sortie_backend,$sortie_frontend);
 
 
 

@@ -80,7 +80,11 @@ button:hover {
   background-color: #4CAF50;
 }
 </style>
-<body><form id="regForm" class="" action="../RESULTATaddformspdf/FORMSback_end.php" method="post" autocomplete="on"><div class="tab">Onglet %d:1
+
+
+<body>
+<div class="Formulaire">
+  <form id="regForm" class="" action="../RESULTATaddformspdf/FORMSback_end.php" method="post" autocomplete="on"><div class="tab">Onglet %d:1
 <p> CODEPOSTAL :<input list=" CODEPOSTALs" type="text" name=" CODEPOSTAL" oninput="this.className = ''"/>
         </p>
 <p> MAIL :<input list=" MAILs" type="text" name=" MAIL" oninput="this.className = ''"/>
@@ -196,7 +200,7 @@ button:hover {
   <!-- Circles which indicates the steps of the form: -->
 
   <div style="text-align:center;margin-top:40px;">
-  
+
 <span class="step"></span>
 <span class="step"></span>
 <span class="step"></span>
@@ -209,6 +213,8 @@ button:hover {
 
 </div>
 </form>
+</div>
+
 <script>
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
