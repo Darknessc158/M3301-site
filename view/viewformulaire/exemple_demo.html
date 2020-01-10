@@ -318,8 +318,6 @@ ul{
         {
           var url ;
           url = formulaire.ListeUrl.options[formulaire.ListeUrl.selectedIndex].value;
-          //window.open(url,'_blank'); truc de base
-          // nouveauté : (et i marche )
           window.location.href=url;
         }
       }
@@ -330,109 +328,71 @@ ul{
         <SELECT NAME="ListeUrl" SIZE=1 onChange="ChangeUrl(this.form)"  >
           <OPTION SELECTED VALUE="">-Menu Déroulant De Liens-</option>
             <?php
-            $d = dir("../viewformulaire/");
-            // echo "Pointeur: ".$d->handle."<br>\n";
-            // echo "Chemin: ".$d->path."<br>\n";
+            $d = dir(".");
             while($entry = $d->read()) {
               if ($entry !="." or $entry != "..") {
                 echo '<option value="'.$entry.'">'.$entry.' </option>'.PHP_EOL;
               }
-
-
             }
             $d->close();
-
-
              ?>
-            <!-- <option value="formulairePDF.php?name=exemple">Exemple </option>
-            <option value="formulairePDF.php?name=assurance">Assurance de responsaibilite civile et risques divers pour les epreuves</option>
-            <option value="formulairePDF.php">Doc 2 pas encore disponible </option>
-            <option value="formulairePDF.php">Doc 3 pas encore disponible </option> -->
+
           </SELECT>
         </FORM>
 
-
-
-
-
-        <?php
-        //aussi la possibilité d'utiliser https://www.w3schools.com/howto/howto_js_autocomplete.asp
-        if (isset($_GET['name'])){
-          if($_GET['name']=='exemple'){
-            printf(' <h2>Formulaire du PDF %s  </h2>',$_GET['name']) ;
-            echo '
-
-            <div id="boiteformetpdf">
-            <div id="formulaire">
-            <form class="" action="../../model/fpdm/ex-array.php" method="post" autocomplete="off">
-            <p> Name :<br />
-            <input list="nom" type="text" name="name" placeholder="Name par defaut "/>
-            <datalist id="nom">
-            <option value="proposition nom 1 ">
-            <option value="proposition nom 2">
-            <option value="proposition nom 3">
-            <option value="proposition nom 4">
-            </datalist>
-            </p>
-
-            <p>Address :<br />
-            <input list="address" type="text" name="address" placeholder="Adresse Par defaut " />
-            <datalist id="address">
-            <option value="proposition adresse 1 ">
-            <option value="proposition adresse 2">
-            <option value="proposition adresse 3">
-            <option value="proposition adresse 4">
-            <option value="45 rue du zouk">
-            <option value="289 rue des exemples ">
-            </datalist>
-            </p>
-
-            <p>City :<br />
-            <input list="city" type="text" name="city" placeholder="City par défaut" />
-            <datalist id="city">
-            <option value="proposition city 1 ">
-            <option value="proposition city 2">
-            <option value="proposition city 3">
-            <option value="proposition city 4">
-            </datalist>
-            </p>
-
-            <p>Phone :<br />
-            <input type="phone" name="phone" list="phone" placeholder=" numero par défaut"/>
-            <datalist id="phone">
-            <option tittle="numero ded la mairie" value="0614786532">
-            <option value="0614457889">
-            <option value="0614125678">
-            <option value="0614152648">
-            </datalist>
-            </p>
-
-            <div class="Bouton">
-            <INPUT TYPE="submit" NAME="valider" VALUE="Valider">
-            <INPUT TYPE="reset" NAME="reset" VALUE="Reinitialiser">
-            </div>
-            </form>
-            </div>
-
-            <div class="pdf">
-
-            <embed src=../../model/fpdm/template.pdf width=800 height=500 type=\'application/pdf\'/>
-
-            </div>
-            </div>
-
-            ';
-          }
-
-          // faire 10 champs par 10
-
-
-        }
-        else {
-          echo "Ce document PDF n'est pas encore disponible";
-        }
-        ?>
-
+        <div id="boiteformetpdf">
+                    <h2>Formulaire du PDF exemples demo  </h2>
+                   <div id="formulaire">
+                   <form class="" action="../../model/fpdm/ex-array.php" method="post" autocomplete="off">
+                   <p> Name :<br />
+                   <input list="nom" type="text" name="name" placeholder="Name par defaut "/>
+                   <datalist id="nom">
+                   <option value="proposition nom 1 ">
+                   <option value="proposition nom 2">
+                   <option value="proposition nom 3">
+                   <option value="proposition nom 4">
+                   </datalist>
+                   </p>
+                   <p>Address :<br />
+                   <input list="address" type="text" name="address" placeholder="Adresse Par defaut " />
+                   <datalist id="address">
+                   <option value="proposition adresse 1 ">
+                   <option value="proposition adresse 2">
+                   <option value="proposition adresse 3">
+                   <option value="proposition adresse 4">
+                   <option value="45 rue du zouk">
+                   <option value="289 rue des exemples ">
+                   </datalist>
+                   </p>
+                   <p>City :<br />
+                   <input list="city" type="text" name="city" placeholder="City par défaut" />
+                   <datalist id="city">
+                   <option value="proposition city 1 ">
+                   <option value="proposition city 2">
+                   <option value="proposition city 3">
+                   <option value="proposition city 4">
+                   </datalist>
+                   </p>
+                   <p>Phone :<br />
+                   <input type="phone" name="phone" list="phone" placeholder=" numero par défaut"/>
+                   <datalist id="phone">
+                   <option tittle="numero ded la mairie" value="0614786532">
+                   <option value="0614457889">
+                   <option value="0614125678">
+                   <option value="0614152648">
+                   </datalist>
+                   </p>
+                   <div class="Bouton">
+                   <INPUT TYPE="submit" NAME="valider" VALUE="Valider">
+                   <INPUT TYPE="reset" NAME="reset" VALUE="Reinitialiser">
+                   </div>
+                   </form>
+                   </div>
+                   
+                   <div class="pdf">
+                   <embed src=../../model/fpdm/template.pdf width=800 height=500 type=\'application/pdf\'/>
+                   </div>
+                   </div>
       </div>
     </div>
   </body>
