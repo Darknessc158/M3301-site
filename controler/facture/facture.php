@@ -42,7 +42,7 @@ if (isset($_GET['numpaiement'])) {
               $PrixTTC=$value.quantite*$produit_courant.prix;
 
     // Stock les variables dans une string et separer les variables par des ';'
-    $ligne = $quantite+';'+$numarticle+';'+$Description+';'+$Marque+';'+$PrixUnitaire+';'+$PrixTTC '\n';
+    $ligne = $quantite+';'+$numarticle+';'+$Description+';'+$Marque+';'+$PrixUnitaire+';'+$PrixTTC.PHP_EOL;
     //Ecrit la ligne dans le fichier
     fwrite($text,$ligne);
     }
