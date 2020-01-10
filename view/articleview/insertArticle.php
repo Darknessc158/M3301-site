@@ -34,8 +34,7 @@
        <input type="reset" value="Annuler" />
        </p>
        <p>
-
-       <a id="retour" href="../../controler/tablearticle/tablearticle.ctrl.php"><button type="button" class="btn btn-primary">Retour</button></a>
+       Retour : <a id="retour" href="../../controler/tablearticle/tablearticle.ctrl.php"><i class="fas fa-undo"></i></a>
     </p>
   </form>
 
