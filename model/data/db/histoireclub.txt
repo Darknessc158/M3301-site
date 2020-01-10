@@ -1,31 +1,93 @@
-HC_1.jpg|Dernière course Echirolles/Bresson.C'est un échirollois qui gagne : Julien Garnier aidé par Jacques Vial et Sébastien Rajon.|2001
-HC_2.jpg|Ensemble du club|2001
-HC_3.jpg|L'école de cyclisme à Champ sur Drac|2001
-HC_4.jpg|Cyclo-cross|2001
-HC_5.jpg|Rencontre école de cyclisme à Jarrie|2002
-HC_6.jpg|1ère organisation de la Montée de la Savoyères|2002
-HC_7.jpg||2002
-HC_8.jpg|L'année de tous les records|2003
-HC_9.jpg|Les entraînements derrière le Derny|2003
-HC_10.jpg|Julien Garnier Champion Dauphiné/Savoie sur route|2003
-HC_11.jpg|Courses contre la montre par équipe : Le départ|2003
-HC_12.jpg|La remise des prix|2003
-HC_13.jpg|2ème organisation de la Montée de Savoyères|2003
-HC_14.jpg|Sortie de ski de fond aux Glovettes (Villard de Lans)|2003
-HC_15.jpg|Le club|2004
-HC_16.jpg|Le bureau|2004
-HC_17.jpg|Départ de la course du 1er mai|2004
-HC_18.jpg|Article sur la course du 1er mai|2004
-HC_19.jpg|Sortie à Villard de Lans|2004
-HC_20.jpg|Après l'effort... (les Glovettes)|2004
-HC_21.jpg|Les récompensés de la Savoyères|2004
-HC_22.jpg|Cyclo-cross (Luc Rajon 8ème, Jacky Durand 9ème)|2004
-HC_23.jpg|Le club|2005
-HC_24.jpg|Les coureurs au départ du Tonneau|2005
-HC_25.jpg|Jarrie, un départ de course de l'école de cyclisme|2005
-HC_26.jpg|Les récompenses|2005
-HC_27.jpg|Fontaine : course école de cyclisme (Sébastine Pascanet)|2005
-HC_28.jpg|Fontaine (Thomas Deraisin)|2005
-HC_29.jpg|Ecole de cyclisme à St Martin d'Hères|2005
-HC_30.jpg|La montée de Savoyères|2005
-HC_31.jpg|Le cyclo-cross|2005
+HC_1.jpg|Dernière course Echirolles/Bresson.C'est un échirollois qui gagne : Julien Garnier aidé par Jacques Vial et Sébastien Rajon.|2001;
+HC_2.jpg|Ensemble du club|2001;
+HC_3.jpg|L'école de cyclisme à Champ sur Drac|2001;
+HC_4.jpg|Cyclo-cross|2001;
+HC_5.jpg|Rencontre école de cyclisme à Jarrie|2002;
+HC_6.jpg|1ère organisation de la Montée de la Savoyères|2002;
+HC_7.jpg||2002;
+HC_8.jpg|L'année de tous les records|2003;
+HC_9.jpg|Les entraînements derrière le Derny|2003;
+HC_10.jpg|Julien Garnier Champion Dauphiné/Savoie sur route|2003;
+HC_11.jpg|Courses contre la montre par équipe : Le départ|2003;
+HC_12.jpg|La remise des prix|2003;
+HC_13.jpg|2ème organisation de la Montée de Savoyères|2003;
+HC_14.jpg|Sortie de ski de fond aux Glovettes (Villard de Lans)|2003;
+HC_15.jpg|Le club|2004;
+HC_16.jpg|Le bureau|2004;
+HC_17.jpg|Départ de la course du 1er mai|2004;
+HC_18.jpg|Article sur la course du 1er mai|2004;
+HC_19.jpg|Sortie à Villard de Lans|2004;
+HC_20.jpg|Après l'effort... (les Glovettes)|2004;
+HC_21.jpg|Les récompensés de la Savoyères|2004;
+HC_22.jpg|Cyclo-cross (Luc Rajon 8ème, Jacky Durand 9ème)|2004;
+HC_23.jpg|Le club|2005;
+HC_24.jpg|Les coureurs au départ du Tonneau|2005;
+HC_25.jpg|Jarrie, un départ de course de l'école de cyclisme|2005;
+HC_26.jpg|Les récompenses|2005;
+HC_27.jpg|Fontaine : course école de cyclisme (Sébastine Pascanet)|2005;
+HC_28.jpg|Fontaine (Thomas Deraisin)|2005;
+HC_29.jpg|Ecole de cyclisme à St Martin d'Hères|2005;
+HC_30.jpg|La montée de Savoyères|2005;
+HC_31.jpg|Le cyclo-cross|2005;
+HC_32.jpg|L'assemblée Générale et le 25ème anniversaire|2006;
+HC_33.jpg|Une vue d'ensemble du club et des sorties familiales|2006;
+HC_34.jpg|La montée de Savoyères N°5|2006;
+HC_35.jpg|Le cyclo-cross|2006;
+HC_36.jpg|Le club|2007;
+HC_37.jpg|Journée populaire (cyclo-cross)|2007;
+HC_38.jpg||;
+HC_39.jpg|Les crapauds (24 h VTT à Metz)|2007;
+HC_40.jpg|Savoyères|2007;
+HC_41.jpg|Cyclo-cross à Echirolles|;
+HC_42.jpg|Le club|2008;
+HC_43.jpg|Savoyères|2008;
+HC_44.jpg|Sortie ski de fond aux Glovettes|;
+HC_45.jpg|Le club|2009;
+HC_46.jpg|Sortie familiale à St Siméon de Bressieux|;
+HC_47.jpg||;
+HC_48.jpg||;
+HC_49.jpg||;
+HC_50.jpg||;
+HC_51.jpg|Savoyères|2009;
+HC_52.jpg|La journée populaire et le cyclo-cross à Echirolles|;
+HC_53.jpg||;
+HC_54.jpg||;
+HC_55.jpg||;
+HC_56.jpg||;
+HC_57.jpg|Le challenge des montées chronométrées|2009;
+HC_58.jpg||;
+HC_59.jpg|Le club signe à la Fédération UFOLEP|2010;
+HC_60.jpg|Le club|;
+HC_61.jpg|Nouveau logo sur les cuissards|;
+HC_62.jpg||;
+HC_63.jpg|Sortie familiale à St Siméon de Bressieux|;
+HC_64.jpg||;
+HC_65.jpg||;
+HC_66.jpg|Sortie aux Glovettes|;
+HC_67.jpg||;
+HC_68.jpg|La Savoyères|;
+HC_69.jpg||;
+HC_70.jpg|Cyclo-cross à la Frange Verte|;
+HC_71.jpg||;
+HC_72.jpg||;
+HC_73.jpg||;
+HC_74.jpg||;
+HC_75.jpg||;
+HC_76.jpg||;
+HC_77.jpg||;
+HC_78.jpg||;
+HC_79.jpg||;
+HC_80.jpg|Sortie de l'école de cyclisme (entraînement avec Grenoble-Eybens)|;
+HC_81.jpg|Loto|;
+HC_82.jpg|Le club|2011;
+HC_83.jpg|Sortie hivernale aux Glovettes (pas de neige)|;
+HC_84.jpg|1ère sortie de l'école de cyclisme|;
+HC_85.jpg|1ère course sous la pluie (les filles)|;
+
+
+LOAD DATA INFILE 'histoireclub.txt'
+INTO TABLE histoireclub
+COLUMNS
+TERMINATED BY '|'
+LINES
+TERMINATED BY ';';

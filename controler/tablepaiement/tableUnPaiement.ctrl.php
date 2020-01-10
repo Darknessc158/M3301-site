@@ -1,10 +1,14 @@
 <?php
 require_once('../../model/classPaiement/paiement.class.php');
 require_once('../../model/classPaiement/paiementDAO.class.php');
+require_once('../../model/classAdherent/adherent.class.php');
+require_once('../../model/classAdherent/adherentDAO.class.php');
 
-// Creation de l'instance DAO
-$paiements = new paiementDAO('../../model/data/db');
+$config = parse_ini_file('../../config/config.ini');
 
+// Creation des instances DAO
+$paiements = new paiementDAO();
+$adherents = new adherentDAO();
 
 //------------------gestion supression d'un paiement-------------------------
 if (isset($_GET['type'])) {
@@ -40,10 +44,6 @@ $respaiement = $res; //on remplit la variable pour la view
 
 
 //recuperation des donnes pour recup le nom et prenom de l'id qui correspond
-require_once('../../model/classAdherent/adherent.class.php');
-require_once('../../model/classAdherent/adherentDAO.class.php');
-$config = parse_ini_file('../../config/config.ini');
-$adherents = new adherentDAO($config['database_path']);
 $lesadh = $adherents->getLesAdherents();
 
 //----------------------------------------------------------

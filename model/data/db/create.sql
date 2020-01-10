@@ -1,25 +1,35 @@
--- CREATE TABLE histoireclub{
---       image varchar(10),
---       description STRING,
---       annee varchar(4)
--- };
+CREATE TABLE publication{
+      idPublication INTEGER PRIMARY KEY AUTO_INCREMENT,
+      titre varchar(40),
+      description TEXT,
+      content varchar(400),
+      datePublication DATE
+};
+
+ CREATE TABLE histoireclub{
+       image varchar(20),
+       description varchar(60),
+       annee varchar(4)
+ };
 CREATE DATABASE scale;
 USE scale;
 CREATE TABLE adherent (
-     idAdherent  INTEGER PRIMARY KEY,
+     idAdherent  INTEGER PRIMARY KEY AUTO_INCREMENT,
      nom varchar(30) NOT NULL,
      prenom varchar(30) NOT NULL,
      categorie varchar(30),
+     role varchar(60),
      datenaissance DATE,
      adresse varchar(40),
      telephone char(10),
      mail varchar(40),
-     numLicence varchar(20) UNIQUE,
-     FOREIGN KEY (numLicence) REFERENCES  licence(numLicence)
+     numLicence varchar(20),
+     urlPhoto varchar(100),
+     urlPhotoAlt varchar(100)
 );
 
 CREATE TABLE paiement (
-  idPaiement INTEGER PRIMARY KEY,
+  idPaiement INTEGER PRIMARY KEY AUTO_INCREMENT,
   datePaiement DATE,
   prix float,
   description varchar(100),
@@ -29,7 +39,7 @@ CREATE TABLE paiement (
 );
 
 CREATE TABLE article (
-  idArticle INTEGER PRIMARY KEY,
+  idArticle INTEGER PRIMARY KEY AUTO_INCREMENT,
   prix float,
   categorie varchar(35),
   quantite INTEGER,
@@ -45,6 +55,13 @@ CREATE TABLE commandearticle(
    quantiteCommande INTEGER,
    FOREIGN KEY (numArticle) REFERENCES  article(idArticle),
    FOREIGN KEY (numPaiement) REFERENCES  paiement(idPaiement)
+);
+
+CREATE TABLE users(
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password VARCHAR(255) NOT NULL,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 --
 -- CREATE TABLE paimentLicence(

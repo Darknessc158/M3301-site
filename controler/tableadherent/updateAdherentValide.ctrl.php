@@ -17,11 +17,25 @@ $telephone = $_POST['telephone'];
 $mail = $_POST['mail'];
 $numlicence = $_POST['numlicence'];
 
+//gestion modfification des photos
+if ($_POST['urlphoto2'] != ''){
+  $urlphoto = $_POST['urlphoto2'];
+}else{
+$urlphoto = $_POST['urlphoto'];
+}
+
+if ($_POST['urlphotoalt2'] != ''){
+  $urlphotoalt = $_POST['urlphotoalt2'];
+}else{
+$urlphotoalt = $_POST['urlphotoalt'];
+}
+
+$role = $_GET['typerole'].'/'.$_POST['role'];
+
 //delete avant
 $adherents->supprUnAdherent($_GET['idAdherent']);
 
-//inverse prenom et nom car bug
-$unAdherent = $adherents->insertUnAdherent($prenom,$nom,$categorie,$datenaissance,$adresse,$telephone,$mail,$numlicence);
+$unAdherent = $adherents->insertUnAdherent($nom,$prenom,$categorie,$role,$datenaissance,$adresse,$telephone,$mail,$numlicence,$urlphoto,$urlphotoalt);
 
 $resadh = $adherents->getLesAdherents();
 

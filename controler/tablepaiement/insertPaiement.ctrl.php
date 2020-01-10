@@ -3,25 +3,54 @@ require_once('../../model/classPaiement/paiement.class.php');
 require_once('../../model/classPaiement/paiementDAO.class.php');
 require_once('../../model/classArticle/article.class.php');
 require_once('../../model/classArticle/articleDAO.class.php');
-
-// Creation de l'instance DAO
-$paiements = new paiementDAO('../../model/data/db');
 require_once('../../model/classAdherent/adherent.class.php');
 require_once('../../model/classAdherent/adherentDAO.class.php');
 
 // Récupération des données de configuration
 $config = parse_ini_file('../../config/config.ini');
 
-$datePaiement = $_POST['datePaiement'];
-$prix = $_POST['prix'];
-$description = $_POST['description'];
-$etatDuPaiement = $_POST['etatDuPaiement'];
-$type = $_POST['type'];
+// Creation des instances DAO
+$paiements = new paiementDAO();
+$articles = new articleDAO();
+$adherents = new adherentDAO();
 
-if($type == 'Article'){
-  $refArticle = $_POST['nomArticle'];
+$lesadh = $adherents->getLesAdherents();
+
+
+
+$type = $_POST['type'];
+if ($type == 'Article'){
+  //obligé de le faire 2 fois car pas le meme name pour article et autres.
+  $datePaiement = $_POST['datePaiementArticle'];
+  $description = $_POST['descriptionArticle'];
   $quantiteCommande = $_POST['quantiteCommande'];
-  //Puis faire l'instance DAO avec la class article et verif puis diminuer le stock ...
+  //-------------------------------------------
+
+  //changement du stock de l'article commandé
+  $articlePaye = $articles->getUnArticleRef($description);
+  $stock = $articlePaye->getQuantite();
+  $stockrestant = $stock-$quantiteCommande;
+  if($stockrestant < 0){
+    echo "<script>alert(\"Pas assez de stock pour cet article ($description) veuillez saisir un autre montant\")</script>";
+    echo '<script language="JavaScript" type="text/javascript">window.location.replace("../../controler/tablepaiement/insertpaiementavant.ctrl.php");</script>';
+    exit(0);
+  }
+  if($stockrestant == 0 ){
+    echo "<script>alert(\"Attention plus de stock pour l'article $description \")</script>";
+  }
+  $idArticle = $articlePaye->getIdArticle();
+  $articles->updateUnArticleStock($idArticle,$stockrestant); //on update le stock dans le DAO
+  //----------------------------------------
+
+  $prix = ($articlePaye->getPrix())*$quantiteCommande;//Calcul du prix
+  $etatDuPaiement = $_POST['etatDuPaiementArticle'];
+  $description = $_POST['descriptionArticle'].'('.$quantiteCommande.')'; //on ecrit nomProduit (quantite)
+
+}else{//adhésion,licence
+  $datePaiement = $_POST['datePaiement'];
+  $prix = $_POST['prix'];
+  $description = $_POST['description'];
+  $etatDuPaiement = $_POST['etatDuPaiement'];
 }
 
 if (isset($_GET['idAdherent'])){
@@ -42,22 +71,7 @@ if (isset($_GET['idAdherent'])){ // on a l'id adherent
 }
 $respaiement = $res; //on remplit la variable pour la view
 //--------------------------------------------------------------------
-
-
-//recuperation des donnes pour recup le nom et prenom de l'id qui correspond
-require_once('../../model/classAdherent/adherent.class.php');
-require_once('../../model/classAdherent/adherentDAO.class.php');
-$config = parse_ini_file('../../config/config.ini');
-$adherents = new adherentDAO($config['database_path']);
-$lesadh = $adherents->getLesAdherents();
-
-//----------------------------------------------------------
-
 //view
-if (isset($_GET['idAdherent'])){//si l'adherent est set alors on redirige vers ses paiements
-  include('../../controler/tablepaiement/tableUnPaiement.ctrl.php');
-}else{
-  include('../../view/paiementview/adminpage.paiement.php');
-}
+include('../../controler/tablepaiement/tableUnPaiement.ctrl.php');
 
 ?>

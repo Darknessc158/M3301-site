@@ -6,7 +6,7 @@ require_once('../../model/classAdherent/adherentDAO.class.php');
 $config = parse_ini_file('../../config/config.ini');
 
 // Creation de l'instance DAO
-$adherents = new adherentDAO($config['database_path']);
+$adherents = new adherentDAO();
 
 if (isset($_GET['type'])){
   $type=$_GET['type'];
@@ -18,9 +18,9 @@ if (isset($_GET['type'])){
 
 if (isset($_GET['tri'])){ //Si valeur et element dans la query string
   $tri=$_GET['tri'];
-  $resadh = $adherents->getListeTrie($tri);//les articles voulus en fonction des parametres de la query string sont recupérés
+  $resadh = $adherents->getListeTrie($tri);//les adherents triés
 }else{
-  $resadh = $adherents->getLesAdherents(); //si rien dans la query string on recupere tous les articles
+  $resadh = $adherents->getLesAdherents(); //si rien dans la query string on ne tri pas
 }
 
 
