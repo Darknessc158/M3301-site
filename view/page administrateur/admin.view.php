@@ -91,7 +91,7 @@
 
     <div class="col-sm-3">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../../model/data/images/images_sites/site-icon.png" alt="image gestion des stocks">
+        <img class="card-img-top" src="../../model/data/images/images_sites/stats-icon.jpg" alt="image gestion des stocks">
         <div class="card-body">
           <h5 class="card-title">Statistique du site</h5>
           <p class="card-text">Ajouter des articles pour l'actualité</p>
