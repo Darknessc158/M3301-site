@@ -129,7 +129,7 @@
           </td>
         </tr>
       <?php } ?>
-      <p>Ajouter un article : <a href="../../view/articleview/insertArticle.php"> <i class="fas fa-plus-circle"></i> </a></p>
+      <p>Ajouter un produit : <a href="../../view/articleview/insertArticle.php"> <i class="fas fa-plus-circle"></i> </a></p>
     </tbody>
   </table>
     <!-- Fin tableau -->

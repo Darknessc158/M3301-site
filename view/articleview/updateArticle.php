@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="../../view/css/form.view.css">
-  <title>Modification d'un Article</title>
+  <title>Modification d'un produit</title>
 </head>
 <body>
-  <h1>Modification d'un article</h1>
+  <h1>Modification d'un produit</h1>
   <form class="" action="../../controler/tablearticle/updateArticle.ctrl.php?idArticle=<?php echo $_GET['idArticle']; ?>" method="post">
     <p>
         Description (Nom, référence, taille ...) :<br />

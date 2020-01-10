@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="../../view/css/form.view.css">
-  <title>Ajout d'un Article</title>
+  <title>Ajout d'un produit</title>
 </head>
 <body>
-  <h1>Ajout d'un article</h1>
+  <h1>Ajout d'un produit</h1>
   <form class="" action="../../controler/tablearticle/insertArticle.ctrl.php" method="post">
     <p>
         Description (Nom, référence, taille ...) :<br />

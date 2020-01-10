@@ -60,7 +60,7 @@
         <img class="card-img-top" src="../../model/data/images/images_sites/commandes-icon.png" alt="image gestion des stocks">
         <div class="card-body">
           <h5 class="card-title">Gestionnaire des stocks</h5>
-          <p class="card-text">Liste des articles et des quantités, modifier ou supprimer un article</p>
+          <p class="card-text">Liste des produits et des quantités, modifier ou supprimer un produit</p>
           <a href="../../controler/tablearticle/tablearticle.ctrl.php" class="btn btn-primary">Gérer les stocks</a>
         </div>
       </div>
@@ -81,7 +81,7 @@
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="../../model/data/images/images_sites/site-icon.png" alt="image gestion des stocks">
         <div class="card-body">
-          <h5 class="card-title">Gestionnaire du site</h5>
+          <h5 class="card-title">Gestionnaire des actualitées</h5>
           <p class="card-text">Ajouter des articles pour l'actualité</p>
           <a href="../../view/actualite/ajouterarticles.view.php" class="btn btn-primary">Ajouter un Article</a>
           <a href="../../controler/actualite/tablepublication.ctrl.php" class="btn btn-primary">Modifier/Supprimer un Article</a>
@@ -99,10 +99,21 @@
         </div>
       </div>
     </div>
-  </div>
 
+  <div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="../../model/data/images/images_sites/pdf-icon.png" alt="image gestion des stocks">
+      <div class="card-body">
+        <h5 class="card-title">Automatisation PDF</h5>
+        <p class="card-text">Application pour l'automatisation des fichiers PDF</p>
+        <a href="../../view/actualite/ajouterarticles.view.php" class="btn btn-primary">Cliquez ici</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
   <!--Debut alerte stock article-->
-    <div class="" style="border:1px solid gray; width: 36rem; background-color: #fff; border-radius: .25rem; margin:auto; margin-bottom:30px; padding:5px;">
+    <div class="" style="border:1px solid gray; width: 36rem; background-color: #fff; border-radius: .25rem; margin:auto; margin-bottom:30px; padding:5px; margin-top:30px;">
       <h4>Informations sur le stock des articles</h4>
 
 <div class="Infos Article" style="border-top:1px solid gray;">
