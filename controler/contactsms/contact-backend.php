@@ -1,7 +1,7 @@
 <?php
-composer require nexmo/client
-$basic  = new \Nexmo\Client\Credentials\Basic('71d6dd4c', 'nXIRfrtZZR4bk5xS');
-$client = new \Nexmo\Client($basic);
+//composer require nexmo/client
+$basic  = new ../../model/nexmo/Client/Credentials/Basic('71d6dd4c', 'nXIRfrtZZR4bk5xS');
+$client = new ../../model/nexmo/Client($basic);
 
     $telephone = array();
       foreach ($POST as $key => $value) {
