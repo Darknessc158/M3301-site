@@ -4,7 +4,9 @@
 
 
 
-function facture(int $numero_paiement){
+
+if (isset($_GET['numpaiement'])) {
+  $numero_paiement=$_GET['numpaiement'];
 
   $database = 'mysql:host=soysauceduck99.ddns.net;dbname=scale';
   $user = 'admincave';
@@ -137,12 +139,6 @@ function facture(int $numero_paiement){
         $this->Cell(array_sum($w),0,'','T');
     }
     }
-
-
-
-
-
-
     $pdf = new PDF();
     $header = array('Quantite','Num Article','Description','Marque','Prix UTC','PrixTTC');
     $data = $pdf->LoadData('temp_facture.txt');
@@ -155,8 +151,8 @@ function facture(int $numero_paiement){
     $pdf->FancyTable($header,$data);
 
     // faire une fonction qui fait le format date-numcommande-client
-    $chemin = 'M3301-site/FichierPDF/FacturePDF'+$file;
-    $pdf->Output('I',$chemin);
+
+    $pdf->Output();
       unlink('temp_facture.txt');
 }
 
