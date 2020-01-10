@@ -37,9 +37,9 @@ if (isset($_GET['numpaiement'])) {
               $quantite=$value.quantiteCommande;
               $numarticle=$value.numArticle;
               $Description=$produit_courant.description;
-              $PrixUnitaire=$produit_courant.prix;
-              $Marque =$produit_courant.marque;
-              $PrixTTC=$value.quantite*$produit_courant.prix;
+              $PrixUnitaire=$produit_courant.getPrix();
+              $Marque =$produit_courant.getMarque();
+              $PrixTTC=$value.quantite*$PrixUnitaire;
 
     // Stock les variables dans une string et separer les variables par des ';'
     $ligne = $quantite+';'+$numarticle+';'+$Description+';'+$Marque+';'+$PrixUnitaire+';'+$PrixTTC.PHP_EOL;
