@@ -7,12 +7,15 @@
   <body>
 
 
-    <form class="" action="test_traitement.php" method="post">
+    <form class="" action="../../controler/contactsms/contact-backend.php" method="post">
       <input type="checkbox" name="telephone1" value="0614409064">  Clique dessu pd <br>
       <input type="checkbox" name="telephone2" value="2"> telephone 2 <br>
       <input type="checkbox" name="telephone3" value="3"> telephone 3 <br>
       <input type="checkbox" name="telephone4" value="4"> telephone 4 <br>
       <input type="checkbox" name="telephonea5" value="5"> telephone 5 <br>
+
+      <label for="subject">Subject</label>
+      <textarea id="message" name="message" placeholder="Saisir votre message" style="height:200px"></textarea>
       <input type="submit" value="Valider">
     </form>
   </body>
