@@ -52,7 +52,3 @@ input[type=submit], input[type=reset] {
  box-shadow:1px 1px 1px #D83F3D;
  cursor:pointer;
  }
- #retour{
-   text-decoration: none;
-   color: #0000ff;
- }
