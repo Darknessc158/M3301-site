@@ -329,10 +329,25 @@ ul{
         <h3>Liste des PDF </h3>
         <SELECT NAME="ListeUrl" SIZE=1 onChange="ChangeUrl(this.form)"  >
           <OPTION SELECTED VALUE="">-Menu Déroulant De Liens-</option>
-            <option value="formulairePDF.php?name=exemple">Exemple </option>
+            <?php
+            $d = dir("../viewformulaire/");
+            // echo "Pointeur: ".$d->handle."<br>\n";
+            // echo "Chemin: ".$d->path."<br>\n";
+            while($entry = $d->read()) {
+              if ($entry !="." or $entry != "..") {
+                echo '<option value="'.$entry.'">'.$entry.' </option>'.PHP_EOL;
+              }
+
+
+            }
+            $d->close();
+
+
+             ?>
+            <!-- <option value="formulairePDF.php?name=exemple">Exemple </option>
             <option value="formulairePDF.php?name=assurance">Assurance de responsaibilite civile et risques divers pour les epreuves</option>
             <option value="formulairePDF.php">Doc 2 pas encore disponible </option>
-            <option value="formulairePDF.php">Doc 3 pas encore disponible </option>
+            <option value="formulairePDF.php">Doc 3 pas encore disponible </option> -->
           </SELECT>
         </FORM>
 
@@ -410,22 +425,7 @@ ul{
           }
 
           // faire 10 champs par 10
-          elseif ($_GET['name']=='assurance') {
-            echo '<div id="boiteformetpdf">
-            <div id="formulaire">
-            <form class="" action="../../model/fpdm/ex-array.php" method="post">
 
-            <p> Numero affiliation  :<br />
-            <input list="nom" type="text" name="name" placeholder=""/>
-            <datalist id="nom">
-            <option value="038151913 ">
-              </datalist>
-              </p>
-            </form>
-            </div>
-            </div>';
-
-          }
 
         }
         else {
