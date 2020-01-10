@@ -1,55 +1,46 @@
 <?php
-require '../../model/classPaiement.paiementDAO.class.php';
+
+
+
+
+
 function facture(int $numero_paiement){
-  //recupere le numero de commande
-  $req = "SELECT numcommande FROM paiement  where num_paiement =  $numero_paiement;";
+
+  $database = 'mysql:host=soysauceduck99.ddns.net;dbname=scale';
+  $user = 'admincave';
+  $password = 'cave';
+  try{
+    $db = new PDO($database, $user, $password);
+  }
+  catch (Exception $e)
+  {
+    die('Erreur : ' . $e->getMessage());
+  }
+
+  $req = "SELECT * FROM commandearticle WHERE numPaiement=$numero_paiement ;";
   $sth=$this->db->query($req);
-  $numcommande = $sth->fetchAll(PDO::FETCH_CLASS,'commandearticle');
-
-
-
-  //Recupere un membre en fonction de la commande
-  $req = "SELECT * FROM MEMBRE  where numadh in ( select numadh
-                                                  from commande
-                                                  where num_commande = $numcommande;);";
-  $sth=$this->db->query($req);
-  $membre = $sth->fetchAll(PDO::FETCH_CLASS,'MEMBRE');
-
-
-
-
-  //Liste des numero d'article et des quantite dans une ligne commande
-  $req = "SELECT * FROM LIGNE_COMMANDE_ARTICLE  where COMMANDEnum_commande = $numcommande ;";
-  $sth=$this->db->query($req);
-  $listeprod_lignecommande = $sth->fetchAll(PDO::FETCH_CLASS,'LIGNE_COMMANDE_ARTICLE');
-
-
-
-   //pour chaque num article de ligne de commande on va
-
+  $listeprod_lignecommande = $sth->fetchAll(PDO::FETCH_CLASS,'commandearticle');
+  var_dump($listeprod_lignecommande);
     //Ouverture d'un fichier pour
-    $text= fopen('temp_facture.txt', 'r+');
+    $text= fopen('temp_facture.txt', 'x+');
 
     //Boucle permettant d'afficher tout le produit contenue dans une commandes
-    foreach ($listeprod_lignecommande) {
+    foreach ($listeprod_lignecommande as $value) {
 
-      $req = "SELECT * FROM LIGNE_COMMANDE_ARTICLE  where Num_article = $listeprod_lignecommande.ArticleNum_article ;";
+      $req = "SELECT * FROM article  where numArticle = $value.numArticle ;";
       $sth=$this->db->query($req);
       $produit_courant = $sth->fetchAll(PDO::FETCH_CLASS,'article');
 
 
-              //Stock les differentes valeur dans des variables local a la boucle
-
-              $quantite=$listeprod_lignecommande.quantite;
-              $numarticle=$listeprod_lignecommande.ARTICLENum_article;
-              $Description=$produit_courant.Description;
-               $PrixUnitaire=$produit_courant.PrixUnitaireHT;
-              $Marque =$produit_courant.Marque;
-              $PrixTHC=$listeprod_lignecommande.quantite*$produit_courant.PrixUnitaireHT;
-              $PrixTTC=$listeprod_lignecommande.quantite*$produit_courant.PrixUnitaireHT*1.20);
+              $quantite=$value.quantiteCommande;
+              $numarticle=$value.numArticle;
+              $Description=$produit_courant.description;
+              $PrixUnitaire=$produit_courant.prix;
+              $Marque =$produit_courant.marque;
+              $PrixTTC=$value.quantite*$produit_courant.prix;
 
     // Stock les variables dans une string et separer les variables par des ';'
-    $ligne = $quantite+';'+$numarticle+';'+$Description+';'+$Marque+';'+$PrixUnitaire+';'+$PrixTHC+';'+$PrixTTC '\n';
+    $ligne = $quantite+';'+$numarticle+';'+$Description+';'+$Marque+';'+$PrixUnitaire+';'+$PrixTTC '\n';
     //Ecrit la ligne dans le fichier
     fwrite($text,$ligne);
     }
@@ -60,7 +51,7 @@ function facture(int $numero_paiement){
 
 
     //
-    require('fpdf/fpdf.php');
+    require('../../model/fpdf/fpdf.php');
 
     class PDF extends FPDF
     {
@@ -153,8 +144,8 @@ function facture(int $numero_paiement){
 
 
     $pdf = new PDF();
-    $header = array('Quantite','Num Article','Description','Marque','Prix UTC','PrixTHC','PrixTTC');
-    $data = $pdf->LoadData('M3301-site/model/data/pdf/temp_facture.txt');
+    $header = array('Quantite','Num Article','Description','Marque','Prix UTC','PrixTTC');
+    $data = $pdf->LoadData('temp_facture.txt');
     $pdf->SetFont('Arial','',10);
     $pdf->AddPage();
     $pdf->BasicTable($header,$data);
@@ -166,7 +157,7 @@ function facture(int $numero_paiement){
     // faire une fonction qui fait le format date-numcommande-client
     $chemin = 'M3301-site/FichierPDF/FacturePDF'+$file;
     $pdf->Output('I',$chemin);
-
+      unlink('temp_facture.txt');
 }
 
  ?>
