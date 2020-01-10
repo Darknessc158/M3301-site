@@ -31,7 +31,7 @@ if ($type == 'Article'){
   $stock = $articlePaye->getQuantite();
   $stockrestant = $stock-$quantiteCommande;
   if($stockrestant < 0){
-    echo "<script>alert(\"Pas assez de stock pour cette article ($description) veuillez saisir un autre montant\")</script>";
+    echo "<script>alert(\"Pas assez de stock pour cet article ($description) veuillez saisir un autre montant\")</script>";
     echo '<script language="JavaScript" type="text/javascript">window.location.replace("../../controler/tablepaiement/insertpaiementavant.ctrl.php");</script>';
     exit(0);
   }

@@ -21,7 +21,7 @@ if (!file_exists("../model/data/images/imagesblog/$date/") && ($_FILES['files'][
 }
 
 $valid_formats = array("jpg", "png", "gif", "zip", "bmp","jfif","JPG","JPEG");
-$max_file_size = 4000*4000; //100 kb
+$max_file_size = 10000*10000; //10000 kb
 $path = "../../model/data/images/imagesblog/$date/"; // Upload directory
 $count = 0;
 
