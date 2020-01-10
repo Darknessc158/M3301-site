@@ -1,23 +1,5 @@
 <?php
-
-//chemin = $chemin_extraction_fields
-//sortie = sortie front_end
-//entree = nom_fichier_backend
- function txt2html($chemin='exemple.txt',
- ,$nomformulaire='traitement_exemple',$sortie='poubelle/formulaire_generer.html'):int
-{
-  if (fopen( $chemin,"r")) {
-   $in=fopen( $chemin, "r" );
- }else {
-   echo("i marche pas PD";
-   return -1;
- }
-
- $out = fopen($sortie,'x+');
- fwrite($out,'<?php'.PHP_EOL);
-
-
-fwrite($out, '<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -25,11 +7,9 @@ fwrite($out, '<!DOCTYPE html>
 * {
   box-sizing: border-box;
 }
-
 body {
   background-color: #f1f1f1;
 }
-
 #regForm {
   background-color: #ffffff;
   margin: 100px auto;
@@ -100,60 +80,63 @@ button:hover {
   background-color: #4CAF50;
 }
 </style>
-<body>');
-//Crée le formulaire avec le chemin vers le controleur adapté
-// printf('<form id="regForm" class="" action="../../controler/pdf/%s.php" method="post" autocomplete="on
-// ">',$nomformulaire,$nomformulaire);
-fwrite($out,'<form id="regForm" class="" action="../../controler/pdf/'.$nomformulaire.'.php" method="post" autocomplete="on">');
+<body><form id="regForm" class="" action="../../controler/pdf/traitement_exemple.php" method="post" autocomplete="on"><div class="tab">Onglet %d:1
+<p> CODEPOSTAL :<input list=" CODEPOSTALs" type="text" name=" CODEPOSTAL" oninput="this.className = ''"/>
+        </p>
+<p> MAIL :<input list=" MAILs" type="text" name=" MAIL" oninput="this.className = ''"/>
+        </p>
+<p> VILLE :<input list=" VILLEs" type="text" name=" VILLE" oninput="this.className = ''"/>
+        </p>
+<p> NOMPERSONNEMORAL :<input list=" NOMPERSONNEMORALs" type="text" name=" NOMPERSONNEMORAL" oninput="this.className = ''"/>
+        </p>
+<p> NUMAFFILIATION8 :<input list=" NUMAFFILIATION8s" type="text" name=" NUMAFFILIATION8" oninput="this.className = ''"/>
+        </p>
+</div> <br>
+<div class="tab">Onglet %d:2
+<p> NOMREPRESENTANT :<input list=" NOMREPRESENTANTs" type="text" name=" NOMREPRESENTANT" oninput="this.className = ''"/>
+        </p>
+<p> NOM_APPELATION :<input list=" NOM_APPELATIONs" type="text" name=" NOM_APPELATION" oninput="this.className = ''"/>
+        </p>
+<p> LIEUX MANIF :<input list=" LIEUX MANIFs" type="text" name=" LIEUX MANIF" oninput="this.className = ''"/>
+        </p>
+<p> CB1 :<input list=" CB1s" type="text" name=" CB1" oninput="this.className = ''"/>
+        </p>
+<p> DATEMANIF :<input list=" DATEMANIFs" type="text" name=" DATEMANIF" oninput="this.className = ''"/>
+        </p>
+</div> <br>
+<div class="tab">Onglet %d:3
+<p> FORFAIT :<input list=" FORFAITs" type="text" name=" FORFAIT" oninput="this.className = ''"/>
+        </p>
+<p> FORFAITJ2 :<input list=" FORFAITJ2s" type="text" name=" FORFAITJ2" oninput="this.className = ''"/>
+        </p>
+<p> NBPARTICIPANT :<input list=" NBPARTICIPANTs" type="text" name=" NBPARTICIPANT" oninput="this.className = ''"/>
+        </p>
+<p> FORFAIT2 :<input list=" FORFAIT2s" type="text" name=" FORFAIT2" oninput="this.className = ''"/>
+        </p>
+<p> NBPARTICIPANTJ1 :<input list=" NBPARTICIPANTJ1s" type="text" name=" NBPARTICIPANTJ1" oninput="this.className = ''"/>
+        </p>
+</div> <br>
+<div class="tab">Onglet %d:4
+<p> NBPARTICIPANTJ2 :<input list=" NBPARTICIPANTJ2s" type="text" name=" NBPARTICIPANTJ2" oninput="this.className = ''"/>
+        </p>
+<p> FORFAITJ1 :<input list=" FORFAITJ1s" type="text" name=" FORFAITJ1" oninput="this.className = ''"/>
+        </p>
+<p> FORFAITJ2B :<input list=" FORFAITJ2Bs" type="text" name=" FORFAITJ2B" oninput="this.className = ''"/>
+        </p>
+<p> TOTAL :<input list=" TOTALs" type="text" name=" TOTAL" oninput="this.className = ''"/>
+        </p>
+<p> FORFAITJ1B :<input list=" FORFAITJ1Bs" type="text" name=" FORFAITJ1B" oninput="this.className = ''"/>
+        </p>
+</div> <br>
+<div class="tab">Onglet %d:5
+<p> NOMCLUB :<input list=" NOMCLUBs" type="text" name=" NOMCLUB" oninput="this.className = ''"/>
+        </p>
+<p> DATE :<input list=" DATEs" type="text" name=" DATE" oninput="this.className = ''"/>
+        </p>
+<p> LIEUX :<input list=" LIEUXs" type="text" name=" LIEUX" oninput="this.className = ''"/>
+        </p>
+</div>
 
-
-$ligne_courante = fgets($in);
-$nb=0;
-$total =1;
-$fin=false;
-  while (!feof($in) ) {
-    //detect la présence de la chaine 'FIeldname'
-    if (strpos($ligne_courante,'FieldName')!==false) {
-      //Methode generique pour du text
-
-
-      //Enleve le surplus de la chaine et la en fait un input en html
-      $ligne_courante = explode('FieldName:',$ligne_courante);
-      $ligne_courante = implode($ligne_courante);
-      $ligne_courante = rtrim($ligne_courante);
-      if($nb==0){
-      // printf('<div class="tab">Onglet %d:',$total) ;
-      fwrite($out,'<div class="tab">Onglet %d:'.$total.PHP_EOL);
-      $fin=false;
-      }
-      if ($nb <5) {
-        // printf('<p>%s :
-        // <input list="%s" type="text" name="%s" oninput="this.className = \'\'"/>
-        // </p>',$ligne_courante,$ligne_courante,$ligne_courante);
-        fwrite($out,'<p>'.$ligne_courante.' :<input list="'.$ligne_courante.'s" type="text" name="'.$ligne_courante.'" oninput="this.className = \'\'"/>
-        </p>'.PHP_EOL)
-        $nb++;
-        $fin=false;
-      }
-      else{
-        fwrite($out, '</div> <br>'.PHP_EOL);
-        $nb=0;
-        $total++;
-        $fin=true;
-      }
-    }
-
-$ligne_courante = fgets($in);
-  }
-    //Ca depend , trouver un moyen de verifier que nb modulo 5 diff de 0
-  // normalement c bon
-    if ($nb<=5 && $fin==false) {
-      fwrite($out, '</div>'.PHP_EOL;
-    }
-
-    $total++;
-
-fwrite($out, '
 <div style="overflow:auto;">
     <div style="float:right;">
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -163,18 +146,13 @@ fwrite($out, '
   <!-- Circles which indicates the steps of the form: -->
 
   <div style="text-align:center;margin-top:40px;">
-  '.PHP_EOL);
-    for ($i=1; $i < $total ; $i++) {
-      fwrite($out, '<span class="step"></span>'.PHP_EOL);
-    }
+  
+<span class="step"></span>
+<span class="step"></span>
+<span class="step"></span>
+<span class="step"></span>
+<span class="step"></span>
 
-    // <span class="step"></span>
-    // <span class="step"></span>
-    // <span class="step"></span>
-    // <span class="step"></span>
-
-
-fwrite($out, '
 </div>
 </form>
 <script>
@@ -253,16 +231,4 @@ function fixStepIndicator(n) {
 </script>
 
 </body>
-</html>'.PHP_EOL);
-
-  return 7;
-
-}
-
-//test
-txt2html();
-
-
-
-
- ?>
+</html>

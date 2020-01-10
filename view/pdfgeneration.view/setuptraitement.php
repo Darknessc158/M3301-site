@@ -12,7 +12,8 @@ function setuptraitement($template , $chemin='exemple.txt',$sortie='poubelle/res
  }
 
  $out = fopen($sortie,'x+');
-fwrite($out,'<?php'.PHP_EOL);
+fwrite($out,'<?php require(\'../../../model/fpdm/fpdm.php\');'.PHP_EOL);
+
  $ligne_courante = fgets($in);
  $array_of_array = array();
    while (!feof($in) ) {
@@ -33,8 +34,9 @@ fwrite($out,'<?php'.PHP_EOL);
        $line_array = '\''.$ligne_courante.'\'   => $'.$ligne_courante;
        array_push($array_of_array,$line_array);
 
-       $line_if = 'if (empty($_POST[\''.$ligne_courante.'\']))$name =\'$'.$ligne_courante.PHP_EOL.'\';else $name = $_POST[\''.$ligne_courante.'\'];';
+       $line_if = 'if (empty($_POST[\''.$ligne_courante.'\']))$'.$ligne_courante.' =\' \';'.PHP_EOL.'else $'.$ligne_courante.' = $_POST[\''.$ligne_courante.'\'];';
        fwrite($out,$line_if.PHP_EOL);
+       fwrite($out,PHP_EOL);
      }
 
  $ligne_courante = fgets($in);
@@ -58,9 +60,10 @@ fwrite($out,'<?php'.PHP_EOL);
   fwrite($out,$fin);
   fclose($out);
   fclose($in);
+  return 1;
 }
 //il faut faire des saut de ligne car c'est illisible
-setuptraitement('template.php');
+//setuptraitement('template.php');
 
 
 

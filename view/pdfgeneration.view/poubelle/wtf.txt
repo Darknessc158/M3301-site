@@ -20,7 +20,7 @@ FieldFlags: 1
 FieldJustification: Left
 ---
 FieldType: Text
-FieldName: NUMAFFILIATION8
+FieldName: NUMAFFILIATION
 FieldFlags: 1
 FieldJustification: Left
 ---
