@@ -104,10 +104,10 @@
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="../../model/data/images/images_sites/pdf-icon.png" alt="image gestion des stocks">
       <div class="card-body">
-        <h5 class="card-title">Automatisation PDF</h5>
-        <p class="card-text">Application pour l'automatisation des fichiers PDF</p>
+        <h5 class="card-title">Remplire PDF</h5>
+        <p class="card-text">Remplire ses PDF en ligne</p>
 
-        <a href="../../view/viewformulaire/main.view.formulaire.php" class="btn btn-primary">Cliquez ici</a>
+        <a href="../../view/viewformulaire/main.view.formulaire.php" class="btn btn-primary">Remplir</a>
 
       </div>
     </div>

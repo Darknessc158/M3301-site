@@ -51,7 +51,8 @@ fwrite($out,'<?php require(\'../../../model/fpdm/fpdm.php\');'.PHP_EOL);
      else fwrite($out,$value.','.PHP_EOL);
    }
 
-   $fin = '); $pdf = new FPDM(\'../../model/data/pdf/template'.$template.'\');
+   $fin = ');
+   $pdf = new FPDM(\'../../../model/data/pdf/template/'.$template.'\');
    $pdf->Load($fields, false); // second parameter: false if field values are in ISO-8859-1, true if UTF-8
    $pdf->Merge();
  //	$chemin = "../../FichierPDF/PDFRemplie";

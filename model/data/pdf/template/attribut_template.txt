@@ -1,0 +1,24 @@
+---
+FieldType: Text
+FieldName: name
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: address
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: city
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: phone
+FieldFlags: 0
+FieldValue: 
+FieldJustification: Left

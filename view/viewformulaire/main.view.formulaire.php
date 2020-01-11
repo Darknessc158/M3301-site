@@ -331,10 +331,10 @@ ul{
 $dir =".";
 $scan = scandir($dir);
 foreach ($scan as $key => $value) {
-$path_parts = pathinfo($dir.$value);
-if ($path_parts['extension']!='php' && $value!='..' && $value !='.') {
+$path_parts = pathinfo($value);
+if ($value!='..' && $value !='.') {
   $file = $path_parts['filename'].PHP_EOL;
-  echo '<option value="'.$file.'">'.$file.' </option>'.PHP_EOL;
+  echo '<option value="'.$file.'php">'.$file.' </option>'.PHP_EOL;
 }
 }
              ?>

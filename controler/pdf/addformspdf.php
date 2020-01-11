@@ -12,9 +12,11 @@ txt2html($template_formulaire,$chemin_extraction_fields,$sortie_backend,$sortie_
 
 
 
+
+
 }
 
-addform('../../model/data/pdf/attribut_Responsabilitecivil.txt','../../model/data/pdf/Responsabilite_civil.pdf','../../view/viewformulaire/responsabilite+civil.php','../../controler/pdf/traitementformulaire/TRAITEMENTresponsabilite+civil.php');
-addform('../../model/data/pdf/attribut_template.txt','../../model/data/pdf/template.pdf','../../view/viewformulaire/exemple.php','../../controler/pdf/traitementformulaire/TRAITEMENTexemple.php');
+addform('../../model/data/pdf/template/attribut_Responsabilitecivil.txt','Responsabilite_civil.pdf','../../view/viewformulaire/responsabilite civil.php','traitementformulaire/TRAITEMENTresponsabilitecivil.php');
+addform('../../model/data/pdf/template/attribut_template.txt','template.pdf','../../view/viewformulaire/exemple.php','traitementformulaire/TRAITEMENTexemple.php');
 
  ?>

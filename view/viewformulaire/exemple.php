@@ -1,22 +1,4 @@
-<?php
-
-//chemin = $chemin_extraction_fields
-//sortie = sortie front_end
-//entree = nom_fichier_backend
- function txt2html($template='template.pdf',$chemin='attribut_pdf.txt',$cheminbackend='traitement_exemple',$sortie='poubelle/V4_test.php'):int
-{
-  if (fopen( $chemin,"r")) {
-   $in=fopen( $chemin, "r" );
- }else {
-   echo("i marche pas PD");
-   return -1;
- }
-
- $out = fopen($sortie,'x+');
-
-
-
-fwrite($out, '<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -27,12 +9,12 @@ fwrite($out, '<!DOCTYPE html>
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
-    font-family: \'Poppins\', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: #fafafa;
 }
 
 p {
-    font-family: \'Poppins\', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -194,7 +176,7 @@ a.article:hover {
 }
 
 body {
-  font-family: \'Poppins\', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: #fafafa;
 }
 @media (max-width: 768px) {
@@ -315,8 +297,8 @@ button:hover {
 <body>
 <script>
 $(document).ready(function () {
-        $(\'#sidebarCollapse\').on(\'click\', function () {
-            $(\'#sidebar\').toggleClass(\'active\');
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
         });
     });
 </script>
@@ -408,7 +390,7 @@ $(document).ready(function () {
       {
         var url ;
         url = formulaire.ListeUrl.options[formulaire.ListeUrl.selectedIndex].value;
-        //window.open(url,\'_blank\'); truc de base
+        //window.open(url,'_blank'); truc de base
         // nouveauté : (et i marche )
         window.location.href=url;
       }
@@ -424,71 +406,26 @@ $dir =".";
 $scan = scandir($dir);
 foreach ($scan as $key => $value) {
 $path_parts = pathinfo($value);
-if ($path_parts[\'extension\']=\'php\') {
-$file = $path_parts[\'filename\'].PHP_EOL;
-echo \'<option value="\'.$file.\'.php">\'.$file.\'. </option>\'.PHP_EOL;
+if ($path_parts['extension']='php') {
+$file = $path_parts['filename'].PHP_EOL;
+echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
 }
 }
          ?>
         </SELECT>
-      </FORM>');
-//Crée le formulaire avec le chemin vers le controleur adapté
-// printf('<form id="regForm" class="" action="../../controler/pdf/%s.php" method="post" autocomplete="on
-// ">',$cheminbackend,$cheminbackend);
-fwrite($out,'  <div id="boiteformetpdf">
+      </FORM>  <div id="boiteformetpdf">
             <div id="formulaire">
-            <form id="regForm" class="" action="../../controler/pdf/'.$cheminbackend.'" method="post" autocomplete="on">');
+            <form id="regForm" class="" action="../../controler/pdf/traitementformulaire/TRAITEMENTexemple.php" method="post" autocomplete="on"><div class="tab">Onglet %d:1
+<p> name :<input list=" names" type="text" name=" name" oninput="this.className = ''"/>
+        </p>
+<p> address :<input list=" addresss" type="text" name=" address" oninput="this.className = ''"/>
+        </p>
+<p> city :<input list=" citys" type="text" name=" city" oninput="this.className = ''"/>
+        </p>
+<p> phone :<input list=" phones" type="text" name=" phone" oninput="this.className = ''"/>
+        </p>
+</div>
 
-
-$ligne_courante = fgets($in);
-$nb=0;
-$total =1;
-$fin=false;
-  while (!feof($in) ) {
-    //detect la présence de la chaine 'FIeldname'
-    if (strpos($ligne_courante,'FieldName')!==false) {
-      //Methode generique pour du text
-
-
-      //Enleve le surplus de la chaine et la en fait un input en html
-      $ligne_courante = explode('FieldName:',$ligne_courante);
-      $ligne_courante = implode($ligne_courante);
-      $ligne_courante = rtrim($ligne_courante);
-      if($nb==0){
-      // printf('<div class="tab">Onglet %d:',$total) ;
-      fwrite($out,'<div class="tab">Onglet %d:'.$total.PHP_EOL);
-      $fin=false;
-      }
-      if ($nb <4) {
-        // printf('<p>%s :
-        // <input list="%s" type="text" name="%s" oninput="this.className = \'\'"/>
-        // </p>',$ligne_courante,$ligne_courante,$ligne_courante);
-        fwrite($out,'<p>'.$ligne_courante.' :<input list="'.$ligne_courante.'s" type="text" name="'.$ligne_courante.'" oninput="this.className = \'\'"/>
-        </p>'.PHP_EOL);
-        $nb++;
-        $fin=false;
-      }
-      else{
-        fwrite($out,'<p>'.$ligne_courante.' :<input list="'.$ligne_courante.'s" type="text" name="'.$ligne_courante.'" oninput="this.className = \'\'"/>
-        </p>'.PHP_EOL);
-        fwrite($out, '</div> <br>'.PHP_EOL);
-        $nb=0;
-        $total++;
-        $fin=true;
-      }
-    }
-
-$ligne_courante = fgets($in);
-  }
-    //Ca depend , trouver un moyen de verifier que nb modulo 5 diff de 0
-  // normalement c bon
-    if ($nb<=5 && $fin==false) {
-      fwrite($out, '</div>'.PHP_EOL);
-    }
-
-    $total++;
-
-fwrite($out, '
 <div style="overflow:auto;">
     <div style="float:right;">
       <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -498,25 +435,16 @@ fwrite($out, '
   <!-- Circles which indicates the steps of the form: -->
 
   <div style="text-align:center;margin-top:40px;">
-  '.PHP_EOL);
-    for ($i=1; $i < $total ; $i++) {
-      fwrite($out, '<span class="step"></span>'.PHP_EOL);
-    }
 
-    // <span class="step"></span>
-    // <span class="step"></span>
-    // <span class="step"></span>
-    // <span class="step"></span>
+<span class="step"></span>
 
-
-fwrite($out, '
 </div>
 </form>
 </div>
 
           <div class="pdf">
 
-          <embed src=../../model/data/pdf/template/'.$template.' width=800 height=500 type=\'application/pdf\'/>
+          <embed src=../../model/data/pdf/template/template.pdf width=800 height=500 type='application/pdf'/>
 
           </div>
           </div>
@@ -596,14 +524,4 @@ function fixStepIndicator(n) {
 </script>
 
 </body>
-</html>'.PHP_EOL);
-
-  return 7;
-
-}
-
-
-
-
-
- ?>
+</html>
