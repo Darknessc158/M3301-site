@@ -1,7 +1,7 @@
 <?php
 require nexmo\client
-$basic  = new ..\..\model\nexmo\Client\Credentials\Basic('71d6dd4c', 'nXIRfrtZZR4bk5xS');
-$client = new ..\..\model\Nexmo\Client($basic);
+$basic  = new nexmo\Client\Credentials\Basic('71d6dd4c', 'nXIRfrtZZR4bk5xS');
+$client = new model\Nexmo\Client($basic);
 
     $telephone = array();
       foreach ($POST as $key => $value) {
