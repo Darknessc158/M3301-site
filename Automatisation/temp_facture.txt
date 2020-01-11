@@ -1,0 +1,4 @@
+12;01;Casque;btwin;12.23 euro;40.25 euro;11.44 euro
+14;45;Roue  26";btwin;24 euro;75 euro;18 euro
+4;45;Roue  26";btwin;24 euro;75 euro;18 euro
+1;99;Fourche;24 euro;btwin;75 euro;18 euro
