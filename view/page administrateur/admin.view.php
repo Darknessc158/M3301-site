@@ -94,8 +94,8 @@
         <img class="card-img-top" src="../../model/data/images/images_sites/stats-icon.jpg" alt="image gestion des stocks">
         <div class="card-body">
           <h5 class="card-title">Statistique du site</h5>
-          <p class="card-text">Ajouter des articles pour l'actualité</p>
-          <a href="../../view/actualite/ajouterarticles.view.php" class="btn btn-primary">Ajouter un Article</a>
+          <p class="card-text">Informations sur les visiteurs du site ...</p>
+          <a href="#" class="btn btn-primary">(En cours de développement)</a>
         </div>
       </div>
     </div>
@@ -106,7 +106,7 @@
       <div class="card-body">
         <h5 class="card-title">Automatisation PDF</h5>
         <p class="card-text">Application pour l'automatisation des fichiers PDF</p>
-        <a href="../../view/actualite/ajouterarticles.view.php" class="btn btn-primary">Cliquez ici</a>
+        <a href="#" class="btn btn-primary">Cliquez ici (En cours de développement)</a>
       </div>
     </div>
   </div>
