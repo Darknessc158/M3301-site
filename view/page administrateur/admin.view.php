@@ -106,7 +106,9 @@
       <div class="card-body">
         <h5 class="card-title">Automatisation PDF</h5>
         <p class="card-text">Application pour l'automatisation des fichiers PDF</p>
-        <a href="#" class="btn btn-primary">Cliquez ici (En cours de développement)</a>
+
+        <a href="../../view/viewformulaire/main.view.formulaire.php" class="btn btn-primary">Cliquez ici</a>
+
       </div>
     </div>
   </div>
