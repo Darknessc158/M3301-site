@@ -14,10 +14,10 @@ form {
 fieldset {
  padding:0 20px 20px 20px;
  margin-bottom:10px;
- border:1px solid #0000ff;
+ border:1px solid white;
  }
 legend {
- color:#0000ff;
+ color:white;
  font-weight:bold
  }
 label {
@@ -33,7 +33,7 @@ input, textarea, select, option {
  }
 input, textarea, select {
  padding:3px;
- border:1px solid #0000ff;
+ border:1px solid white;
  border-radius:5px;
  width:200px;
  box-shadow:1px 1px 2px #C0C0C0 inset;
