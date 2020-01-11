@@ -15,8 +15,9 @@
 </head>
 <body>
 
+
     <a id="boutontop"></a>
-    
+
   <header>
     <!--Image bandeau haut-->
     <div class="boximg">
@@ -220,7 +221,7 @@
   <h2 class = "sous_Titre">Les chiffres clefs du SCALE</h2>
   <div class="container">
     <div class="elementphoto">
-    <img src="../model/data/images/accueil/image1.png" alt="" width="95%">
+    <img src="../model/data/images/accueil/Image1.png" alt="" width="95%">
     </div>
     <div class="element" style="height:250px; margin:auto; margin-top:0px;">
       <h3 class = "sous_Titre"><strong>2019 :</strong></h3>
@@ -229,16 +230,16 @@
       <p><strong>Plus de 180 participants aux départs des courses organisées par le club.</strong> </p>
     </div>
     <div class="elementphoto">
-    <img src="../model/data/images/accueil/image2.jpg" alt="" width="95%">
+    <img src="../model/data/images/accueil/Image2.jpg" alt="" width="95%">
     </div>
     <div class="elementphoto">
-    <img src="../model/data/images/accueil/image3.jpg" alt="" width="95%">
+    <img src="../model/data/images/accueil/Image3.jpg" alt="" width="95%">
     </div>
     <div class="elementphoto">
-    <img src="../model/data/images/accueil/arzelier_depart.jpg" alt="" width="95%">
+    <img src="../model/data/images/accueil/arzelier_depart.JPG" alt="" width="95%">
     </div>
     <div class="elementphoto">
-    <img src="../model/data/images/accueil/image4.jpg" alt="" width="95%">
+    <img src="../model/data/images/accueil/Image4.jpg" alt="" width="95%">
     </div>
   </div>
 
@@ -265,7 +266,7 @@
   </p>
 
 </div>
-
+<?php include('../controler/visiteurSite/visitor_tracking.ctrl.php'); ?>
 
 
 
