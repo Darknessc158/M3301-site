@@ -77,12 +77,24 @@
   <h1>Les coureurs en <?php   echo date('Y');?></h1>
   <div class="container">
     <?php foreach ($lesadh as $coureur) {
-      echo '<div style="border-bottom:1px solid gray; border-radius:100px; margin:auto; margin-bottom:20px;">';
-      echo '<div class="element" style="background-image:url(../model/data/images/lescoureurs/'.$coureur->getUrlPhoto().'); background-size:cover;">';
-      echo "</div>";
-      echo '<p>'.$coureur->getPrenom().' '.$coureur->getNom().'</p>';
-      echo '<p> Catégorie : '.$coureur->getCategorie().'</p>';
-      echo "</div>";
+      if ( $coureur->getUrlPhoto() != '' || $coureur->getUrlPhoto() != 'null' ) {
+        echo '<div style="border-bottom:1px solid gray; border-radius:100px; margin:auto; margin-bottom:20px;">';
+        echo '<div class="element" style="background-image:url(../model/data/images/lescoureurs/'.$coureur->getUrlPhoto().'); background-size:cover;">';
+        echo "</div>";
+        echo '<p>'.$coureur->getPrenom().' '.$coureur->getNom().'</p>';
+        echo '<p> Catégorie : '.$coureur->getCategorie().'</p>';
+        echo "</div>";
+
+
+      }else{
+    }} ?>
+    <?php foreach ($lesadh as $coureur) {
+      if ($coureur->getUrlPhoto() == '' || $coureur->getUrlPhoto() == 'null') {
+        echo '<div class="element" style="height:50%;">';
+        echo '<p>'.$coureur->getPrenom().' '.$coureur->getNom().'</p>';
+        echo '<p> Catégorie : '.$coureur->getCategorie().'</p>';
+        echo "</div>";
+      }
     } ?>
   </div>
 
