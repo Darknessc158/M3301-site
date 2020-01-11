@@ -328,13 +328,15 @@ ul{
         <SELECT NAME="ListeUrl" SIZE=1 onChange="ChangeUrl(this.form)"  >
           <OPTION SELECTED VALUE="">-Menu Déroulant De Liens-</option>
             <?php
-            $d = dir(".");
-            while($entry = $d->read()) {
-              if ($entry !="." or $entry != "..") {
-                echo '<option value="'.$entry.'">'.$entry.' </option>'.PHP_EOL;
-              }
-            }
-            $d->close();
+$dir =".";
+$scan = scandir($dir);
+foreach ($scan as $key => $value) {
+$path_parts = pathinfo($dir.$value);
+if ($path_parts['extension']!='php' && $value!='..' && $value !='.') {
+  $file = $path_parts['filename'].PHP_EOL;
+  echo '<option value="'.$file.'">'.$file.' </option>'.PHP_EOL;
+}
+}
              ?>
 
           </SELECT>

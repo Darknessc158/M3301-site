@@ -4,12 +4,7 @@ require 'setuptraitement.php';
 require 'txtohtml_v4.php';
 
 
-function addform($chemin_extraction_fields='exemple.txt',
-$template_formulaire='fichier.pdf' ,
-$sortie_frontend='../viewformulaire/FORMSfront_end.html',
-$sortie_backend='../../controler/pdf/FORMSback_end.php'){
-
-
+function addform($chemin_extraction_fields,$template_formulaire,$sortie_frontend,$sortie_backend){
 setuptraitement($template_formulaire,$chemin_extraction_fields,$sortie_backend);
 txt2html($template_formulaire,$chemin_extraction_fields,$sortie_backend,$sortie_frontend);
 
@@ -19,7 +14,7 @@ txt2html($template_formulaire,$chemin_extraction_fields,$sortie_backend,$sortie_
 
 }
 
-addform('attribut_pdf.txt','pdf.pdf',);
-
+addform('../../model/data/pdf/attribut_Responsabilitecivil.txt','../../model/data/pdf/Responsabilite_civil.pdf','../../view/viewformulaire/responsabilite+civil.php','../../controler/pdf/traitementformulaire/TRAITEMENTresponsabilite+civil.php');
+addform('../../model/data/pdf/attribut_template.txt','../../model/data/pdf/template.pdf','../../view/viewformulaire/exemple.php','../../controler/pdf/traitementformulaire/TRAITEMENTexemple.php');
 
  ?>
