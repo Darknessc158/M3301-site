@@ -1,31 +1,10 @@
 <?php
-require nexmo\client
-$basic  = new nexmo\Client\Credentials\Basic('71d6dd4c', 'nXIRfrtZZR4bk5xS');
-$client = new model\Nexmo\Client($basic);
 
-    $telephone = array();
-      foreach ($POST as $key => $value) {
-        if ($key !='message') {
-        $telephone.array_push($value);
-        }
-        else $message=$value;
-      }
-      foreach ($telephone as $key => $value) {
-        $message = $client->message()->send([
-            'to' => $value,
-            'from' => 'SCALE ECHIROLLE',
-            'text' => $message
-            ]);
-      }
-
-      }
-
-
-
-
-
-
-
-]);
+require 'src/Clockwork.php';
+require 'src/ClockworkException.php';
+$API_KEY=
+$clockwork = new mediaburst\ClockworkSMS\Clockwork( $API_KEY ); //Be careful not to post your API Keys to public repositories.
+$message = array( 'to' => '330614409064', 'message' => 'This is a test!' );
+$result = $clockwork->send( $message );
 
  ?>
