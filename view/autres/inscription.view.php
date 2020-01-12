@@ -72,7 +72,7 @@
 
             <small class="help-block text-danger"><?php echo $password_err; ?></small>
             <div class="input-group form-group<?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-              <input type="password" name="password" class="form-control" required placeholder="Mot de passe(6 carateres minimum)"value="<?php echo $password; ?>">
+              <input type="password" name="password" class="form-control" required placeholder="Mot de passe(6 caratères minimum)"value="<?php echo $password; ?>">
             </div>
 
             <small class="help-block text-danger"><?php echo $confirm_password_err; ?></small>
@@ -88,7 +88,7 @@
         </div>
         <div class="card-footer">
           <div class="d-flex justify-content-center links">
-            <p>Deja inscrit? <a href="login.ctrl.php">S'identifier</a>.</p>
+            <p>Déjà inscrit? <a href="login.ctrl.php">S'identifier</a>.</p>
           </div>
         </div>
       </div>
@@ -100,9 +100,7 @@
   <script>(function() {
     'use strict';
     window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.getElementsByClassName('needs-validation');
-      // Loop over them and prevent submission
       var validation = Array.prototype.filter.call(forms, function(form) {
         form.addEventListener('submit', function(event) {
           if (form.checkValidity() === false) {

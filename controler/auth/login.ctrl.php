@@ -1,8 +1,8 @@
 <?php
-// Initialize the session
+// commencer une session
 session_start();
 
-// Check if the user is already logged in, if yes then redirect him to welcome page
+// verifie si l'utilisateur est connecte
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     if($_SESSION["admin"]){
       header("location: profilAdmin.ctrl.php");
@@ -70,7 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;
                             $_SESSION["admin"] = $admin;
 
-                            // Redirect user to welcome page
+                            // Redirection vers la page de profil
                             if($_SESSION["admin"] === 1){
                               header("location: profilAdmin.ctrl.php");
                             }else{

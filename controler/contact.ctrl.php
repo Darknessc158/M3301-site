@@ -24,4 +24,6 @@
 
 	mail($mailDestinataire, $sujet, $messageMail, $from);
 
+  include('../view/autres/envoyerSucces.view.php');
+
 ?>

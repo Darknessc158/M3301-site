@@ -22,23 +22,7 @@
         <img class="scroll" src="../../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
       </p>
     </div>
-    <!--Script defilement voir après.
-    <script type="text/javascript">
-    I = 0 ;
-    Imax = document.images.length - 1 ;
-    setTimeout(suivante, 7000) ;
-    function suivante()
-    {
-    document.images[I].style.display = "none" ;
-    if ( I < Imax )
-    I++;
-    else
-    I=0;
-    document.images[I].style.display = "block";
-    setTimeout(suivante, 7000) ;
-  }
-</script>
-<!Nav-->
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
   <button class="navbar-toggler" data-toggle = "collapse" data-target = "#collapse_target">
       <span class="navbar-toggler-icon"></span>
@@ -91,7 +75,7 @@
           <form action="../../controler/auth/resetmdp.ctrl.php" method="post" class="needs-validation" novalidate>
             <small class="help-block text-danger"><?php echo $new_password_err; ?></small>
             <div class="form-group <?php echo (!empty($new_password_err)) ? 'has-error' : ''; ?>">
-                <input type="password" name="new_password" class="form-control" required placeholder="nouveau mot de passe(6 carateres minimum)"value="<?php echo $new_password; ?>">
+                <input type="password" name="new_password" class="form-control" required placeholder="nouveau mot de passe(6 caratères minimum)"value="<?php echo $new_password; ?>">
             </div>
 
             <small class="help-block text-danger"><?php echo $confirm_password_err; ?></small>
@@ -116,9 +100,7 @@
   <script>(function() {
     'use strict';
     window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.getElementsByClassName('needs-validation');
-      // Loop over them and prevent submission
       var validation = Array.prototype.filter.call(forms, function(form) {
         form.addEventListener('submit', function(event) {
           if (form.checkValidity() === false) {

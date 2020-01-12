@@ -21,23 +21,7 @@
         <img class="scroll" src="../model/data/images/images_sites/ob_763433_p1620864.jpg" alt="" style="display:none;">
       </p>
     </div>
-    <!--Script defilement voir après.
-    <script type="text/javascript">
-    I = 0 ;
-    Imax = document.images.length - 1 ;
-    setTimeout(suivante, 7000) ;
-    function suivante()
-    {
-    document.images[I].style.display = "none" ;
-    if ( I < Imax )
-    I++;
-    else
-    I=0;
-    document.images[I].style.display = "block";
-    setTimeout(suivante, 7000) ;
-  }
-</script>
-<!Nav-->
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
   <button class="navbar-toggler" data-toggle = "collapse" data-target = "#collapse_target">
       <span class="navbar-toggler-icon"></span>

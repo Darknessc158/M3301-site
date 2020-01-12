@@ -23,10 +23,10 @@
     <!--Nav-->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
       <button class="navbar-toggler" data-toggle = "collapse" data-target = "#collapse_target">
-        <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapse_target">
-        <a class="navbar-brand" href="../../controler/accueil.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt="logo scale Echirolles" width="60%"></a>
+      <a class="navbar-brand" href="../../controler/accueil.ctrl.php"> <img src="../../model/data/images/images_sites/logo-scale.jpg" alt="logo scale Echirolles" width="60%"></a>
 
 
         <ul class="navbar-nav">
@@ -49,6 +49,12 @@
             <a class="nav-link" href="../../view/autres/contact.view.php">Nous contacter</a>
           </li>
         </ul>
+        <form action="../auth/login.ctrl.php" method="get" class="ml-auto">
+          <div class="input-group mb-3">
+
+            <button class="btn btn-success my-2 my-sm-0" type="submit"><?php echo $etat; ?></button>
+          </div>
+        </form>
       </div>
 
     </nav>

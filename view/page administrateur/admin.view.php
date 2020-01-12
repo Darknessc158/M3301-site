@@ -40,7 +40,7 @@
   </div>
   <div class=" text-center">
     <a href="resetmdp.ctrl.php" class="btn btn-warning">Changer votre mot de passe</a>
-    <a href="logout.ctrl.php" class="btn btn-danger">Se deconnecter</a>
+    <a href="logout.ctrl.php" class="btn btn-danger">Se déconnecter</a>
   </div>
 
 
@@ -82,7 +82,7 @@
       <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="../../model/data/images/images_sites/site-icon.png" alt="image gestion des stocks">
         <div class="card-body">
-          <h5 class="card-title">Gestionnaire des actualitées</h5>
+          <h5 class="card-title">Gestionnaire des actualités</h5>
           <p class="card-text">Ajouter des articles pour l'actualité</p>
           <a href="../../view/actualite/ajouterarticles.view.php" class="btn btn-primary">Ajouter un Article</a>
           <a href="../../controler/actualite/tablepublication.ctrl.php" class="btn btn-primary">Modifier/Supprimer un Article</a>
@@ -105,8 +105,8 @@
     <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="../../model/data/images/images_sites/pdf-icon.png" alt="image gestion des stocks">
       <div class="card-body">
-        <h5 class="card-title">Remplire PDF</h5>
-        <p class="card-text">Remplire ses PDF en ligne</p>
+        <h5 class="card-title">Remplir PDF</h5>
+        <p class="card-text">Remplir ses PDF en ligne</p>
 
         <a href="../../view/viewformulaire/main.view.formulaire.php" class="btn btn-primary">Remplir</a>
 
@@ -168,9 +168,7 @@ function Article(id){
   <script>(function() {
     'use strict';
     window.addEventListener('load', function() {
-      // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.getElementsByClassName('needs-validation');
-      // Loop over them and prevent submission
       var validation = Array.prototype.filter.call(forms, function(form) {
         form.addEventListener('submit', function(event) {
           if (form.checkValidity() === false) {

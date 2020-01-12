@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_stmt_store_result($stmt);
 
         if(mysqli_stmt_num_rows($stmt) == 1){
-          $username_err = "Cette email a deja un compte";
+          $username_err = "Cette email a déjà un compte";
         }else{
           $username = trim($_POST["username"]);
         }
@@ -31,9 +31,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   //validation du mot de $password_err
   if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter a password.";
+        $password_err = "Veuillez entrer le mot de passe";
     } elseif(strlen(trim($_POST["password"])) < 6){
-        $password_err = "Password must have atleast 6 characters.";
+        $password_err = "Le mot de passe doit comporter 6 caratères minimum";
     } else{
         $password = trim($_POST["password"]);
     }
@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $confirm_password = trim($_POST["confirm_password"]);
     if (empty($password_err) && ($password != $confirm_password)) {
-      $confirm_password_err = "les mots de passe ne sont pas les memes";
+      $confirm_password_err = "les mots de passe ne sont pas les mêmes";
     }
   }
     if (empty($password_err) && empty($username_err) && empty($confirm_password_err)) {
