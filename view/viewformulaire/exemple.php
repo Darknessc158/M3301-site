@@ -191,10 +191,16 @@ ul{
 list-style: none;
 }
 #formulaire{
-padding: 100px;
+/* padding: 100px; */
+padding-top: 10px;
+padding-left: 50px;
+padding-right: 50px;
+
 }
 #pdf {
-padding: 100px;
+  padding-top: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
 width: auto;
 
 }
@@ -378,6 +384,8 @@ $(document).ready(function () {
        </ul>
   </nav>
 
+
+
   <div id="content">
 
 
@@ -411,8 +419,9 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
 }
          ?>
         </SELECT>
-      </FORM>  <div id="boiteformetpdf">
         <h2>Remplissage du formulaire exemple (demonstration)</h2>
+      </FORM>  <div id="boiteformetpdf">
+
             <div id="formulaire">
             <form id="regForm" class="" action="../../controler/pdf/traitementformulaire/TRAITEMENTexemple.php" method="post" autocomplete="on"><div class="tab">Onglet %d:1
 <p> name :<input list=" names" type="text" name=" name" oninput="this.className = ''"/>

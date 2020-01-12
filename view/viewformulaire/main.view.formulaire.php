@@ -242,10 +242,10 @@ ul{
               <p>Administratif</p>
               <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="#">Organiser une course</a>
+                        <a href="#">Organiser une course(en cours de developpement)</a>
                     </li>
                     <li>
-                        <a href="#">Document Administratif</a>
+                        <a href="../../view/viewformulaire/main.view.formulaire.php">Remplire PDF Administratif</a>
                     </li>
 
                 </ul>
@@ -254,42 +254,40 @@ ul{
               <p>Club</p>
               <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="#">Gerer les membres</a>
+                        <a href="../../controler/tableadherent/tableadherent.ctrl.php">Gerer les membres</a>
                     </li>
                     <li>
-                        <a href="#">Contacter adherent</a>
+                        <a href="#">Contacter adherent(en cours de developpement)</a>
                     </li>
 
                 </ul>
             </div>
             <div class="Boite">
-              <p>Blog</p>
+              <p>Actualité</p>
               <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="#">Article</a>
+                      <a href="../../view/actualite/ajouterarticles.view.php" >Ajouter un Article</a>
                     </li>
                     <li>
-                        <a href="#">Photo</a>
+                      <a href="../../controler/actualite/tablepublication.ctrl.php">Modifier/Supprimer un Article</a>
                     </li>
                     <li>
-                        <a href="#">Classement</a>
+                        <a href="#">Classement(en cours de developpement)</a>
                     </li>
-                    <li>
-                        <a href="#">Annonce</a>
-                    </li>
+
                 </ul>
             </div>
             <div class="Boite">
               <p>Boutique</p>
               <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="#">Gerer Stock</a>
+                        <a href="../../controler/tablearticle/tablearticle.ctrl.php">Gérer les stocks</a>
                     </li>
                     <li>
-                        <a href="#">Facture</a>
+                        <a href="#">Facture(en cours de developpement)</a>
                     </li>
                     <li>
-                        <a href="#">Commande</a>
+                      <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Gérer les transactions</a>
                     </li>
 
                 </ul>
@@ -298,10 +296,10 @@ ul{
               <p>Site</p>
               <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="#">Parametre generaux</a>
+                        <a href="#">Menu Administrateur</a>
                     </li>
                     <li>
-                        <a href="#">Statistique</a>
+                        <a href="#">Statistique(en cours de developpement)</a>
                     </li>
                 </ul>
             </div>
@@ -354,7 +352,7 @@ if ($value!='..' && $value !='.') {
         <form action="upload.php" method="post" enctype="multipart/form-data">
           Choisir le pdf à ajouté:
             <input type="file" name="fileToUpload" id="fileToUpload" accept="application/pdf">
-            <input type="submit" value="Valider" name="submit" disabled>
+            <input type="submit" value="Valider" name="Envoyer" disabled>
         </form>
         </div>
 
