@@ -417,14 +417,46 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
             <div id="formulaire">
             <form id="regForm" class="" action="../../controler/pdf/traitementformulaire/TRAITEMENTresponsabilitecivil.php" method="post" autocomplete="on"><div class="tab">Onglet %d:1
 <p> CODEPOSTAL :<input list=" CODEPOSTALs" type="text" name=" CODEPOSTAL" oninput="this.className = ''"/>
+  <datalist id="CODEPOSTALs">
+                   <option value="38000">
+                   <option value="38130">
+                   </datalist>
         </p>
 <p> MAIL :<input list=" MAILs" type="text" name=" MAIL" oninput="this.className = ''"/>
+  <datalist id="MAILs">
+                   <option value="isa.glenaz@orange.fr">
+                   <option value="laurent.glenaz@orange.fr">
+                   </datalist>
         </p>
 <p> VILLE :<input list=" VILLEs" type="text" name=" VILLE" oninput="this.className = ''"/>
+  <datalist id="VILLEs">
+                   <option value="Echirolle">
+                   <option value="Grenoble">
+                   </datalist>
         </p>
 <p> NOMPERSONNEMORAL :<input list=" NOMPERSONNEMORALs" type="text" name=" NOMPERSONNEMORAL" oninput="this.className = ''"/>
+  <datalist id="NOMREPRESENTANTs">
+                   <option value="Emile RAJON">
+                   <option value="Isabelle GLENAZ">
+                   <option value="Laurent GLENAZ">
+                   <option value="Laurent SUGNY">
+                   <option value="Patrice VIALZ">
+                   <option value="Damien PARA">
+                   <option value="Jacques VIAL">
+                   </datalist>
         </p>
 <p> NOMREPRESENTANT :<input list=" NOMREPRESENTANTs" type="text" name=" NOMREPRESENTANT" oninput="this.className = ''"/>
+  <datalist id="NOMREPRESENTANTs">
+                   <option value="Emile RAJON">
+                   <option value="Isabelle GLENAZ">
+                   <option value="Laurent GLENAZ">
+                   <option value="Laurent SUGNY">
+                   <option value="Patrice VIALZ">
+                   <option value="Damien PARA">
+                   <option value="Jacques VIAL">
+
+                   </datalist>
+        </p>
         </p>
 </div> <br>
 <div class="tab">Onglet %d:2

@@ -314,10 +314,10 @@ $(document).ready(function () {
             <p>Administratif</p>
             <ul class="collapse list-unstyled" id="homeSubmenu">
                   <li>
-                      <a href="#">Organiser une course</a>
+                      <a href="#">Organiser une course(en cours de developpement)</a>
                   </li>
                   <li>
-                      <a href="#">Document Administratif</a>
+                      <a href="../../view/viewformulaire/main.view.formulaire.php">Remplire PDF Administratif</a>
                   </li>
 
               </ul>
@@ -326,42 +326,40 @@ $(document).ready(function () {
             <p>Club</p>
             <ul class="collapse list-unstyled" id="homeSubmenu">
                   <li>
-                      <a href="#">Gerer les membres</a>
+                      <a href="../../controler/tableadherent/tableadherent.ctrl.php">Gerer les membres</a>
                   </li>
                   <li>
-                      <a href="#">Contacter adherent</a>
+                      <a href="#">Contacter adherent(en cours de developpement)</a>
                   </li>
 
               </ul>
           </div>
           <div class="Boite">
-            <p>Blog</p>
+            <p>Actualité</p>
             <ul class="collapse list-unstyled" id="homeSubmenu">
                   <li>
-                      <a href="#">Article</a>
+                    <a href="../../view/actualite/ajouterarticles.view.php" >Ajouter un Article</a>
                   </li>
                   <li>
-                      <a href="#">Photo</a>
+                    <a href="../../controler/actualite/tablepublication.ctrl.php">Modifier/Supprimer un Article</a>
                   </li>
                   <li>
-                      <a href="#">Classement</a>
+                      <a href="#">Classement(en cours de developpement)</a>
                   </li>
-                  <li>
-                      <a href="#">Annonce</a>
-                  </li>
+
               </ul>
           </div>
           <div class="Boite">
             <p>Boutique</p>
             <ul class="collapse list-unstyled" id="homeSubmenu">
                   <li>
-                      <a href="#">Gerer Stock</a>
+                      <a href="../../controler/tablearticle/tablearticle.ctrl.php">Gérer les stocks</a>
                   </li>
                   <li>
-                      <a href="#">Facture</a>
+                      <a href="#">Facture(en cours de developpement)</a>
                   </li>
                   <li>
-                      <a href="#">Commande</a>
+                    <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Gérer les transactions</a>
                   </li>
 
               </ul>
@@ -370,10 +368,10 @@ $(document).ready(function () {
             <p>Site</p>
             <ul class="collapse list-unstyled" id="homeSubmenu">
                   <li>
-                      <a href="#">Parametre generaux</a>
+                      <a href="#">Menu Administrateur</a>
                   </li>
                   <li>
-                      <a href="#">Statistique</a>
+                      <a href="#">Statistique(en cours de developpement)</a>
                   </li>
               </ul>
           </div>
@@ -417,12 +415,36 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
             <div id="formulaire">
             <form id="regForm" class="" action="../../controler/pdf/traitementformulaire/TRAITEMENTexemple.php" method="post" autocomplete="on"><div class="tab">Onglet %d:1
 <p> name :<input list=" names" type="text" name=" name" oninput="this.className = ''"/>
+  <datalist id="names">
+                   <option value="proposition nom 1 ">
+                   <option value="proposition nom 2">
+                   <option value="proposition nom 3">
+                   <option value="proposition nom 4">
+                   </datalist>
         </p>
 <p> address :<input list=" addresss" type="text" name=" address" oninput="this.className = ''"/>
+  <datalist id="addresss">
+                   <option value="proposition address 1 ">
+                   <option value="proposition address 2">
+                   <option value="proposition address 3">
+                   <option value="proposition address 4">
+                   </datalist>
         </p>
 <p> city :<input list=" citys" type="text" name=" city" oninput="this.className = ''"/>
+  <datalist id="citys">
+                   <option value="proposition city 1 ">
+                   <option value="proposition city 2">
+                   <option value="proposition city 3">
+                   <option value="proposition city 4">
+                   </datalist>
         </p>
 <p> phone :<input list=" phones" type="text" name=" phone" oninput="this.className = ''"/>
+  <datalist id="phones">
+                   <option value="proposition numero telephone 1 ">
+                   <option value="proposition numero telephone 2">
+                   <option value="proposition numero telephone 3">
+                   <option value="proposition numero telephone 4">
+                   </datalist>
         </p>
 </div>
 
