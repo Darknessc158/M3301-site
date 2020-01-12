@@ -377,6 +377,10 @@ $(document).ready(function () {
           </div>
        </ul>
   </nav>
+<!--  A ENLEVER AU CAS OU  -->
+</div>
+
+
 
   <div id="content">
 

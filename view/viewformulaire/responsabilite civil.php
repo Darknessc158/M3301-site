@@ -303,82 +303,78 @@ $(document).ready(function () {
     });
 </script>
 
-<div class="wrapper">
+<nav id="sidebar">
 
-  <nav id="sidebar">
+      <h3>Menu du mode admin </h3>
 
-        <h3>Menu du mode admin </h3>
+    <ul class="list-unstyled components">
+        <div class="Boite">
+          <p>Administratif</p>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#">Organiser une course(en cours de developpement)</a>
+                </li>
+                <li>
+                    <a href="../../view/viewformulaire/main.view.formulaire.php">Remplire PDF Administratif</a>
+                </li>
 
-      <ul class="list-unstyled components">
-          <div class="Boite">
-            <p>Administratif</p>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-                  <li>
-                      <a href="#">Organiser une course</a>
-                  </li>
-                  <li>
-                      <a href="#">Document Administratif</a>
-                  </li>
+            </ul>
+        </div>
+        <div class="Boite">
+          <p>Club</p>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="../../controler/tableadherent/tableadherent.ctrl.php">Gerer les membres</a>
+                </li>
+                <li>
+                    <a href="#">Contacter adherent(en cours de developpement)</a>
+                </li>
 
-              </ul>
-          </div>
-          <div class="Boite">
-            <p>Club</p>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-                  <li>
-                      <a href="#">Gerer les membres</a>
-                  </li>
-                  <li>
-                      <a href="#">Contacter adherent</a>
-                  </li>
+            </ul>
+        </div>
+        <div class="Boite">
+          <p>Actualité</p>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                  <a href="../../view/actualite/ajouterarticles.view.php" >Ajouter un Article</a>
+                </li>
+                <li>
+                  <a href="../../controler/actualite/tablepublication.ctrl.php">Modifier/Supprimer un Article</a>
+                </li>
+                <li>
+                    <a href="#">Classement(en cours de developpement)</a>
+                </li>
 
-              </ul>
-          </div>
-          <div class="Boite">
-            <p>Blog</p>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-                  <li>
-                      <a href="#">Article</a>
-                  </li>
-                  <li>
-                      <a href="#">Photo</a>
-                  </li>
-                  <li>
-                      <a href="#">Classement</a>
-                  </li>
-                  <li>
-                      <a href="#">Annonce</a>
-                  </li>
-              </ul>
-          </div>
-          <div class="Boite">
-            <p>Boutique</p>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-                  <li>
-                      <a href="#">Gerer Stock</a>
-                  </li>
-                  <li>
-                      <a href="#">Facture</a>
-                  </li>
-                  <li>
-                      <a href="#">Commande</a>
-                  </li>
+            </ul>
+        </div>
+        <div class="Boite">
+          <p>Boutique</p>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="../../controler/tablearticle/tablearticle.ctrl.php">Gérer les stocks</a>
+                </li>
+                <li>
+                    <a href="#">Facture(en cours de developpement)</a>
+                </li>
+                <li>
+                  <a href="../../controler/tablepaiement/tableUnPaiement.ctrl.php">Gérer les transactions</a>
+                </li>
 
-              </ul>
-          </div>
-          <div class="Boite">
-            <p>Site</p>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-                  <li>
-                      <a href="#">Parametre generaux</a>
-                  </li>
-                  <li>
-                      <a href="#">Statistique</a>
-                  </li>
-              </ul>
-          </div>
-       </ul>
-  </nav>
+            </ul>
+        </div>
+        <div class="Boite">
+          <p>Site</p>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="#">Menu Administrateur</a>
+                </li>
+                <li>
+                    <a href="#">Statistique(en cours de developpement)</a>
+                </li>
+            </ul>
+        </div>
+     </ul>
+</nav>
 
   <div id="content">
 
