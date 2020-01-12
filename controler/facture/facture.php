@@ -1,13 +1,16 @@
 <?php
 
-
-
-
-
+require '../../model/classCommandesArticle/commandearticleDAO.class.php';
+require '../../model/classCommandesArticle/commandearticle.class.php';
+require '../../model/classPaiement/paiement.class.php';
+require '../../model/classPaiement/paiementDAO.class.php';
+require  '../../model/classArticle/article.class.php';
+require  '../../model/classArticle/articleDAO.class.php';
 
 if (isset($_GET['numpaiement'])) {
   $numero_paiement=$_GET['numpaiement'];
 
+  //On ouvre la base de donnée
   $database = 'mysql:host=soysauceduck99.ddns.net;dbname=scale';
   $user = 'admincave';
   $password = 'cave';
@@ -19,36 +22,42 @@ if (isset($_GET['numpaiement'])) {
     die('Erreur : ' . $e->getMessage());
   }
 
+  //On cherche tout les commandes article correspondat à un numero de paiement
   $req = "SELECT * FROM commandearticle WHERE numPaiement=$numero_paiement ;";
   $sth=$this->db->query($req);
   $listeprod_lignecommande = $sth->fetchAll(PDO::FETCH_CLASS,'commandearticle');
-  var_dump($listeprod_lignecommande);
+
     //Ouverture d'un fichier pour
     $text= fopen('temp_facture.txt', 'x+');
 
     //Boucle permettant d'afficher tout le produit contenue dans une commandes
     foreach ($listeprod_lignecommande as $value) {
 
-      $req = "SELECT * FROM article  where numArticle = $value.numArticle ;";
+      //On recupere l'objet article avec un numarticle
+      $narticle = $value.getNumArticle();
+      $req = "SELECT * FROM article  where numArticle = $narticle ;";
       $sth=$this->db->query($req);
       $produit_courant = $sth->fetchAll(PDO::FETCH_CLASS,'article');
 
 
-              $quantite=$value.quantiteCommande;
-              $numarticle=$value.numArticle;
-              $Description=$produit_courant.description;
+              $quantite=$value.getQuantiteCommande();
+              $numarticle=$narticle;
+              $Description=$produit_courant.getDescription();
               $PrixUnitaire=$produit_courant.getPrix();
               $Marque =$produit_courant.getMarque();
-              $PrixTTC=$value.quantite*$PrixUnitaire;
+              $PrixTTC=$quantite*$PrixUnitaire;
 
     // Stock les variables dans une string et separer les variables par des ';'
-    $ligne = $quantite+';'+$numarticle+';'+$Description+';'+$Marque+';'+$PrixUnitaire+';'+$PrixTTC.PHP_EOL;
+    $ligne =$numarticle+';'+$quantite+';'+$Description+';'+$Marque+';'+$PrixUnitaire+';'+$PrixTTC.PHP_EOL;
     //Ecrit la ligne dans le fichier
     fwrite($text,$ligne);
     }
     //En sorti de boucle nous avons donc toute les info necessaire sur chacun des produits de la commande
     //Fermeture du fichier
     fclose($text);
+
+
+
 
 
 
@@ -139,16 +148,29 @@ if (isset($_GET['numpaiement'])) {
         $this->Cell(array_sum($w),0,'','T');
     }
     }
+
+
+    $objpaiement = getUnPaiement($numero_paiement);
+    $idadh = $objpaiement.getIdAdherent();
+    $client = getUnAdherent($idadh);
+
     $pdf = new PDF();
-    $header = array('Quantite','Num Article','Description','Marque','Prix UTC','PrixTTC');
-    $data = $pdf->LoadData('temp_facture.txt');
     $pdf->SetFont('Arial','',10);
+    $pdf->Image('../../model/data/image/images_sites/logo-scale.png');
+    $pdf->Write(1,'Facture numero : '.$numero_paiement);
+    $pdf->Write(2,'Numero client : '.$idadh);
+    $pdf->Write(3,'Nom client : '.$client.getNom().' '.$client.getPrenom());
+    $pdf->Write(4,'Date paiement : '.$objpaiement.getDatePaiement());
+    $pdf->Write(5,'Etat paiement '.$objpaiement.getEtatDuPaiement());
+    $pdf-> Write(6,'Description :'.$objpaiement.getDescription());
+    $pdf-> Write(7,'TOTAL TTC : '.$total);
+
+    $header = array('Num Article','Quantite','Description','Marque','Prix UTC','PrixTTC');
+    $data = $pdf->LoadData('temp_facture.txt');
+
     $pdf->AddPage();
     $pdf->BasicTable($header,$data);
-    $pdf->AddPage();
-    $pdf->ImprovedTable($header,$data);
-    $pdf->AddPage();
-    $pdf->FancyTable($header,$data);
+
 
     // faire une fonction qui fait le format date-numcommande-client
 
