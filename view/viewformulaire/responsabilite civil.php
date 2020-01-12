@@ -302,7 +302,7 @@ $(document).ready(function () {
         });
     });
 </script>
-
+<div class="wrapper">
 <nav id="sidebar">
 
       <h3>Menu du mode admin </h3>
@@ -409,8 +409,9 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
 }
          ?>
         </SELECT>
-      </FORM>  <div id="boiteformetpdf">
         <h2>Remplissage du formulaire de Responsabilite civil</h2>
+      </FORM>  <div id="boiteformetpdf">
+
             <div id="formulaire">
             <form id="regForm" class="" action="../../controler/pdf/traitementformulaire/TRAITEMENTresponsabilitecivil.php" method="post" autocomplete="on"><div class="tab">Onglet:1
 <p> CODEPOSTAL :<input list=" CODEPOSTALs" type="text" name=" CODEPOSTAL" oninput="this.className = ''"/>
