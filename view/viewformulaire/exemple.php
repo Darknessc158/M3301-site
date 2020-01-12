@@ -412,6 +412,7 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
          ?>
         </SELECT>
       </FORM>  <div id="boiteformetpdf">
+        <h2>Remplissage du formulaire exemple (demonstration)</h2>
             <div id="formulaire">
             <form id="regForm" class="" action="../../controler/pdf/traitementformulaire/TRAITEMENTexemple.php" method="post" autocomplete="on"><div class="tab">Onglet %d:1
 <p> name :<input list=" names" type="text" name=" name" oninput="this.className = ''"/>

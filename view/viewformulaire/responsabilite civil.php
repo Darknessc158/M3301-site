@@ -199,7 +199,7 @@ width: auto;
 
 }
 #boiteformetpdf {
-  display: flex;
+  display: inline-flex;
   align-items: center;
 
 }
@@ -414,8 +414,9 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
          ?>
         </SELECT>
       </FORM>  <div id="boiteformetpdf">
+        <h2>Remplissage du formulaire de Responsabilite civil</h2>
             <div id="formulaire">
-            <form id="regForm" class="" action="../../controler/pdf/traitementformulaire/TRAITEMENTresponsabilitecivil.php" method="post" autocomplete="on"><div class="tab">Onglet %d:1
+            <form id="regForm" class="" action="../../controler/pdf/traitementformulaire/TRAITEMENTresponsabilitecivil.php" method="post" autocomplete="on"><div class="tab">Onglet:1
 <p> CODEPOSTAL :<input list=" CODEPOSTALs" type="text" name=" CODEPOSTAL" oninput="this.className = ''"/>
   <datalist id="CODEPOSTALs">
                    <option value="38000">
@@ -459,7 +460,7 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
         </p>
         </p>
 </div> <br>
-<div class="tab">Onglet %d:2
+<div class="tab">Onglet:2
 <p> NOM_APPELATION :<input list=" NOM_APPELATIONs" type="text" name=" NOM_APPELATION" oninput="this.className = ''"/>
         </p>
 <p> CB1 :<input list=" CB1s" type="text" name=" CB1" oninput="this.className = ''"/>
@@ -471,7 +472,7 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
 <p> FORFAITJ2 :<input list=" FORFAITJ2s" type="text" name=" FORFAITJ2" oninput="this.className = ''"/>
         </p>
 </div> <br>
-<div class="tab">Onglet %d:3
+<div class="tab">Onglet:3
 <p> NBPARTICIPANT :<input list=" NBPARTICIPANTs" type="text" name=" NBPARTICIPANT" oninput="this.className = ''"/>
         </p>
 <p> FORFAIT2 :<input list=" FORFAIT2s" type="text" name=" FORFAIT2" oninput="this.className = ''"/>
@@ -483,7 +484,7 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
 <p> FORFAITJ1 :<input list=" FORFAITJ1s" type="text" name=" FORFAITJ1" oninput="this.className = ''"/>
         </p>
 </div> <br>
-<div class="tab">Onglet %d:4
+<div class="tab">Onglet:4
 <p> FORFAITJ2B :<input list=" FORFAITJ2Bs" type="text" name=" FORFAITJ2B" oninput="this.className = ''"/>
         </p>
 <p> TOTAL :<input list=" TOTALs" type="text" name=" TOTAL" oninput="this.className = ''"/>
@@ -495,7 +496,7 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
 <p> DATE :<input list=" DATEs" type="text" name=" DATE" oninput="this.className = ''"/>
         </p>
 </div> <br>
-<div class="tab">Onglet %d:5
+<div class="tab">Onglet:5
 <p> LIEUX :<input list=" LIEUXs" type="text" name=" LIEUX" oninput="this.className = ''"/>
         </p>
 <p> NUMCAP :<input list=" NUMCAPs" type="text" name=" NUMCAP" oninput="this.className = ''"/>
@@ -507,7 +508,7 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
 <p> LIEUX_MANIF :<input list=" LIEUX_MANIFs" type="text" name=" LIEUX_MANIF" oninput="this.className = ''"/>
         </p>
 </div> <br>
-<div class="tab">Onglet %d:6
+<div class="tab">Onglet:6
 <p> CB2 :<input list=" CB2s" type="text" name=" CB2" oninput="this.className = ''"/>
         </p>
 <p> CB3 :<input list=" CB3s" type="text" name=" CB3" oninput="this.className = ''"/>
@@ -519,7 +520,7 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
 <p> CB6 :<input list=" CB6s" type="text" name=" CB6" oninput="this.className = ''"/>
         </p>
 </div> <br>
-<div class="tab">Onglet %d:7
+<div class="tab">Onglet:7
 <p> CB7 :<input list=" CB7s" type="text" name=" CB7" oninput="this.className = ''"/>
         </p>
 <p> CB8 :<input list=" CB8s" type="text" name=" CB8" oninput="this.className = ''"/>
@@ -531,7 +532,7 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
 <p> CB11 :<input list=" CB11s" type="text" name=" CB11" oninput="this.className = ''"/>
         </p>
 </div> <br>
-<div class="tab">Onglet %d:8
+<div class="tab">Onglet:8
 <p> CB12 :<input list=" CB12s" type="text" name=" CB12" oninput="this.className = ''"/>
         </p>
 <p> CB13 :<input list=" CB13s" type="text" name=" CB13" oninput="this.className = ''"/>
@@ -543,7 +544,7 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
 <p> CB16 :<input list=" CB16s" type="text" name=" CB16" oninput="this.className = ''"/>
         </p>
 </div> <br>
-<div class="tab">Onglet %d:9
+<div class="tab">Onglet:9
 <p> CB17 :<input list=" CB17s" type="text" name=" CB17" oninput="this.className = ''"/>
         </p>
 <p> NBPARTICIPANT_bis :<input list=" NBPARTICIPANT_biss" type="text" name=" NBPARTICIPANT_bis" oninput="this.className = ''"/>

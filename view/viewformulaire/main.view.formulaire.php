@@ -338,22 +338,25 @@ if ($value!='..' && $value !='.') {
 }
 }
              ?>
-<div class="">
 
-<h4>Inserer un nouveau pdf vierge à préremplir (en cours de developppement)</h4>
-<!-- Pour developper cette fonctionnalité nous devons intégré pdftk à notre serveur
-Le probleme etant que pdftk utilise un gestionnaire de dépendances appeler composer que nous ne nous comprenons pas faute de temps
-Mais une fois cette barriere franchis tout fichier compatible pourra etre ajouter et remplis en ligne
-Deplus un tuto pour etre mis en place pour apprendre aux utilisateur à créer eux meme leurs pdf template (avec des text fields)
--->
-<form action="upload.php" method="post" enctype="multipart/form-data">
-  Choisir le pdf à ajouté:
-    <input type="file" name="fileToUpload" id="fileToUpload" accept="application/pdf">
-    <input type="submit" value="Valider" name="submit" disabled>
-</form>
-</div>
           </SELECT>
         </FORM>
+
+
+        <div class="">
+
+        <h4>Inserer un nouveau pdf vierge à préremplir (en cours de developppement)</h4>
+        <!-- Pour developper cette fonctionnalité nous devons intégré pdftk à notre serveur
+        Le probleme etant que pdftk utilise un gestionnaire de dépendances appeler composer que nous ne nous comprenons pas faute de temps
+        Mais une fois cette barriere franchis tout fichier compatible pourra etre ajouter et remplis en ligne
+        Deplus un tuto pour etre mis en place pour apprendre aux utilisateur à créer eux meme leurs pdf template (avec des text fields)
+        -->
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+          Choisir le pdf à ajouté:
+            <input type="file" name="fileToUpload" id="fileToUpload" accept="application/pdf">
+            <input type="submit" value="Valider" name="submit" disabled>
+        </form>
+        </div>
 
 
       </div>
