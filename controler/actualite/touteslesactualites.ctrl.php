@@ -2,7 +2,12 @@
 require_once('../../model/classPublication/publication.class.php');
 require_once('../../model/classPublication/publicationDAO.class.php');
 
-
+session_start();
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+  $etat = "Bienvenue,".$_SESSION["username"];
+} else {
+  $etat = "Se connecter ou s'inscrire";
+}
 
 $publications = new publicationDAO();
 

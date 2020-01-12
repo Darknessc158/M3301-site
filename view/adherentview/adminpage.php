@@ -1,3 +1,16 @@
+<?php
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    if($_SESSION["admin"]){
+      header("location: profilAdmin.ctrl.php");
+    }else{
+        header("location: profil.ctrl.php");
+
+    }
+
+    exit;
+}
+
+ ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

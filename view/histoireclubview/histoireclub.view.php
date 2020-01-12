@@ -66,13 +66,12 @@ $('[data-toggle="popover"]').popover()
     </ul>
     <form action="../auth/login.ctrl.php" method="get" class="ml-auto">
       <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">@</span>
-        </div>
+
         <button class="btn btn-success my-2 my-sm-0" type="submit"><?php echo $etat; ?></button>
       </div>
     </form>
   </div>
+
 </nav>
 <!--Nav-->
 </header>
