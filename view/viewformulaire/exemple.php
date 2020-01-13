@@ -377,7 +377,7 @@ $(document).ready(function () {
                       <a href="#">Menu Administrateur</a>
                   </li>
                   <li>
-                      <a href="#">Statistique(en cours de developpement)</a>
+                      <a href="../page administrateur/admin.view.php">Statistique(en cours de developpement)</a>
                   </li>
               </ul>
           </div>

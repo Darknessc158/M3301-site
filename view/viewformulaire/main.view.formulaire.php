@@ -296,7 +296,7 @@ ul{
               <p>Site</p>
               <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="#">Menu Administrateur</a>
+                        <a href="../page administrateur/admin.view.php">Menu Administrateur</a>
                     </li>
                     <li>
                         <a href="#">Statistique(en cours de developpement)</a>
