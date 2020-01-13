@@ -69,7 +69,7 @@
 
     <div class="col-sm-3">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../../model/data/images/images_sites/transactions-icon.png" alt="image gestion des stocks">
+        <img class="card-img-top" src="../../model/data/images/images_sites/transactions-icon.png" alt="image gestion des transaction">
         <div class="card-body">
           <h5 class="card-title">Gestionnaire des transactions</h5>
           <p class="card-text">Liste des transactions, modifier ou supprimer une transaction</p>
@@ -80,7 +80,7 @@
 
     <div class="col-sm-3">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../../model/data/images/images_sites/site-icon.png" alt="image gestion des stocks">
+        <img class="card-img-top" src="../../model/data/images/images_sites/site-icon.png" alt="image gestion actualites">
         <div class="card-body">
           <h5 class="card-title">Gestionnaire des actualités</h5>
           <p class="card-text">Ajouter des articles pour l'actualité</p>
@@ -92,7 +92,7 @@
 
     <div class="col-sm-3">
       <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="../../model/data/images/images_sites/stats-icon.jpg" alt="image gestion des stocks">
+        <img class="card-img-top" src="../../model/data/images/images_sites/stats-icon.jpg" alt="image Statistique">
         <div class="card-body">
           <h5 class="card-title">Statistique du site</h5>
           <p class="card-text">Informations sur les visiteurs du site ...</p>
@@ -103,7 +103,7 @@
 
   <div class="col-sm-3">
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="../../model/data/images/images_sites/pdf-icon.png" alt="image gestion des stocks">
+      <img class="card-img-top" src="../../model/data/images/images_sites/pdf-icon.png" alt="image Remplir PDF">
       <div class="card-body">
         <h5 class="card-title">Remplir PDF</h5>
         <p class="card-text">Remplir ses PDF en ligne</p>
@@ -113,6 +113,21 @@
       </div>
     </div>
   </div>
+
+  <div class="col-sm-3">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="../../model/data/images/images_sites/messagerie-icon.svg" alt="image Remplir PDF">
+      <div class="card-body">
+        <h5 class="card-title">Accès Messagerie</h5>
+        <p class="card-text">Accéder à la messagerie</p>
+
+        <a href="http://scale-echirolles.ddns.net/rainloop" target="_blank"class="btn btn-primary">Messagerie</a>
+
+      </div>
+    </div>
+  </div>
+
+
 </div>
 </div>
   <!--Debut alerte stock article-->

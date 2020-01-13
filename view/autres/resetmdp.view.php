@@ -51,12 +51,7 @@
         <a class="nav-link" href="../../view/autres/contact.view.php">Nous contacter</a>
       </li>
     </ul>
-    <form action="../../controler/auth/login.ctrl.php" method="get" class="ml-auto">
-      <div class="input-group mb-3">
-
-        <button class="btn btn-success my-2 my-sm-0" type="submit"><?php echo $etat; ?></button>
-      </div>
-    </form>
+    
   </div>
 
 </nav>

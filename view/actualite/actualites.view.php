@@ -89,8 +89,8 @@
       </div>
     <?php }  ?>
   </div>
+<?php if ($_SERVER['PHP_SELF'] =='/M3301-site/controler/actualite/touteslesactualites.ctrl.php') { ?> <!--on affiche ces infos uniquement quand la vue est appelée par ce controleur-->
 
-<?php if ($_SERVER['PHP_SELF'] == '/controler/actualite/touteslesactualites.ctrl.php') { ?> <!--on affiche ces infos uniquement quand la vue est appelée par ce controleur-->
   <div class="pagination" style="justify-content:space-between; width:80%; margin:auto;">
     <a href="?action=prev&page=<?php echo $idPage; ?>"><i class="fas fa-angle-double-left fa-3x" title="page suivante"></i></a>
     <p> <strong><?=$idPage?></strong> </p>
