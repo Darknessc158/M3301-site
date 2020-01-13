@@ -584,8 +584,8 @@ else {
 </div>
 
           <div class="pdf">
-
-          <embed src=../../model/data/pdf/template/Responsabilite_civil.pdf width=800 height=500 type='application/pdf'/>
+            <h3>Fichier PDF avec les champs correspondant à ceux dans le formulaire </h3>
+          <embed src=../../model/data/pdf/template/Responsabilite_civil-Visionneur.pdf width=800 height=730 type='application/pdf'/>
 
           </div>
           </div>
