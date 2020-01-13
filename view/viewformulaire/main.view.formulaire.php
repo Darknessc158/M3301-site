@@ -331,8 +331,15 @@ $scan = scandir($dir);
 foreach ($scan as $key => $value) {
 $path_parts = pathinfo($value);
 if ($value!='..' && $value !='.') {
-  $file = $path_parts['filename'].PHP_EOL;
-  echo '<option value="'.$file.'.php">'.$file.' </option>'.PHP_EOL;
+  if($value!='main.view.formulaire.php'){
+    $file = $path_parts['filename'].PHP_EOL;
+    echo '<option value="'.$file.'.php">'.$file.'</option>'.PHP_EOL;
+  }
+  else {
+    $file = $path_parts['filename'].PHP_EOL;
+    echo '<option value="'.$file.'.php"> menu remplissage PDF</option>'.PHP_EOL;
+  }
+
 }
 }
              ?>

@@ -412,9 +412,15 @@ $dir =".";
 $scan = scandir($dir);
 foreach ($scan as $key => $value) {
 $path_parts = pathinfo($value);
-if ($path_parts['extension']='php') {
-$file = $path_parts['filename'].PHP_EOL;
-echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
+if ($value!='..' && $value !='.') {
+  if($value!='main.view.formulaire.php'){
+    $file = $path_parts['filename'].PHP_EOL;
+    echo '<option value="'.$file.'.php">'.$file.'</option>'.PHP_EOL;
+  }
+  else {
+    $file = $path_parts['filename'].PHP_EOL;
+    echo '<option value="'.$file.'.php"> menu remplissage PDF</option>'.PHP_EOL;
+  }
 }
 }
          ?>
@@ -423,8 +429,8 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
       </FORM>  <div id="boiteformetpdf">
 
             <div id="formulaire">
-            <form id="regForm" class="" action="../../controler/pdf/traitementformulaire/TRAITEMENTexemple.php" method="post" autocomplete="on"><div class="tab">Onglet %d:1
-<p> name :<input list=" names" type="text" name=" name" oninput="this.className = ''"/>
+            <form id="regForm" class="" action="../../controler/pdf/traitementformulaire/TRAITEMENTexemple.php" method="post" autocomplete="on"><div class="tab">Onglet 1
+<p> name :<input list="names" type="text" name=" name" oninput="this.className = ''"/>
   <datalist id="names">
                    <option value="proposition nom 1 ">
                    <option value="proposition nom 2">
@@ -432,7 +438,7 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
                    <option value="proposition nom 4">
                    </datalist>
         </p>
-<p> address :<input list=" addresss" type="text" name=" address" oninput="this.className = ''"/>
+<p> address :<input list="addresss" type="text" name=" address" oninput="this.className = ''"/>
   <datalist id="addresss">
                    <option value="proposition address 1 ">
                    <option value="proposition address 2">
@@ -440,7 +446,7 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
                    <option value="proposition address 4">
                    </datalist>
         </p>
-<p> city :<input list=" citys" type="text" name=" city" oninput="this.className = ''"/>
+<p> city :<input list="citys" type="text" name=" city" oninput="this.className = ''"/>
   <datalist id="citys">
                    <option value="proposition city 1 ">
                    <option value="proposition city 2">
@@ -448,7 +454,7 @@ echo '<option value="'.$file.'.php">'.$file.'. </option>'.PHP_EOL;
                    <option value="proposition city 4">
                    </datalist>
         </p>
-<p> phone :<input list=" phones" type="text" name=" phone" oninput="this.className = ''"/>
+<p> phone :<input list="phones" type="text" name=" phone" oninput="this.className = ''"/>
   <datalist id="phones">
                    <option value="proposition numero telephone 1 ">
                    <option value="proposition numero telephone 2">
